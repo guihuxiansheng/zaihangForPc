@@ -2,15 +2,17 @@
     	var mobile = document.querySelector(".mobile");
     	var mobile_login = document.querySelector(".mobile .mobileBox #mobileLoginBtn");
     	var mobileMenuBtn = mobile.querySelector(".mobile .mobileBox #mobileMenuBtn");
-    	var qx = mobile.querySelector(".mobile .list p");
-    	var list = mobile.querySelector(".mobile .list");
+    	var mobileList = document.querySelector(".mobileList");
+        var qx = mobileList.querySelector(".mobileList span");
     	var mobileBox = mobile.querySelector(".mobile .mobileBox");
     	// 
+        var headerout = document.querySelector(".zaih_headerout");
     	var header_nav = document.querySelector(".zaih_headerout .header .header_nav");
     	var navLi = header_nav.querySelectorAll(".zaih_headerout .header .header_nav>li");
     	var more_menu = header_nav.querySelector(".zaih_headerout .header .header_nav .header_more .more_menu");
     	var menuLi = header_nav.querySelectorAll(".zaih_headerout .header .header_nav .header_more .more_menu >li");
     	// 登录部分
+        var login_container = document.querySelector(".login_container");
     	var header_login = document.querySelector(".zaih_headerout .header .header_setting .header_login");
     	var login_box = document.querySelector(".login_box");
     	var back = login_box.querySelector(".back");
@@ -54,9 +56,11 @@
     	// 点击登录
     	header_login.onclick = function(){
     		login_box.style.display = 'block';
+            login_container.style.display = 'block';
     	}
     	loginQx.onclick = function () {
     		this.parentNode.parentNode.style.display = 'none';
+            login_container.style.display = 'none';
     	}
     	login.onclick = function(ev){
     		var oEvent= ev || event;
@@ -66,20 +70,25 @@
     	// mobile登录
     	mobile_login.onclick = function(){
     		login_box.style.display = 'block';
+            login_container.style.display = 'block';
     	}
     	loginQx.onclick = function () {
     		this.parentNode.parentNode.style.display = 'none';
+             login_container.style.display = 'none';
     	}
     	login.onclick = function(ev){
     		var oEvent= ev || event;
         	oEvent.cancelBubble=true;
     	}
     	// 
+        console.log(qx)
+        console.log(mobileList)
     	mobileMenuBtn.onclick = function(){
     		mobileBox.style.display='none';
-    		list.style.display='block';
+    		mobileList.style.display='block';
     	}
     	qx.onclick = function(){
+            console.log(1)
     		mobileBox.style.display='block';
-    		list.style.display='none';
+    		mobileList.style.display='none';
     	}
