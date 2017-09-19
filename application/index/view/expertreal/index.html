@@ -1,0 +1,56 @@
+{include file="common/header"}
+{include file="nav_foot/nav"}
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/static/expertreal/css/add_realname.css">
+	<div class="container">
+		<div class="content">
+			<div class="sticky-wrapper" id="sticky-wrapper" style="height: 100px;">
+				<div class="apply-steps sticky">
+					<ol class="step-list">
+						<li class="active">
+							<span>1</span>
+							实名认证
+						</li>
+						<li class="">
+							<span>2</span>
+							填写行家资料
+						</li>
+						<li class="">
+							<span>3</span>
+							添加话题
+						</li>
+					</ol>
+				</div>
+			</div>
+
+			<div class="main zhima-verify">
+				<img class="image" src="__ROOT__/public/static/expertreal/image/zhima.png">
+				<p class="intro">
+	                由「芝麻信用」提供行家真实身份认证服务。<br>
+	                目前仅支持支付宝实名认证用户进行认证，<br>
+	                非支付宝用户请耐心等待，我们正在接入更丰富的认证方式。
+        	    </p>
+        	    <p class="tip zhima_tip">
+	                所有信息均保密，仅用作身份认证，请放心填写！
+   	     	    </p>
+
+				<form id="zhimaForm" class="zhima-form">
+	                <div class="form-group" data-required="required">
+	                    <input id="name" name="name" type="text" maxlength="" placeholder="真实姓名">
+	                    <span class="form-error"></span>
+	                </div>
+	                <div class="form-group" data-required="required">
+	                    <input id="cert_no" name="cert_no" type="text" maxlength="18" placeholder="身份证号">
+	                    <span class="form-error"></span>
+	                </div>
+	                <div class="btns-wrap btns-wrap-center">
+	                    <button class="btn-primary btn-lg" type="submit">提交认证</button>
+	                </div>
+	            </form>
+
+
+			</div>
+
+		</div>
+	</div>
+{include file="nav_foot/foot"}
+{include file="common/footer"}

@@ -1,0 +1,83 @@
+{include file="common/header"}
+{include file="nav_foot/nav"}
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/static/register/css/signup.css">
+	<div class="container">
+		<div class="content signup">
+			<div class="single-column">
+				<div class="single-white-wrap">
+					<p>欢迎加入在行</p>
+					<div class="signup-panel">
+
+						<form action="" method="POST" class="signForm">
+
+
+							<div class="form-group">
+								<div class="form-item">
+									<input type="text" id="mobile" name="mobile" placeholder="手机号" class="form-control">
+									<span class="form-error errForMobile"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-item">
+									<input type="text" id="captcha" name="captcha" placeholder="验证码" class="form-control">
+									<img src="__ROOT__/public/static/register/image/captcha.png" class="btn-default btn-md captchaImg" alt="">
+									<span class="form-error errForMobile"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a href="#" class="btn-default btn-hg getCode">发送手机验证码</a>
+							</div>			
+
+							<div class="form-group">
+								<div class="form-item">
+									<input type="text" id="code" name="code" placeholder="手机验证码" class="form-control">
+									<span class="form-error errForMobile"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-item">
+									<input type="text" id="nickname" name="nickname" placeholder="昵称" class="form-control">
+									<span class="form-error errForMobile"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-item">
+									<input type="text" id="password" name="password" placeholder="密码" class="form-control">
+									<span class="form-error errForMobile"></span>
+								</div>
+							</div>
+							
+							<div class="deal checkbox-wrap">
+								<label for="">
+									<input autofocus="" checked="" id="readme" name="readme" type="checkbox">
+									<span class="checkbox checkbox-true">
+										<img class="iconcheck" src="__ROOT__/public/static/register/image/check.png" alt="">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									我已阅读并同意
+									<a href="http://www.zaih.com/help/agreement/" target="_blank">《服务条款》</a>
+								</label>
+							</div>
+							
+							<div class="btns-wrap-center">
+								<button type="submit" class="btn-submit btn-hg btn-complete-register">注册</button>
+							</div>
+							
+							<div class="to-login">
+								已有账号？现在去
+								<a rel="nofollow" href="{:url('/index/login')}">登录</a>
+							</div>
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{include file="nav_foot/foot"}
+{include file="common/footer"}

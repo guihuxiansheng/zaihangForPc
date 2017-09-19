@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" zr_content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人中心</title>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>		
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/static/personalinfo/css/zr_personaCenter.css"/>
+		
+	</head>
+	<body>
+		<div class="zr_zr_header">
+			
+		</div>
+		<div class="zr_container">
+			<div class="zr_content">
+				<div id="zr_vue_here">
+					<!--左边-->
+					<div class="img_nav">
+						<img src="__ROOT__/public/static/personalinfo/images/touxiang_normal.png"/>
+						<div class="nav_list">
+							<ul>
+								<li class="navList_ul_li">									
+									<router-link to="/appointment" active-class="whether_curMenu"><i class="cur_menu"></i>我约的行家</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/wantList" active-class="whether_curMenu"><i class="cur_menu"></i>心愿单</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/liquan" active-class="whether_curMenu"><i class="cur_menu"></i>我的礼劵</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/personalSet" active-class="whether_curMenu"><i class="cur_menu"></i>个人设置</router-link>
+									<ol>
+										<li>	
+											<router-link to="/GerenZiliao" active-class="whether_curWord"><i class=""></i><span class="cur_menu_word">个人资料</span></router-link>
+										</li>
+										<li>
+											<router-link to="/TouxiangSet" active-class="whether_curWord"><i class=""></i><span class="cur_menu_word">头像设置</span></router-link>
+										</li>
+										<li>
+											<router-link to="/YanzhengPhone" active-class="whether_curWord"><i class=""></i><span class="cur_menu_word">验证手机</span></router-link>
+										</li>
+										<li>	
+											<router-link to="/ChangeMima" active-class="whether_curWord"><i class=""></i><span class="cur_menu_word">修改密码</span></router-link>
+										</li>
+										<li>	
+											<router-link to="/ShoukuangYinsi" active-class="whether_curWord"><i class=""></i><span class="cur_menu_word">收款及隐私</span></router-link>
+										</li>
+									</ol>
+								</li>							
+							</ul>
+						</div>
+					</div>
+					<!--右边-->
+					<div class="nav_zr_container">
+						<router-view></router-view>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		<div class="footer"></div>		
+			
+		<!--我约的行家页-->
+		<template id="appointmentHtml">
+			<div class="appointmentHtml">
+				<div class="appointmentHtml_zr_header">
+					<p>我约的人</p>
+				</div>
+				<div class="appointmentHtml_zr_container">
+					<p>真忧伤，我还没有约过人唉。<a href="#">立即去约人！</a></p>
+				</div>
+			</div>
+		</template>
+		<!--心愿单页-->
+		<template id="wantListHtml">
+			<div class="wantListHtml">
+				<div class="wantListHtml_zr_container">
+					<p>真忧伤，我的心愿单还没有行家。<a href="#">立即去加人！</a></p>
+				</div>
+			</div>
+		</template>
+		<!--我的礼劵页-->
+		<template id="liquanHtml">
+			<div class="liquanHtml">
+				<div class="liquanHtml_zr_header">
+					<p>
+						我的礼劵
+						<a href="#">使用规则</a>
+					</p>
+				</div>
+				<div class="liquanHtml_zr_container">
+					<p>您还没有获得礼券，请随时关注「在行」</p>
+				</div>
+			</div>
+		</template>
+		<!--个人设置页-->
+		<template id="personalSetHtml">
+			<div class="personalSetHtml">
+				<!--<p>个人设置页</p>-->
+			</div>
+		</template>
+		
+		<!--个人设置页里面的导航条-->
+		<!--个人资料-->
+		<template id="GerenZiliaoHtml">
+			<div class="GerenZiliaoHtml">
+				<div class="GerenZiliaoHtml_zr_header">
+					<p>个人资料</p>
+				</div>
+				<div class="GerenZiliaoHtml_zr_container">
+					<div class="Geren_userName">
+						<p><span>* </span>昵称</p>
+						<input value="空洞丶丶" />						
+					</div>
+					<div class="Geren_trueName">
+						<p><span>* </span>真实姓名</p>
+						<input value="" />						
+					</div>
+					<div class="Geren_changzhudi">
+						<p><span>* </span>常居地</p>
+						<select autofocus id="location" name="location" required>
+							<option value="北京">北京</option>
+							<option value="上海">上海</option>
+							<option value="深圳">深圳</option>
+							<option value="广州">广州</option>
+							<option value="杭州">杭州</option>
+							<option value="成都">成都</option>
+							<option value="西安">西安</option>
+							<option value="武汉">武汉</option>
+							<option value="宁波">宁波</option>
+						</select>						
+					</div>
+					<div class="Geren_jianjie">
+						<p><span>* </span>个人简介<span class="Geren_jianjie_word">完备的个人简历可以向行家展现您约见的诚意，也能让行家更好的帮助您。</span></p>
+						<textarea name="" rows="" cols="">这个人很懒，什么都没写</textarea>
+					</div>
+				</div>
+				<div class="GerenZiliaoHtml_footer">
+					<button class="" type="submit">提交</button>
+				</div>
+			</div>
+		</template>
+		<!--头像设置-->
+		<template id="TouxiangSetHtml">
+			<div class="TouxiangSetHtml">
+				<div class="TouxiangSetHtml_zr_header">
+					<p>上传头像</p>
+				</div>
+				<div class="TouxiangSetHtml_zr_container">
+					<div class="img_word_btn">
+						<div class="touxiang_imgbox">
+							<img src="__ROOT__/public/static/personalinfo/images/touxiang_normal.png" class="touxiangImg"/>
+							<span class="close_touxiang">x</span>
+						</div>
+						
+						<div class="word_btn">
+							<p>支持jpg，png，gif格式图片，请尽可能选用160*160以上照片。</p>
+							<div class="btn">
+								<a href="javascript:;"><input type="file" class="filepath"/>电脑中选一张</a>								
+							</div>							
+						</div>
+					</div>
+					<div class="submit_touxiang">
+						<button>保存</button>
+					</div>
+				</div>
+			</div>
+		</template>
+		<!--验证手机-->
+		<template id="YanzhengPhoneHtml">
+			<div class="YanzhengPhoneHtml">
+				<div class="YanzhengPhoneHtml_zr_header">
+					<p>验证手机</p>
+				</div>
+				<div class="YanzhengPhoneHtml_zr_container">
+					<div class="phoneNum">
+						<input type="text" value="12345678900"/>
+						<button>发送手机验证码</button>
+					</div>
+					<div class="phoneCaptcha">
+						<input type="text" />
+						<button>提交</button>
+					</div>
+				</div>
+			</div>
+		</template>
+		<!--修改密码-->
+		<template id="ChangeMimaHtml">
+			<div class="ChangeMimaHtml">
+				<div class="ChangeMimaHtml_zr_header">
+					<p>修改密码</p>
+				</div>
+				<div class="ChangeMimaHtml_zr_container">
+					<div class="nowPassword">
+						<p>当前密码</p>
+						<input />						
+					</div>
+					<div class="newPassword">
+						<p>新密码</p>
+						<input value="" />						
+					</div>
+					<div class="newPassword_again">
+						<p>确认新密码</p>
+						<input value="" />						
+					</div>
+				</div>
+				<div class="ChangeMimaHtml_footer">
+					<button class="" type="submit">提交</button>
+				</div>
+			</div>
+		</template>
+		<!--收款及隐私-->
+		<template id="ShoukuangYinsiHtml">
+			<div class="ShoukuangYinsiHtml">
+				<div class="ShoukuangYinsiHtml_zr_header">
+					<p>收款及隐私</p>
+				</div>
+				<div class="ShoukuangYinsiHtml_zr_container">
+					<div class="AboutTuikuang">
+						<p>如果出现退款情况，将退到您这个账号。</p>
+					</div>					
+					<div class="zhifubao">
+						<p><span> * </span>收款人支付宝</p>
+						<input placeholder="目前只提供支付宝一种结算方式，如您没有支付宝建议您申请一个，或者找亲友代收"/>						
+					</div>
+					<div class="IDcard">
+						<p><span> * </span>收款人身份证姓名</p>
+						<input value="" placeholder="请务必与证件上的姓名一致，请不要用昵称"/>						
+					</div>
+				</div>
+				<div class="ShoukuangYinsiHtml_footer">
+					<button class="" type="submit">提交</button>
+				</div>
+			</div>
+		</template>
+		<!--路由-->
+		<script type="text/javascript">
+			const router=new VueRouter({
+				routes:[
+//					重定向
+					{
+						path:'/',
+						redirect:'/appointment'
+					},
+//					预约
+					{
+						path:'/appointment',
+						component:{
+							template:'#appointmentHtml'
+						}
+					},
+//					心愿单
+					{
+						path:'/wantList',
+						component:{
+							template:'#wantListHtml'
+						}
+					},
+//					礼券
+					{
+						path:'/liquan',
+						component:{
+							template:'#liquanHtml'
+						}
+					},
+//					个人设置
+					{
+						path:'/personalSet',
+						component:{
+							template:'#personalSetHtml'
+						}
+					},
+//					个人设置里面的导航条
+					{
+						path:'/GerenZiliao',
+						component:{
+							template:'#GerenZiliaoHtml'
+						}
+					},
+					{
+						path:'/TouxiangSet',
+						component:{
+							template:'#TouxiangSetHtml'
+						}
+					},
+					{
+						path:'/YanzhengPhone',
+						component:{
+							template:'#YanzhengPhoneHtml'
+						}
+					},
+					{
+						path:'/ChangeMima',
+						component:{
+							template:'#ChangeMimaHtml'
+						}
+					},
+					{
+						path:'/ShoukuangYinsi',
+						component:{
+							template:'#ShoukuangYinsiHtml'
+						}
+					},
+				]
+			});
+			new Vue({
+				el:"#zr_vue_here",
+				data:[],
+				methods:{},
+				router
+			});
+		</script>
+		<!--js-->
+		<script type="text/javascript">
+			var navList_li=document.querySelectorAll(".nav_list ul .navList_ul_li");
+			var navList_li_ol_li=document.querySelectorAll(".nav_list ul .navList_ul_li ol li");
+			var navList_li_ol=document.querySelectorAll(".nav_list ul .navList_ul_li ol");
+
+//			进来就判断
+			setCurmenu();
+			function setCurmenu(){
+//				设置个人设置是否高亮
+				var key=0;
+				for(var i=0;i<navList_li_ol_li.length;i++){
+//					console.log(navList_li_ol_li[i].querySelector('a').getAttribute('class'));
+					if(navList_li_ol_li[i].querySelector('a').getAttribute('class')){
+						key=1;
+					}
+				}
+				if(key==1){					
+					navList_li[3].setAttribute("class",'navList_ul_li liWhether_curMenu');
+					navList_li_ol[0].style.display="block";
+				}
+				else{
+					navList_li[3].setAttribute("class",'navList_ul_li');
+					navList_li_ol[0].style.display="none";
+				}
+			}
+//			点击首页导航条是判断
+			clickLi_setCur();
+			function clickLi_setCur(){
+				for(var i=0;i<navList_li.length-1;i++){
+					navList_li[i].onclick=function(){
+						setCurmenu();
+					}
+				}
+			}
+			
+//			点击个人设置导航条判断
+			clickOlli_setCur();
+			function clickOlli_setCur(){
+				for(var i=0;i<navList_li_ol_li.length;i++){
+					navList_li_ol_li[i].onclick=function(){
+						setCurmenu();
+					}
+				}
+			}
+			
+//			个人设置导航条是否显示
+			ShowGerenNav();
+			function ShowGerenNav(){
+				navList_li[3].children[0].onclick=function(){				
+					if(navList_li_ol[0].style.display=="block"){
+						navList_li_ol[0].style.display="none";
+					}
+					else{
+						navList_li_ol[0].style.display="block";
+					}
+				}
+			}
+		</script>
+		<script type="text/javascript">
+			uploadImg();
+			function uploadImg(){
+				$(function() {
+			        $(".filepath").on("change",function() {
+			            var srcs = getObjectURL(this.files[0]);   //获取路径
+			            console.log(srcs)
+			            $(".close_touxiang").show();
+			            $(".submit_touxiang").show();
+			            $(".touxiangImg").attr("src",srcs);    //this指的是input
+			        })
+			        $(".close_touxiang").on("click",function() {
+		                $(this).hide();
+		                $(".submit_touxiang").hide();
+		                 $(".touxiangImg").attr("src",'images/touxiang_normal.png');
+		            })
+			    })
+			}
+			
+			
+			//获取路径的方法
+			function getObjectURL(file) {
+		        var url = null;
+		        if (window.createObjectURL != undefined) {
+		            url = window.createObjectURL(file)
+		        } else if (window.URL != undefined) {
+		            url = window.URL.createObjectURL(file)
+		        } else if (window.webkitURL != undefined) {
+		            url = window.webkitURL.createObjectURL(file)
+		        }
+		        return url
+		    };
+		</script>
+	</body>
+</html>

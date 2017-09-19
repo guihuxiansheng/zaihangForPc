@@ -1,0 +1,67 @@
+{include file="common/header"}
+{include file="nav_foot/nav"}
+	<link rel="stylesheet" href="__ROOT__/public/static/login/css/login.css">
+	<div class="container">
+		<div class="content signup">
+			<div class="single-column">
+				<div class="single-white-wrap">
+					<p>欢迎登录「在行」</p>
+					<div class="signup-panel">
+
+						<p class="signup-tip">无需注册，直接用社交账号登录</p>
+
+						<a id="followBtn" class="btn-primary btn-hg login-weibo" href="#" data-received="">
+							<img src="__ROOT__/public/static/login/image/weibo.png" class="icon icon-weibo"></img>
+						</a>		
+
+						<a id="followBtn" class="btn-primary btn-hg login-weixin" href="#" data-received="">
+							<img src="__ROOT__/public/static/login/image/weixin.png" class="icon icon-weixin"></img>
+						</a>	
+
+						<a id="followBtn" class="btn-primary btn-hg login-baidu" href="#" data-received="">
+							<img src="__ROOT__/public/static/login/image/baidu.png" class="icon icon-baidu"></img>
+						</a>	
+
+
+						<div class="phone-login" id="phoneLogin" style="display: block;">
+							<div class="btn-hg login-phone" id="phoneBtn" style="display: none;">
+									手机登录
+							</div>
+						
+
+							
+							<form method="POST" action="" class="signForm" style="display: block">
+				                <div style="display:block;"><input id="csrf_token" name="csrf_token" type="hidden" value=""></div>
+				                <div class="form-group">
+				                    <div class="form-item">
+				                    	<input class="form-control" id="identity" name="identity" placeholder="手机号" type="text" value="">
+										<span class="form-error errForIdentity"></span>
+				                    </div>
+								</div>
+				                <div class="form-group">
+				                    <div class="form-item">
+					                    <input class="form-control" id="password" name="password" placeholder="密码" type="password" value="">
+										<p class="form-error errForPassword"></p>
+									</div>
+									<div class="err"></div>
+				                </div>
+								<div class="btns-wrap-center">
+									<button type="submit" class="btn-submit btn-hg btn-complete-register" data-received="登录方式..type.baidu;when.其他">登录</button>
+								</div>
+			            	</form>
+
+
+							<div>
+								<p class="to-signup">还没有账号？<a href="{:url('/index/register')}">现在去注册</a></p>
+								<p class="to-resetpassword"><a href="#">忘记密码？</a></p>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{include file="nav_foot/foot"}
+{include file="common/footer"}

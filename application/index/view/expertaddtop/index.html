@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加话题</title>
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/static/expertaddtop/css/add_subject.css">
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="sticky-wrapper" id="sticky-wrapper" style="height: 100px;">
+
+				<div class="apply-steps sticky">
+					<ol class="step-list">
+						<li class="visited">
+							<span>1</span>
+							实名认证
+						</li>
+						<li class="visited">
+							<span>2</span>
+							填写行家资料
+						</li>
+						<li class="active">
+							<span>3</span>
+							添加话题
+						</li>
+					</ol>
+					<p class="step-tip">恭喜，只差最后一步啦，添加话题大约需要5-10分钟时间，请保持耐心哦</p>
+				</div>
+
+				<form id="formWrap" class="main">
+					
+					<div class="apply-form" id="topicForm">
+
+						<div class="form-group" data-required="required">
+					        <input name="topic_title" type="text" maxlength="20" placeholder="话题名称：提炼话题的核心要点，方便学员筛选，最少5字" value="">
+					        <!-- <span class="form-range"><i>0</i>/20</span> -->
+					        <span class="form-error"></span>
+					    </div>
+
+						<div class="form-group" data-required="required">
+					        <select autofocus="" name="topic_duration" placeholder="大致时长">
+					            <option value="">请选择：大致时长</option>
+					            <option value="30">0.5小时</option>
+					            <option value="60" selected="">1小时</option>
+					            <option value="90">1.5小时</option>
+					            <option value="120">2小时</option>
+					            <option value="150">2.5小时</option>
+					            <option value="180">3小时</option>
+					        </select>
+					        <span class="form-error"></span>
+					    </div>
+
+					    <div class="form-group" data-required="required" data-type="number">
+					        <input name="topic_reward" type="text" placeholder="话题价格" value="">
+					        <span class="form-tip">价格不代表行家资历及水平，而是学员用来向知识分享者表达感谢的金额。在行的行家均价约为300元，建议您将价格设定在200-400元区间，更容易被学员约见。</span>
+					        <span class="form-error"></span>
+					    </div>
+						
+						<div class="form-group">
+							<label for="topic_introduction" data-required="required">话题大纲/要点（最多800字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="不少于5条要点，同一主题&#xA（1）教你科学的练习方法，多种训练方法结合练习腹肌&#xA（2）短期见效，让你越练越High&#xA（3）为你量身定制饮食计划&#xA最少20字" name="" id="" cols="30" rows="10"></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="topic_introduction" data-required="required">您在该领域的资历和成就（最多800字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="说说你为什么擅长分享这个话题&#xA我拥有十年健身经验，积累了丰富的理论知识，通过ACE培训及考试认证；拥有独家腹肌训练方法与技巧&#xA最少20字&#xA" name="" id="" cols="30" rows="10"></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="topic_introduction">补充更多想说的（最多1000字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="包括但不限于：你想与学员分享的心情、学员约见前需做哪些准备、话题涉及的方法论模型和工具" name="" id="" cols="30" rows="10"></textarea>
+						</div>
+
+						<div class="checkbox-wrap">
+					        <label>
+					            <input name="has_icebreaker_price" type="checkbox">
+					            <span class="checkbox checkbox-true">
+					        	    <!-- <i class="icon icon-checkbox"></i> -->
+					            </span>
+					            接受前两单半价，获得更多推广机会
+					        </label>
+					        <span class="form-tip">确认接受2名学员的约见后，价格将自动恢复到原价。据统计：95.2%的新行家通过破冰价获得首批种子学员，获得了首批好评。</span>
+					    </div>
+
+						<div class="btns-wrap btns-wrap-center">
+					        <a class="btn-link btn-sm" href="add_detail.html"><i class="icon icon-back"></i>返回</a>
+					        <button class="btn-link btn-md" type="button" id="saveBtn">保存暂不提交</button>
+					        <button class="btn-primary btn-md" type="button" id="submitBtn">提交认证</button>
+					    </div>
+
+					</div>
+
+				</form>
+
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

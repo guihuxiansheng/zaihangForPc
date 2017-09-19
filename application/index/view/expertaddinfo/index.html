@@ -1,0 +1,229 @@
+{include file="common/header"}
+{include file="nav_foot/nav"}
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/static/expertaddinfo/css/add_detail.css">
+
+	<!-- <script src="data/js/7a77b0f3.ckeditor.js"></script> -->
+	<!-- <script src="data/js/f38e580e.jquery.js"></script> -->
+	<!-- <script src="https://cdn.bootcss.com/ckeditor/4.7.2/adapters/jquery.js"></script> -->
+<!-- 	<script src="data/js/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/ckeditor/4.7.2/ckeditor.js"></script>
+	<script src="data/js/82952b29.sisyphus.js"></script>
+	<script src="data/js/198002d1.apply.js"></script> -->
+	<div class="container">
+		<div class="content">
+
+			<div class="sticky-wrapper" id="sticky-wrapper" style="height: 100px;">
+				<div class="apply-steps sticky">
+					<ol class="step-list">
+						<li class="visited">
+							<span>1</span>
+							实名认证
+						</li>
+						<li class="active">
+							<span>2</span>
+							填写行家资料
+						</li>
+						<li class="">
+							<span>3</span>
+							添加话题
+						</li>
+					</ol>
+					<p class="step-tip">填写行家资料大约需要20-30分钟</p>
+				</div>
+			</div>
+
+			<div class="main" id="formWrap">
+				<form action="" class="apply-form" id="tutorForm">
+
+					<div class="form-group">
+						<div class="profile-picture">
+							<div class="profile-picture-mask"></div>
+							<input type="file" name="file" data-name="profile_picture">
+							<img src="__ROOT__/public/static/expertaddinfo/image/camera.png" alt="" class="profile-picture-mask-camera">
+							<img src="__ROOT__/public/static/expertaddinfo/image/profile-picture.png" id="profile_picture">
+						</div>
+						<div class="form-tip">头像支持jpg，png，gif格式图片，请尽可能选用160*160以上照片。</div>
+						<span class="form-error"></span>
+					</div>
+
+					<div class="form-group" data-required="required">
+						<input name="realname" type="text" maxlength="20" placeholder="行家姓名：真名或常用名，最少2字" value="">
+						<!-- <span class="form-range"><i>0</i>/20</span> -->
+					</div>
+
+					<div class="form-group" data-required="required">
+				        <select autofocus="" name="city">
+				            <option value="">请选择：常驻城市</option>
+				                <option value="北京">北京</option>
+				                <option value="上海">上海</option>
+				                <option value="深圳">深圳</option>
+				                <option value="广州">广州</option>
+				                <option value="杭州">杭州</option>
+				                <option value="成都">成都</option>
+				                <option value="西安">西安</option>
+				                <option value="武汉">武汉</option>
+				                <option value="宁波">宁波</option>
+				            <option value="其他">其他</option>
+				        </select>
+				        <span class="form-error"></span>
+				    </div>
+
+				    <div class="form-group" data-required="required">
+				        <input name="meet_location" type="text" maxlength="20" placeholder="在常驻城市的常活动区域：国贸、中关村，最少2字" value="">
+				        <!-- <span class="form-range"><i>0</i>/20</span> -->
+				        <span class="form-error"></span>
+   					 </div>
+
+
+					<div class="row">
+					        <div class="form-group" data-required="required">
+					            <select autofocus="" name="category_id" placeholder="行业：请选择您所擅长的领域">
+					                <option value="">请选择：行业</option>
+					                    <option value="397">职场发展</option>
+					                    <option value="420">行业经验</option>
+					                    <option value="342">互联网+</option>
+					                    <option value="389">创业和投融资</option>
+					                    <option value="450">生活服务</option>
+					                    <option value="479">心理</option>
+					                    <option value="485">投资理财</option>
+					                    <option value="495">教育学习</option>
+					                    <option value="510">其他</option>
+					            </select>
+					            <span class="form-error"></span>
+					        </div>
+					        <div class="form-group" data-required="required">
+					            <select autofocus="" name="seniority" placeholder="工作年限">
+					                <option value="">请选择：工作年限</option>
+					                <option value="3-5年">3-5年</option>
+					                <option value="5-10年">5-10年</option>
+					                <option value="10年以上">10年以上</option>
+					            </select>
+					            <span class="form-error"></span>
+					        </div>
+				    </div>
+
+
+					<div class="form-group" data-required="required">
+				        <input name="occupation" type="text" maxlength="20" placeholder="任职机构：自由职业者可填写工作室名字，最少2字" value="">
+				        <!-- <span class="form-range"><i>0</i>/20</span> -->
+				        <span class="form-error"></span>
+				    </div>
+
+
+					<div class="form-group" data-required="required">
+				        <input name="title" type="text" maxlength="20" placeholder="头衔/职位：自由职业者可注明，最少2字" value="">
+				        <!-- <span class="form-range"><i>0</i>/20</span> -->
+				        <span class="form-error"></span>
+				    </div>
+
+
+					<div class="form-group">
+				        <label for="education" data-required="required">教育背景/培训经历（最多500字）
+				        	<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+			        	</label>
+				        <textarea rows="6" name="education" maxlength="500" placeholder="2007年9月-2011年7月，北京大学，新闻与传播学专业，硕士研究生，最少20字"></textarea>
+				        <span class="form-error"></span>
+				    </div>
+
+					<div class="checkbox-wrap">
+				        <label>
+				            <input name="is_show_education" type="checkbox">
+				            <span class="checkbox checkbox-false"><i class="icon icon-checkbox"></i></span>
+				            向学员公开教育背景/培训经历，以增加行家资质说明
+				        </label>
+				    </div>
+
+
+
+
+					<div id="categoryForm">
+						<div class="category-item" data-category_type="certificate">
+							<div class="form-group">
+								<label for="career_experience" data-required="required">职业经历（最多800字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+
+
+								<textarea name="" id="" cols="30" rows="10" placeholder="可填写多段经历，描述清楚时间段、任职机构、职位，最少20字"></textarea>
+
+
+							</div>
+
+							<div class="form-group">
+								<label for="project_experience" >项目经历（最多800字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</div>
+
+							<div class="form-group">
+								<label for="social_account" >媒体报道/社交账号链接（最多500字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</div>	
+
+
+							<div class="form-group">
+								<label for="career_images">上传职业证明材料（最多5张照片）</label>
+									<div id="career_images">
+			                            <div class="photo career_image">
+			                            	<input type="file" name="file">
+		                            	</div>
+			                            <div class="photo career_image">
+			                         	  	<input type="file" name="file">
+			                           	 </div>
+			                            <div class="photo career_image">
+			                       	   	 	<input type="file" name="file">
+			                            </div>
+			                            <div class="photo career_image">
+		                        	        <input type="file" name="file">
+			                            </div>
+			                            <div class="photo career_image">
+		                                    <input type="file" name="file">
+			                            </div>
+				                    </div>
+				                    <span class="form-tip">能体现职务的名片、工作证、加盖公章的在职证明、劳动合同和社保缴费证明等，仅供审核参考，信息保密</span>
+				                    <span class="form-error"></span>
+							</div>
+
+							<div class="form-group">
+								<label for="readme" data-required="required">自述（最多1000字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</div>
+
+
+							<div class="checkbox-wrap">
+						        <label>
+						            <input id="is_agreed" type="checkbox" checked="">
+						            <span class="checkbox checkbox-true"><i class="icon icon-checkbox"></i></span>
+						            本人承诺为以上信息的真实性及准确性负责，并会在任职信息变更时及时更新行家资料
+						        </label>
+						    </div>
+
+							
+							<div class="btns-wrap btns-wrap-center">
+								<button id="submitBtn" class="btn-primary btn-lg" type="submit" href="{:url('/index/expertaddtop')}">下一项：添加话题</button>
+  							</div>
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+{include file="nav_foot/foot"}
+{include file="common/footer"}
