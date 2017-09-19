@@ -1,4 +1,4 @@
-
+﻿
      @font-face{
         font-family:tutor-icons;
         src:url(0b86a9ca.tutor-icons.eot);
@@ -177,6 +177,7 @@ form .search-sug {
 		float: left;
     	margin: 0 8px;
     	font-size: 14px;
+    	cursor: pointer;
 	}
 	.zaih_headerout .header .header_links{
 		float: right;
@@ -187,13 +188,17 @@ form .search-sug {
     	font-size: 14px;
 	}
 	/*登录模态框*/
+	.login_container{
+		position: fixed;
+		z-index: 2;
+	}
 	.login_container .login_box{
 		width: 100%;
 		height: 100%;
 		position: fixed;
 		left: 0;
 		top: 0;
-		display: none;
+		/*display: none;*/
 	}
 	.login_container .login_box .back{
 		width: 100%;
@@ -226,7 +231,7 @@ form .search-sug {
 	}
 	/*自适应*/
 	@media (min-width: 770px) {
-		.header{
+		.header,.zaih_headerout{
 			display: block;
 		}
 		.mobile{
@@ -234,7 +239,7 @@ form .search-sug {
 		}
 	}
 	@media (max-width: 769px) {
-		.header{
+		.header,.zaih_headerout{
 			display: none;
 		}
 		.mobile{
@@ -243,10 +248,15 @@ form .search-sug {
 	}
 
 	/*mobile*/
+.mobile a{
+	color: #fff;
+}
+
+
 	.mobile{
 		height: 80px;
 		position: absolute;
-		z-index: 2;
+		z-index: 3;
 	}
 	.mobile .mobileBox{
 		position: absolute;

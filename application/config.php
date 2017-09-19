@@ -17,7 +17,7 @@ return [
     // 应用命名空间
     'app_namespace'          => 'app',
     // 应用调试模式
-    'app_debug'              => false,
+    'app_debug'              => true,
     // 应用Trace
     'app_trace'              => false,
     // 应用模式状态
@@ -142,7 +142,7 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__STATIC_PATH__' => '/group/04/public'
+        '__STATIC_PATH__' => '/php/project/zaihangForPc/public'
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
