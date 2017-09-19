@@ -27,7 +27,7 @@
 						<span class="red">高</span>接受率
 					</li>
 					<b class="introduce_btn" >
-						<
+						
 					</b>
 				</ul>
 				
@@ -59,7 +59,7 @@
 				</ul>
 				<div class="share">
 					<strong>分享话题：</strong>
-					<img src="images/火狐截图_2017-09-15T11-01-45_03.png" alt="" />
+					<img src="" alt="" />
 					<img src=""/>
 				</div>
 				
@@ -70,7 +70,7 @@
 					<li><span>8</span>人约过</li>
 				</ul>
 				<!--<input id="btn" type="button" class="right" value=">"/>-->
-				<div  class="right btn"></div>
+				<div class="b_hover"><div  class="right btn"></div></div>
 			</div>
 				
 			<div class="about">
@@ -191,18 +191,22 @@
 
 </div>
 <script type="text/javascript">
-	var btn=document.querySelector('.introduce_btn');
-	btn.onclick=function(e){
+//	var btn=document.querySelector('.introduce_btn');
+//	btn.onclick=function(e){
+//		
+//	}
+		var b = document.querySelector('.details .content .con_left .introduce ul b');
+	b.onclick = function(e) {
 		e.preventDefault();
 		$(this).parent().toggleClass("one");
+		$(this).hasClass("b") ? $(this).removeClass("b").addClass("introduce_btn") : $(this).removeClass("introduce_btn").addClass("b")
 	}
-	
-	var oBtn=document.querySelector(".details>.content>.con_left>.footer .btn");
+	var oBtn=document.querySelector(".details>.content>.con_left>.footer .b_hover .btn");
 	oBtn.onclick=function(e) {
 	  e.preventDefault();
 	  var t = $(this),
 	 
-	    n = t.parent().siblings(".item");
+	    n = t.parent().parent().siblings(".item");
 	    
 	    t.toggleClass("change");
 	  n.toggleClass("close");
