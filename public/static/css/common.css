@@ -1,0 +1,40 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	font-size:16px;
+}
+a{
+	color: #333;
+	text-decoration: none;
+}
+ul,ol{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.f6{
+	font-size: 12px;
+}
+.f5{
+	font-size: 14px;
+}
+.f4{
+	font-size: 18px;
+}
+.f3{
+	font-size: 20px;
+}
+.f2{
+	font-size: 24px;
+}
+.clear-fix{
+	zoom: 1;
+}
+.clear-fix:after{
+	content: '';
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}

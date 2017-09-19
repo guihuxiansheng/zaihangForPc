@@ -1,0 +1,402 @@
+abbr, address, article, aside, audio, b, blockquote, body, body div, caption, cite, code, dd, del, details, dfn, dl, dt, em, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: 0 0;
+}
+body {
+    min-width: 1100px;
+    background: #fff;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    color: #343434;
+    line-height: 1.58;
+    background: #fafafa;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+input, select, textarea {
+    font: 99% sans-serif;
+}
+form textarea {
+    border: 1px solid #ccc;
+    padding: 7px;
+    color: #343434;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    resize: none;
+}
+form span {
+    margin-right: 15px;
+}
+@font-face{
+        font-family:tutor-icons;
+        src:url(0b86a9ca.tutor-icons.eot);
+        src:url(0b86a9ca.tutor-icons.eot?#iefix)
+        format('embedded-opentype'),url(data/25266ea0.tutor-icons.svg) 
+        format('svg'),url(data/ddfa3f61.tutor-icons.woff) 
+        format('woff'),url(data/d7c26ff4.tutor-icons.ttf) 
+        format('truetype')
+}
+#formWrap .form-group textarea{
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.container {
+    padding-top: 56px;
+}
+.content {
+    width: 1000px;
+    margin: 0 auto;
+}
+.column:after, .column:before, .content:after, .content:before {
+    content: " ";
+    display: table;
+}
+.apply-steps:after, .apply-steps:before {
+    content: " ";
+    display: table;
+}
+.apply-steps {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    font-size: 18px;
+    color: #999;
+    z-index: 100;
+}
+.apply-steps ol.step-list {
+    position: relative;
+    margin: 35px 150px;
+    height: 30px;
+    line-height: 30px;
+    background: -webkit-linear-gradient(left,#ccc 50%,transparent 0) center/10px 1px repeat-x;
+    background: linear-gradient(to right,#ccc 50%,transparent 0) center/10px 1px repeat-x;
+    list-style: none;
+}
+.apply-steps ol.step-list li.active, .apply-steps ol.step-list li.visited {
+    color: #ff946e;
+}
+
+.apply-steps ol.step-list li {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    background: #fff;
+    outline: #fff solid 10px;
+}
+.apply-steps ol.step-list li.active {
+    border-bottom: 4px solid;
+}
+.apply-steps ol.step-list li:nth-child(1) {
+    left: 0;
+}
+.apply-steps ol.step-list li:nth-child(2) {
+    left: 50%;
+    margin-left: -65px;
+}
+.apply-steps ol.step-list li:nth-child(3) {
+    right: 0;
+}
+.apply-steps ol.step-list li span {
+    display: inline-block;
+    margin-right: 4px;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    font-size: 12px;
+}
+.apply-steps ol.step-list li.active span, .apply-steps ol.step-list li.visited span {
+    border-color: #ff946e;
+    color: #fff;
+    background: #ff946e;
+}
+.apply-steps .step-tip {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.main {
+    float: left;
+    width: 648px;
+    margin-right: 32px;
+}
+.main {
+    margin-top: 10px;
+    width: 100%;
+    background: #fff;
+}
+
+.apply-detail, .apply-form, .city-overlay, .zhima-form {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 440px;
+    text-align: left;
+    overflow: visible;
+}
+.apply-detail .form-group, .apply-form .form-group, .city-overlay .form-group, .zhima-form .form-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+.apply-detail .form-group .profile-picture, .apply-form .form-group .profile-picture, .city-overlay .form-group .profile-picture, .zhima-form .form-group .profile-picture {
+    margin: 0 auto 10px;
+    padding: 5px;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    box-shadow: 0 0 14px #ccc;
+    border: 6px solid #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.apply-detail .form-group .profile-picture .profile-picture-mask, .apply-form .form-group .profile-picture .profile-picture-mask, .city-overlay .form-group .profile-picture .profile-picture-mask, .zhima-form .form-group .profile-picture .profile-picture-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url() center/50px auto no-repeat rgba(0,0,0,.5);
+    z-index: 10;
+}
+.apply-form .form-group .profile-picture  .profile-picture-mask-camera{
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: 80px;
+    height: 80px;
+    background: url() center/50px auto no-repeat rgba(0,0,0,.0);
+    z-index: 10;
+}
+.apply-detail .form-group input, .apply-detail .form-group select, .apply-detail .form-group textarea, .apply-form .form-group input, .apply-form .form-group select, .apply-form .form-group textarea, .city-overlay .form-group input, .city-overlay .form-group select, .city-overlay .form-group textarea, .zhima-form .form-group input, .zhima-form .form-group select, .zhima-form .form-group textarea {
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 14px;
+    width: 100%;
+    background: #f6f6f6;
+    outline: 0;
+}
+.apply-detail .form-group .photo input, .apply-detail .form-group .profile-picture input, .apply-form .form-group .photo input, .apply-form .form-group .profile-picture input, .city-overlay .form-group .photo input, .city-overlay .form-group .profile-picture input, .zhima-form .form-group .photo input, .zhima-form .form-group .profile-picture input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    z-index: 11;
+    font-size: 100px;
+}
+.apply-detail .form-group .photo img, .apply-detail .form-group .profile-picture img, .apply-form .form-group .photo img, .apply-form .form-group .profile-picture img, .city-overlay .form-group .photo img, .city-overlay .form-group .profile-picture img, .zhima-form .form-group .photo img, .zhima-form .form-group .profile-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ececec;
+}
+.apply-detail .form-group .profile-picture+.form-tip, .apply-form .form-group .profile-picture+.form-tip, .city-overlay .form-group .profile-picture+.form-tip, .zhima-form .form-group .profile-picture+.form-tip {
+    text-align: center;
+}
+.apply-detail .form-group .form-tip, .apply-form .form-group .form-tip, .city-overlay .form-group .form-tip, .zhima-form .form-group .form-tip {
+    margin-top: 5px;
+    color: #999;
+    font-size: 12px;
+}
+
+form .form-error {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    display: block;
+}
+
+form .form-error {
+    margin-top: -26px;
+    margin-left: 5px;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 12px;
+    color: #ff946e;
+}
+.apply-detail .form-group[data-required=required]:before, .apply-form .form-group[data-required=required]:before, .city-overlay .form-group[data-required=required]:before, .zhima-form .form-group[data-required=required]:before {
+    content: '*';
+    position: absolute;
+    color: #ff946e;
+    top: 15px;
+    left: -15px;
+    line-height: 1;
+    font-size: 20px;
+}
+.apply-detail .form-group input, .apply-detail .form-group select, .apply-detail .form-group textarea, .apply-form .form-group input, .apply-form .form-group select, .apply-form .form-group textarea, .city-overlay .form-group input, .city-overlay .form-group select, .city-overlay .form-group textarea, .zhima-form .form-group input, .zhima-form .form-group select, .zhima-form .form-group textarea {
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 14px;
+    width: 100%;
+    background: #f6f6f6;
+    outline: 0;
+}
+
+.apply-detail .form-group input, .apply-detail .form-group select, .apply-form .form-group input, .apply-form .form-group select, .city-overlay .form-group input, .city-overlay .form-group select, .zhima-form .form-group input, .zhima-form .form-group select {
+    height: 44px;
+    line-height: 44px;
+    box-sizing: border-box;
+}
+
+.apply-detail .form-range i, .apply-form .form-range i, .city-overlay .form-range i, .zhima-form .form-range i {
+    font-style: normal;
+}
+.inline-block, .pager li a, .pager li span, .picker-wrap .picked .picker-ctrl-inner, .picker-wrap .picker-ctrl, .picker-wrap a, .picker-wrap a:hover .picker-ctrl-inner, .split, form input, form label, form span {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+}
+form span {
+    margin-right: 15px;
+}
+.apply-detail .form-range, .apply-form .form-range, .city-overlay .form-range, .zhima-form .form-range {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 44px;
+    color: #b3b3b3;
+}
+.apply-detail .form-group select, .apply-form .form-group select, .city-overlay .form-group select, .zhima-form .form-group select {
+    padding: 0 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(45deg,transparent 50%,#d8d8d8 0),-webkit-linear-gradient(135deg,transparent 50%,#d8d8d8 0);
+    background-image: linear-gradient(45deg,transparent 50%,#d8d8d8 0),linear-gradient(-45deg,transparent 50%,#d8d8d8 0);
+    background-position: calc(100% - 20px) 18px,calc(100% - 14px) 18px;
+    background-size: 6px 6px;
+}
+
+.apply-detail .row, .apply-form .row, .city-overlay .row, .zhima-form .row {
+    margin-right: -40px;
+}
+.apply-detail .row .form-group, .apply-form .row .form-group, .city-overlay .row .form-group, .zhima-form .row .form-group {
+    float: left;
+    margin-right: 40px;
+    width: 200px;
+}
+.apply-detail .row:after, .apply-detail .row:before, .apply-form .row:after, .apply-form .row:before, .city-overlay .row:after, .city-overlay .row:before, .zhima-form .row:after, .zhima-form .row:before {
+    content: " ";
+    display: table;
+}
+.apply-detail .row:after, .apply-form .row:after, .city-overlay .row:after, .zhima-form .row:after {
+    clear: both;
+}
+.apply-detail .form-group label, .apply-form .form-group label, .city-overlay .form-group label, .zhima-form .form-group label {
+    margin-bottom: 4px;
+    width: 100%;
+    color: #b3b3b3;
+    text-align: left;
+}
+.apply-detail .form-group label[data-required=required]:before, .apply-form .form-group label[data-required=required]:before, .city-overlay .form-group label[data-required=required]:before, .zhima-form .form-group label[data-required=required]:before {
+    content: '*';
+    position: absolute;
+    color: #ff946e;
+    top: 5px;
+    left: -15px;
+    line-height: 1;
+    font-size: 20px;
+}
+.checkbox-wrap label {
+    width: 100%;
+    text-align: left;
+}
+.clickable, button, input[type=button], input[type=checkbox], input[type=file], input[type=submit], label {
+    cursor: pointer;
+}
+.checkbox-wrap label input[type=checkbox] {
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+}
+.checkbox-wrap label .checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    margin-right: 2px;
+    border: 2px solid #6ed5d7;
+    border-radius: 2px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+.checkbox-wrap label .checkbox-true {
+    background: #6ed5d7;
+}
+.checkbox-wrap label .checkbox-false {
+    background: #fff;
+}
+.checkbox-wrap {
+    position: relative;
+    margin-bottom: 24px;
+}
+.apply-detail .form-group label .sample-tip, .apply-form .form-group label .sample-tip, .city-overlay .form-group label .sample-tip, .zhima-form .form-group label .sample-tip {
+    color: #ff946e;
+}
+.cke_chrome {
+    visibility: visible;
+}
+
+
+form .btns-wrap-center {
+    text-align: center;
+}
+
+.apply-detail .btns-wrap, .apply-form .btns-wrap, .city-overlay .btns-wrap, .zhima-form .btns-wrap {
+    margin-top: 44px;
+}
+
+
+
+.btn-primary {
+    background: #ff946e;
+    border: 1px solid #ff946e;
+    color: #fff;
+}
+.btn-lg {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.apply-detail .btns-wrap .btn-lg, .apply-detail .btns-wrap .btn-md, .apply-detail .btns-wrap .btn-sm, .apply-form .btns-wrap .btn-lg, .apply-form .btns-wrap .btn-md, .apply-form .btns-wrap .btn-sm, .city-overlay .btns-wrap .btn-lg, .city-overlay .btns-wrap .btn-md, .city-overlay .btns-wrap .btn-sm, .zhima-form .btns-wrap .btn-lg, .zhima-form .btns-wrap .btn-md, .zhima-form .btns-wrap .btn-sm {
+    height: 54px;
+    line-height: 54px;
+}
+
+.apply-detail .form-group .photo, .apply-form .form-group .photo, .city-overlay .form-group .photo, .zhima-form .form-group .photo {
+    display: inline-block;
+    margin-right: 4px;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    background: url() center/30px auto no-repeat #ececec;
+}

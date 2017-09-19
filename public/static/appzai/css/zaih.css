@@ -1,0 +1,151 @@
+body{
+    padding:0;
+    margin:0;
+}
+
+.container{
+    min-width:1120px;
+    min-height:1000px;
+    overflow:hidden;
+}
+
+.container .header{
+    width:100%;
+    height:600px;
+    color:white;
+    background: url(../img/1.jpg) no-repeat;
+    padding-left:130px ;
+    padding-top: 100px;
+}
+
+.container .header h1{
+    font-size:76px;
+}
+
+.container .header h3{
+    font-size:30px;
+    font-weight:100;
+    margin-top: -20px;
+}
+
+.container .QR-code{
+    width:150px;
+    height:200px;
+    border-radius:5px;
+    overflow:hidden;
+    text-align: center;
+    line-height:20px;
+    background: white
+
+}
+
+.container .QR-code .img{
+    width:100%;
+    height:80%;
+    background: url(../img/下载.png) no-repeat;
+    background-size:100% 100%;
+}
+
+.container .QR-code a{
+    text-decoration:none;
+    color:black;
+    font-size:20px;
+}
+
+.container .img01{
+    width:547px;
+    height:540px;
+    background: url(../img/2.jpg) no-repeat;
+    position: absolute;
+    left:678px;
+    top:180px;
+}
+
+
+.container .download-btn{
+    margin-left: 130px;
+    margin-top:-70px;
+    
+}
+.container .download-btn .btn{
+    width:230px;
+    height:80px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    text-align:center;
+    line-height:80px;
+
+
+}
+
+.container .download-btn .btn a{
+    text-decoration:none;
+    display:inline-block;
+}
+.container .download-btn .btn .img{
+    display:inline-block;
+    width:50px;
+    height:46px;
+    background: url(../img/2f146598.app-icons.png) no-repeat;
+    vertical-align: middle;
+    margin-top:-8px;
+}
+
+.container .download-btn .btn:hover{
+    background:rgb(240,240,240)
+}
+.container .download-btn .android{
+    margin-left:-6px;
+    border-radius:0 5px 5px 0;
+}
+.container .download-btn .ios{
+    border-radius:5px 0 0 5px;
+    
+}
+.container .download-btn .android .img{
+    background-position:bottom left;  
+}
+.container .guide{
+    width:100%;
+    height:230px;
+    background:rgb(242,242,242);   
+    padding-top:40px;
+    margin-top:20px; 
+    border-top: 1px solid #ccc;
+}
+
+.container .guide ul{
+    width:80%;
+    margin:10px auto;
+    padding:0;
+}
+
+.container .guide ul li{
+    display:inline-block;
+    width:33%;
+    height:100%;
+    text-align:center;
+}
+
+.container .guide ul li .guide-icon{
+    position: relative;
+    display: block;
+    width: 134px;
+    height: 134px;
+    margin: 0 auto 26px;
+    background: #6ed5d7;
+    border-radius:100%;
+    overflow:hidden;
+}
+
+
+.container .guide ul li a{
+    display:block;
+    text-decoration:none;
+    color:black;
+}
+
+.container .guide ul li img{
+    width:80px;
+    margin-top:20px;
+}

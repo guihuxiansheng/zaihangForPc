@@ -1,0 +1,226 @@
+.container{
+    background: #fafafa;		
+    padding-top: 56px;
+}
+.content{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 14px;
+}
+.signup .single-column{
+    width: 805px;
+    margin: 0 auto;
+    min-height: 579px;
+}
+.signup .single-column .single-white-wrap {
+    border: 1px solid #e8e8e8;
+    padding: 40px;
+    background: #fff;
+    text-align: center;
+}
+.signup p{
+    margin-bottom: 18px;
+    font-size: 38px;
+    padding-left: 20px;	
+}
+.signup .signup-panel{
+    width: 290px;
+    margin: 0 auto;	
+}
+.signup-panel .signup-tip{
+	font-size: 100%;
+}
+.signup-panel .form-group{
+    position: relative;
+    margin-bottom: 20px;	
+}
+.signup-panel .form-group .form-item{
+    position: relative;
+    display: inline-block;	
+}
+.signup-panel form input {
+    /*width: 300px;*/
+    width: 290px;
+    padding: 7px;
+    height: 36px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: none;    
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.signup-panel form span {
+	margin-right: 15px;
+}
+.signup-panel form .form-error{
+	margin-top: -26px;
+    margin-left: 5px;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 12px;
+    color: #ff946e;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    display: block;    
+}
+.signup-panel form #captcha {
+    width: 180px;
+    margin-right: 5px;
+}
+.signup-panel form .btn-default {
+    vertical-align: middle;
+}
+.signup-panel form img {
+    border: 0;
+    width: 100px;
+}
+.btn-hg {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    border-radius: 3px;
+    padding: 0;
+    background: 0 0;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    vertical-align: middle;    
+}
+.btn-default {
+    border: 1px solid #ccc;
+    color: #343434;
+}
+.signup-panel form .deal {
+    font-size: 12px;
+}
+.checkbox-wrap label input[type=checkbox] {
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width: 18px;
+    height: 18px;
+}
+.checkbox-wrap label {
+    width: 100%;
+    text-align: left;
+}
+.checkbox-wrap label .checkbox-true {
+    background: #ff946e;
+}
+.checkbox-wrap label .checkbox-false {
+    background: #fff;
+}
+.checkbox-wrap label .checkbox {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    margin-right: 2px;
+    border: 2px solid #ff946e;
+    border-radius: 4px;
+    line-height: 18px;
+    vertical-align: middle;
+}
+.checkbox-wrap label .checkbox i {
+    color: #fff;
+    font-size: 15px;
+}
+.checkbox-wrap .iconcheck{
+    width: 18px;
+    height: 18px;	
+}
+.icon-checkbox:before {
+}
+a {
+    color: #343434;
+    text-decoration: none;
+}
+form a {
+    color: #ff946e;
+    cursor: pointer;
+}
+.signup-panel form .btn-submit {
+    border: 1px solid #ff946e;
+    color: #ff946e;
+}
+.signup-panel .btn-complete-register {
+    margin-top: 30px;
+}
+.signup-panel form .to-login {
+    margin-top: 15px;
+    padding-top: 8px;
+    border-top: 1px solid #e8e8e8;
+}
+
+
+
+.signup-panel .login-weibo {
+    margin-bottom: 20px;
+    float: left;
+    margin-left: 20px;
+    background: #f50505;
+    border: 1px solid #f50505;
+}
+.signup-panel .login-weixin {
+    margin-bottom: 20px;
+    background: #619619;
+    border: 1px solid #619619;
+}
+.signup-panel .login-baidu {
+    margin-bottom: 20px;
+    float: right;
+    margin-right: 20px;
+    background: #4d67eb;
+    border: 1px solid #4d67eb;
+}
+.signup-panel .login-baidu, .signup-panel .login-weibo, .signup-panel .login-weixin {
+    height: 46px;
+    width: 46px;
+    line-height: 46px;
+    border-radius: 50%;
+}
+.signup-panel .login-baidu .icon, .signup-panel .login-phone .icon, .signup-panel .login-weibo .icon, .signup-panel .login-weixin .icon {
+    color: #fff;
+    vertical-align: middle;
+    margin-top: -5px;
+    font-size: 30px;
+}
+
+
+.phone-login {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+
+.btn-warning, .signup-panel .login-phone, .signup-panel form .btn-submit {
+    border: 1px solid #ff946e;
+    color: #ff946e;
+    box-sizing: border-box;
+}
+
+
+.phone-login .to-resetpassword {
+    float: right;
+}
+.phone-login .to-signup {
+    float: left;
+}
+.phone-login .to-resetpassword, .phone-login .to-signup {
+    padding: 15px 0;
+    display: inline-block;
+    font-size: 100%;
+}
+.phone-login .to-resetpassword a, .phone-login .to-signup a {
+    color: #ff946e;
+}

@@ -1,0 +1,333 @@
+
+
+
+@media screen and (min-width: 768px) {
+  body{
+    padding:0;
+    margin:0;
+}
+
+.section1 .header,.download-btn-mod,.btn-mod{
+    display: none;
+}
+.banner{
+    min-width:1120px;
+    height: 500px;
+    background: url(../img/fdbg.png) no-repeat;
+    background-size:100% 100%; 
+}
+
+.section1 .container .right-mod{
+    display:none;
+}
+.container{
+    position: relative;
+    width:80%;
+    height: 100%;
+    margin:0 auto;
+}
+
+.container .header{
+    display:none;
+}
+
+.cantiner768 .header{
+        width: 100%;
+    }
+.cantiner768 .header img{
+        width: 100%;
+        background: 
+}
+.container .download-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: inline-block;
+}
+
+.container .download-btn li{
+
+    display: inline-block;
+    width: 100px;
+    height:30px;
+    background: rgb(255,255,255);
+    text-align: center;
+    border-radius: 5px;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 100
+}
+
+.container .download-code{
+    position: absolute;
+    right: 10px;
+    bottom: 40px;
+}
+
+.container .download-code li{
+    background: white;
+    text-align: center;
+    width: 150px;
+    height: 180px;
+    display: inline-block;
+    margin-left:10px;
+
+}
+
+.container .download-code li .img{
+    width: 100%;
+    height: 140px;
+}
+
+.container .download-code li .img1{
+    background: url(../img/wxcode.png);
+    background-size: 100% 100%;
+
+}
+.container .download-code li .img2{
+    background: url(../img/appcode.png);
+    background-size: 100% 100%;
+}
+
+.container .download-code li a{
+    font-weight: 100;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    line-height: 40px;
+}
+
+.section1 {
+    margin-top: 60px;
+}
+
+.section1 .container{
+    min-width:1000px;
+    height: 410px;
+    margin:0 auto;
+    background-image: linear-gradient(90deg,hsla(0, 85%, 21%, 0) 20%,#fff 50%),url(../img/renwu.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.section1 .container .right h2{
+    margin:0;
+    margin-left: 566px;
+    padding-top: 15px;
+    font-size: 37px;
+    font-weight: 100;
+}
+
+.section1 .container .right p{
+    margin:0;
+    margin-left: 566px;
+    padding-top: 14px;
+    font-size: 20px;
+    font-weight: 100;
+    
+}
+
+.intro{
+    width: 700px;
+    padding-bottom: 40px;
+    margin:50px auto;
+    font-size: 0;
+}
+
+.intro p {
+    font-size: 16px;
+    margin:0;
+    display: inline-block;
+    padding: 40px 0 30px;
+    width: 50%;
+    height: 150px;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.intro p:first-child {
+    padding-right: 140px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-align: right;
+    background-image: url(../img/a.png);
+    background-position: 240px 30px;
+}
+
+.intro p:nth-child(2) {
+    padding-left: 140px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    background-image: url(../img/c.png);
+    background-position: 30px 30px;
+}
+
+.intro p:nth-child(3) {
+    padding-right: 140px;
+    border-right: 1px solid #eee;
+    text-align: right;
+    background-image: url(../img/c.png);
+    background-position: 240px 30px;
+}
+
+.intro p:last-child {
+    padding-left: 140px;
+    text-align: left;
+    background-image: url(../img/d.png);
+    background-position: 30px 30px;
+}
+}
+
+
+@media screen and (max-width: 768px){
+    body{
+        padding:0;
+        margin:0;
+    }
+    .banner {
+        display:none;
+    }
+    
+    .section1{
+        width:100%;
+
+    }
+    .section1 .container .right{
+        display:none;
+    }
+    .section1 .container{
+        width:100%;
+    }
+ 
+    .section1 .container img{
+        width:100%;
+    }
+    
+    .download-btn-mod {
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+
+    .download-btn-mod img{
+        display:inline-block;
+        width:30%;
+        margin:0 auto;
+    }
+
+    
+    .section1 .container .right-mod{
+        width:100%;
+        display:inline-block;
+        text-align:center;
+    }
+
+    .btn-mod{
+                margin: 0 auto;
+        width: 60%;
+        border:1px solid #F14040;
+        padding:20px 0;
+        color: #f14040;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .intro p{
+        width: 100%;
+        border-bottom:1px solid #eee;
+        font-size: 18px;
+        color: #585252;
+        margin:0;
+        display: inline-block;
+        padding: 15px 0 10px 80px;
+        height: 80px;
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        background-position: 30px 20px;
+    }
+
+        .intro p:first-child {
+              
+            background-image: url(../img/a.png);    
+        }
+
+        .intro p:nth-child(2) {
+            
+            background-image: url(../img/c.png);  
+        }
+
+        .intro p:nth-child(3) {
+               
+            background-image: url(../img/c.png);    
+        }
+
+        .intro p:last-child {
+               
+            background-image: url(../img/d.png);    
+}
+    // .banner{
+    //     width:100%;
+    // }
+
+
+    // .banner .container{
+    //     width:100%;
+    // }
+    // .header{
+    //     width:100%;
+    // }
+    // .cantiner{
+    //     display: block;
+    //     width: 100%;
+    // }
+    // .cantiner .header{
+    //     width: 100%;
+    // }
+    // .banner .cantiner .header img{
+    //     width: 100%;
+        
+    // }
+    
+    // .cantiner .download-btn{
+    //     width: 30%;
+    //     margin:0 auto;
+    //     text-align: center;
+    // }
+    // .cantiner .download-btn img{
+    //     width: 100%;
+
+    // }
+    
+    // .cantiner .btn{
+        // margin: 0 auto;
+        // width: 60%;
+        // border:1px solid #F14040;
+        // padding:20px 0;
+        // color: #f14040;
+        // text-align: center;
+        // border-radius: 5px;
+    // }
+    // .cantiner .intro {
+    //     width: 100%;
+    //     margin-top: 20px;
+    // }
+    // .cantiner .intro p{
+    //     width: 100%;
+    //     border-bottom:1px solid #eee;
+    //     font-size: 18px;
+    //     color: #585252;
+    //     margin:0;
+    //     display: inline-block;
+    //     padding: 15px 0 10px 80px;
+    //     height: 80px;
+    //     background-size: 40px 40px;
+    //     background-repeat: no-repeat;
+    //     box-sizing: border-box;
+    //     background-position: 30px 20px;
+    // }
+
+
+
+}

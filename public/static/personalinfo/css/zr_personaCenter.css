@@ -1,0 +1,538 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+/*头部*/
+.zr_header{
+	width: 100%;
+	height: 56px;
+	background: rgba(91,91,91,.8);
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+/*底部*/
+.footer{
+	width: 100%;
+	height: 395px;
+	background: rgba(91,91,91,.8);
+	position: relative;
+	left: 0;
+	bottom: 0;
+}
+/*容器*/
+.zr_container{
+	width: 100%;
+	min-height: 1200px;
+	margin-top: 56px;
+	background-color: #fafafa;	
+	padding: 30px 0px;
+}
+/*左边+右边*/
+.zr_container .zr_content{
+	overflow: hidden;
+	width: 1000px;
+	min-height: 500px;
+	/*border: 1px solid red;*/
+	margin: 0px auto;
+}
+/*左边*/
+.zr_container .zr_content .img_nav{
+	width: 200px;
+	min-height: 475px;
+	/*border: 1px solid #CCCCCC;*/
+	float: left;
+	box-sizing: border-box;
+}
+/*图片*/
+.zr_container .zr_content .img_nav img{
+	width: 155px;
+	height: 155px;
+	border:  4px solid #FFFFFF;
+	box-shadow: 0px 0px 1px #CCCCCC;
+	border-radius: 50%;
+}
+/*导航条*/
+.zr_container .zr_content .img_nav .nav_list{
+	margin-top: 50px;
+}
+.zr_container .zr_content .img_nav .nav_list ul li{
+	font-size: 19px;
+	padding: 20px;
+}
+.zr_container .zr_content .img_nav .nav_list ul li a{
+	color: #343434;
+	text-decoration: none;
+	position: relative;
+}
+.zr_container .zr_content .img_nav .nav_list ul li a:hover{
+	color: #ff946e;
+	cursor: pointer;
+}
+
+.whether_curMenu .cur_menu{
+	width: 6px;
+	height: 20px;
+	border-radius: 6px;
+	background: #ff946e;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	margin-left: -12px;
+}
+.liWhether_curMenu .cur_menu{
+	width: 6px;
+	height: 20px;
+	border-radius: 6px;
+	background: #ff946e;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	margin-left: -12px;
+}
+/*个人设置的导航条*/
+.zr_container .zr_content .img_nav .nav_list ul li ol{
+	margin-top: 20px;
+	display: none;
+}
+.zr_container .zr_content .img_nav .nav_list ul li ol li{
+	font-size: 14px;
+	padding: 10px 5px;	
+}
+
+.whether_curWord .cur_menu_word{
+	color: #ff946e;;
+}
+
+/*右边*/
+.zr_container .zr_content .nav_zr_container{
+	width: 800px;
+	min-height: 50px;
+	border: 1px solid #CCCCCC;
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/*template*/
+/*id=appointmentHtml*/
+.appointmentHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.appointmentHtml .appointmentHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.appointmentHtml .appointmentHtml_zr_container p{
+	width: 100%;
+	padding: 70px 0px;
+	text-align: center;
+	/*border: 1px solid #CCCCCC;*/
+	box-sizing: border-box;
+}
+.appointmentHtml .appointmentHtml_zr_container p a{
+	text-decoration: none;
+	color: #ff946e;
+	cursor: pointer;
+}
+/*id=wantListHtml*/
+.wantListHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.wantListHtml .wantListHtml_zr_container p{
+	width: 100%;
+	padding: 70px 0px;
+	text-align: center;
+	/*border: 1px solid #CCCCCC;*/
+	box-sizing: border-box;
+}
+.wantListHtml .wantListHtml_zr_container p a{
+	text-decoration: none;
+	color: #ff946e;
+	cursor: pointer;
+}
+/*id=liquanHtml*/
+.liquanHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.liquanHtml  .liquanHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.liquanHtml .liquanHtml_zr_header p a{
+	float: right;
+	text-decoration: none;
+	color: #ff946e;
+	cursor: pointer;
+}
+.liquanHtml .liquanHtml_zr_container p{
+	width: 100%;
+	padding: 20px 20px;
+	/*border: 1px solid #CCCCCC;*/
+	box-sizing: border-box;
+}
+
+/*个人主页里面的导航条*/
+/*id=GerenZiliaoHtml，个人资料*/
+/*统一样式*/
+.GerenZiliaoHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_container div p{
+	width: 100%;
+	padding: 0px 30px;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_container div p span{
+	color: #ff946e;
+}
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_container div input{
+	width: 530px;
+	height: 35px;
+	margin-left: 30px;
+}
+/*页脚*/
+.GerenZiliaoHtml .GerenZiliaoHtml_footer{
+	width: 100%;
+	padding: 30px 0px;
+	border-top: 1px solid #CCCCCC;
+	margin-top: 50px;
+	position: relative;
+}
+.GerenZiliaoHtml .GerenZiliaoHtml_footer button{
+	position: absolute;
+	width: 140px;
+	height: 30px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    border-radius: 3px;
+    color: #fff;
+	right: 30px;
+	top: 50%;
+	margin-top: -15px;
+	cursor: pointer;
+	
+}
+/*常居地*/
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_container .Geren_changzhudi select{
+	width: 300px;
+	height: 35px;
+	margin-left: 30px;
+}
+/*个人简介*/
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_container .Geren_jianjie p .Geren_jianjie_word{
+	font-size: 12px;
+	color: black;
+	padding: 0px 10px;
+}
+.GerenZiliaoHtml .GerenZiliaoHtml_zr_container .Geren_jianjie textarea{
+	margin: 0px 30px;
+	width: calc(100% - 60px);
+	height: 280px;
+	padding: 10px;
+}
+
+/*头像设置id=TouxiangSetHtml*/
+.TouxiangSetHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container{
+	padding: 55px 0px;
+	padding-left: 90px;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn{
+	overflow: hidden;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .submit_touxiang{
+	width: 155px;
+	height: 35px;
+	margin-top: 20px;
+	position: relative;
+	display: none;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .submit_touxiang button{
+	width: 80px;
+	padding: 8px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    cursor: pointer;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .touxiang_imgbox{
+	width: 155px;
+	height: 155px;
+	position: relative;
+	float: left;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .touxiang_imgbox span{
+	width: 12px;
+	height: 12px;
+	font-size: 15px;
+	line-height: 12px;
+	text-align: center;
+	color: red;
+	display: none;
+	border: 1px solid #CCCCCC;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+}
+
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn img{
+	
+	width: 155px;
+	height: 155px;
+	border-radius: 50%;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .word_btn{
+	float: left;
+	width: 450px;
+	height: 100px;
+	/*border: 1px solid #CCCCCC;*/
+	padding: 22px 0px;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .word_btn p{
+	font-size: 14px;
+	text-align: center;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .word_btn .btn{
+	position: relative;
+	width: 100%;
+	height: 81px;
+	
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .word_btn .btn a{
+	position: absolute;
+	width: 140px;
+	padding: 8px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    color: #fff;
+    bottom: 0px;
+	left: 50%;
+	margin-left: -70px;
+	cursor: pointer;
+	border-radius: 3px;
+	text-align: center;
+	text-decoration: none;
+	overflow: hidden;
+}
+.TouxiangSetHtml .TouxiangSetHtml_zr_container .img_word_btn .word_btn .btn input{
+	width: 200px;
+	height: 50px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -80px;
+	color: black;
+	opacity: 0;
+}
+/*验证手机*/
+/*id=YanzhengPhoneHtml*/
+.YanzhengPhoneHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container{
+	width: 100%;
+	min-height: 200px;
+	/*border: 1px solid #CCCCCC;*/
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container .phoneNum{
+	margin-top: 85px;
+	margin-left: 175px;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container .phoneNum input{
+	width: 300px;
+	padding: 9px 10px;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container .phoneNum button{
+	width: 140px;
+	padding: 8px 0px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container .phoneCaptcha{
+	margin-left: 175px;
+	margin-top: 20px;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container .phoneCaptcha input{
+	width: 300px;
+	padding: 9px 10px;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+}
+.YanzhengPhoneHtml .YanzhengPhoneHtml_zr_container .phoneCaptcha button{
+	width: 140px;
+	padding: 8px 0px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/*修改密码 id=ChangeMimaHtml*/
+.ChangeMimaHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.ChangeMimaHtml .ChangeMimaHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.ChangeMimaHtml .ChangeMimaHtml_zr_container{
+	width: 100%;
+	min-height: 150px;
+	/*border: 1px solid #CCCCCC;*/
+}
+.ChangeMimaHtml .ChangeMimaHtml_zr_container .nowPassword,.newPassword,.newPassword_again{
+	margin-top: 30px;
+}
+.ChangeMimaHtml .ChangeMimaHtml_zr_container p{
+	width: 100%;
+	padding: 0px 30px;
+}
+.ChangeMimaHtml .ChangeMimaHtml_zr_container input{
+	width: 300px;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	padding: 9px 10px;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+/*页脚*/
+.ChangeMimaHtml .ChangeMimaHtml_footer{
+	width: 100%;
+	padding: 30px 0px;
+	border-top: 1px solid #CCCCCC;
+	margin-top: 20px;
+	position: relative;
+}
+.ChangeMimaHtml .ChangeMimaHtml_footer button{
+	position: absolute;
+	width: 140px;
+	height: 35px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    border-radius: 4px;
+    color: #fff;
+	right: 30px;
+	top: 50%;
+	margin-top: -15px;
+	cursor: pointer;
+	
+}
+/*收款及隐私 id=ShoukuangYinsiHtml*/
+.ShoukuangYinsiHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container{
+	width: 100%;
+	min-height: 150px;
+	/*border: 1px solid #CCCCCC;*/
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container .IDcard,.AboutTuikuang{
+	margin-top: 30px;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container .zhifubao{
+	margin-top: 10px;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container p{
+	width: 100%;
+	padding: 0px 30px;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container .AboutTuikuang p{
+	font-size: 12px;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container p span{
+	color: #ff946e;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_zr_container input{
+	width: 530px;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 9px 10px;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+/*页脚*/
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_footer{
+	width: 100%;
+	padding: 30px 0px;
+	border-top: 1px solid #CCCCCC;
+	margin-top: 20px;
+	position: relative;
+}
+.ShoukuangYinsiHtml .ShoukuangYinsiHtml_footer button{
+	position: absolute;
+	width: 140px;
+	height: 35px;
+	background: #ff946e;
+    border: 1px solid #ff946e;
+    border-radius: 4px;
+    color: #fff;
+	right: 30px;
+	top: 50%;
+	margin-top: -15px;
+	cursor: pointer;	
+}
+
+/*多媒体应用*/
+@media (max-width: 1120px) and (min-width: 770px) {
+	.zr_container .zr_content .img_nav{
+		display: none;
+	}
+}
+@media (max-width: 770px) {
+	.zr_container .zr_content .img_nav{
+		display: none;
+	}
+}
