@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" zr_content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>个人中心</title>
-		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+{include file="common/header"}
+{include file="nav_foot/nav"}
 		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>		
-		<link rel="stylesheet" type="text/css" href="__ROOT__/public/static/personalinfo/css/zr_personaCenter.css"/>
-		
-	</head>
-	<body>
+		<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/personalinfo/css/zr_personaCenter.css"/>
 		<div class="zr_zr_header">
 			
 		</div>
@@ -19,7 +11,7 @@
 				<div id="zr_vue_here">
 					<!--左边-->
 					<div class="img_nav">
-						<img src="__ROOT__/public/static/personalinfo/images/touxiang_normal.png"/>
+						<img src="__STATIC_PATH__/static/personalinfo/images/touxiang_normal.png"/>
 						<div class="nav_list">
 							<ul>
 								<li class="navList_ul_li">									
@@ -154,7 +146,7 @@
 				<div class="TouxiangSetHtml_zr_container">
 					<div class="img_word_btn">
 						<div class="touxiang_imgbox">
-							<img src="__ROOT__/public/static/personalinfo/images/touxiang_normal.png" class="touxiangImg"/>
+							<img src="__STATIC_PATH__/static/personalinfo/images/touxiang_normal.png" class="touxiangImg"/>
 							<span class="close_touxiang">x</span>
 						</div>
 						
@@ -407,5 +399,5 @@
 		        return url
 		    };
 		</script>
-	</body>
-</html>
+{include file="nav_foot/foot"}
+{include file="common/footer"}
