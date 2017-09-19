@@ -6,11 +6,13 @@
     	var list = mobile.querySelector(".mobile .list");
     	var mobileBox = mobile.querySelector(".mobile .mobileBox");
     	// 
+        var headerout = document.querySelector(".zaih_headerout");
     	var header_nav = document.querySelector(".zaih_headerout .header .header_nav");
     	var navLi = header_nav.querySelectorAll(".zaih_headerout .header .header_nav>li");
     	var more_menu = header_nav.querySelector(".zaih_headerout .header .header_nav .header_more .more_menu");
     	var menuLi = header_nav.querySelectorAll(".zaih_headerout .header .header_nav .header_more .more_menu >li");
     	// 登录部分
+        var login_container = document.querySelector(".login_container");
     	var header_login = document.querySelector(".zaih_headerout .header .header_setting .header_login");
     	var login_box = document.querySelector(".login_box");
     	var back = login_box.querySelector(".back");
@@ -54,9 +56,11 @@
     	// 点击登录
     	header_login.onclick = function(){
     		login_box.style.display = 'block';
+            login_container.style.display = 'block';
     	}
     	loginQx.onclick = function () {
     		this.parentNode.parentNode.style.display = 'none';
+            login_container.style.display = 'none';
     	}
     	login.onclick = function(ev){
     		var oEvent= ev || event;
@@ -66,9 +70,11 @@
     	// mobile登录
     	mobile_login.onclick = function(){
     		login_box.style.display = 'block';
+            login_container.style.display = 'block';
     	}
     	loginQx.onclick = function () {
     		this.parentNode.parentNode.style.display = 'none';
+             login_container.style.display = 'none';
     	}
     	login.onclick = function(ev){
     		var oEvent= ev || event;
