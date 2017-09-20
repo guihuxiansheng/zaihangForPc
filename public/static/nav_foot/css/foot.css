@@ -53,6 +53,7 @@
 		width: 50%;
 	}
 	.foot .top .left >ul{
+		width: 100px;
 		margin:20px 0 50px 0;
 	}
 	.foot .top .left ul a{
@@ -138,8 +139,12 @@
 		.foot .top .left .header_logo >i{
 			float: none;
 		}
+		.foot .header_logo .icon{
+			margin-right: 0;
+		}
 		.foot .top .left .header_logo span{display: none;}
 		.foot .top .left >ul{
+			width: 100%;
 			margin: 20px auto;
 		}
 		.foot .top .left >ul a{
@@ -147,6 +152,7 @@
 			color: #fff;
 			font-size: 16px;
 			font-weight: 200;
+			margin-right: 10px;
 		}
 		.foot .top .right .bigTel{margin:0;font-size: 26px;}
 		.foot .top .right .imgBox{display: none;}
