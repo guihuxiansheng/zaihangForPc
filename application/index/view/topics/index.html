@@ -1,6 +1,6 @@
 {include file="common/header"}
 {include file="nav_foot/nav"}
-<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?ghfg">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?ghg">
 <div class="topics">
 	<div class="category">
 		<div class="content f5">
@@ -50,7 +50,7 @@
 				</div>
 				<div class="content-right">
 					<div class="filter">
-						<a href="">筛选</a>
+						<a>筛选</a>
 						<div class="cate-more">
 								<ul class="content">
 									<li>价格</li>
@@ -84,15 +84,15 @@
 			<div class="city">
 				<span>北京</span>
 				<ol>
-					<li><a href=""><span>北京</span></a></li>
-					<li><a href=""><span>上海</span></a></li>
-					<li><a href=""><span>深圳</span></a></li>
-					<li><a href=""><span>广州</span></a></li>
-					<li><a href=""><span>杭州</span></a></li>
-					<li><a href=""><span>成都</span></a></li>
-					<li><a href=""><span>西安</span></a></li>
-					<li><a href=""><span>武汉</span></a></li>
-					<li><a href=""><span>宁波</span></a></li>
+					<li><a><span>北京</span></a></li>
+					<li><a><span>上海</span></a></li>
+					<li><a><span>深圳</span></a></li>
+					<li><a><span>广州</span></a></li>
+					<li><a><span>杭州</span></a></li>
+					<li><a><span>成都</span></a></li>
+					<li><a><span>西安</span></a></li>
+					<li><a><span>武汉</span></a></li>
+					<li><a><span>宁波</span></a></li>
 				</ol>
 			</div>
 		</div>
@@ -105,14 +105,15 @@
 							<div class="list-head">
 								<div class="type f6">线上课</div><div class="title">线上课：熊课101 - 时间管理OS</div><div class="score"><span>9.3</span>分</div><i class="tips" title="该题分由在行系统算法综合学员的匿名评分以及多种因素得出，每增加三个评分，更新一次"></i>
 							</div>
+							<div class="list-right">
+								<span>494</span>元/次
+							</div>
 							<div class="list-msg">
 								<div class="name">陈华伟</div><div class="label">译者，CPA，小熊熊OS创始人</div>
 							</div>
-							<div class="list-foot"><span class="seen">447</span>人见过，<span class="join">971</span>人参加线上课</div>
+							<div class="list-foot"><span><span class="seen">447</span>人见过</span><span>，<span class="join">971</span>人参加线上课</span></div>
 						</div>
-						<div class="list-right">
-							<span>494</span>元/次
-						</div>
+							
 					</li>
 				</a>
 			</ul>
@@ -121,8 +122,8 @@
 	<div class="list-tabs">
 		<ul class="content">
 			<li class="tab-left"><a href="">&nbsp;</a></li>
-			<li class="ellipsis"><a href="">...</a></li>
 			<li><a href="">1</a></li>
+			<li class="ellipsis"><a href="">...</a></li>
 			<li><a href="">2</a></li>
 			<li class="cur"><a href="">3</a></li>
 			<li><a href="">4</a></li>
@@ -133,5 +134,32 @@
 		</ul>
 	</div>
 </div>
+<script type="text/javascript">
+	$(function(){
+		$('.topics .filter a').click(function(){
+			if($(this).parent().hasClass('cur')){
+				$(this).parent().removeClass('cur');
+			}else{
+				$(this).parent().addClass('cur');
+			}
+			return false;
+			
+		});
+		$('.topics .list-filter .city>span').click(function(){
+			if($('.topics .list-filter').hasClass('cur')){
+				$('.topics .list-filter').removeClass('cur');
+				
+			}else{
+				$('.topics .list-filter').addClass('cur');
+				var that = this;
+				$('.topics .list-filter ol li').on('click',function(){
+					$(that).click();
+					$(that).html($(this).text());
+					$('.topics .list-filter ol li').off('click');
+				})
+			}
+		})
+	})
+</script>
 {include file="nav_foot/foot"}
 {include file="common/footer"}

@@ -45,6 +45,31 @@ form span {
         format('woff'),url(data/d7c26ff4.tutor-icons.ttf) 
         format('truetype')
 }
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999; opacity:1; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;opacity:1;
+}
+input:-ms-input-placeholder{
+    color: #999;opacity:1;
+    font-size:14px;
+}
+
+input::-webkit-input-placeholder{
+    color: #999;opacity:1;
+    font-size:14px;
+}
+textarea:-ms-input-placeholder{
+    color: #999;opacity:1;
+    font-size:14px;
+}
+
+textarea::-webkit-input-placeholder{
+    color: #999;opacity:1;
+    font-size:14px;
+}
 #formWrap .form-group textarea{
     background: #fff;
     border: 1px solid #ccc;
@@ -330,7 +355,7 @@ form span {
 .checkbox-wrap label input[type=checkbox] {
     position: absolute;
     filter: alpha(opacity=0);
-    opacity: 0;
+    opacity: 1;
     width: 16px;
     height: 16px;
 }
@@ -354,6 +379,9 @@ form span {
 .checkbox-wrap {
     position: relative;
     margin-bottom: 24px;
+}
+.checkbox.checkbox-true,.checkbox.checkbox-false{
+    opacity: 0;
 }
 .apply-detail .form-group label .sample-tip, .apply-form .form-group label .sample-tip, .city-overlay .form-group label .sample-tip, .zhima-form .form-group label .sample-tip {
     color: #ff946e;

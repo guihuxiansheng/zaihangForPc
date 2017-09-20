@@ -80,11 +80,14 @@
         	oEvent.cancelBubble=true;
     	}
     	// 
+        console.log(qx)
+        console.log(mobileList)
     	mobileMenuBtn.onclick = function(){
     		mobileBox.style.display='none';
     		mobileList.style.display='block';
     	}
     	qx.onclick = function(){
+            console.log(1)
     		mobileBox.style.display='block';
     		mobileList.style.display='none';
     	}

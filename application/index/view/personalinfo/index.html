@@ -2,7 +2,7 @@
 {include file="nav_foot/nav"}
 		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>		
-		<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/personalinfo/css/zr_personaCenter.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/personalinfo/css/zr_personaCenter.css?jhj"/>
 		<div class="zr_zr_header">
 			
 		</div>
@@ -55,7 +55,7 @@
 			</div>
 			
 		</div>
-		<div class="footer"></div>		
+		<!--<div class="footer"></div>	-->	
 			
 		<!--我约的行家页-->
 		<template id="appointmentHtml">
@@ -73,6 +73,11 @@
 			<div class="wantListHtml">
 				<div class="wantListHtml_zr_container">
 					<p>真忧伤，我的心愿单还没有行家。<a href="#">立即去加人！</a></p>
+					<!--<ul>
+						<li>
+							
+						</li>
+					</ul>-->
 				</div>
 			</div>
 		</template>
@@ -86,7 +91,65 @@
 					</p>
 				</div>
 				<div class="liquanHtml_zr_container">
-					<p>您还没有获得礼券，请随时关注「在行」</p>
+					<!--<p>您还没有获得礼券，请随时关注「在行」</p>-->
+					<div class="coupon_usable">
+						<div class="title">
+							新用户专属
+							<p class="denomination">
+								<span class="unit">￥</span>50
+							</p>
+						</div>
+						<ul class="description">
+							<li>• 满99元可用</li>
+						</ul>
+						<p class="tip">
+							2017-09-18至2017-10-01有效
+						</p>	
+					</div>
+					<div class="coupon_usable">
+						<div class="title">
+							新用户专属
+							<p class="denomination">
+								<span class="unit">￥</span>50
+							</p>
+						</div>
+						<ul class="description">
+							<li>• 满99元可用</li>
+							<li>• 满99元可用</li>
+							<li>• 满99元可用</li>
+						</ul>
+						<p class="tip">
+							2017-09-18至2017-10-01有效
+						</p>	
+					</div>
+					<div class="coupon_usable">
+						<div class="title">
+							新用户专属
+							<p class="denomination">
+								<span class="unit">￥</span>50
+							</p>
+						</div>
+						<ul class="description">
+							<li>• 满99元可用</li>
+						</ul>
+						<p class="tip">
+							2017-09-18至2017-10-01有效
+						</p>	
+					</div>
+					<div class="coupon_usable">
+						<div class="title">
+							新用户专属
+							<p class="denomination">
+								<span class="unit">￥</span>50
+							</p>
+						</div>
+						<ul class="description">
+							<li>• 满99元可用</li>
+						</ul>
+						<p class="tip">
+							2017-09-18至2017-10-01有效
+						</p>	
+					</div>
 				</div>
 			</div>
 		</template>
@@ -264,7 +327,11 @@
 					{
 						path:'/personalSet',
 						component:{
-							template:'#personalSetHtml'
+							template:'#personalSetHtml',
+							//增加
+							beforeRouteEnter(to,from,next){
+								next('/GerenZiliao')
+							}
 						}
 					},
 //					个人设置里面的导航条
@@ -356,13 +423,15 @@
 //			个人设置导航条是否显示
 			ShowGerenNav();
 			function ShowGerenNav(){
-				navList_li[3].children[0].onclick=function(){				
+				navList_li[3].children[0].onclick=function(){					
 					if(navList_li_ol[0].style.display=="block"){
 						navList_li_ol[0].style.display="none";
 					}
 					else{
 						navList_li_ol[0].style.display="block";
 					}
+					//增加
+					navList_li[3].setAttribute("class",'navList_ul_li liWhether_curMenu');
 				}
 			}
 		</script>

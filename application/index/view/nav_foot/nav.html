@@ -1,5 +1,5 @@
 {include file="common/header"}
-	<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/nav_foot/css/nav.css?hf">
+	<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/nav_foot/css/nav.css?fgfhf">
 	<div class="mobile">
 		<div class="mobileBox">
 			<a class="header_logo" href="/" ><i class="icon icon_zaih">在行</i></a>
@@ -11,20 +11,22 @@
 		    <a href="#" class="mobile-text-btn btn" id="mobileLoginBtn" >登录</a>
 		    <a href="#" class="btn">去「分答」</a>
 		</div>
-	    <ul class="list">
-	    	<p>×</p>
-        	<a href="#">首页</a>
-        	<a href="#">职场发展</a>
-        	<a href="#">行业经验</a>
-        	<a href="#">互联网+</a>
-        	<a href="#">创业和投融资</a>
-        	<a href="#">生活服务</a>
-        	<a href="#">心理</a>
-        	<a href="#">投资理财</a>
-        	<a href="#">教育学习</a>
-        	<a href="#">其他</a>
-        </ul>
 	</div>
+    <div class="mobileList">
+        <span>×</span>
+        <ul class="list">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">职场发展</a></li>
+            <li><a href="#">行业经验</a></li>
+            <li><a href="#">互联网+</a></li>
+            <li><a href="#">创业和投融资</a></li>
+            <li><a href="#">生活服务</a></li>
+            <li><a href="#">心理</a></li>
+            <li><a href="#">投资理财</a></li>
+            <li><a href="#">教育学习</a></li>
+            <li><a href="#">其他</a></li>
+        <!-- </div> -->
+    </div>
     <div class="zaih_headerout">
         <div class="header">
             <a class="header_logo" href="{:url('/index')}" ><i class="icon icon_zaih">在行</i></a>
@@ -43,7 +45,7 @@
                     <a href="#" class="hover">创业和投融资</a>
                 </li>
                 <li class="header_more">
-                    <a href="#" class="hover">更多&nbsp;<span class="icon_down"><</span></a>
+                    <a href="#" class="hover">更多&nbsp;<span class="icon_down"></span></a>
                     <ul class="more_menu">
                         <li>
                             <a href="#" class="hover">生活服务</a>
@@ -67,7 +69,7 @@
             
             <div class="header_setting">
                 <a class="tutorApply hover" href="{:url('/index/expertreal')}">成为行家</a>
-                <a href="#" class="hover header_login">登录</a>
+                <a class="hover header_login">登录</a>
                 <a href="{:url('/index/register')}" class="hover">注册</a>
             </div>
             <div class="header_links">
@@ -85,7 +87,7 @@
 
 
     <div class="login_container" style="display:none;width: 100%;height: 500px;">
-    	<div class="login_box">
+    	<div class="login_box" style="display: none;">
     		<div class="back">
     			
     		</div>
