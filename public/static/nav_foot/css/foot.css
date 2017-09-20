@@ -53,6 +53,7 @@
 		width: 50%;
 	}
 	.foot .top .left >ul{
+		width: 100px;
 		margin:20px 0 50px 0;
 	}
 	.foot .top .left ul a{
