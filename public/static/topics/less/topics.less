@@ -346,8 +346,8 @@
                 background-position: center;
             }
             .list-body{
-                float: left;
-                padding: 0 10px;
+                position: relative;
+                padding: 0 120px;
                 .list-head{
                     .type{
                         display: inline-block;
@@ -412,17 +412,22 @@
                     margin-left: 5px;
                     line-height: 40px;
                     span{
-                        color: #ff946e;
+                        span{
+                            color: #ff946e;
+                        }
+                    }
+                }
+                .list-right{
+                    position: absolute;
+                    font-size: 14px;
+                        top: 0;
+                        right: 0;
+                    span{
+                        font-size: 20px;
                     }
                 }
             }
-            .list-right{
-                float: right;
-                font-size: 14px;
-                span{
-                    font-size: 20px;
-                }
-            }
+            
         }
     }
     .list-tabs{
@@ -487,4 +492,78 @@
         }
                 
     }
+}
+@media screen and (max-width: 1000px) {
+    html,body{
+        font-size: 12px !important;
+    }
+    .topics{
+        .list-content{
+             ul{
+                 li{
+                    .avatar{
+                        width: 80px;
+                        height: 80px;
+                    }
+                    .list-body{
+                        padding-left: 90px;
+                        .list-head{
+                            .type{
+                                display: none;
+                            }
+                            .title{
+                                font-size: 14px;
+                                padding-left: 5px;
+                            }
+                            .score{
+                                display: none;
+                            }
+                            i.tips{
+                                display: none;
+                            }
+                        }
+                        .list-msg{
+                            line-height: 24px;
+                        }
+                        .list-foot{
+                            line-height: 24px;
+                            &>span{
+                                &:nth-child(2){
+                                    display: none;
+                                }
+                            }
+                        }
+                        .list-right{
+                            position: relative;
+                            padding-left: 5px;
+                            span{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                 }
+             }
+        }
+        .content{
+            .list-filter{
+                ul{
+                    li{
+                        margin: 10px 2px;
+                        a{
+                            padding: 0 10px;
+                        }
+                    }
+                }
+                .city{
+                    margin: 10px 0;
+                    span{
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    
 }
