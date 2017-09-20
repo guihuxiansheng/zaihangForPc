@@ -1,20 +1,20 @@
 // mobile
     	var mobile = document.querySelector(".mobile");
     	var mobile_login = document.querySelector(".mobile .mobileBox #mobileLoginBtn");
-    	var mobileMenuBtn = mobile.querySelector(".mobile .mobileBox #mobileMenuBtn");
+    	var mobileMenuBtn = mobile.querySelector(".mobileBox #mobileMenuBtn");
     	var mobileList = document.querySelector(".mobileList");
-        var qx = mobileList.querySelector(".mobileList span");
-    	var mobileBox = mobile.querySelector(".mobile .mobileBox");
+        var qx = mobileList.querySelector("span");
+    	var mobileBox = mobile.querySelector(" .mobileBox");
     	// 
         var headerout = document.querySelector(".zaih_headerout");
     	var header_nav = document.querySelector(".zaih_headerout .header .header_nav");
-    	var navLi = header_nav.querySelectorAll(".zaih_headerout .header .header_nav>li");
-    	var more_menu = header_nav.querySelector(".zaih_headerout .header .header_nav .header_more .more_menu");
-    	var menuLi = header_nav.querySelectorAll(".zaih_headerout .header .header_nav .header_more .more_menu >li");
+    	var navLi = header_nav.querySelectorAll(".header .header_nav>li");
+    	var more_menu = header_nav.querySelector(".header_more .more_menu");
+    	var menuLi = header_nav.querySelectorAll(".header_more .more_menu >li");
     	// 登录部分
         var login_container = document.querySelector(".login_container");
     	var header_login = document.querySelector(".zaih_headerout .header .header_setting .header_login");
-    	var login_box = document.querySelector(".login_box");
+    	var login_box = document.querySelector(".login_container .login_box");
     	var back = login_box.querySelector(".back");
     	var login = login_box.querySelector(".login");
         var loginQx = login_box.querySelector(".login>span");
