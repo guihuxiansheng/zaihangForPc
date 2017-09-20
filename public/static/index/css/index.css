@@ -58,11 +58,8 @@
         li.index-list-tutor:hover .index-list-cover{
           top:-25%;
           height: 125%;
-          border-left: 230px solid rgba(0,0,0,.7);
+          border-left: 352px solid rgba(0,0,0,.7);
         }
-
-
-
 
     @font-face{
         font-family:tutor-icons;
@@ -391,9 +388,8 @@
     .index-list .index-list-item .index-list-cover {
         position: absolute;
         top: 50%;
-        border-left: 230px solid #000;
-        border-left: 230px solid rgba(0,0,0,.3);
-        border-top: 70px solid transparent;
+        border-left: 352px solid rgba(0,0,0,.3);
+        border-top: 81px solid transparent;
         height: 50%;
         transition: all 0.5s;
         -webkit-transition: all 0.5s;
@@ -524,6 +520,7 @@
         position: absolute;
         top: 100px;
         left: 17%;
+        color:white;
     }
     .slider .slides .slides-summary {
         font-size: 20px;
@@ -531,6 +528,7 @@
         position: absolute;
         top: 260px;
         left: 17%;
+        color:white;
     }
 
     .slider .slides .slides-btn {
@@ -725,10 +723,7 @@
     .index-list .index-list-item {
         border-radius: 5px
     }
-    .index-list .index-list-item .index-list-cover {
-        border-left: 352px solid rgba(0, 0, 0, .3);
-        border-top: 81px solid transparent
-    }
+    
    
     .index-list .index-list-item .index-tutor-info {
         padding: 35px 16px 0
