@@ -24,7 +24,7 @@
 /*容器*/
 .zr_container{
 	width: 100%;
-	min-height: 1200px;
+	min-height: 300px;
 	margin-top: 56px;
 	background-color: #fafafa;	
 	padding: 30px 0px;
@@ -144,6 +144,9 @@
 	font-size: 14px;
 	background: #FFFFFF;
 }
+.wantListHtml .wantListHtml_zr_container{
+	
+}
 .wantListHtml .wantListHtml_zr_container p{
 	width: 100%;
 	padding: 70px 0px;
@@ -179,7 +182,66 @@
 	/*border: 1px solid #CCCCCC;*/
 	box-sizing: border-box;
 }
-
+.liquanHtml .liquanHtml_zr_container{
+	padding: 25px 25px 35px 25px;
+	overflow: hidden;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable{
+	background: url(../images/liquanImg.png) no-repeat;
+	width: 365px;
+	height: 153px;
+	text-align: center;
+	overflow: hidden;
+	float: left;
+	margin-top: 10px;
+	padding: 20px 15px 10px 26px;
+	box-sizing: border-box;	
+	position: relative; 	
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable:nth-child(2n){	
+	margin-left: 18px;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable .title{
+	float: left;
+	width: 130px;
+	height: calc(100% - 40px);
+	text-align: center;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable .title p{
+	color: #ff946e;
+	font-size: 40px;
+	overflow: hidden;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable .title p .unit{	
+    line-height: 1.58;
+    float: left;
+    font-size: 14px;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable .description{
+	float: left;
+	display: block;
+    margin: 1px 0 0 0px;
+    font-size: 12px;
+    color: #999;
+    list-style-type: disc;
+    text-align: left;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable .description li{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: 0 0;
+}
+.liquanHtml .liquanHtml_zr_container .coupon_usable .tip{
+	position: absolute;
+    bottom: 10px;
+    left: 136px;
+    font-size: 12px;
+    text-align: left;
+}
 /*个人主页里面的导航条*/
 /*id=GerenZiliaoHtml，个人资料*/
 /*统一样式*/
@@ -498,7 +560,7 @@
 	width: 530px;
 	border: 1px solid #CCCCCC;
 	border-radius: 4px;
-	font-size: 16px;
+	font-size: 14px;
 	padding: 9px 10px;
 	margin-left: 30px;
 	margin-top: 5px;

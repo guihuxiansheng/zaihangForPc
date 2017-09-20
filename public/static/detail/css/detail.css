@@ -110,7 +110,53 @@
 	text-align: center;
 	line-height: 20px;
 	color: #fff;
+	
 }
+.details .content .con_left .introduce ul .introduce_btn:before{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	top: 60%;
+	margin-left: -2px;
+	left:30%;
+	transform: rotate(30deg);
+}
+.details .content .con_left .introduce ul .introduce_btn:after{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	top: 30%;
+	margin-left: -2px;
+	left:30%;
+	transform: rotate(-30deg);
+}
+.details .content .con_left .introduce ul .b:before{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	top: 60%;
+	margin-left: -2px;
+	left:35%;
+	transform: rotate(330deg);
+}
+.details .content .con_left .introduce ul .b:after{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	top: 30%;
+	margin-left: -2px;
+	left:35%;
+	transform: rotate(-330deg);
+}
+
 .details>.content>.con_left>.item {
 	max-width: 600px;
 	
@@ -226,8 +272,15 @@
 	top: 40%;
 	margin-top: 1px;
 }
-.details>.content>.con_left>.footer .change{
+.details>.content>.con_left>.footer .b_hover:hover .btn{
+	background: #FF946E;
 	
+}
+.details>.content>.con_left>.footer .b_hover:hover .btn:before{
+	background: #FFF;
+}
+.details>.content>.con_left>.footer .b_hover:hover .btn:after{
+	background: #FFF;
 }
 
 .details>.content>.con_left>.footer .change{
@@ -266,8 +319,16 @@
 	top: 40%;
 	margin-top: 1px;
 }
-
-
+.details>.content>.con_left>.footer .b_hover:hover .change{
+	background: #FF946E;
+	
+}
+.details>.content>.con_left>.footer .b_hover:hover .change:before{
+	background: #FFF;
+}
+.details>.content>.con_left>.footer .b_hover:hover .change:after{
+	background: #FFF;
+}
 .details>.content>.con_left>.about {
 	margin-top: 20px;
 }

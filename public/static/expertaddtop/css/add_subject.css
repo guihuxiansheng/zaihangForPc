@@ -367,7 +367,7 @@ form span {
 .checkbox-wrap label input[type=checkbox] {
     position: absolute;
     filter: alpha(opacity=0);
-    opacity: 0;
+    opacity: 1;
     width: 16px;
     height: 16px;
 }
@@ -391,6 +391,9 @@ form span {
 .checkbox-wrap {
     position: relative;
     margin-bottom: 24px;
+}
+.checkbox.checkbox-true,.checkbox.checkbox-false{
+    opacity: 0;
 }
 .apply-detail .form-group label .sample-tip, .apply-form .form-group label .sample-tip, .city-overlay .form-group label .sample-tip, .zhima-form .form-group label .sample-tip {
     color: #ff946e;

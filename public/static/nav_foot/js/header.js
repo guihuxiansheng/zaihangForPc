@@ -18,41 +18,40 @@
     	var back = login_box.querySelector(".back");
     	var login = login_box.querySelector(".login");
         var loginQx = login_box.querySelector(".login>span");
-    	for(var i=1;i<navLi.length;i++){
-    		// console.log(navLi[i],i)
-    		navLi[i].onmouseover=function(){
-    			navLi[0].style.left = this.offsetLeft + 'px';
-    			navLi[0].style.width = this.offsetWidth + 'px';
-    		}
-    	}
-    	header_nav.onmouseout=function(){
-    		navLi[0].style.width = '0px';
-    	}
-    	navLi[navLi.length-1].onmouseover=function(){
-    		more_menu.style.height = '190px';
-    		this.style.background='#fff';
-    		this.childNodes[1].style.color = '#ff946e';
+        for(var i=1;i<navLi.length;i++){
+            // console.log(navLi[i],i)
+            navLi[i].onmouseover=function(){
+                navLi[0].style.left = this.offsetLeft + 'px';
+                navLi[0].style.width = this.offsetWidth + 'px';
+            }
+        }
+        header_nav.onmouseout=function(){
+            navLi[0].style.width = '0px';
+        }
+        navLi[navLi.length-1].onmouseover=function(){
+            more_menu.style.height = '190px';
+            this.style.background='#fff';
+            this.childNodes[1].style.color = '#ff946e';
 
-    		navLi[0].style.left = this.offsetLeft + 'px';
-    		navLi[0].style.width = this.offsetWidth + 'px';
-    	}
-    	navLi[navLi.length-1].onmouseout=function(){
-    		more_menu.style.height = '0px';
-    		this.style.background='transparent';
-    		this.childNodes[1].style.color = '#fff';
-    	}
-    	// 更多 子项
-    	for(var j=0;j<menuLi.length;j++){
-    		menuLi[j].onmouseover=function(){
-    			this.style.background = '#ff946e';
-    			this.childNodes[1].style.color = '#fff';
-    		}
-    		menuLi[j].onmouseout=function(){
-    			this.style.background = '#fff';
-    			this.childNodes[1].style.color = '#343434';
-    		}
-    	}
-
+            navLi[0].style.left = this.offsetLeft + 'px';
+            navLi[0].style.width = this.offsetWidth + 'px';
+        }
+        navLi[navLi.length-1].onmouseout=function(){
+            more_menu.style.height = '0px';
+            this.style.background='transparent';
+            this.childNodes[1].style.color = '#fff';
+        }
+        // 更多 子项
+        for(var j=0;j<menuLi.length;j++){
+            menuLi[j].onmouseover=function(){
+                this.style.background = '#ff946e';
+                this.childNodes[1].style.color = '#fff';
+            }
+            menuLi[j].onmouseout=function(){
+                this.style.background = '#fff';
+                this.childNodes[1].style.color = '#343434';
+            }
+        }
     	// 点击登录
     	header_login.onclick = function(){
     		login_box.style.display = 'block';
