@@ -136,12 +136,13 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		$('.topics .filter').click(function(){
-			if($(this).hasClass('cur')){
-				$(this).removeClass('cur');
+		$('.topics .filter a').click(function(){
+			if($(this).parent().hasClass('cur')){
+				$(this).parent().removeClass('cur');
 			}else{
-				$(this).addClass('cur');
+				$(this).parent().addClass('cur');
 			}
+			return false;
 			
 		});
 		$('.topics .list-filter .city>span').click(function(){
