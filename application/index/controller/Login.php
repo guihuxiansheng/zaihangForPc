@@ -1,9 +1,13 @@
 <?php
 	namespace app\index\controller;
-	use \think\Controller;
+	// use \think\Controller;
 
-	class Login extends Controller
+	class Login extends Islogin
 	{
+		function __construct(){
+			parent::__construct();
+			$this->assign('login',$this->isLogin);
+		}
 		public function index(){
 			return $this->fetch();
 		}
