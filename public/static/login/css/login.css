@@ -224,3 +224,6 @@ form a {
 .phone-login .to-resetpassword a, .phone-login .to-signup a {
     color: #ff946e;
 }
+.signup #submit{
+    line-height: 0px;
+}
