@@ -216,7 +216,7 @@ form .search-sug {
 	/*登录模态框*/
 	.login_container{
 		position: fixed;
-		z-index: 2;
+		z-index: 1001;
 	}
 	.login_container .login_box{
 		width: 100%;
