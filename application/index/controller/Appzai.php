@@ -1,8 +1,7 @@
 <?php
 	namespace app\index\controller;
-	use \think\Controller;
 
-	class Appzai extends Controller
+	class Appzai extends Islogin
 	{
 		public function index()
 		{

@@ -1,7 +1,7 @@
 <?php
 	namespace app\index\controller;
 
-	class Register extends \think\Controller
+	class Register extends Islogin
 	{
 		public function index(){
 			return $this->fetch();
