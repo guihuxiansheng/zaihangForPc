@@ -52,7 +52,7 @@
 	    	
 	    	// print_r($add_data);
 	    	$that=model("Register");
-	    	$user_list=$that->getInfo();
+	    	// $user_list=$that->getInfo();
 	    	// print_r($user_list);
 
 	    	//判断是否有重名的用户名或者手机号码

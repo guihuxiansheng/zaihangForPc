@@ -73,7 +73,7 @@
 					return;
 				}
 				$.post({
-					url: "../api/login/index",
+					url: "{:url('../../api/login/index')}",
 					data:{
 						username: $('#identity').val(),
 						password: $('#password').val()
@@ -82,7 +82,9 @@
 						data = JSON.parse(data);
 						console.log(data,data.status,data.status == 0)
 						if(data.status == 0){
-							window.location.href = '../'
+							window.location.href = "{:url('index')}";
+						}else{
+							alert(data.message)
 						}
 					},
 
