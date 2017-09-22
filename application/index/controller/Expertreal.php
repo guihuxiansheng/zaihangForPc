@@ -1,8 +1,7 @@
 <?php
 	namespace app\index\controller;
-	use \think\Controller;
 
-	class Expertreal extends Controller
+	class Expertreal extends Islogin
 	{
 		public function index()
 		{

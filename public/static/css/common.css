@@ -38,3 +38,8 @@ ul,ol{
 	visibility: hidden;
 	clear: both;
 }
+.user_head_pic{
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}

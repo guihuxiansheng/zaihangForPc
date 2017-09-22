@@ -1,8 +1,7 @@
 <?php
 	namespace app\index\controller;
-	use \think\Controller;
 
-	class Holiday extends Controller
+	class Holiday extends Islogin
 	{
 		public function index()
 		{
