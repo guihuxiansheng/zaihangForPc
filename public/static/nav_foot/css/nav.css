@@ -300,8 +300,9 @@ form .search-sug {
 		left: 0;
 		top: 0;
 		clear: both;
-		z-index: 3;
-		background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));
+		z-index: 999;
+		background: rgba(0,0,0,.7);
+		/* background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));*/ 
 	}
 	.mobile .mobileBox{
 		position: absolute;
