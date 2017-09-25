@@ -6,6 +6,13 @@
 	*/
 	class Login extends \think\Controller
 	{
+		function __construct(){
+			parent::__construct();
+			if(Session::get('manage_user')){
+				header("location:".url('/admin/user'));
+				exit();
+			}
+		}
 		
 		public function index()
 	    {
