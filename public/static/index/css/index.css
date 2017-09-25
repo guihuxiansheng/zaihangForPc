@@ -22,9 +22,6 @@
     .zaih_headerout{
         background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));
     }
-    .mobile{
-        background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));
-    }
     .index.container img{
         max-width: 100%;
     }
