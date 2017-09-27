@@ -2,87 +2,8 @@
 {include file="nav_foot/nav"}
 <link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/detail/css/detail.css" />
 <div class="details">
-
-
-	<div class="appointment" style="display: none;">
-		<div class="mask"></div>
-		<div class="appointmentBox">
-			<div class="closebtn">&times;</div>
-			<div class="warp">
-				<div class="beforesubmit">
-					<div class="top">
-						<span class="complete">预约</span>
-						<span>行家确认</span>
-						<span>付款</span>
-						<span>完成</span>
-						<span>评价</span>
-					</div>
-					<div class="line"></div>
-					<form action="">
-						<div class="center">
-							<p>预约</p>
-
-							<label for="topic_1">
-								<div class="topicli radio select">
-									<span class="topicdetail fleft">我是话题哈哈哈哈哈哈哈1</span>
-									<span class="topicdetail fright">390元/次<br>1.5小时左右</span>
-								</div>
-							</label>
-							<input type="radio" checked="checked" value="1" name="topic_id" id="topic_1" style="display: none;">
-
-							<label for="topic_2">
-								<div class="topicli radio">
-									<span class="topicdetail fleft">我是话题哈哈哈哈哈哈哈2</span>
-									<span class="topicdetail fright">390元/次<br>1.5小时左右</span>
-								</div>
-							</label>
-							<input type="radio" name="topic_id" id="topic_2" style="display: none;">
-
-							<label for="topic_3">
-								<div class="topicli radio">
-									<span class="topicdetail fleft">我是话题哈哈哈哈哈哈哈3</span>
-									<span class="topicdetail fright">390元/次<br>1.5小时左右</span>
-								</div>
-							</label>
-							<input type="radio" name="topic_id" id="topic_3" style="display: none;">
-
-							<p>时间地点选择</p>
-							<div class="topicli select">
-								<span class="topicdetail fleft">见面时间、地点，将在行家同意见面后与您商定</span>
-							</div>
-							
-							<div class="line"></div>
-
-							<p>告诉行家你要请教的问题：（20-300字）</p>
-							<textarea class="meet_question" name="" id="" cols="30" rows="10">111</textarea>
-							<p>介绍自己当前的情况：（20-300字）</p>
-							<textarea class="meet_situation" name="" id="" cols="30" rows="10">222</textarea>
-
-						</div>
-
-
-						<div class="footer">
-							<div class="line"></div>
-							<div class="submitbtn">提交</div>
-						</div>
-					</form>
-					
-				</div>
-
-
-				<div class="successbox" style="display: none;">
-					<h1>提交成功！</h1>
-					<p>请等待行家的反馈</p>
-					<div class="btns">
-						<div class="checkprocessbtn btn">查看进展</div>
-						<div class="cancelbtn btn">取消</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 	<div class="header">
+
 	</div>
 	<div class="content">
 		<div class="left con_left">
@@ -90,9 +11,8 @@
 				<img src="//media.zaih.com/FhL64PQrzgRa5bvIh4K4Li1Hq_FT55!avatar" alt="刘艳蓉">
 			</div>
 			<div class="introduce">
-
-				<h1 class="name">{$info.exp_realname}</h1>
-				<p>{$info.exp_job}</p>
+				<h1 class="name">刘艳蓉</h1>
+				<p>品牌战略&新媒体整合营销实战派</p>
 				<ul class="f6 ">
 					<li>
 						<span class="red">半天</span>内回应
@@ -107,61 +27,13 @@
 						<span class="red">高</span>接受率
 					</li>
 					<b class="introduce_btn" >
-						>
+						
 					</b>
 				</ul>
 				
-				<p>{$info.exp_city} <span>{$info.exp_place}</span></p>
+				<p>北京 <span>朝阳</span></p>
 			</div>
-
-
-			<!-- 话题 -->
-			{foreach $topicinfo as $value}
-			<div class="item  close">
-				<div class="price">
-					<span>
- 						￥<span style="font-size: 18px; "> {$value.topic_price} </span>/次
-					</span>
-					<span class="right" >
- 						<span style="font-size: 18px;">9.8</span>分<b>!</b>
-					</span>
-				</div>
-				<h2>{$value.topic_name}</h2>
-
-				<p>{$value.topic_outline}</p>
-				<p>{$value.topic_achievement}</p>
-				<p>我非常愿意和你分享我的经验，如果你遇到了如下问题，我也愿意知无不言，言无不尽地说出我的建议：</p>
-				<ul class="wen">
-					<li>做市场营销从哪里入手？</li>
-					<li>市场营销都包括哪些方面？</li>
-					<li>什么样的广告形式更有效，如何投放网络广告？</li>
-					<li>什么样的营销方式更适合自己的产品？</li>
-					<li>做市场营销从哪里入手？</li>
-					<li>市场营销都包括哪些方面？</li>
-					<li>什么样的广告形式更有效，如何投放网络广告？</li>
-					<li>什么样的营销方式更适合自己的产品？</li>
-				</ul>
-				<p>PS.{$value.topic_ps}</p>
-				<div class="share">
-					<strong>分享话题：</strong>
-					<img src="images/火狐截图_2017-09-15T11-01-45_03.png" alt="" />
-					<img src=""/>
-				</div>
-				
-			</div>
-			<div class="footer">
-				<ul class="left">
-					<li>约<span>{$value.topic_time}</span></li>
-					<li><span>8</span>人约过</li>
-				</ul>
-				<!--<input id="btn" type="button" class="right" value=">"/>-->
-				<div  class="right btn " style="cursor: pointer;"></div>
-			</div>
-			{/foreach}
-
-
-			<!-- 话题 -->
-			<div class="item  close">
+			<div class="item  ">
 				<div class="price">
 					<span>
  						￥<span style="font-size: 18px; "> 500 </span>/次
@@ -197,18 +69,15 @@
 					<li>约<span>1.5</span>小时</li>
 					<li><span>8</span>人约过</li>
 				</ul>
-				<!-- <input id="btn" type="button" class="right" value=">"/> -->
-				<div  class="right btn "></div>
+				<!--<input id="btn" type="button" class="right" value=">"/>-->
+				<div class="b_hover"><div  class="right btn"></div></div>
 			</div>
-
-
-
 				
 			<div class="about">
 				<h2>关于行家   </h2>
 				<img src="FnSFIS7F4PD9_0c4O0NYSW78m486!mainbody.jpg" />
-				<p>{$info.exp_job_experience}</p>
-				<p>{$info.exp_narration}</p>
+				<p>当我第一次在活动现场，经历了两个小时的活动，主持人手卡上的最后一句话说完，嘉宾离场，灯光暗下来……看着这一切，我特别开心。</p>
+				<p>当我第一次在活动现场，经历了两个小时的活动，主持人手卡上的最后一句话说完，嘉宾离场，灯光暗下来……看着这一切，我特别开心。</p>
 				<p>当我第一次在活动现场，经历了两个小时的活动，主持人手卡上的最后一句话说完，嘉宾离场，灯光暗下来……看着这一切，我特别开心。</p>
 				<p>当我第一次在活动现场，经历了两个小时的活动，主持人手卡上的最后一句话说完，嘉宾离场，灯光暗下来……看着这一切，我特别开心。</p>
 
@@ -222,8 +91,8 @@
 			</div>
 			
 			<div class="r_btn">
-				<p href="">立即预约</p>
-				<p href="">加入心愿墙</p>
+				<a href="">立即预约</a>
+				<a href="">加入心愿墙</a>
 			</div>
 			<ul class="recommend">
 				<h2>王弢的推荐</h2>
@@ -322,32 +191,26 @@
 
 </div>
 <script type="text/javascript">
-
-
-	// 左右反弹箭头
-	var btn=document.querySelector('.introduce_btn');
-	btn.onclick=function(e){
+//	var btn=document.querySelector('.introduce_btn');
+//	btn.onclick=function(e){
+//		
+//	}
+		var b = document.querySelector('.details .content .con_left .introduce ul b');
+	b.onclick = function(e) {
 		e.preventDefault();
 		$(this).parent().toggleClass("one");
 		$(this).hasClass("b") ? $(this).removeClass("b").addClass("introduce_btn") : $(this).removeClass("introduce_btn").addClass("b")
 	}
-	
-	// 全文、收起
-	var oBtn=document.querySelectorAll(".details>.content>.con_left>.footer .btn");
-	$.each(oBtn,function(i,item){
-		item.onclick=function(e) {
-		  e.preventDefault();
-		  var t = $(this),
-		 
-		    n = t.parent().siblings(".item").eq(i);
-		    
-		    t.toggleClass("change");
-		    n.toggleClass("close");
-		}
-	})
-
-
-	// 热门、最新切换
+	var oBtn=document.querySelector(".details>.content>.con_left>.footer .b_hover .btn");
+	oBtn.onclick=function(e) {
+	  e.preventDefault();
+	  var t = $(this),
+	 
+	    n = t.parent().parent().siblings(".item");
+	    
+	    t.toggleClass("change");
+	  n.toggleClass("close");
+	}
 	var hot=document.querySelector(".hot");
 	var aUl=document.querySelector(".aUl");
 	hot.onclick=function(){
@@ -358,55 +221,6 @@
 		hot.style.display='block';
 		aUl.style.display='none';
 	}
-
-    //选择预约话题
-    $.each($(".topicli.radio"),function(n,item){
-    	item.index=n;
-    	item.onclick=function(){
-    		for (var i = 0; i < $(".topicli.radio").length; i++) {
-    			$(".topicli.radio").eq(i).removeClass("select");
-    		}
-    		$(".topicli.radio").eq(this.index).addClass("select");
-    	}
-    })
-
-	//预约话题提交
-	$(".appointmentBox .submitbtn").on("click",function(){
-		$.ajax({
-		   type: "POST",
-		   url: "{:url('meetsubmit')}",
-		   data: {
-		  	 	student_id:12,
-		   		expert_id: {$info.id},
-		   		topic_id:$(".beforesubmit .center input:radio:checked").val(),
-		   		meet_question:$('.meet_question').val(),
-		   		meet_situation:$('.meet_situation').val()
-		   },
-		   success: function(msg){
-		     alert( "Data Saved: " + msg );
-		     console.log(msg)
-		   }
-		});
-		$(".appointmentBox .beforesubmit").hide();
-		$(".appointmentBox .successbox").show();
-	})
-
-
-	//隐藏弹框
-	$(".appointmentBox .closebtn,.appointmentBox .checkprocessbtn,.appointmentBox .cancelbtn").on("click",function(){
-		$(".appointment").hide();
-		$(".appointment .mask").hide();
-		$(".appointmentBox .successbox").hide();
-		$(".appointmentBox .beforesubmit").show();
-	})
-
-	//显示弹框
-    $(".con_right .r_btn p").eq(0).on("click",function(){
-		$(".appointment").show();
-		$(".appointment .mask").show();
-	})
-
-
 </script>
 {include file="nav_foot/foot"}
 {include file="common/footer"}
