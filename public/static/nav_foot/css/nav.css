@@ -43,11 +43,13 @@
 		/*background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));*/
 		/*background: rgba(52,52,52,.8);*/
 	}
-	.zaih_headerout .header{
+	.zaih_headerout .header,.mobile{
 		width: 100%;
 		color: #fff;
-		max-width: 1060px;
-		margin: auto;
+		/*background: transparent;*/
+		position: fixed;
+		left: 0;
+		top: 0;
 		clear: both;
 	}
 	.zaih_headerout .header_logo i{
@@ -254,24 +256,9 @@ form .search-sug {
 		text-align: center;
 	}
 	/*自适应*/
-
-	@media (min-width: 990px) {
+	@media (min-width: 770px) {
 		.header,.zaih_headerout{
 			display: block;
-		}
-		.zaih_headerout .header .search,.zaih_headerout .header .header_setting a.tohangj{
-			display: block;
-		}
-		.mobile{
-			display: none;
-		}
-	}
-	@media (max-width: 989px) and (min-width: 769px) {
-		.header,.zaih_headerout{
-			display: block;
-		}
-		.zaih_headerout .header .search,.zaih_headerout .header .header_setting a.tohangj{
-			display: none;
 		}
 		.mobile{
 			display: none;
@@ -291,18 +278,12 @@ form .search-sug {
 	color: #fff;
 }
 
+
 	.mobile{
 		height: 80px;
-		width: 100%;
-		color: #fff;
-		/*background: transparent;*/
 		position: fixed;
-		left: 0;
-		top: 0;
-		clear: both;
-		z-index: 999;
-		background: rgba(0,0,0,.7);
-		/* background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));*/ 
+		z-index: 3;
+		background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));
 	}
 	.mobile .mobileBox{
 		position: absolute;
@@ -352,7 +333,6 @@ form .search-sug {
 		font-size: 26px;
 		padding: 15px;
 		float: right;
-		cursor: pointer;
 	}
 	.mobileList .list{
 		line-height: 40px;
@@ -368,10 +348,6 @@ form .search-sug {
 	.mobileList .list li{
 		height: 50px;
 		border-bottom: 1px solid #948C8C;
-	}
-	.mobileList .list li>a:hover{
-		/*background: rgba(0,0,0,.1);*/
-		color: #ff946e;
 	}
 	.mobileList .list li>a{
 		display: block;

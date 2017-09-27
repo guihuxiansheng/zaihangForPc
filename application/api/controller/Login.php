@@ -1,7 +1,5 @@
 <?php
 	namespace app\api\controller;
-
-	use think\Session;
 	/**
 	* 
 	*/
@@ -14,9 +12,11 @@
 			// $password = input('password');
 			$password = md5(input('password'));
 			try{
-				$info = db('user')->where("user_pwd='$password' and user_phone='$username'")->find();
+				$info = db('user')->where("user_name='$username' and user_pwd='$password'")->find();
+				var_dump($info);
 				if($info){
-					Session::set('user_name',$info['user_name']);
+					// $this->success("登录成功！");
+					Session::set('user_name',$username);
 					return json_encode(Array(
 						'status'=>0,
 						'message'=> '登录成功！'
@@ -28,6 +28,7 @@
 					));
 				}
 			}catch(\Exception $e){
+				// $this->error('登录失败！');
 				return json_encode(Array(
 					'status'=>1,
 					'message'=> '查询错误'
@@ -36,7 +37,7 @@
 		}
 		function logout(){
 			Session::set('user_name',null);
-			$this->success("退出成功！",'../index');
+			$this->success("登录成功！",'/index');
 		}
 		
 	}
