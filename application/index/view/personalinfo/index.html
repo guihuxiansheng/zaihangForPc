@@ -11,7 +11,7 @@
 				<div id="zr_vue_here">
 					<!--左边-->
 					<div class="img_nav">
-						<img src="__STATIC_PATH__/static/personalinfo/images/touxiang_normal.png"/>
+						<img :src="touxiang_src"/>
 						<div class="nav_list">
 							<ul>
 								<li class="navList_ul_li">									
@@ -55,7 +55,7 @@
 			</div>
 			
 		</div>
-		<!--<div class="footer"></div>	-->	
+		<div class="footer"></div>		
 			
 		<!--我约的行家页-->
 		<template id="appointmentHtml">
@@ -163,86 +163,92 @@
 		<!--个人设置页里面的导航条-->
 		<!--个人资料-->
 		<template id="GerenZiliaoHtml">
-			<div class="GerenZiliaoHtml">
+			<form action="{:url('update')}" method="post" class="GerenZiliaoHtml">
 				<div class="GerenZiliaoHtml_zr_header">
 					<p>个人资料</p>
 				</div>
+	
 				<div class="GerenZiliaoHtml_zr_container">
 					<div class="Geren_userName">
 						<p><span>* </span>昵称</p>
-						<input value="空洞丶丶" />						
+						<input name="user_name" value="{$info.user_name}" />						
 					</div>
 					<div class="Geren_trueName">
 						<p><span>* </span>真实姓名</p>
-						<input value="" />						
+						<input name="user_true_name" value="{$info.user_true_name}" />						
 					</div>
 					<div class="Geren_changzhudi">
 						<p><span>* </span>常居地</p>
-						<select autofocus id="location" name="location" required>
+						<select autofocus id="location" name="user_address" required>
 							<option value="北京">北京</option>
-							<option value="上海">上海</option>
-							<option value="深圳">深圳</option>
-							<option value="广州">广州</option>
-							<option value="杭州">杭州</option>
-							<option value="成都">成都</option>
-							<option value="西安">西安</option>
-							<option value="武汉">武汉</option>
-							<option value="宁波">宁波</option>
+							<option {if $info.user_address == '上海'} selected {/if} value="上海">上海</option>
+							<option {if $info.user_address == '深圳'} selected {/if} value="深圳">深圳</option>
+							<option {if $info.user_address == '广州'} selected {/if} value="广州">广州</option>
+							<option {if $info.user_address == '杭州'} selected {/if} value="杭州">杭州</option>
+							<option {if $info.user_address == '成都'} selected {/if} value="成都">成都</option>
+							<option {if $info.user_address == '西安'} selected {/if} value="西安">西安</option>
+							<option {if $info.user_address == '武汉'} selected {/if} value="武汉">武汉</option>
+							<option {if $info.user_address == '宁波'} selected {/if} value="宁波">宁波</option>
 						</select>						
 					</div>
 					<div class="Geren_jianjie">
 						<p><span>* </span>个人简介<span class="Geren_jianjie_word">完备的个人简历可以向行家展现您约见的诚意，也能让行家更好的帮助您。</span></p>
-						<textarea name="" rows="" cols="">这个人很懒，什么都没写</textarea>
+						<textarea name="user_intro" name="" rows="" cols="">{$info.user_intro}			
+				</textarea>
 					</div>
 				</div>
 				<div class="GerenZiliaoHtml_footer">
+					<input type="hidden" name="id" value="{$info.id}">
 					<button class="" type="submit">提交</button>
 				</div>
-			</div>
+			</form>
 		</template>
 		<!--头像设置-->
 		<template id="TouxiangSetHtml">
-			<div class="TouxiangSetHtml">
+			<form action="{:url('saveimg')}" method="POST" enctype="multipart/form-data" class="TouxiangSetHtml">
 				<div class="TouxiangSetHtml_zr_header">
 					<p>上传头像</p>
 				</div>
 				<div class="TouxiangSetHtml_zr_container">
 					<div class="img_word_btn">
 						<div class="touxiang_imgbox">
-							<img src="__STATIC_PATH__/static/personalinfo/images/touxiang_normal.png" class="touxiangImg"/>
-							<span class="close_touxiang">x</span>
+							<img src="__STATIC_PATH__/{$info.user_head_pic}" class="touxiangImg"/>
+							<span class="close_touxiang" @click="close_touxiang()" >x</span>
 						</div>
 						
 						<div class="word_btn">
 							<p>支持jpg，png，gif格式图片，请尽可能选用160*160以上照片。</p>
 							<div class="btn">
-								<a href="javascript:;"><input type="file" class="filepath"/>电脑中选一张</a>								
+								<a href="javascript:;"><input name="user_head_pic" @change="uploadImg()" type="file" class="filepath"/>电脑中选一张</a>	
 							</div>							
+
 						</div>
 					</div>
 					<div class="submit_touxiang">
+						<input type="hidden" name="id" value="{$info.id}">
 						<button>保存</button>
 					</div>
 				</div>
-			</div>
+			</form>
 		</template>
 		<!--验证手机-->
 		<template id="YanzhengPhoneHtml">
-			<div class="YanzhengPhoneHtml">
+			<form action="{:url('update')}" method="post" class="YanzhengPhoneHtml">
 				<div class="YanzhengPhoneHtml_zr_header">
 					<p>验证手机</p>
 				</div>
 				<div class="YanzhengPhoneHtml_zr_container">
 					<div class="phoneNum">
-						<input type="text" value="12345678900"/>
+						<input name="user_phone" type="text" value="{$info.user_phone}"/>
 						<button>发送手机验证码</button>
 					</div>
 					<div class="phoneCaptcha">
 						<input type="text" />
+						<input type="hidden" name="id" value="{$info.id}">
 						<button>提交</button>
 					</div>
 				</div>
-			</div>
+			</form>
 		</template>
 		<!--修改密码-->
 		<template id="ChangeMimaHtml">
@@ -285,10 +291,11 @@
 					</div>
 					<div class="IDcard">
 						<p><span> * </span>收款人身份证姓名</p>
-						<input value="" placeholder="请务必与证件上的姓名一致，请不要用昵称"/>						
+						<input value="" placeholder="请务必与证件上的姓名一致，请不要用昵称"/>	
 					</div>
 				</div>
 				<div class="ShoukuangYinsiHtml_footer">
+					<input type="hidden" name="id" value="{$info.id}">
 					<button class="" type="submit">提交</button>
 				</div>
 			</div>
@@ -331,7 +338,7 @@
 							//增加
 							beforeRouteEnter(to,from,next){
 								next('/GerenZiliao')
-							}
+							},
 						}
 					},
 //					个人设置里面的导航条
@@ -344,7 +351,36 @@
 					{
 						path:'/TouxiangSet',
 						component:{
-							template:'#TouxiangSetHtml'
+							template:'#TouxiangSetHtml',
+							methods:{
+								beannyclick:function(){
+									console.log("beannyclick")
+								},
+								uploadImg:function(){
+						            var srcs = this.getObjectURL($(".filepath")[0].files[0]);   //获取路径
+						            console.log(srcs);
+						            console.log($(".filepath"));
+						            $(".close_touxiang").show();
+						            $(".submit_touxiang").show();
+						            $(".touxiangImg").attr("src",srcs);    //this指的是input
+						        },
+								getObjectURL:function(file) {
+							        var url = null;
+							        if (window.createObjectURL != undefined) {
+							            url = window.createObjectURL(file)
+							        } else if (window.URL != undefined) {
+							            url = window.URL.createObjectURL(file)
+							        } else if (window.webkitURL != undefined) {
+							            url = window.webkitURL.createObjectURL(file)
+							        }
+							        return url
+							    },
+							    close_touxiang:function(){
+						            $(".close_touxiang").hide();
+						            $(".submit_touxiang").hide();
+						            $(".touxiangImg").attr("src",'__STATIC_PATH__/{$info.user_head_pic}');
+							    }
+							}
 						}
 					},
 					{
@@ -369,8 +405,11 @@
 			});
 			new Vue({
 				el:"#zr_vue_here",
-				data:[],
-				methods:{},
+				data:{
+					touxiang_src: "__STATIC_PATH__/{$info.user_head_pic}"
+				},
+				methods:{
+				},
 				router
 			});
 		</script>
@@ -436,23 +475,24 @@
 			}
 		</script>
 		<script type="text/javascript">
-			uploadImg();
-			function uploadImg(){
-				$(function() {
-			        $(".filepath").on("change",function() {
-			            var srcs = getObjectURL(this.files[0]);   //获取路径
-			            console.log(srcs)
-			            $(".close_touxiang").show();
-			            $(".submit_touxiang").show();
-			            $(".touxiangImg").attr("src",srcs);    //this指的是input
-			        })
-			        $(".close_touxiang").on("click",function() {
-		                $(this).hide();
-		                $(".submit_touxiang").hide();
-		                 $(".touxiangImg").attr("src",'images/touxiang_normal.png');
-		            })
-			    })
-			}
+
+			        // $(".filepath").on("change",function() {
+			        //     // var srcs = getObjectURL(this.files[0]);   //获取路径
+			        //     srcs = window.URL.createObjectURL($(".filepath")[0].files[0])
+			        //     console.log(srcs);
+			        //     console.log($(".filepath"));
+			        //     $(".close_touxiang").show();
+			        //     $(".submit_touxiang").show();
+			        //     $(".touxiangImg").attr("src",srcs);    //this指的是input
+			        // })
+
+
+			        // $(".close_touxiang").on("click",function() {
+		         //        $(this).hide();
+		         //        $(".submit_touxiang").hide();
+		         //         $(".touxiangImg").attr("src",'__STATIC_PATH__/static/personalinfo/images/touxiang_normal.png');
+		         //    })
+
 			
 			
 			//获取路径的方法
@@ -460,10 +500,13 @@
 		        var url = null;
 		        if (window.createObjectURL != undefined) {
 		            url = window.createObjectURL(file)
+		            console.log('w1')
 		        } else if (window.URL != undefined) {
 		            url = window.URL.createObjectURL(file)
+		            console.log('w2')
 		        } else if (window.webkitURL != undefined) {
 		            url = window.webkitURL.createObjectURL(file)
+		            console.log('w3')
 		        }
 		        return url
 		    };
