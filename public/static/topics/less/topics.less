@@ -237,6 +237,11 @@
                                         color: #ff946e;
                                     }
                                 }
+                                form{
+                                    span{
+                                        color: #ccc;
+                                    }
+                                }
                             }
                         }
                     }
@@ -485,8 +490,11 @@
     .list-tabs{
         padding: 50px 0;
         ul{
+            font-size: 0;
             li{
+                font-size: 14px;
                 display: inline-block;
+                margin: 0 6px;
                 line-height: 26px;
                 border: 1px solid #bbb;
                 border-radius: 5px;
@@ -513,6 +521,10 @@
                 }
                 &.cur{
                     color: #ff946e;
+                    border: 1px solid #ff946e;
+                    a{
+                        color: #ff946e;
+                    }
                 }
                 &.tab-right{
                     position: relative;

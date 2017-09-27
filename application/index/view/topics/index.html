@@ -1,6 +1,6 @@
 {include file="common/header"}
 {include file="nav_foot/nav"}
-<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?wqdrtdgryretyery">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?wqdrtdgrdfgdfyretyery">
 <div class="topics">
 	<div class="category">
 		<div class="content f5">
@@ -34,14 +34,16 @@
 						<div class="cate-more">
 								<ul class="content">
 									<li>价格</li>
-									<li><a href="">0-300</a></li>
-									<li><a href="">301-600</a></li>
-									<li><a href="">601-1000</a></li>
-									<li><a href="">1000以上</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=300&price_floor=0'}">0-300</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=600&price_floor=301'}">301-600</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=1000&price_floor=601'}">601-1000</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_floor=1001'}">1000以上</a></li>
 									<li>
-										<form>
-											<input type="text" name="" placeholder="起始价格">
-											<input type="text" name="" placeholder="终止价格">
+										<form action="{:url('index')}" >
+											<input type="hidden" name="cate_id" value="{:end($cate)['id']}">
+											<input type="text" name="price_floor" placeholder="起始价格">
+											<span>一</span>
+											<input type="text" name="price_cap" placeholder="终止价格">
 											<button type="submit">确定</button>
 										</form>
 									</li>
@@ -62,17 +64,11 @@
 				<li><a href="">价格</a></li>
 			</ul>
 			<div class="city">
-				<span>北京</span>
+				<span>{$city}</span>
 				<ol>
-					<li><a><span class="cur">北京</span></a></li>
-					<li><a><span>上海</span></a></li>
-					<li><a><span>深圳</span></a></li>
-					<li><a><span>广州</span></a></li>
-					<li><a><span>杭州</span></a></li>
-					<li><a><span>成都</span></a></li>
-					<li><a><span>西安</span></a></li>
-					<li><a><span>武汉</span></a></li>
-					<li><a><span>宁波</span></a></li>
+					{foreach $city_list as $k=>$val}
+					<li><a href="{:url('index').'?cate_id=1&city='.$val['place']}"><span class="{if ($val.place_name == $city)}cur{/if}">{$val.place_name}</span></a></li>
+					{/foreach}
 				</ol>
 			</div>
 		</div>
@@ -84,13 +80,13 @@
 						<div class="avatar"></div>
 						<div class="list-body">
 							<div class="list-head">
-								 <div class="type f6">线上课</div><div class="title">{$value['topic_name']}</div><div class="score"><span>9.3</span>分</div><img class="tips" src="__STATIC_PATH__/static/topics/images/170920151653.png"><!-- 该题分由在行系统算法综合学员的匿名评分以及多种因素得出，每增加三个评分，更新一次-->
+								 <div class="type f6">线上课</div><div class="title">{$value['title']}</div><div class="score"><span>9.3</span>分</div><img class="tips" src="__STATIC_PATH__/static/topics/images/170920151653.png"><!-- 该题分由在行系统算法综合学员的匿名评分以及多种因素得出，每增加三个评分，更新一次-->
 							</div>
 							<div class="list-right">
-								<span>{$value['topic_price']}</span>元/次
+								<span>{$value['price']}</span>元/次
 							</div>
 							<div class="list-msg">
-								<div class="name">{$value['uname']}</div><div class="label">译者，CPA，小熊熊OS创始人</div>
+								<div class="name">{$value['realname']}</div><div class="label">{$value['job']}</div>
 							</div>
 							<div class="list-foot"><span><span class="seen">447</span>人见过</span><span>，<span class="join">971</span>人参加线上课</span></div>
 						</div>
@@ -103,25 +99,31 @@
 	</div>
 	<div class="list-tabs">
 		<ul class="content">
+			{if $topic[1]>1}
+			<li class="tab-left"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city=beijing&page='.($topic[1]-1)}">&nbsp;</a></li>
+			{/if}
 			{if $topic[0]>10}
-			<li class="tab-left"><a href="">&nbsp;</a></li>
-			<li class="{if $topic[1] == 1}cur{/if}"><a href="">1</a></li>
+			<li class="{if $topic[1] == 1}cur{/if}"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city=beijing&page=1'}">1</a></li>
 			{/if}
 			{if $topic[1]>4}
 			<li class="ellipsis"><a href="">...</a></li>
 			{/if}
 			<?php
 				for($i=$topic[1]-2;$i<=$topic[1]+2;$i++){
-					if($i>1 and $i*10<$topic[0]-20){
-						echo '<li class="ellipsis"><a href="">$i</a></li>';
+					if($i>1 and $i*10-10<$topic[0]){
+						$str = '';
+						if($topic[1] == $i){
+							$str = 'cur';
+						}
+						echo '<li class="'.$str.'"><a href="?cate_id='.end($cate)['id'].'&city=beijing&page='.$i.'">'.$i.'</a></li>';
 					}
 				}
 			?>
 			{if $topic[0]>$topic[1]*10+20}
 			<li class="ellipsis"><a href="">...</a></li>
 			{/if}
-			{if $topic[0]>$topic[1]*10+10}
-			<li class="tab-right"><a href="">&nbsp;</a></li>
+			{if $topic[0]>$topic[1]*10}
+			<li class="tab-right"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city=beijing&page='.($topic[1]+1)}">&nbsp;</a></li>
 			{/if}
 		</ul>
 	</div>
@@ -134,14 +136,11 @@
 			}else{
 				$(this).parent().addClass('cur');
 			}
-			return false;
-			
 		});
-		$('.topics .list-filter .city>span').click(function(){
+		$('.topics .list-filter .city>span').on('mousedown',function(event){
 			if($('.topics .list-filter').hasClass('cur')){
 				$('.topics .list-filter').removeClass('cur');
-				
-			}else{
+			}else{				
 				$('.topics .list-filter').addClass('cur');
 				var that = this;
 				$('.topics .list-filter ol li').on('click',function(){
@@ -149,7 +148,17 @@
 					$(that).html($(this).text());
 					$('.topics .list-filter ol li').off('click');
 				})
+				$(document).on('mousedown',function(){
+					$('.topics .list-filter').removeClass('cur');
+					$(this).off('mousedown');
+					console.log('fsdf')
+					return false;
+				})
 			}
+			return false;
+		});
+		$('.topics .list-filter .city ol li').on('mousedown',function(){
+			return false;
 		})
 	})
 </script>

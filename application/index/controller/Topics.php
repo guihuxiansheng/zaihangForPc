@@ -5,14 +5,16 @@
 	{
 		public function index()
 		{
-			$cate_city = input('cate_city');
-
-			$cate = model('Topics')->getCate();
-			$cate_list = model('Topics')->getCateNext();
-			$topic = model('Topics')->getTopic();
+			$model = model('Topics');
+			$city = $model->findCity();
+			$cate = $model->getCate();
+			$cate_list = $model->getCateNext();
+			$topic = $model->getTopic($city);
+			$this->assign('city',$city);
 			$this->assign('cate',$cate);
 			$this->assign('cate_list',$cate_list);
 			$this->assign('topic',$topic);
+			$this->assign('city_list',$model->getCity());
 			return $this->fetch();
 		}
 
