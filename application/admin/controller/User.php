@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 
-class User extends \think\Controller
+class User extends Islogin
 {
     public function index()
     {

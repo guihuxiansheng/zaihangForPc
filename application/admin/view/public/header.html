@@ -78,7 +78,7 @@
 
                                 <li class="dropdown dropdown-user">
                                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                        <img alt="" class="img-circle" src="__PUBLIC__/static/admin/avatar3_small.jpg">
+                                        <img alt="" class="img-circle" src="__STATIC_PATH__/static/admin/avatar3_small.jpg">
                                         <span class="username username-hide-on-mobile">管理员</span>
                                     </a>
 
@@ -122,8 +122,16 @@
 
                                     </a>
 
-                                </li>     
+                                </li>
+                                <li class="nav-item <?php echo  is_active('category','active');?>
+                                    ">
+                                    <a href="{:url('category/index')}" class="nav-link nav-toggle">
+                                        <i class="icon-bell"></i>
+                                        <span class="title">分类管理</span>
 
+                                    </a>
+
+                                </li>     
                                 <li class="nav-item <?php echo  is_active('system','active');?>
                                     ">
                                     <a href="{:url('system/index')}" class="nav-link nav-toggle">
@@ -133,6 +141,7 @@
                                     </a>
 
                                 </li>
+                                
 
                                 <li class="nav-item ">
                                     <a href="/" target="_balnk" class="nav-link nav-toggle">
