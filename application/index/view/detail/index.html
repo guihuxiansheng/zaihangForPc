@@ -198,11 +198,7 @@
 					<li><span>8</span>人约过</li>
 				</ul>
 				<!-- <input id="btn" type="button" class="right" value=">"/> -->
-<!-- <<<<<<< HEAD -->
 				<div  class="right btn "></div>
-<!-- ======= -->
-				<!-- <div class="b_hover"><div  class="right btn"></div></div> -->
-<!-- >>>>>>> 9e00a13cf3515a63a8d5807e3e95900cc03c4732 -->
 			</div>
 
 
@@ -326,25 +322,15 @@
 
 </div>
 <script type="text/javascript">
-// <<<<<<< HEAD
 
 
 	// 左右反弹箭头
 	var btn=document.querySelector('.introduce_btn');
 	btn.onclick=function(e){
-// =======
-//	var btn=document.querySelector('.introduce_btn');
-//	btn.onclick=function(e){
-//		
-//	}
-/*		var b = document.querySelector('.details .content .con_left .introduce ul b');
-	b.onclick = function(e) {*/
-// >>>>>>> 9e00a13cf3515a63a8d5807e3e95900cc03c4732
 		e.preventDefault();
 		$(this).parent().toggleClass("one");
 		$(this).hasClass("b") ? $(this).removeClass("b").addClass("introduce_btn") : $(this).removeClass("introduce_btn").addClass("b")
 	}
-// <<<<<<< HEAD
 	
 	// 全文、收起
 	var oBtn=document.querySelectorAll(".details>.content>.con_left>.footer .btn");
@@ -362,18 +348,6 @@
 
 
 	// 热门、最新切换
-/*=======
-	var oBtn=document.querySelector(".details>.content>.con_left>.footer .b_hover .btn");
-	oBtn.onclick=function(e) {
-	  e.preventDefault();
-	  var t = $(this),
-	 
-	    n = t.parent().parent().siblings(".item");
-	    
-	    t.toggleClass("change");
-	  n.toggleClass("close");
-	}
->>>>>>> 9e00a13cf3515a63a8d5807e3e95900cc03c4732*/
 	var hot=document.querySelector(".hot");
 	var aUl=document.querySelector(".aUl");
 	hot.onclick=function(){
