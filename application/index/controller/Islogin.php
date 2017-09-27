@@ -13,6 +13,7 @@
 		{
 			parent::__construct();
 			$this->isLogin = Session::get('user_name')?Session::get('user_name'):'';
+			$this->assign('login',$this->isLogin);
 		}
 	}
 ?>

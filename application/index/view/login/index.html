@@ -41,7 +41,7 @@
 				                <div class="form-group">
 				                    <div class="form-item">
 					                    <input class="form-control" id="password" name="password" placeholder="密码" type="password" value="">
-										<p class="form-error errForPassword" style="margin-bottom: 0;padding-left: 0;"></p>
+										<p class="form-error errForPassword"></p>
 									</div>
 									<div class="err"></div>
 				                </div>
@@ -68,13 +68,12 @@
 			$('.signup #submit').click(function(){
 				var username = $('#identity').val();
 				var username = $('#password').val();
-				console.log(111111111)
 				if(!username || !username ){
 					alert('请输入账号内容！');
 					return;
 				}
 				$.post({
-					url: "../api/login/index",
+					url: "{:url('../../api/login/index')}",
 					data:{
 						username: $('#identity').val(),
 						password: $('#password').val()
@@ -83,18 +82,14 @@
 						data = JSON.parse(data);
 						console.log(data,data.status,data.status == 0)
 						if(data.status == 0){
-							window.location.href = '../'
+							window.location.href = "{:url('index')}";
 						}else{
-							$('.signup .errForPassword').text('帐号或密码错误！')
+							alert(data.message)
 						}
 					},
 
 				})
 			})
-			//获取焦点后清除错误信息
-			$(".signup input").focus(function(){
-			  $(".signup .form-error").text('');
-			});
 		})
 	</script>
 {include file="nav_foot/foot"}

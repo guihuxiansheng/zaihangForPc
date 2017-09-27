@@ -1,22 +1,22 @@
 .icon{
-	margin: -3px 0 0 5px;
     vertical-align: middle;
     font-size: 14px;
     display: inline-block;
     line-height: 1;
     &:empty {
-        width: 1em;
+        width: 2em;
     }
 }
 .icon-go{
 	position: relative;
+    height: 30px;
     &:before {
         content: "";
         position: absolute;
-        left: -2px;
-        top: 0;
+        left: 5px;
+        top: 12px;
         display: inline-block;
-        width: 50%;
+        width: 20%;
         height: 2px;
         background: #333;
         transform: rotate(45deg) translate(-50%);
@@ -24,10 +24,10 @@
     &:after {
         content: "";
         position: absolute;
-        left: -2px;
-        top: 0;
+        left: 5px;
+        top: 12px;
         display: inline-block;
-        width: 50%;
+        width: 20%;
         height: 2px;
         background: #333;
         transform: rotate(-45deg) translate(-50%);
@@ -48,7 +48,6 @@
         .category-body{
             padding: 0 20px;
             .contetn-left{
-                float: left;
                 ul{
                     float: left;
                     padding: 15px 0 0;
@@ -71,7 +70,7 @@
                             a{
                                 &.cur{
                                     position: relative;
-                                    z-index: 2;
+                                    z-index: 100;
                                     border: 1px solid #eaeaea;
                                     border-bottom: 1px solid transparent;
                                     background: #fff;
@@ -89,7 +88,7 @@
                             width: 100%;
                             border-top: 1px solid #eaeaea;
                             border-bottom: 1px solid #eaeaea;
-                            z-index: 1;
+                            z-index: 3;
                             ul{
                                 position: absolute;
                                 left: 0;
@@ -110,9 +109,6 @@
                     }
                     &:first-child li{
                         font-weight: 600;
-                        a{
-                            margin-right: 5px;
-                        }
                     }
                     &:nth-child(2){
                         width: 600px;
@@ -202,7 +198,7 @@
                         width: 100%;
                         border-top: 1px solid #eaeaea;
                         border-bottom: 1px solid #eaeaea;
-                        z-index: 1;
+                        z-index: 3;
                         ul{
                             position: absolute;
                             left: 0;
@@ -600,21 +596,19 @@
                  }
              }
         }
-        .content{
-            .list-filter{
-                ul{
-                    li{
-                        margin: 10px 2px;
-                        a{
-                            padding: 0 10px;
-                        }
+        .list-filter{
+            ul{
+                li{
+                    margin: 10px 2px;
+                    a{
+                        padding: 0 10px;
                     }
                 }
-                .city{
-                    margin: 10px 0;
-                    span{
-                        padding: 0 25px 0 15px;
-                    }
+            }
+            .city{
+                margin: 10px 0;
+                span{
+                    padding: 0 25px 0 15px;
                 }
             }
         }
@@ -642,6 +636,11 @@
                         }
                     }
                 }
+            }
+        }
+        .list-filter{
+            .city{
+                margin-right: 20px;
             }
         }
     }

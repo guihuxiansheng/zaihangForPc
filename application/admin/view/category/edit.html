@@ -1,0 +1,49 @@
+{include file="public/header"} 
+
+ 
+<div class="container mt-3">
+    
+     <div class="card">
+         <div class="card-body">
+             <div class="col-sm-4 text-center">
+                 <img src="http://media.zaih.com/Fh8J1Fi5s-dN1IasJlJ12wpJKOsa!avatar" alt="">
+                 <p>行家</p>
+             </div>
+             <div class="col-sm-8">
+                 <form action="{:url('save')}" method="post">
+                    <div class="form-group">
+                        <label >用户名</label>
+                        <input type="text" class="form-control"  name="user_name" value="{$info.user_name}">
+                    </div>
+                    <div class="form-group">
+                        <label >真实姓名</label>
+                        <input type="text" class="form-control" name="user_true_name" value="{info.user_true_name}">
+                    </div>
+                    <div class="form-group">
+                        <label >常住地址</label>
+                        <input type="text" class="form-control" name="user_address" value="{$info.user_address}">
+                    </div>
+                     <div class="form-group">
+                        <label >支付宝账户</label>
+                        <input type="text" class="form-control" name="user_alipay" value="{$info.user_alipay}">
+                    </div>
+                    <div class="form-group">
+                        <label >支付宝姓名</label>
+                        <input type="text" class="form-control" name="user_alipay_name" value="{$info.user_alipay_name}">
+                    </div>
+                     <div class="form-group">
+                        <label >简介</label>
+                        <textarea id="text_content" name="user_intro" id="" style="width:100%" value="{$info.user_intro}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" value="编辑" class="btn btn-warning" disabled="true">
+                        <input type="submit" value="提交" class="btn btn-info">
+                    </div>
+                 </form> 
+             </div>
+         </div>
+     </div>
+
+</div>
+    
+{include file="public/footer"}
