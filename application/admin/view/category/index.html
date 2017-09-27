@@ -1,0 +1,42 @@
+{include file="public/header"}
+<div class="container mt-3">
+    <a href="{:url('category/add')}" class="btn btn-info">添加用户</a>
+    <a href="{:url('category/index')}" class="btn btn-primary">用户管理</a>
+    <h2>课程管理界面</h2>
+    <div class="row">
+        <form action="" class="form ">
+            <div class="form-group">
+                <label >用户名</label>
+                <input type="text" placeholder="请输入用户名进行搜索" name="user_name">
+                <input type="submit" class="btn btn-info" value="搜索"></div>
+        </form>
+    </div>
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>类名</th>
+            <th>上一级编号</th>
+            <th>等级</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        {foreach $user_list as $value}
+        <tr>
+            <td>{$value['id']}</td>
+            <td>{$value['cate_name']}</td>
+            <td>{$value['pr_id']}</td>
+            <td>{$value['level']}</td>
+            <td>{$value['create_time']}</td>
+            <td>
+                <a href="{:url('detailed',['id'=>$value['id']])}" class="btn btn-info">详细</a>
+                <a href="{:url('edit',['id'=>$value['id']])}" class="btn btn-info">编辑</a>
+                <a href="{:url('delete',['id'=>$value['id']])}" class="btn btn-danger">删除</a>
+            </td>
+        </tr>
+        {/foreach}
+    </table>
+    <div>
+        {$user_list->render()}
+    </div>
+</div>
+{include file="public/footer"}

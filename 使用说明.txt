@@ -1,0 +1,1 @@
+拉回本地使用时，首先需要根据本地路径修改application下的config.php配置文件（将视图输出字符串内容替换view_replace-str的属性__STATIC_PATH__的路径改成本地路径）。有时候也需要修改database.php的数据库配置

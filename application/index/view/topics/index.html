@@ -1,51 +1,31 @@
 {include file="common/header"}
 {include file="nav_foot/nav"}
-<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?wqdrtdgryretyery">
 <div class="topics">
 	<div class="category">
 		<div class="content f5">
 			<div class="category-body clear-fix">
 				<div class="contetn-left">
 					<ul>
-						<li><a href="">职场发展</a><i class="icon icon-go"></i></li>
+						{foreach $cate as $k=>$val}
+						<li><a href="{:url('index').'?cate_id='.$val['id']}">{$val['cate_name']}</a><i class="icon icon-go"></i></li>
+						{/foreach}
 					</ul>
 					<ul>
+						{foreach $cate_list as $k=>$val}
 						<li>
-							<a href="">求职</a>
-						</li>
-						<li>
-							<a href="">职场晋升</a>
-						</li>
-						<li>
-							<a href="">职场转型</a>
-						</li>
-						<li>
-							<a href="">职业规划</a>
-						</li>
-						<li>
-							<a href="" class="cur">职场技能</a>
+							<a href="{:url('index').'?cate_id='.$val['id']}" class="{if isset($val['list'])}cur{/if}">{$val['cate_name']}</a>
+							{if isset($val['list'])}
 							<div class="cate-more">
 								<ul class="content">
-									<li><a href="">演讲</a></li>
-									<li><a href="">写作</a></li>
-									<li><a href="">沟通</a></li>
-									<li><a href="">人际交往</a></li>
-									<li><a href="">个人品牌</a></li>
-									<li><a href="">时间管理</a></li>
-									<li><a href="">办公软件</a></li>
-									<li><a href="">其他</a></li>
+									{foreach $val['list'] as $value}
+									<li><a href="{:url('index').'?cate_id='.$value['id']}">{$value['cate_name']}</a></li>
+									{/foreach}
 								</ul>	
 							</div>
+							{/if}
 						</li>
-						<li>
-							<a href="">经营管理</a>
-						</li>
-						<li>
-							<a href="">项目管理</a>
-						</li>
-						<li>
-							<a href="">全国通话</a>
-						</li>
+						{/foreach}
 					</ul>
 				</div>
 				<div class="content-right">
@@ -84,7 +64,7 @@
 			<div class="city">
 				<span>北京</span>
 				<ol>
-					<li><a><span>北京</span></a></li>
+					<li><a><span class="cur">北京</span></a></li>
 					<li><a><span>上海</span></a></li>
 					<li><a><span>深圳</span></a></li>
 					<li><a><span>广州</span></a></li>
@@ -99,48 +79,62 @@
 		<div class="list-content">
 			<ul>
 				<a href="{:url('/index/detail')}">
+					{foreach $topic[2] as $key=>$value}
 					<li class="clear-fix">
 						<div class="avatar"></div>
 						<div class="list-body">
 							<div class="list-head">
-								<div class="type f6">线上课</div><div class="title">线上课：熊课101 - 时间管理OS</div><div class="score"><span>9.3</span>分</div><i class="tips" title="该题分由在行系统算法综合学员的匿名评分以及多种因素得出，每增加三个评分，更新一次"></i>
+								 <div class="type f6">线上课</div><div class="title">{$value['topic_name']}</div><div class="score"><span>9.3</span>分</div><img class="tips" src="__STATIC_PATH__/static/topics/images/170920151653.png"><!-- 该题分由在行系统算法综合学员的匿名评分以及多种因素得出，每增加三个评分，更新一次-->
+							</div>
+							<div class="list-right">
+								<span>{$value['topic_price']}</span>元/次
 							</div>
 							<div class="list-msg">
-								<div class="name">陈华伟</div><div class="label">译者，CPA，小熊熊OS创始人</div>
+								<div class="name">{$value['uname']}</div><div class="label">译者，CPA，小熊熊OS创始人</div>
 							</div>
-							<div class="list-foot"><span class="seen">447</span>人见过，<span class="join">971</span>人参加线上课</div>
+							<div class="list-foot"><span><span class="seen">447</span>人见过</span><span>，<span class="join">971</span>人参加线上课</span></div>
 						</div>
-						<div class="list-right">
-							<span>494</span>元/次
-						</div>
+							
 					</li>
+					{/foreach}
 				</a>
 			</ul>
 		</div>
 	</div>
 	<div class="list-tabs">
 		<ul class="content">
+			{if $topic[0]>10}
 			<li class="tab-left"><a href="">&nbsp;</a></li>
-			<li><a href="">1</a></li>
+			<li class="{if $topic[1] == 1}cur{/if}"><a href="">1</a></li>
+			{/if}
+			{if $topic[1]>4}
 			<li class="ellipsis"><a href="">...</a></li>
-			<li><a href="">2</a></li>
-			<li class="cur"><a href="">3</a></li>
-			<li><a href="">4</a></li>
-			<li><a href="">5</a></li>
-			<li><a href="">6</a></li>
+			{/if}
+			<?php
+				for($i=$topic[1]-2;$i<=$topic[1]+2;$i++){
+					if($i>1 and $i*10<$topic[0]-20){
+						echo '<li class="ellipsis"><a href="">$i</a></li>';
+					}
+				}
+			?>
+			{if $topic[0]>$topic[1]*10+20}
 			<li class="ellipsis"><a href="">...</a></li>
+			{/if}
+			{if $topic[0]>$topic[1]*10+10}
 			<li class="tab-right"><a href="">&nbsp;</a></li>
+			{/if}
 		</ul>
 	</div>
 </div>
 <script type="text/javascript">
 	$(function(){
-		$('.topics .filter').click(function(){
-			if($(this).hasClass('cur')){
-				$(this).removeClass('cur');
+		$('.topics .filter a').click(function(){
+			if($(this).parent().hasClass('cur')){
+				$(this).parent().removeClass('cur');
 			}else{
-				$(this).addClass('cur');
+				$(this).parent().addClass('cur');
 			}
+			return false;
 			
 		});
 		$('.topics .list-filter .city>span').click(function(){

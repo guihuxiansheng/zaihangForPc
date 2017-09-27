@@ -1,0 +1,31 @@
+{include file="public/header"} 
+
+ 
+<div class="container mt-3">
+    <a href="{:url('user/add')}" class="btn btn-info">添加用户</a>
+    <a href="{:url('user/index')}" class="btn btn-primary">用户管理</a>
+    <h2>添加用户界面</h2>
+     <form action="{:url('save')}" method="post">
+        <div class="form-group">
+            <label >用户名</label>
+            <input type="text" class="form-control"  name="user_name">
+        </div>
+        <div class="form-group">
+            <label >密码</label>
+            <input type="text" class="form-control" name="user_pwd">
+        </div>
+        <div class="form-group">
+            <label >常住地址</label>
+            <input type="text" class="form-control" name="user_address">
+        </div>
+         <div class="form-group">
+            <label >简介</label>
+            <textarea id="text_content" name="user_intro" id="" style="width:100%" ></textarea>
+        </div>
+        <div class="form-group">
+             <input type="submit" value="添加" class="btn btn-info">
+        </div>
+     </form> 
+</div>
+    
+{include file="public/footer"}

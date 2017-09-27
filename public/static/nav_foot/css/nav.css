@@ -7,7 +7,7 @@
         format('svg'),url(ddfa3f61.tutor-icons.woff) 
         format('woff'),url(d7c26ff4.tutor-icons.ttf) 
         format('truetype')
-     }
+     	}
 	li{
 		list-style: none;
 	}
@@ -39,17 +39,15 @@
 		z-index: 999;
 		width: 100%;
 		height: 56px;
-		/*background: rgba(0,0,0,.7);*/
-		// background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));
-		background: rgba(52,52,52,.8);
+		background: rgba(0,0,0,.7);
+		/*background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));*/
+		/*background: rgba(52,52,52,.8);*/
 	}
-	.zaih_headerout .header,.mobile{
+	.zaih_headerout .header{
 		width: 100%;
 		color: #fff;
-		/*background: transparent;*/
-		position: fixed;
-		left: 0;
-		top: 0;
+		max-width: 1060px;
+		margin: auto;
 		clear: both;
 	}
 	.zaih_headerout .header_logo i{
@@ -88,9 +86,35 @@
 	    display: inline-block;
 	}
 	.zaih_headerout .header .header_more >a .icon_down{
-		display: inline-block;
-		transform: rotate(-90deg);
+		position: relative;
 	}
+	.zaih_headerout .header .header_more >a .icon_down:before{
+		position: absolute;
+		top: 50%;
+		right: -12px;
+		content:"";
+		width: 8px;
+		height: 1px;
+		background: #fff;
+		transform: rotate(-30deg);
+	}
+	.zaih_headerout .header .header_more >a .icon_down:after{
+		position: absolute;
+		top: 50%;
+		right: -5px;
+		content:'';
+		width: 8px;
+		height: 1px;
+		background: #fff;
+		transform: rotate(30deg);
+	}
+	.zaih_headerout .header .header_more:hover .icon_down:before{
+		background:  #ff946e;
+	}
+	.zaih_headerout .header .header_more:hover .icon_down:after{
+		background:  #ff946e;
+	}
+
 	.zaih_headerout .header .header_more .more_menu {
 	    height: 0;
 	    width: 80px;
@@ -190,7 +214,7 @@ form .search-sug {
 	/*登录模态框*/
 	.login_container{
 		position: fixed;
-		z-index: 2;
+		z-index: 1001;
 	}
 	.login_container .login_box{
 		width: 100%;
@@ -230,9 +254,24 @@ form .search-sug {
 		text-align: center;
 	}
 	/*自适应*/
-	@media (min-width: 770px) {
+
+	@media (min-width: 990px) {
 		.header,.zaih_headerout{
 			display: block;
+		}
+		.zaih_headerout .header .search,.zaih_headerout .header .header_setting a.tohangj{
+			display: block;
+		}
+		.mobile{
+			display: none;
+		}
+	}
+	@media (max-width: 989px) and (min-width: 769px) {
+		.header,.zaih_headerout{
+			display: block;
+		}
+		.zaih_headerout .header .search,.zaih_headerout .header .header_setting a.tohangj{
+			display: none;
 		}
 		.mobile{
 			display: none;
@@ -252,11 +291,18 @@ form .search-sug {
 	color: #fff;
 }
 
-
 	.mobile{
 		height: 80px;
-		position: absolute;
-		z-index: 3;
+		width: 100%;
+		color: #fff;
+		/*background: transparent;*/
+		position: fixed;
+		left: 0;
+		top: 0;
+		clear: both;
+		z-index: 999;
+		background: rgba(0,0,0,.7);
+		/* background: linear-gradient(rgba(52,52,52,.8),rgba(52,52,52,0));*/ 
 	}
 	.mobile .mobileBox{
 		position: absolute;
@@ -266,6 +312,7 @@ form .search-sug {
 	.mobile .mobileBox .header_logo i{
 		margin: 0 20px;
 		font-size: 32px;
+		color: #ff946e;
 	}
 	.mobile .mobileBox >a.btn{
 		float: right;
@@ -283,29 +330,55 @@ form .search-sug {
 	.mobile .mobileBox #mobileMenuBtn p:first-child{
 		margin-top: 15px;
 	}
-	.mobile .list{
-		line-height: 40px;
-		background: rgba(0,0,0,.6);
-		color: #948C8C;
-		position: absolute;
-		z-index: 2;
-		width: 100%;
+	.mobileList{
+		background: rgba(0,0,0,.9);
 		display: none;
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1000;
 	}
-	.mobile .list>p{
+	.mobileList>span{
 		margin: 0;
 		padding: 0;
-		text-align: right;
-		margin-right: 20px;s
-		font-size: 24px;
-		height: 40px;
-		color: #948C8C;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		line-height: 15px;
+		color: #b2b1b1;
+		font-size: 26px;
+		padding: 15px;
+		float: right;
+		cursor: pointer;
 	}
-	.mobile .list >a{
-		display: block;
-		height: 40px;
+	.mobileList .list{
 		line-height: 40px;
-		font-size: 24px;
-		border-bottom: 1px solid #948C8C;
+		background: rgba(0,0,0,.9);
+		position: absolute;
+	    top: 45px;
+	    bottom: 0;
 		color: #948C8C;
+		z-index: 2;
+		width: 100%;
+		overflow-y: auto;
+	}
+	.mobileList .list li{
+		height: 50px;
+		border-bottom: 1px solid #948C8C;
+	}
+	.mobileList .list li>a:hover{
+		/*background: rgba(0,0,0,.1);*/
+		color: #ff946e;
+	}
+	.mobileList .list li>a{
+		display: block;
+		height: 100%;
+		line-height: 50px;
+		font-size: 22px;
+		text-align: center;
+		/*border-bottom: 1px solid #948C8C;*/
+		color: #b2b1b1;
 	}

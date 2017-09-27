@@ -1,8 +1,7 @@
 <?php
 	namespace app\index\controller;
-	use \think\Controller;
 
-	class Personalinfo extends Controller
+	class Personalinfo extends Islogin
 	{
 		public function index()
 		{
