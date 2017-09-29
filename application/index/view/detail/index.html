@@ -22,7 +22,19 @@
 						<div class="center">
 							<p>预约</p>
 
-							<label for="topic_1">
+
+
+					{foreach $topicinfo as $key => $value}
+							<label for="topic_{$key}">
+								<div class="topicli radio">
+									<span class="topicdetail fleft">{$value.topic_name}</span>
+									<span class="topicdetail fright">{$value.topic_price}元/次<br>{$value.topic_time}左右</span>
+								</div>
+							</label>
+							<input type="radio" checked="checked" value="{$value.id}" name="topic_id" id="topic_{$key}" style="display: none;">
+					{/foreach}
+
+<!-- 							<label for="topic_1">
 								<div class="topicli radio select">
 									<span class="topicdetail fleft">我是话题哈哈哈哈哈哈哈1</span>
 									<span class="topicdetail fright">390元/次<br>1.5小时左右</span>
@@ -44,7 +56,7 @@
 									<span class="topicdetail fright">390元/次<br>1.5小时左右</span>
 								</div>
 							</label>
-							<input type="radio" name="topic_id" id="topic_3" style="display: none;">
+							<input type="radio" name="topic_id" id="topic_3" style="display: none;"> -->
 
 							<p>时间地点选择</p>
 							<div class="topicli select">
@@ -54,9 +66,9 @@
 							<div class="line"></div>
 
 							<p>告诉行家你要请教的问题：（20-300字）</p>
-							<textarea class="meet_question" name="" id="" cols="30" rows="10">111</textarea>
+							<textarea class="meet_question" name="" id="" cols="30" rows="10"></textarea>
 							<p>介绍自己当前的情况：（20-300字）</p>
-							<textarea class="meet_situation" name="" id="" cols="30" rows="10">222</textarea>
+							<textarea class="meet_situation" name="" id="" cols="30" rows="10"></textarea>
 
 						</div>
 
@@ -82,12 +94,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="header">
+	<div class="header headerbackground">
 	</div>
 	<div class="content">
+		<?php
+		var_dump($topicinfo)
+		?>           
+
 		<div class="left con_left">
 			<div class="logo">
-				<img src="//media.zaih.com/FhL64PQrzgRa5bvIh4K4Li1Hq_FT55!avatar" alt="刘艳蓉">
+				<img src="__STATIC_PATH__/{$user_headpic_temp}" alt="刘艳蓉">
 			</div>
 			<div class="introduce">
 
@@ -98,7 +114,7 @@
 						<span class="red">半天</span>内回应
 					</li>
 					<li>
-						<span class="red">11</span>人见过
+						<span class="red">{$info.exp_meetcount}</span>人见过
 					</li>
 					<li>
 						<span class="red">66</span>人想见
@@ -111,7 +127,7 @@
 					</b>
 				</ul>
 				
-				<p>{$info.exp_city_id} <span>{$info.exp_place}</span></p>
+				<p>{$info.place_name} <span>{$info.exp_place}</span></p>
 			</div>
 
 
@@ -123,9 +139,17 @@
  						￥<span style="font-size: 18px; "> {$value.topic_price} </span>/次
 					</span>
 					<span class="right" >
- 						<span style="font-size: 18px;">9.8</span>分<b>!</b>
+ 						{if isset($value['topic_score'])}
+							<span style="font-size: 18px;">{$value.topic_score}</span>分
+						{else}
+							评分数量不足，暂无总分
+						{/if}
+						<b>!</b>
 					</span>
 				</div>
+
+
+						   
 				<h2>{$value.topic_name}</h2>
 
 				<p>{$value.topic_outline}</p>
@@ -144,15 +168,27 @@
 				<p>PS.{$value.topic_ps}</p>
 				<div class="share">
 					<strong>分享话题：</strong>
-					<img src="images/火狐截图_2017-09-15T11-01-45_03.png" alt="" />
-					<img src=""/>
+					<img src="__STATIC_PATH__/static/expertreal/image/weibo1.png" style="width: 23px;height: 23px;cursor: pointer;" alt="" />
+					<img src="__STATIC_PATH__/static/expertreal/image/weixin1.png" style="width: 23px;height: 23px;cursor: pointer;" />
 				</div>
 				
 			</div>
 			<div class="footer">
 				<ul class="left">
 					<li>约<span>{$value.topic_time}</span></li>
-					<li><span>8</span>人约过</li>
+					<li>
+						<span>
+	 						{if isset($value['topic_meet_count'])}
+								{$value.topic_meet_count}
+							{else}
+								0
+							{/if}
+						</span>
+						人约过
+					</li>
+
+
+
 				</ul>
 				<div  class="right btn " style="cursor: pointer;"></div>
 			</div>
@@ -160,7 +196,7 @@
 
 
 			<!-- 话题 -->
-			<div class="item  close">
+<!-- 			<div class="item  close">
 				<div class="price">
 					<span>
  						￥<span style="font-size: 18px; "> 500 </span>/次
@@ -197,7 +233,7 @@
 					<li><span>8</span>人约过</li>
 				</ul>
 				<div  class="right btn "></div>
-			</div>
+			</div> -->
 
 
 
@@ -216,7 +252,8 @@
 			<div class="r_top">
 				分享：
 				<a href=""><i class="icon icon-weibo"></i></a>
-				<a href=""><img src="images/火狐截图_2017-09-15T11-01-45_04.png" /></a>
+				<a href=""><img src="__STATIC_PATH__/static/expertreal/image/weibo1.png" style="width: 30px;height: 30px;cursor: pointer;" /></a>
+				<a href=""><img src="__STATIC_PATH__/static/expertreal/image/weixin1.png" style="width: 30px;height: 30px;cursor: pointer;" /></a>
 			</div>
 			
 			<div class="r_btn">
@@ -228,7 +265,7 @@
 				<li>
 					<a href="">
 						<div class="item">
-							<img src="images/火狐截图_2017-09-15T11-01-45_08.png" class="left" />
+							<img src="__STATIC_PATH__{$commentinfo[0]['user_head_pic']}" class="left" />
 							<div class="left commend f5">
 								<h4>HR高阶教程：如何真正成为业务伙伴</h4>
 								<p class="name">张少林<span>北京</span></p>
@@ -238,6 +275,7 @@
 						<p class="p_recommend">张少林老师是资深管理专家，20余年HR行业经验，在互联网IT行业久负盛名，拥有一切管理问题的答案。</p>
 					</a>
 				</li>
+
 			</ul>
 		</div>
 	</div>
@@ -258,13 +296,36 @@
 				</ul>
 			</div>
 			<ul class="student_review">
+
+
+{foreach $commentinfo as  $key => $vo} 
+
 				<li>
+					<img style="width: 50px;height: 50px;border-radius: 100%;" src="__STATIC_PATH__/{$vo.user_head_pic}" class="left" />
+					<div class="left content" style="width: 100%;">
+						<h4>{$vo.user_true_name}</h4>
+						<p>{$vo.meet_comment}</p>
+					</div>
+					<p class="item" >参与话题：{$vo.topic_name}</p>
+
+					<div class="footer f6">
+						<div class="discuss_time left">{$vo.meet_commenttime}</div>
+						<input type="button" name="" id="" class="right" value="有用" />
+					</div>
+				</li>
+
+{/foreach}
+
+
+
+
+				<!-- <li>
 					<img src="images/火狐截图_2017-09-15T11-01-45_16.png" class="left" />
 					<div class="left content">
 						<h4>名字</h4>
 						<p>地产代理公司@hr，感谢王弢老师利用周末到公司交流和指导，就人才盘点和组织发展给了系统的指导，希望今后还能有持续交流的机会！</p>
 					</div>
-					<p class="item">参与话题：企业人才盘点</p>
+					<p class="item" style="display: block;">参与话题：企业人才盘点</p>
 
 					<div class="footer f6">
 						<div class="discuss_time left">20170915</div>
@@ -283,7 +344,8 @@
 						<div class="discuss_time left">20170915</div>
 						<input type="button" name="" id="" class="right" value="有用" />
 					</div>
-				</li>
+				</li> -->
+
 				<input type="button" value="加载更多" class="btn" />
 			</ul>
 			<div class=" con_right">
@@ -302,7 +364,7 @@
 					<li>
 						<a href="">
 							<div class="item">
-								<img src="images/火狐截图_2017-09-15T11-01-45_08.png" class="left" />
+								<img src="" class="left" />
 								<div class="left commend f5">
 									
 									<p  class="name">张少林<span>上海擅美广告创意合伙人</span></p>
@@ -320,7 +382,10 @@
 
 </div>
 <script type="text/javascript">
-
+	//修改顶端背景图
+	$(".headerbackground").css({ "backgroundImage": "url(__STATIC_PATH__/static/detail/images/detailtopbackground.jpg)"});
+	$(".headerbackground").css({ "backgroundSize": "100% auto"});
+	$(".headerbackground").css({ "backgroundPosition": "0% 70%"});
 
 	// 左右反弹箭头
 	var btn=document.querySelector('.introduce_btn');
@@ -380,8 +445,8 @@
 		   		meet_situation:$('.meet_situation').val()
 		   },
 		   success: function(msg){
-		     alert( "Data Saved: " + msg );
-		     console.log(msg)
+		     // alert( "Data Saved: " + msg );
+		     // console.log(msg)
 		   }
 		});
 		$(".appointmentBox .beforesubmit").hide();

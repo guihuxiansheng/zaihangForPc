@@ -3,6 +3,9 @@
 	padding: 0px;
 	list-style: none;
 }
+a:hover{
+	color:#FF946E;
+}
 /*头部*/
 .zr_header{
 	width: 100%;
@@ -13,6 +16,7 @@
 	top: 0;
 }
 /*底部*/
+/*已经注释掉*/
 .footer{
 	width: 100%;
 	height: 395px;
@@ -24,7 +28,7 @@
 /*容器*/
 .zr_container{
 	width: 100%;
-	min-height: 1200px;
+	min-height: 100px;
 	margin-top: 56px;
 	background-color: #fafafa;	
 	padding: 30px 0px;
@@ -121,24 +125,294 @@
 	font-size: 14px;
 	background: #FFFFFF;
 }
-.appointmentHtml .appointmentHtml_zr_header p{
+/*没有行家时*/
+.appointmentHtml .noHangjia{
+	display: block;
+	border: 1px solid #CCCCCC;
+	background: #FFFFFF;
+}
+.appointmentHtml .noHangjia .appointmentHtml_zr_header p{
 	width: 100%;
 	padding: 10px 30px;
 	border-bottom: 1px solid #CCCCCC;
 	box-sizing: border-box;
 }
-.appointmentHtml .appointmentHtml_zr_container p{
+.appointmentHtml .noHangjia .appointmentHtml_zr_container p{
 	width: 100%;
 	padding: 70px 0px;
 	text-align: center;
 	/*border: 1px solid #CCCCCC;*/
 	box-sizing: border-box;
 }
-.appointmentHtml .appointmentHtml_zr_container p a{
+.appointmentHtml .noHangjia .appointmentHtml_zr_container p a{
 	text-decoration: none;
 	color: #ff946e;
 	cursor: pointer;
 }
+/*有行家时*/
+.appointmentHtml .haveHangjia{
+	display: block;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 20px;
+	background: #FFFFFF;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_header p .bianhao{
+	margin-right: 20px;
+}
+
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container {
+	padding: 0px 30px;
+	overflow: hidden;
+}
+.appointmentHtml .haveHangjia .lookMove_box {
+	display: none;
+	border-top: 1px solid #CCCCCC;
+	padding:20px 30px;		
+}
+/*关于问题*/
+.appointmentHtml .haveHangjia .lookMove_box .aboutWenti{
+	border-bottom: 2px dashed #CCCCCC;
+	padding: 0px 0px 10px 0px;
+}
+.appointmentHtml .haveHangjia .lookMove_box .aboutWenti p{
+	padding: 5px 0px;
+}
+.appointmentHtml .haveHangjia .lookMove_box .aboutWenti p:nth-child(1){
+	font-weight: bold;
+}
+/*关于个人*/
+.appointmentHtml .haveHangjia .lookMove_box .aboutGeren{
+	padding: 10px 0px 0px 0px;
+}
+.appointmentHtml .haveHangjia .lookMove_box .aboutGeren p{
+	padding: 5px 0px;
+}
+.appointmentHtml .haveHangjia .lookMove_box .aboutGeren p:nth-child(1){
+	font-weight: bold;
+}
+
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word{
+	width: 400px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	float: left;
+	padding: 20px 0px;
+	overflow: hidden;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word img{
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+	float: left;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word .topic_word{
+	float: left;
+	margin-left: 10px;
+	padding: 10px 0px;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word .topic_word h2{
+	font-weight: normal;
+	padding: 2px 0px;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word .topic_word p{
+	padding: 2px 0px;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .money{
+	width: 85px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	border-left: 1px solid #CCCCCC;
+	float: left;
+	line-height: 85px;
+	text-align: center;
+	padding: 20px 0px;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .status{
+	width: 130px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 85px;
+	text-align: center;
+	padding: 20px 0px;
+	border-left: 1px solid #CCCCCC;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .lookMore{
+	width:100px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 85px;
+	text-align: center;
+	padding: 20px 0px;
+	border-left: 1px solid #CCCCCC;
+}
+.appointmentHtml .haveHangjia .appointmentHtml_zr_container .lookMore a{
+	cursor: pointer;
+	margin-left: 42px;
+}
+
+
+/*预约单*/
+/*id=appointmentHtml*/
+.yuyueListHtml{
+	font-size: 14px;
+	background: #FFFFFF;
+}
+/*没有行家时*/
+.yuyueListHtml .noHangjia{
+	display: block;
+	border: 1px solid #CCCCCC;
+	background: #FFFFFF;
+}
+.yuyueListHtml .noHangjia .appointmentHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.yuyueListHtml .noHangjia .appointmentHtml_zr_container p{
+	width: 100%;
+	padding: 70px 0px;
+	text-align: center;
+	/*border: 1px solid #CCCCCC;*/
+	box-sizing: border-box;
+}
+.yuyueListHtml .noHangjia .appointmentHtml_zr_container p a{
+	text-decoration: none;
+	color: #ff946e;
+	cursor: pointer;
+}
+/*有行家时*/
+.yuyueListHtml .haveHangjia{
+	display: block;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 20px;
+	background: #FFFFFF;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_header p{
+	width: 100%;
+	padding: 10px 30px;
+	border-bottom: 1px solid #CCCCCC;
+	box-sizing: border-box;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_header p .bianhao{
+	margin-right: 20px;
+}
+
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container {
+	padding: 0px 30px;
+	overflow: hidden;
+}
+.yuyueListHtml .haveHangjia .lookMove_box {
+	display: none;
+	border-top: 1px solid #CCCCCC;
+	padding:20px 30px;		
+}
+/*关于问题*/
+.yuyueListHtml .haveHangjia .lookMove_box .aboutWenti{
+	border-bottom: 2px dashed #CCCCCC;
+	padding: 0px 0px 10px 0px;
+}
+.yuyueListHtml .haveHangjia .lookMove_box .aboutWenti p{
+	padding: 5px 0px;
+}
+.yuyueListHtml .haveHangjia .lookMove_box .aboutWenti p:nth-child(1){
+	font-weight: bold;
+}
+/*关于个人*/
+.yuyueListHtml .haveHangjia .lookMove_box .aboutGeren{
+	border-bottom: 2px dashed #CCCCCC;
+	padding: 10px 0px 10px 0px;
+}
+.yuyueListHtml .haveHangjia .lookMove_box .aboutGeren p{
+	padding: 5px 0px;
+}
+.yuyueListHtml .haveHangjia .lookMove_box .aboutGeren p:nth-child(1){
+	font-weight: bold;
+}
+/*关于见面*/
+.yuyueListHtml .haveHangjia .lookMove_box .aboutLocaltion{
+	padding: 10px 0px 0px 0px;
+}
+.yuyueListHtml .haveHangjia .lookMove_box .aboutLocaltion p{
+	font-weight: bold;
+	padding: 5px 0px;
+}
+.yuyueListHtml .haveHangjia .lookMove_box .aboutLocaltion p span{
+	font-weight: normal;
+}
+
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word{
+	width: 400px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	float: left;
+	padding: 20px 0px;
+	overflow: hidden;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word img{
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+	float: left;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word .topic_word{
+	float: left;
+	margin-left: 10px;
+	padding: 10px 0px;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word .topic_word h2{
+	font-weight: normal;
+	padding: 2px 0px;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .img_topic_word .topic_word p{
+	padding: 2px 0px;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .money{
+	width: 85px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	border-left: 1px solid #CCCCCC;
+	float: left;
+	line-height: 85px;
+	text-align: center;
+	padding: 20px 0px;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .status{
+	width: 130px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 85px;
+	text-align: center;
+	padding: 20px 0px;
+	border-left: 1px solid #CCCCCC;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .lookMore{
+	width:100px;
+	min-height: 85px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 85px;
+	text-align: center;
+	padding: 20px 0px;
+	border-left: 1px solid #CCCCCC;
+}
+.yuyueListHtml .haveHangjia .appointmentHtml_zr_container .lookMore a{
+	cursor: pointer;
+	margin-left: 42px;
+}
+
+
+
+
 /*id=wantListHtml*/
 .wantListHtml{
 	font-size: 14px;
