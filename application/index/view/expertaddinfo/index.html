@@ -394,10 +394,10 @@
 					traditional: true,
 					success: function(data){
 						data = JSON.parse(data);
-						console.log(data);
+						// console.log(data);
 						
 						if(data.status==10){
-							window.location.href = '../index'
+							window.location.href = "{:url('/index/expertaddtop/index')}"
 						}else{
 							ErrorShow(data);
 						}

@@ -10,11 +10,11 @@
 		function __construct()
 		{
 			parent::__construct();
-			$login = Session::get('manage_user')?Session::get('manage_user'):'';
-			if(empty($login)){
-				header("location:".url('/admin/login'));
-				exit();
-			}
+			// $login = Session::get('manage_user')?Session::get('manage_user'):'';
+			// if(empty($login)){
+			// 	header("location:".url('/admin/login'));
+			// 	exit();
+			// }
 		}
 	}
 ?>
