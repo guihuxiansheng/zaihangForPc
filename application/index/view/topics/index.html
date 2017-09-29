@@ -1,6 +1,6 @@
 {include file="common/header"}
 {include file="nav_foot/nav"}
-<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?wqdrtdgrdfgdfyretyery">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/topics/less/topics.css?mnhjjm">
 <div class="topics">
 	<div class="category">
 		<div class="content f5">
@@ -34,16 +34,16 @@
 						<div class="cate-more">
 								<ul class="content">
 									<li>价格</li>
-									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=300&price_floor=0'}">0-300</a></li>
-									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=600&price_floor=301'}">301-600</a></li>
-									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=1000&price_floor=601'}">601-1000</a></li>
-									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_floor=1001'}">1000以上</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=300&price_floor=0'}" class="{if $topic[3]==0 && $topic[4] == 300}cur{/if}">0-300</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=600&price_floor=301'}" class="{if $topic[3]==301 && $topic[4] == 600}cur{/if}">301-600</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_cap=1000&price_floor=601'}" class="{if $topic[3]==601 && $topic[4] == 1000}cur{/if}">601-1000</a></li>
+									<li><a href="{:url('index').'?cate_id='.end($cate)['id'].'&price_floor=1001'}" class="{if $topic[3] == 1001 && $topic[4]=='' }cur{/if}">1000以上</a></li>
 									<li>
 										<form action="{:url('index')}" >
 											<input type="hidden" name="cate_id" value="{:end($cate)['id']}">
-											<input type="text" name="price_floor" placeholder="起始价格">
+											<input type="text" name="price_floor" placeholder="起始价格" value="{if ($topic[3] != 0 or $topic[4] != 300) && ($topic[3] != 301 or $topic[4] != 600) && ($topic[3] != 601 or $topic[4] != 1000) && ($topic[3] != 1001 or $topic[4] != '')}{$topic[3]}{/if}">
 											<span>一</span>
-											<input type="text" name="price_cap" placeholder="终止价格">
+											<input type="text" name="price_cap" placeholder="终止价格" value="{if ($topic[3] != 0 or $topic[4] != 300) && ($topic[3] != 301 or $topic[4] != 600) && ($topic[3] != 601 or $topic[4] != 1000) && ($topic[3] != 1001 or $topic[4] != '')}{$topic[4]}{/if}">
 											<button type="submit">确定</button>
 										</form>
 									</li>
@@ -57,17 +57,21 @@
 	<div class="content">
 		<div class="list-filter">
 			<ul>
-				<li><a href="">综合排序</a></li>
-				<li><a href="">见过最多</a></li>
-				<li><a href="">评分最高</a></li>
-				<li><a href="">发布时间</a></li>
-				<li><a href="">价格</a></li>
+				<li><a href="{:url('index').'?cate_id=1&city='.$city.($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'')}">综合排序</a></li>
+				<li><a href="{:url('index').'?cate_id=1&city='.$city.($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'')}">见过最多</a></li>
+				<li><a href="{:url('index').'?cate_id=1&city='.$city.($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'')}">评分最高</a></li>
+				<li><a href="{:url('index').'?cate_id=1&city='.$city.($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'').'&sort=published-desc'}" class="{if $topic[5] == 'published-desc'}cur{/if}">发布时间</a></li>
+				<li><a href="{:url('index').'?cate_id=1&city='.$city.($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'').'&sort='.($topic[5] == 'reward-asc'?'reward-desc':'reward-asc')}" class="{if $topic[5] == 'reward-desc' or $topic[5] == 'reward-asc'}cur{/if}">价格<span class="{if $topic[5] == 'reward-desc'}cur{/if}"></span></a></li>
 			</ul>
 			<div class="city">
-				<span>{$city}</span>
+				{foreach $city_list as $k=>$val}
+				{if $val['place'] == $city}
+				<span>{$val['place_name']}</span>
+				{/if}
+				{/foreach}
 				<ol>
 					{foreach $city_list as $k=>$val}
-					<li><a href="{:url('index').'?cate_id=1&city='.$val['place']}"><span class="{if ($val.place_name == $city)}cur{/if}">{$val.place_name}</span></a></li>
+					<li><a href="{:url('index').'?cate_id=1&city='.$val['place'].($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'').($topic[5]!=''?'&sort='.$topic[5]:'')}"><span class="{if ($val.place_name == $city)}cur{/if}">{$val.place_name}</span></a></li>
 					{/foreach}
 				</ol>
 			</div>
@@ -100,10 +104,10 @@
 	<div class="list-tabs">
 		<ul class="content">
 			{if $topic[1]>1}
-			<li class="tab-left"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city=beijing&page='.($topic[1]-1)}">&nbsp;</a></li>
+			<li class="tab-left"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city='.$city.'&page='.($topic[1]-1).($topic[5]!=''?'&sort='.$topic[5]:'')}">&nbsp;</a></li>
 			{/if}
 			{if $topic[0]>10}
-			<li class="{if $topic[1] == 1}cur{/if}"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city=beijing&page=1'}">1</a></li>
+			<li class="{if $topic[1] == 1}cur{/if}"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city='.$city.'&page=1'.($topic[5]!=''?'&sort='.$topic[5]:'')}">1</a></li>
 			{/if}
 			{if $topic[1]>4}
 			<li class="ellipsis"><a href="">...</a></li>
@@ -115,7 +119,7 @@
 						if($topic[1] == $i){
 							$str = 'cur';
 						}
-						echo '<li class="'.$str.'"><a href="?cate_id='.end($cate)['id'].'&city=beijing&page='.$i.'">'.$i.'</a></li>';
+						echo '<li class="'.$str.'"><a href="?cate_id='.end($cate)['id'].'&city='.$city.'&page='.$i.($topic[5]!=''?'&sort='.$topic[5]:'').'">'.$i.'</a></li>';
 					}
 				}
 			?>
@@ -123,7 +127,7 @@
 			<li class="ellipsis"><a href="">...</a></li>
 			{/if}
 			{if $topic[0]>$topic[1]*10}
-			<li class="tab-right"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city=beijing&page='.($topic[1]+1)}">&nbsp;</a></li>
+			<li class="tab-right"><a href="{:url('index').'?cate_id='.end($cate)['id'].'&city='.$city.'&page='.($topic[1]+1).($topic[5]!=''?'&sort='.$topic[5]:'')}">&nbsp;</a></li>
 			{/if}
 		</ul>
 	</div>

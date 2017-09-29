@@ -1,9 +1,15 @@
 <?php
 	namespace app\index\controller;
 	use \think\Controller;
-
+	use think\Session;
 	class Personalinfo extends Islogin
 	{
+		protected $user; 
+		function __construct(){
+			parent::__construct();
+			$this->assign('login',$this->isLogin);
+			$this->user = Session::get('user_name');
+		}
 		public function index()
 		{
 			$id = 12;

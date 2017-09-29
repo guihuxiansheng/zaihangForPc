@@ -235,8 +235,8 @@ form .search-sug {
 	.login_container .login_box .login{
 		background: #f4f4f4;
 		position: absolute;
-		left: 50%;
-		top: 50%;
+		left: 40%;
+		top: 20%;
 		margin-left: -50px;
 		margin-top: -50px;
 		border-radius: 6px;
@@ -382,3 +382,156 @@ form .search-sug {
 		/*border-bottom: 1px solid #948C8C;*/
 		color: #b2b1b1;
 	}
+
+/*登陆窗口*/
+#loginWin .single-white-wrap{
+	border: 1px solid #e8e8e8;
+    padding: 40px;
+    background: #fff;
+    text-align: center;
+}
+#loginWin .single-white-wrap p{
+	margin-bottom: 18px;
+    font-size: 38px;
+    padding-left: 20px;
+}
+
+
+#loginWin .single-white-wrap .signup-panel{
+    width: 290px;
+    margin: 0 auto;	
+}
+#loginWin .single-white-wrap .signup-panel .signup-tip{
+	font-size: 100%;
+}
+#loginWin .single-white-wrap .signup-panel .form-group{
+    position: relative;
+    margin-bottom: 20px;	
+}
+#loginWin .single-white-wrap .signup-panel .form-group .form-item{
+    position: relative;
+    display: inline-block;	
+}
+#loginWin .single-white-wrap .signup-panel form input {
+    /*width: 300px;*/
+    width: 290px;
+    padding: 7px;
+    height: 36px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: none;    
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+#loginWin .single-white-wrap .signup-panel form span {
+	margin-right: 15px;
+}
+#loginWin .single-white-wrap .signup-panel form .form-error{
+	margin-top: -26px;
+    margin-left: 5px;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 12px;
+    color: #ff946e;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    display: block;    
+}
+#loginWin .single-white-wrap .signup-panel form #captcha {
+    width: 180px;
+    margin-right: 5px;
+}
+. form .btn-default {
+    vertical-align: middle;
+}
+#loginWin .single-white-wrap .signup-panel form img {
+    border: 0;
+    width: 100px;
+}
+
+
+#loginWin .single-white-wrap .signup-panel form .deal {
+    font-size: 12px;
+}
+
+#loginWin .single-white-wrap .signup-panel form .btn-submit {
+    border: 1px solid #ff946e;
+    color: #ff946e;
+}
+#loginWin .single-white-wrap .signup-panel .btn-complete-register {
+    margin-top: 30px;
+}
+#loginWin .single-white-wrap .signup-panel form .to-login {
+    margin-top: 15px;
+    padding-top: 8px;
+    border-top: 1px solid #e8e8e8;
+}
+
+
+
+#loginWin .single-white-wrap .signup-panel .login-weibo {
+    margin-bottom: 20px;
+    float: left;
+    margin-left: 20px;
+    background: #f50505;
+    border: 1px solid #f50505;
+}
+#loginWin .single-white-wrap .signup-panel .login-weixin {
+    margin-bottom: 20px;
+    background: #619619;
+    border: 1px solid #619619;
+}
+#loginWin .single-white-wrap .signup-panel .login-baidu {
+    margin-bottom: 20px;
+    float: right;
+    margin-right: 20px;
+    background: #4d67eb;
+    border: 1px solid #4d67eb;
+}
+#loginWin .single-white-wrap .signup-panel .login-baidu, 
+#loginWin .single-white-wrap .signup-panel .login-weibo,
+#loginWin .single-white-wrap .signup-panel .login-weixin {
+    height: 46px;
+    width: 46px;
+    line-height: 46px;
+    border-radius: 50%;
+    display: inline-block;
+}
+#loginWin .single-white-wrap .signup-panel .login-baidu .icon, #loginWin .single-white-wrap .signup-panel .login-phone .icon, #loginWin .single-white-wrap .signup-panel .login-weibo .icon, #loginWin .single-white-wrap .signup-panel .login-weixin .icon {
+    color: #fff;
+    vertical-align: middle;
+    margin-top: -5px;
+    font-size: 30px;
+}
+#loginWin .single-white-wrap .signup-panel .login-phone, #loginWin .single-white-wrap .signup-panel form .btn-submit {
+    border: 1px solid #ff946e;
+    color: #ff946e;
+    box-sizing: border-box;
+    line-height: 0px;
+}
+
+#loginWin .single-white-wrap .signup-panel .phone-login {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#loginWin .single-white-wrap .signup-panel .phone-login .to-resetpassword {
+    float: right;
+}
+#loginWin .single-white-wrap .signup-panel .phone-login .to-signup {
+    float: left;
+}
+#loginWin .single-white-wrap .signup-panel .phone-login .to-resetpassword, #loginWin .single-white-wrap .signup-panel .phone-login .to-signup {
+    padding: 15px 0;
+    display: inline-block;
+    font-size: 100%;
+}
+#loginWin .single-white-wrap .signup-panel .phone-login .to-resetpassword a, #loginWin .single-white-wrap .signup-panel .phone-login .to-signup a {
+    color: #ff946e;
+}

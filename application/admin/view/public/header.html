@@ -49,6 +49,9 @@
 .en-markup-crop-options div div:first-of-type {
     margin-left: 0px !important;
 }
+.page-content>.container{
+    width: 100%;
+}
 </style>
 </head>
             <!-- END HEAD -->
@@ -128,6 +131,15 @@
                                     <a href="{:url('category/index')}" class="nav-link nav-toggle">
                                         <i class="icon-bell"></i>
                                         <span class="title">分类管理</span>
+
+                                    </a>
+
+                                </li>
+                                <li class="nav-item <?php echo  is_active('special','active');?>
+                                    ">
+                                    <a href="{:url('special/index')}" class="nav-link nav-toggle">
+                                        <i class="icon-bell"></i>
+                                        <span class="title">专题管理</span>
 
                                     </a>
 

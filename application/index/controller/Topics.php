@@ -9,8 +9,8 @@
 			$city = $model->findCity();
 			$cate = $model->getCate();
 			$cate_list = $model->getCateNext();
-			$topic = $model->getTopic($city);
-			$this->assign('city',$city);
+			$topic = $model->getTopic($city[1]);
+			$this->assign('city',$city[0]);
 			$this->assign('cate',$cate);
 			$this->assign('cate_list',$cate_list);
 			$this->assign('topic',$topic);
