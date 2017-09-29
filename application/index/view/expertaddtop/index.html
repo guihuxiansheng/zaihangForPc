@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>添加话题</title>
+{include file='common/header'}
+{include file='nav_foot/nav'}
 	<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddtop/css/add_subject.css">
-</head>
-<body>
 	<div class="container">
 		<div class="content">
 			<div class="sticky-wrapper" id="sticky-wrapper" style="height: 100px;">
@@ -28,59 +23,73 @@
 					<p class="step-tip">恭喜，只差最后一步啦，添加话题大约需要5-10分钟时间，请保持耐心哦</p>
 				</div>
 
-				<form id="formWrap" class="main">
+				<form id="formTop" class="main">
 					
 					<div class="apply-form" id="topicForm">
 
 						<div class="form-group" data-required="required">
-					        <input name="topic_title" type="text" maxlength="20" placeholder="话题名称：提炼话题的核心要点，方便学员筛选，最少5字" value="">
+					        <input name="topic_title" type="text" maxlength="20" placeholder="话题名称：提炼话题的核心要点，方便学员筛选，最少5字" value="" id="title">
 					        <!-- <span class="form-range"><i>0</i>/20</span> -->
-					        <span class="form-error"></span>
+					        <span class="form-error Errtitle"></span>
+					    </div>
+						
+						<div class="form-group" data-required="required">
+					        <select autofocus="" name="topic_duration" placeholder="行业类型" id="cateid">
+					        	<option value="">请选择：类型</option>
+					        	{foreach $category as $value}
+						        	{foreach $value as $val}
+					            		<option value="{$val['id']}">{$val['cate_name']}</option>
+					            	{/foreach}
+				            	{/foreach}
+					        </select>
+					        <span class="form-error Errcat"></span>
 					    </div>
 
 						<div class="form-group" data-required="required">
-					        <select autofocus="" name="topic_duration" placeholder="大致时长">
+					        <select autofocus="" name="topic_duration" placeholder="大致时长" id="holdtime">
 					            <option value="">请选择：大致时长</option>
-					            <option value="30">0.5小时</option>
-					            <option value="60" selected="">1小时</option>
-					            <option value="90">1.5小时</option>
-					            <option value="120">2小时</option>
-					            <option value="150">2.5小时</option>
-					            <option value="180">3小时</option>
+					            <option value="0.5小时">0.5小时</option>
+					            <option value="1小时" selected="">1小时</option>
+					            <option value="1.5小时">1.5小时</option>
+					            <option value="2小时">2小时</option>
+					            <option value="2.5小时">2.5小时</option>
+					            <option value="3小时">3小时</option>
 					        </select>
-					        <span class="form-error"></span>
+					        <span class="form-error Errht"></span>
 					    </div>
 
 					    <div class="form-group" data-required="required" data-type="number">
-					        <input name="topic_reward" type="text" placeholder="话题价格" value="">
+					        <input name="topic_reward" type="text" placeholder="话题价格" value="" id="price">
 					        <span class="form-tip">价格不代表行家资历及水平，而是学员用来向知识分享者表达感谢的金额。在行的行家均价约为300元，建议您将价格设定在200-400元区间，更容易被学员约见。</span>
-					        <span class="form-error"></span>
+					        <span class="form-error Errprice"></span>
 					    </div>
 						
 						<div class="form-group">
 							<label for="topic_introduction" data-required="required">话题大纲/要点（最多800字）
 								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
 							</label>
-							<textarea placeholder="不少于5条要点，同一主题&#xA（1）教你科学的练习方法，多种训练方法结合练习腹肌&#xA（2）短期见效，让你越练越High&#xA（3）为你量身定制饮食计划&#xA最少20字" name="" id="" cols="30" rows="10"></textarea>
+							<textarea placeholder="不少于5条要点，同一主题&#xA（1）教你科学的练习方法，多种训练方法结合练习腹肌&#xA（2）短期见效，让你越练越High&#xA（3）为你量身定制饮食计划&#xA最少20字" name="" id="bconcent" cols="30" rows="10"></textarea>
+							<span class="form-error Errbc"></span>
 						</div>
 
 						<div class="form-group">
 							<label for="topic_introduction" data-required="required">您在该领域的资历和成就（最多800字）
 								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
 							</label>
-							<textarea placeholder="说说你为什么擅长分享这个话题&#xA我拥有十年健身经验，积累了丰富的理论知识，通过ACE培训及考试认证；拥有独家腹肌训练方法与技巧&#xA最少20字&#xA" name="" id="" cols="30" rows="10"></textarea>
+							<textarea placeholder="说说你为什么擅长分享这个话题&#xA我拥有十年健身经验，积累了丰富的理论知识，通过ACE培训及考试认证；拥有独家腹肌训练方法与技巧&#xA最少20字&#xA" name="" id="achieve" cols="30" rows="10"></textarea>
+							<span class="form-error Errach"></span>
 						</div>
 
 						<div class="form-group">
 							<label for="topic_introduction">补充更多想说的（最多1000字）
 								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
 							</label>
-							<textarea placeholder="包括但不限于：你想与学员分享的心情、学员约见前需做哪些准备、话题涉及的方法论模型和工具" name="" id="" cols="30" rows="10"></textarea>
+							<textarea placeholder="包括但不限于：你想与学员分享的心情、学员约见前需做哪些准备、话题涉及的方法论模型和工具" name="elsecare" id="elsecare" cols="30" rows="10"></textarea>
 						</div>
 
 						<div class="checkbox-wrap">
 					        <label>
-					            <input name="has_icebreaker_price" type="checkbox">
+					            <input name="has_icebreaker_price" type="checkbox" id="spread">
 					            <span class="checkbox checkbox-true">
 					        	    <!-- <i class="icon icon-checkbox"></i> -->
 					            </span>
@@ -91,18 +100,116 @@
 
 						<div class="btns-wrap btns-wrap-center">
 					        <a class="btn-link btn-sm" href="{:url('Expertaddinfo/index')}"><i class="icon icon-back"></i>返回</a>
-					        <button class="btn-link btn-md" type="button" id="saveBtn">保存暂不提交</button>
-					        <button class="btn-primary btn-md" type="button" id="submitBtn">提交认证</button>
+					        <input class="btn-link btn-md" type="button" id="saveBtn" value="保存暂不提交"/>
+					        <input class="btn-primary btn-md" type="button" id="submitBtn" value="提交认证"/>
 					    </div>
 
 					</div>
 
 				</form>
-
-
-
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+	<script>
+		$(function(){formTop
+			$('#formTop #saveBtn').click(function(){
+				postinfo(0);
+				console.log(111)
+			})
+			$('#formTop #submitBtn').click(function(){
+				postinfo(1);
+				console.log(2222)
+			})
+			function postinfo(id){
+
+				var cateid = $('#cateid').val();//行业类型
+				var publish=id;
+				var title = $('#title').val();//话题名*
+				var holdtime = $('#holdtime').val();//时间*
+				var price = $('#price').val();//价格*
+				var bconcent = $('#bconcent').val();//话题大纲要点*
+				var achieve = $('#achieve').val();//成就*
+				var elsecare = $('#elsecare').val();//更多想说的*
+				// var spread = $('#spread').val();//推广*
+				var spread = 0;
+				if ($("#spread").get(0).checked) {
+				   spread = 1;
+				   console.log('gawgw');
+				}
+
+				// //提交前验证
+				if(!title)
+				{
+					$('#formTop .Errtitle').text('不能为空');
+					return;                             //话题错误
+				}else if(!holdtime){
+					$('#formTop .Errht').text('不能为空');
+					return;                             //时长错误
+				}else if(!price){
+					$('#formTop .Errprice').text('不能为空');
+					return;                             //价格错误
+				}else if(!bconcent){
+					$('#formTop .Errbc').text('不能为空');
+					return;                             //话题大纲错误
+				}else if(!achieve){
+					$('#formTop .Errach').text('不能为空');
+					return;                             //成就错误
+				}else if(!cateid){
+					$('#formTop .Errcat').text('不能为空');
+					return;                             //成就错误
+				}
+				console.log(holdtime)
+				console.log(346)
+				$.post({
+					url: "{:url('/index/expertaddtop/dotopic')}",
+					data: {
+						title:title,
+						holdtime:holdtime,
+						price:price,
+						bconcent:bconcent,
+						achieve:achieve,
+						elsecare:elsecare,
+						spread:spread,
+						publish:publish,
+						cateid:cateid
+					},
+					success: function(data){
+						data = JSON.parse(data);
+						console.log(data);
+						
+						if(data.status==10||data.status==9){
+							window.location.href = '../index'+data.src
+						}else{
+							ErrorShow(data);
+						}
+					},
+
+				})
+			}
+			
+			//错误提示
+			function ErrorShow(data){
+				if(data.status==25)
+				{
+					$('#formTop .Errtitle').text(data.message);//话题错误
+				}else if(data.status==26){
+					$('#formTop .Errht').text(data.message);//时长错误
+				}else if(data.status==27){
+					$('#formTop .Errprice').text(data.message);//价格错误
+				}else if(data.status==28){
+					$('#formTop .Errbc').text(data.message);//话题大纲错误
+				}else if(data.status==29){
+					$('#formTop .Errach').text(data.message);//成就错误
+				}else if(data.status==30){
+					$('#formTop .Errcat').text(data.message);
+				}
+
+			}
+			//获取焦点后清除错误信息
+			$("#formTop input").focus(function(){
+			  $("#formTop .form-error").text('');
+			});
+		})
+	</script>
+{include file='nav_foot/foot' /}
+{include file='common/footer' /}

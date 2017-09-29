@@ -1,5 +1,5 @@
 {include file="common/header"}
-	<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/nav_foot/css/nav.css?fgfhf">
+	<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/nav_foot/css/nav.css?fgf">
 	<div class="mobile">
 		<div class="mobileBox">
 			<a class="header_logo" href="/" ><i class="icon icon_zaih">在行</i></a>
@@ -8,7 +8,13 @@
 		    	<p></p>
 		    	<p></p>
 		    </a>
+            {if !$reg}
+            {if $login}
+                <a class="hover header_user" href="{:url('/index/personalinfo/index')}">{$login}</a>
+            {else}
 		    <a href="#" class="mobile-text-btn btn" id="mobileLoginBtn" >登录</a>
+            {/if}
+            {/if}
 		    <a href="#" class="btn">去「分答」</a>
 		</div>
 	</div>
@@ -68,13 +74,16 @@
             </ul>
             
             <div class="header_setting">
+                
                 <a class="tutorApply hover tohangj" href="{:url('/index/expertreal')}">成为行家</a>
+                {if !$reg}
                 {if $login}
-                <a class="hover header_user">{$login}</a>
-                <a href="{:url('/api/login/logout')}" class="hover">退出</a>
+                <a class="hover header_user" href="{:url('/index/personalinfo/index')}">{$login}</a>
+                <a href="{:url('/index/login/logout')}" class="hover">退出</a>
                 {else}
                 <a class="hover header_login">登录</a>
                 <a href="{:url('/index/register')}" class="hover">注册</a>
+                {/if}
                 {/if}
             </div>
             <div class="header_links">
@@ -96,13 +105,97 @@
     		<div class="back">
     			
     		</div>
-    		<div class="login">
+    		<div class="login" id="loginWin">
                 <span>×</span>
-    			登录
+    			<div class="single-white-wrap">
+                    <p>欢迎登录「在行」</p>
+                    <div class="signup-panel">
+
+                        <p class="signup-tip">无需注册，直接用社交账号登录</p>
+
+                        <a class="btn-primary btn-hg login-weibo" href="#" data-received="">
+                            <img src="__STATIC_PATH__/static/login/image/weibo.png" class="icon icon-weibo"></img>
+                        </a>        
+
+                        <a class="btn-primary btn-hg login-weixin" href="#" data-received="">
+                            <img src="__STATIC_PATH__/static/login/image/weixin.png" class="icon icon-weixin"></img>
+                        </a>    
+
+                        <a class="btn-primary btn-hg login-baidu" href="#" data-received="">
+                            <img src="__STATIC_PATH__/static/login/image/baidu.png" class="icon icon-baidu"></img>
+                        </a>    
+
+
+                        <div class="phone-login" id="phoneLogin" style="display: block;">
+                            <div class="btn-hg login-phone" id="phoneBtn" style="display: none;">
+                                    手机登录
+                            </div>
+                            <form class="signForm" style="display: block">
+                                <div style="display:block;"><input id="csrf_token" name="csrf_token" type="hidden" value=""></div>
+                                <div class="form-group">
+                                    <div class="form-item">
+                                        <input class="form-control" id="identity" name="identity" placeholder="手机号" type="text" value="">
+                                        <span class="form-error errForIdentity"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-item">
+                                        <input class="form-control" id="password" name="password" placeholder="密码" type="password" value="">
+                                        <p class="form-error errForPassword"></p>
+                                    </div>
+                                    <div class="err"></div>
+                                </div>
+                                <div class="btns-wrap-center">
+                                    <input type="button" id="submit" class="btn-submit btn-hg btn-complete-register" value="登录">
+                                </div>
+                            </form>
+
+
+                            <div>
+                                <p class="to-signup">还没有账号？<a href="{:url('/index/register')}">现在去注册</a></p>
+                                <p class="to-resetpassword"><a href="#">忘记密码？</a></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
     		</div>
     	</div>
     </div>
     <script type="text/javascript" src="__STATIC_PATH__/static/nav_foot/js/header.js">
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('#loginWin #submit').click(function(){
+                var username = $('#identity').val();
+                var password = $('#password').val();
+                if(!username || !password ){
+                    alert('请输入账号内容！');
+                    return;
+                }
+                $.post({
+                    url: "{:url('../../index/login/login')}",
+                    data:{
+                        username: $('#identity').val(),
+                        password: $('#password').val()
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                        console.log(data,data.status,data.status == 0)
+                        if(data.status == 0){
+                            window.location.href = "{:url('index')}";
+                        }else{
+                            showErr();
+                        }
+                    },
+
+                })
+            })
+            function showErr(data){
+                $('.signup .err').text(data.message);
+            }
+        })
     </script>
 </body>
 </html>

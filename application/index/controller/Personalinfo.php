@@ -1,13 +1,26 @@
 <?php
 	namespace app\index\controller;
 	use \think\Controller;
-
+	use think\Session;
 	class Personalinfo extends Islogin
 	{
+		protected $user; 
+		function __construct(){
+			parent::__construct();
+			$this->assign('login',$this->isLogin);
+			$this->user = Session::get('user_name');
+		}
 		public function index()
 		{
-	        $info = db("user")->where("id=13")->find();
-
+			//判断是否登陆，登陆则通过，没有登陆则转到登陆页面
+			if(!$this->user)
+			 	{
+					return $this->fetch('login/index');
+			 	}
+			//获取个人信息
+	        $info = db("user")
+	        		->where("user_name='$this->user'")
+	        		->find();
 	        $this->assign("info",$info);			
 			return $this->fetch();
 		}
