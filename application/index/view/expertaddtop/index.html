@@ -125,6 +125,9 @@
 				var cateid = $('#cateid').val();//行业类型
 				var publish=id;
 				var title = $('#title').val();//话题名*
+
+
+
 				var holdtime = $('#holdtime').val();//时间*
 				var price = $('#price').val();//价格*
 				var bconcent = $('#bconcent').val();//话题大纲要点*
@@ -142,6 +145,9 @@
 				{
 					$('#formTop .Errtitle').text('不能为空');
 					return;                             //话题错误
+				}else if(!cateid){
+					$('#formTop .Errcat').text('不能为空');
+					return;                             //类型
 				}else if(!holdtime){
 					$('#formTop .Errht').text('不能为空');
 					return;                             //时长错误
@@ -153,9 +159,6 @@
 					return;                             //话题大纲错误
 				}else if(!achieve){
 					$('#formTop .Errach').text('不能为空');
-					return;                             //成就错误
-				}else if(!cateid){
-					$('#formTop .Errcat').text('不能为空');
 					return;                             //成就错误
 				}
 				console.log(holdtime)
@@ -174,11 +177,11 @@
 						cateid:cateid
 					},
 					success: function(data){
+
 						data = JSON.parse(data);
-						console.log(data);
-						
+							// console.log(data);
 						if(data.status==10||data.status==9){
-							window.location.href = '../index'+data.src
+							window.location.href = "{:url('/index/personalinfo/index')}"
 						}else{
 							ErrorShow(data);
 						}

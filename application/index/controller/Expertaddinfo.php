@@ -55,7 +55,7 @@
 
 			//获取数据
 			$new_data=$_POST;
-			var_dump($new_data);
+			// var_dump($new_data);
 			//验证数据
 
 			if($new_data['is_agreed']==0){
@@ -148,7 +148,34 @@
 					->find();
 			$id = $uid['id'];
 			// //存储
-			db('expert')
+			//查询专家表，如果该专家已经存在，则更新数据
+			//如果没有存在，则添加新专家
+			$info=db('expert')
+				->field('uid')
+				->where("uid='$id'")
+				->find();
+			if($info){
+				db('expert')
+					->where("uid='$id'")
+	    			->update([
+						'exp_realname'=>$new_data['realname'],
+						'exp_city_id'=>$new_data['city'],
+						'exp_place'=>$new_data['meet_location'],
+						'exp_field_id'=>$new_data['category_id'],
+						'exp_workyear'=>$new_data['seniority'],
+						'exp_company'=>$new_data['occupation'],//
+						'exp_job'=>$new_data['title'],
+						'exp_edu_experience'=>$new_data['education'],
+						'exp_job_experience'=>$new_data['work_exper'],
+						'exp_project_experience'=>$new_data['pro_exper'],
+						'exp_sociallink'=>$new_data['soc_cont'],
+						'exp_proofpic'=>$proimg,//证明图片
+						'exp_narration'=>$new_data['self_intro'],//
+						'head_pic'=>$headPath,//头像
+						'show_edu'=>$new_data['showedu']//是否公开教育经历
+					]);
+			}else{
+				db('expert')
 	    			->insert([
 						'uid'=>$id,
 						'exp_realname'=>$new_data['realname'],
@@ -168,19 +195,20 @@
 						'create_time'=>time(),
 						'show_edu'=>$new_data['showedu']//是否公开教育经历
 					]);
-
+			}
 	    	//更新用户表，更改是否是行家的字段值
 	    	db('user')
 	    			->where("id='$id'")
 	    			->update(['if_specialist' => 1]);
 
 
-	    	$this->redirect('expertaddtop/index');//路由重定向
-			// return json_encode(Array(
-			// 			'status'=>10,
-			// 			'message'=> '注册成功'
-			// 			// 'src'=> '/expertaddtop/index'//跳转到行家中心
-			// 		));
+	    	// $this->redirect('expertaddtop/index');//路由重定向
+	    	
+			return json_encode(Array(
+						'status'=>10,
+						'message'=> '注册成功'
+						// 'src'=> '/expertaddtop/index'//跳转到行家中心
+					));
 		}
 		
 		function saveFiles($file_data='',$path){

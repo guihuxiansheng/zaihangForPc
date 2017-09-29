@@ -95,8 +95,8 @@
 			$spread = input('spread');//
 			
 			$publish = input('publish');//是否发布
-			echo $title;
-			echo $spread;
+			// echo $title;
+			// echo $spread;
 			//验证数据
 			if(!$title){
 				return json_encode(Array(
@@ -108,7 +108,7 @@
 						'status'=>26,
 						'message'=> '时长有误'
 					));
-			}else if(!preg_match_all("/^([1-9][0-9]*)+(.[0-9]{1,2})?$ /",$price)){//^([1-9][0-9]*)+(.[0-9]{1,2})?$ 
+			}else if(!preg_match_all("/(^[1-9]\d*(\.\d{1,2})?$)|(^0(\.\d{1,2})?$)/",$price)){//^([1-9][0-9]*)+(.[0-9]{1,2})?$ 
 				return json_encode(Array(
 						'status'=>27,
 						'message'=> '价格有误'
@@ -136,7 +136,7 @@
 					->join('user u','c.uid=u.id')
 					->where("u.user_name='$this->user'")
 					->find();
-			var_dump($uid);
+			// var_dump($uid);
 			// exit();
 
 			// //存储话题
@@ -155,6 +155,9 @@
 						'topic_publish'=>$publish,
 						'cate_id'=>$cateid
 					]);
+
+
+			// $this->redirect('personalinfo/index');//路由重定向
 	    	if($publish==0)
 	    	{
 	    		return json_encode(Array(
