@@ -11,7 +11,7 @@
 		}
 		function getCoupon($special){
 			try{
-				$coupon = db('coupon')->where('special='.$special)->find();
+				$coupon = db('coupon')->where(['special'=>$special])->find();
 				return $coupon;
 			}catch(\Exception $e){
 				return false;
@@ -20,12 +20,12 @@
 		function saveCoupon($login){
 			$special = input('special');
 			if($login && isset($special) && $special != ''){
-				$sp = db('special')->where('special='.$special)->find();
+				$sp = db('special')->where(["special"=>$special])->find();
 				// 专题不正确
 				if(!$sp){
 					return false;
 				}
-				$coupon = db('coupon')->where('uid='.$login['id'].' and special='.$sp['special'])->find();
+				$coupon = db('coupon')->where(['uid'=>$login['id'],'special'=>$sp['special']])->find();
 				// 已领取
 				if($coupon){
 					return false;

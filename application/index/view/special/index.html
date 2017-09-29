@@ -67,9 +67,10 @@
 			if(!$(this).hasClass('cur') && login){
 				var that = this;
 				$.post({
-					url: {:url('/index/special/coupon')},
-					data: {special: {$login !== false?$special['name']:"''"}},
+					url: "{:url('/index/special/coupon')}",
+					data: {special: "{$login !== false?$special['name']:''}"},
 					success: function(data){
+						data = JSON.parse(data);
 						if(data.status == 0){
 							$(that).addClass('cur');
 						}

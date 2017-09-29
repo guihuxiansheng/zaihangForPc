@@ -53,10 +53,13 @@
             }
         }
     	// 点击登录
-    	header_login.onclick = function(){
-    		login_box.style.display = 'block';
-            login_container.style.display = 'block';
-    	}
+        if(header_login){
+            header_login.onclick = function(){
+                login_box.style.display = 'block';
+                login_container.style.display = 'block';
+            }
+        } 
+    	
     	loginQx.onclick = function () {
     		this.parentNode.parentNode.style.display = 'none';
             login_container.style.display = 'none';
@@ -67,10 +70,13 @@
     	}
 
     	// mobile登录
-    	mobile_login.onclick = function(){
-    		login_box.style.display = 'block';
-            login_container.style.display = 'block';
-    	}
+        if(mobile_login){
+            mobile_login.onclick = function(){
+                login_box.style.display = 'block';
+                login_container.style.display = 'block';
+            }
+        } 
+        	
     	loginQx.onclick = function () {
     		this.parentNode.parentNode.style.display = 'none';
              login_container.style.display = 'none';

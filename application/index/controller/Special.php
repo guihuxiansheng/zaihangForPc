@@ -19,14 +19,16 @@
 			
 		}
 		function coupon(){
-			$state = $this->saveCoupon($this->isLogin);
+			$state = model('special')->saveCoupon($this->isLogin);
 			if($state){
 				return json_encode([
-					'status'=>0
+					'status'=>0,
+					'message'=>'恭喜！领取成功！'
 				]);
 			}
 			return json_encode([
-				'status'=>1
+				'status'=>1,
+				'message'=>'领取失败！'
 			]);
 		}
 	}
