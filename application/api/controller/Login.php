@@ -16,7 +16,7 @@
 			try{
 				$info = db('user')->where("user_pwd='$password' and user_phone='$username'")->find();
 				if($info){
-					Session::set('user_name',$info['user_name']);
+					Session::set('user_name',$info);
 					return json_encode(Array(
 						'status'=>0,
 						'message'=> '登录成功！'

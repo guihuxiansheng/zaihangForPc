@@ -1,0 +1,36 @@
+{include file="public/header"}
+<div class="container mt-3">
+    <a href="{:url('special/add')}" class="btn btn-info">添加专题</a>
+    <a href="{:url('special/change')}" class="btn btn-info">修改城市专题</a>
+    <h2>专题管理界面</h2>
+    <div class="row">
+    </div>
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>专题</th>
+            <th>专题名字</th>
+            <th>专题广告图</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        {foreach $special_list as $value}
+        <tr>
+            <td>{$value['id']}</td>
+            <td>{$value['special']}</td>
+            <td>{$value['special_name']}</td>
+            <td><img style="width: 100px;" src="__STATIC_PATH__{$value['special_img']}"></td>
+            <td>{$value['create_time']}</td>
+            <td>
+                <a href="{:url('detailed',['id'=>$value['id']])}" class="btn btn-info">详细</a>
+                <a href="{:url('edit',['id'=>$value['id']])}" class="btn btn-info">编辑</a>
+                <a href="{:url('delete',['id'=>$value['id']])}" class="btn btn-danger">删除</a>
+            </td>
+        </tr>
+        {/foreach}
+    </table>
+    <div>
+        {$special_list->render()}
+    </div>
+</div>
+{include file="public/footer"}

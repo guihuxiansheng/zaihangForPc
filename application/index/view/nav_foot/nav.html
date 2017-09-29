@@ -33,7 +33,7 @@
             <ul class="header_nav">
                 <li class="decoration"></li>
                 <li>
-                    <a href="{:url('/index/topics').'?cate_id=1&city=beijing'}" class="hover">职场发展</a>
+                    <a href="{:url('topics/').'?cate_id=1&city=beijing'}" class="hover">职场发展</a>
                 </li>
                 <li>
                     <a href="#" class="hover">行业经验</a>
@@ -70,7 +70,7 @@
             <div class="header_setting">
                 <a class="tutorApply hover tohangj" href="{:url('/index/expertreal')}">成为行家</a>
                 {if $login}
-                <a class="hover header_user">{$login}</a>
+                <a class="hover header_user">{$login['user_name']}</a>
                 <a href="{:url('/api/login/logout')}" class="hover">退出</a>
                 {else}
                 <a class="hover header_login">登录</a>

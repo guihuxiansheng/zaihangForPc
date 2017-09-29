@@ -82,7 +82,7 @@
 			}
 			$sort = $this->getSort();
 			$map['topic.cate_id'] = ['in',$all_id];
-			$map['expert.exp_city'] = $city;
+			$map['expert.exp_city_id'] = $city;
 			// 统计列表长度
 			$list[0] = $this->table('zh_topic topic, zh_expert expert')->where('topic.uid = expert.uid')->where($map)->count();
 			// 防止查询超出范围
@@ -155,7 +155,7 @@
 			$city[0] = $city_check?$city_check:($session_city?$session_city:'beijing');
 			Session::set('city',$city[0]);
 			$db_city = db('place')->where('place','=',$city[0])->find();
-			$city[1] = $db_city['place_name'];
+			$city[1] = $db_city['id'];
 			return $city;
 				
 		}

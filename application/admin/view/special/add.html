@@ -1,0 +1,28 @@
+{include file="public/header"} 
+
+ 
+<div class="container mt-3">
+    <a href="{:url('special/index')}" class="btn btn-info">专题列表</a>
+    <a href="{:url('special/change')}" class="btn btn-primary">添加城市专题</a>
+    <h2>添加用户界面</h2>
+     <form action="{:url('save')}" method="post" enctype="multipart/form-data" >
+        <div class="form-group">
+            <label >专题英文</label>
+            <input type="text" class="form-control"  name="special">
+        </div>
+        <div class="form-group">
+            <label >专题名字</label>
+            <input type="text" class="form-control" name="special_name">
+        </div>
+        <div class="form-group">
+            <label >专题图片</label>
+
+            <input type="file" name="special_img">
+        </div>
+        <div class="form-group">
+             <input type="submit" value="添加" class="btn btn-info">
+        </div>
+     </form> 
+</div>
+    
+{include file="public/footer"}

@@ -1,11 +1,11 @@
 {include file="common/header"}
 {include file="nav_foot/nav"}
-<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/holiday/less/holiday.css?y">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/special/less/special.css?y">
 <div class="holiday">
 	<div class="holiday-head">
 		<div class="holiday-poster">
 			<div class="head-msg">
-				<img src="__STATIC_PATH__/static/holiday/images/FtxFrAu5xmc1BqFP8Jc3o0X6qRgC!preface.jpg">
+				<img src="__STATIC_PATH__{$special.img_path}">
 			</div>
 			<div class="discount">
 				<div class="discount-title">
@@ -20,7 +20,11 @@
 						<li><span>·</span>满199元可用</li>
 					</ul>
 				</div>
+				{if $coupon !== false}
+				<div class="discount-get cur">已领取</div>
+				{else}
 				<div class="discount-get">领取&nbsp;&nbsp;&gt;</div>
+				{/if}
 				<div class="discount-tag">
 					限量<br>500张
 				</div>
@@ -32,6 +36,7 @@
 	<div class="holiday-list">
 		<ul>
 			<a href="{:url('/index/detail')}">
+				{foreach $special_list as $key=>$val}
 				<li>
 					<div class="hope-see">
 						171人想见
@@ -39,20 +44,40 @@
 					<div class="avatar">
 						<img src="__STATIC_PATH__/static/holiday/images/FpNULgENNMtTk6_TuFX5CrnqeN94!avatar.jpg">
 					</div>
-					<div class="name">刘文勇</div>
-					<div class="label">西藏游达人</div>
+					<div class="name">{$val['realname']}</div>
+					<div class="label">{$val['job']}</div>
 					<div class="msg">
 						<div class="title">
-							告诉你一个不一样的西藏
+							{$val['name']}
 						</div>
 						<div class="tips">
-							西藏，那个离天堂最近的地方
+							{$val['name']}
 						</div>
 					</div>
 				</li>
+				{/foreach}
 			</a>
 		</ul>
 	</div>
 </div>
+<script type="text/javascript">
+	$(function(){
+		var login = {$login !== false? 'true': 'false'} ;
+		$('.discount-get').click(function(){
+			if(!$(this).hasClass('cur') && login){
+				var that = this;
+				$.post({
+					url: {:url('/index/special/coupon')},
+					data: {special: {$login !== false?$special['name']:"''"}},
+					success: function(data){
+						if(data.status == 0){
+							$(that).addClass('cur');
+						}
+					}
+				})
+			}
+		})
+	})
+</script>
 {include file="nav_foot/foot"}
 {include file="common/footer"}
