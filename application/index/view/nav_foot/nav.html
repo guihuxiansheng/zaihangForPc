@@ -10,7 +10,7 @@
 		    </a>
             {if !$reg}
             {if $login}
-                <a class="hover header_user" href="{:url('/index/personalinfo/index')}">{$login}</a>
+                <a class="hover header_user" href="{:url('/index/personalinfo/index')}">{$login['user_name']}</a>
             {else}
 		    <a href="#" class="mobile-text-btn btn" id="mobileLoginBtn" >登录</a>
             {/if}
