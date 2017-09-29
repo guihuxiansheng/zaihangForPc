@@ -68,8 +68,7 @@
 					// ));
 	    	return json_encode(Array(
 						'status'=>10,
-						'message'=> '跳转',
-						'src'=> '/expertaddinfo/index'
+						'message'=> '认证成功'
 					));
 		}
 		
