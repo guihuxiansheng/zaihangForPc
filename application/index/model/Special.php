@@ -54,7 +54,7 @@
 				$db_array = $this->table('zh_place place, zh_special special')->where([
 					'place.place' => $str[1],
 					'special.special' => $str[0]
-				])->where('special.special = place.topic_name')->field('special.special as name,place.place,special.special_img as img_path')->find();
+				])->where('special.special = place.special_name')->field('special.special as name,place.place,special.special_img as img_path')->find();
 				return $db_array;
 			}catch(\Exception $e){
 				return false;

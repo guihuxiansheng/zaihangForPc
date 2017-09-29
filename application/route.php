@@ -10,4 +10,5 @@
 // +----------------------------------------------------------------------
 use \think\Route;
 Route::resource('special','index/special');
+Route::resource('aspecial','admin/special');
 Route::alias('topic','index/topic',['ext'=>'html']);

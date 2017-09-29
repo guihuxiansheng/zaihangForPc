@@ -29,6 +29,28 @@
 				return false;
 			}
 		}
+		function getCityList(){
+			return db('place')->paginate();
+		}
+		function getSpecialList(){
+			return db('special')->select();
+		}
+		function updateSpecial($id){
+			$special = input('special');
+			if(!isset($special) || $special == ''){
+				return fasle;
+			}
+			try{
+				$state = db('special')->where(['special'=>$special])->find();
+				if(!$state){
+					return false;
+				}
+				db('place')->where(['id'=>$id])->update(['special_name'=>$state['special']]);
+			}catch(\Exception $e){
+				return false;
+			}
+			return true;
+		}
 		function delete(){
 			if(input('id')){
 				try{

@@ -71,7 +71,7 @@
 				{/foreach}
 				<ol>
 					{foreach $city_list as $k=>$val}
-					<li><a href="{:url('index').'?cate_id=1&city='.$val['place'].($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'').($topic[5]!=''?'&sort='.$topic[5]:'')}"><span class="{if ($val.place_name == $city)}cur{/if}">{$val.place_name}</span></a></li>
+					<li><a href="{:url('index').'?cate_id=1&city='.$val['place'].($topic[4]!=''?'&price_cap='.$topic[4]:'').($topic[3]!=''?'&price_floor='.$topic[3]:'').($topic[5]!=''?'&sort='.$topic[5]:'')}"><span class="{if ($val['place'] == $city)}cur{/if}">{$val.place_name}</span></a></li>
 					{/foreach}
 				</ol>
 			</div>
