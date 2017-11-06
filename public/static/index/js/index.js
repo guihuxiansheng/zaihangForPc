@@ -1,9 +1,11 @@
   function selectCity(){
             this.btn=document.getElementById('selectCity');
-            this.CityLi=document.getElementsByClassName('city');
+            this.CityLi=document.getElementsByClassName('current');
             this.city=document.getElementById('city');
             this.sh=false;
             this.part=this.CityLi[0];
+            this.cityInput = document.getElementById('cityInput');
+            this.cityInput.value = this.part.getAttribute('data-city');
         };
         selectCity.prototype.show=function(e){
             // console.log(1)
@@ -47,6 +49,7 @@
             this.part.className='city';
             evt.srcElement.className='city current';
             this.part=evt.srcElement;
+            this.cityInput.value = this.part.getAttribute('data-city');
             this.city.className='drop-select drop-select-hide';
             this.sh=false;
         }

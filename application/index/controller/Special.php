@@ -5,8 +5,8 @@
 	{
 		public function read($id)
 		{
-			$special = model('special')->checkUrl($id);	
-			if($special !== false){
+			$special = model('special')->checkUrl($id);
+			if($special !== false && $special !== null){
 				$this->assign('special',$special);
 				$coupon = model('special')->getCoupon($special['name']);
 				$this->assign('coupon',$coupon);
@@ -14,7 +14,7 @@
 				$this->assign('special_list',$special_list);
 				return $this->fetch('index');
 			}else{
-				$this->error('专题不存在');
+				$this->error('专题不存在',url('/index'));
 			}
 			
 		}

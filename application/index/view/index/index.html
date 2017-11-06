@@ -3,55 +3,27 @@
 <link rel="stylesheet" href="__STATIC_PATH__/static/index/css/index.css">
 <div class="index container">
     <div class="cover">
-        <div class="cover-image"></div>
+        <div class="cover-image" style="background-image:url({:url('/data/index/Fgfa_iD_vHSZTzMo94hqJl9CzKl3.png')})"></div>
         <div class="column">
             <div class="index-title">
                 <h1>行家指路<br>少走弯路</h1>
                 <p>在行，领先的知识技能共享平台</p>
                 <a href="" class="app-download-btn"
                     target="_blank">下载客户端</a>
-                <form class="index-search" action="/search" method="GET">
+                <form class="index-search" action="{:url('/index/search')}" method="GET">
                     <div class="drop-select drop-select-hide" id="city">
-                        <a class="drop-select-default dropSelectDefault" id="selectCity" onclick="selex.show()">北京<i class="icon icon-arrow-bottom" href="javascript:void 0;"></i></a>
+                        <a class="drop-select-default dropSelectDefault" id="selectCity" onclick="selex.show()">{foreach $cityList as $key=>$val}{if $val['place']==$city}{$val['place_name']}{/if}{/foreach}<i class="icon icon-arrow-bottom" href="javascript:void 0;"></i></a>
                         <ul class="drop-select-options">
                             <li class="arrow-up-wrap"><i class="arrow-up"></i></li>
-                            <li>
-                                <a class="city current" onclick="selex.getCity()" href="javascript:void 0;">北京</a>
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">上海</a>
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">深圳</a>
-
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">广州</a>
-
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">杭州</a>
-
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">成都</a>
-
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">西安</a>
-
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">武汉</a>
-
-                            </li>
-                            <li>
-                                <a class="city" onclick="selex.getCity()" href="javascript:void 0;">宁波</a>
-
-                            </li>
+                            {foreach $cityList as $key=>$val}
+                                <li>
+                                    <a class="city {$val['place']==$city?'current':''}" data-city="{$val['place']}" onclick="selex.getCity()" href="javascript:void 0;">{$val['place_name']}</a>
+                                </li>
+                            {/foreach}
                         </ul>
                     </div>
                     <input class="search-content" autocomplete="off" type="text" placeholder="搜行家、话题、服务" name="word">
+                    <input type="hidden" id="cityInput" name="city">
                     <div class="search-sug sug">
                     </div>
                     <button class="search-btn" type="submit">搜索</button>
@@ -329,7 +301,7 @@
             </li>
         </ul>
         <div class="index-btn">
-            <a  href="" class="btn-default btn-hg">发现更多行家</a>
+            <a  href="{:url('/index/topics/')}" class="btn-default btn-hg">发现更多行家</a>
         </div>
 
         <div class="index-app-download appDownloadBar">

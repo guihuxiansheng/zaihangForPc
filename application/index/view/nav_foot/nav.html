@@ -38,39 +38,26 @@
             <a class="header_logo" href="{:url('/index')}" ><i class="icon icon_zaih">在行</i></a>
             <ul class="header_nav">
                 <li class="decoration"></li>
-                <li>
-                    <a href="{:url('topics/').'?cate_id=1&city=beijing'}" class="hover">职场发展</a>
-                </li>
-                <li>
-                    <a href="#" class="hover">行业经验</a>
-                </li>
-                <li>
-                    <a href="#" class="hover">互联网+</a>
-                </li>
-                <li>
-                    <a href="#" class="hover">创业和投融资</a>
-                </li>
+                {foreach $cate_top as $key=>$val}
+                    {if $key<4}
+                    <li>
+                        <a href="{:url('topics/').'?cate_id='.$val['id'].'&city='.$city}" class="hover">{$val['cate_name']}</a>
+                    </li>
+                    {/if}
+                {/foreach}
                 <li class="header_more">
                     <a href="#" class="hover">更多&nbsp;<span class="icon_down"></span></a>
                     <ul class="more_menu">
-                        <li>
-                            <a href="#" class="hover">生活服务</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover">心理</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover">投资理财</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover">教育学习</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover">其他</a>
-                        </li>
+                        <li class="decoration"></li>
+                        {foreach $cate_top as $key=>$val}
+                            {if $key>=4}
+                            <li>
+                                <a href="{:url('topics/').'?cate_id='.$val['id'].'&city='.$city}" class="hover">{$val['cate_name']}</a>
+                            </li>
+                            {/if}
+                        {/foreach}
                     </ul>
                 </li>
-                
             </ul>
             
             <div class="header_setting">

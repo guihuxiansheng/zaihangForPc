@@ -25,6 +25,9 @@
 				return $cate_array;
 			}
 			$cate_id = input('cate_id');
+			if(empty($cate_id)){
+				return [];
+			}
 			return getCate($cate_id);
 		}
 		function getCateNext()
@@ -46,7 +49,7 @@
 				}
 				return $cate;
 			}
-			$cate_id = input('cate_id');
+			$cate_id = (int)input('cate_id');
 			return getCateNext($cate_id);
 		}
 		function getTopic($city)
@@ -66,7 +69,7 @@
 				}
 				return $cate_array;
 			}
-			$cate_id = input('cate_id');
+			$cate_id = (int)input('cate_id');
 			$page = (int)input('page');
 			$sort = input('sort');
 			$map = Array();
