@@ -1,0 +1,183 @@
+{include file="public/header"} 
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+<!-- <link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddtop/css/add_subject.css"> -->
+ 
+<div class="container mt-3" style="padding-top: 0;">
+    
+     <div class="card">
+        <div class="card-title">
+            <a href="{:url('user/detailed',['id'=>$expert['uid']])}" class="btn btn-info">该用户信息</a>
+            <a href="{:url('firsttop',['id'=>$expert['uid']])}" class="btn btn-info">该行家话题信息</a>
+         </div>
+         <div class="card-body">
+            <div class="main" id="formWrap">
+                    <form class="apply-form" id="tutorForm">
+                        <div class="form-group">
+                            <div class="profile-picture">
+                                <div class="profile-picture-mask"></div>
+                                <img src="{$expert['head_pic']?'__STATIC_PATH__/'.$expert['head_pic']:''}" id="profile_picture" style="z-index: 11;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="realname" data-required="required">真实姓名</label>
+                            <input name="realname" type="text" maxlength="20" value="{$expert['exp_realname']}" id="realname" disabled="true">
+                            <span class="form-error ErrName"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realname" data-required="required">常驻城市</label>
+                            <select autofocus="" name="city" id="city" disabled="true">
+                                <option value="">{$city['place_name']}</option>
+                            </select>
+                            <span class="form-error Errcity"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realname" data-required="required">常驻城市的常活动区域</label>
+                            <input name="meet_location" type="text" maxlength="20" disabled="true" value="{$expert['exp_place']}" id="meet_location">
+                            <!-- <span class="form-range"><i>0</i>/20</span> -->
+                            <span class="form-error Errmeet"></span>
+                         </div>
+
+                        <div class="row">
+                                <div class="form-group">
+                                    <label for="realname" data-required="required">行业</label>
+                                    <select autofocus="" name="category_id" id="category_id" disabled="true">
+                                        <option value="">{$category['cate_name']}</option>
+                                    </select>
+                                    <span class="form-error Errcate"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="realname" data-required="required">工作年限</label>
+                                    <select autofocus="" name="seniority" placeholder="工作年限" id="seniority" disabled="true">
+                                        <option value="">{$expert['exp_workyear']}</option>
+                                    </select>
+                                    <span class="form-error Errsenior"></span>
+                                </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="realname" data-required="required">任职机构</label>
+                            <input name="occupation" type="text" maxlength="20" placeholder="任职机构：自由职业者可填写工作室名字，最少2字" value="{$expert['exp_company']}" id="occupation" disabled="true">
+                            <!-- <span class="form-range"><i>0</i>/20</span> -->
+                            <span class="form-error Erroccu"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="realname" data-required="required">头衔、职位</label>
+                            <input name="title" type="text" maxlength="20" placeholder="头衔/职位：自由职业者可注明，最少2字" value="{$expert['exp_job']}" id="title" disabled="true">
+                            <!-- <span class="form-range"><i>0</i>/20</span> -->
+                            <span class="form-error Errtitle"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="education" data-required="required">教育背景/培训经历（最多500字）
+                                <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                            </label>
+                            <textarea rows="6" name="education" maxlength="500" placeholder="2007年9月-2011年7月，北京大学，新闻与传播学专业，硕士研究生，最少20字" id="education" disabled="true">{$expert['exp_edu_experience']}</textarea>
+                            <span class="form-error Erredu"></span>
+                        </div>
+
+                        <div class="checkbox-wrap">
+                            <label>
+                                <input name="is_show_education" type="checkbox" id="showedu">
+                                <span class="checkbox checkbox-false"><i class="icon icon-checkbox"></i></span>
+                                向学员公开教育背景/培训经历，以增加行家资质说明
+                            </label>
+                        </div>
+
+
+
+
+                        <div id="categoryForm">
+                            <div class="category-item" data-category_type="certificate">
+                                <div class="form-group">
+                                    <label for="career_experience" data-required="required">职业经历（最多800字）
+                                        <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                    </label>    
+
+
+                                    <textarea name="" id="work_exper" cols="30" rows="10" placeholder="可填写多段经历，描述清楚时间段、任职机构、职位，最少20字" disabled="true">{$expert['exp_job_experience']}</textarea>
+                                     <span class="form-error Errexper"></span>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="project_experience" >项目经历（最多800字）
+                                        <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                    </label>    
+                                    <textarea name="" id="pro_exper" cols="30" rows="10" disabled="true">{$expert['exp_project_experience']}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="social_account" >媒体报道/社交账号链接（最多500字）
+                                        <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                    </label>    
+                                    <textarea name="" id="soc_cont" cols="30" rows="10" disabled="true">{$expert['exp_sociallink']}</textarea>
+                                </div>  
+
+
+                                <div class="form-group">
+                                    <label for="career_images">上传职业证明材料（最多5张照片）</label>
+                                        <div id="career_images">
+                                            <div class="photo career_image" style="position: relative;">
+                                                <img src="{$imglist[0]?'__STATIC_PATH__/'.$imglist[0]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;" >
+                                            </div>
+                                            <div class="photo career_image" style="position: relative;">
+                              
+                                                <img src="{$imglist[1]?'__STATIC_PATH__/'.$imglist[1]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                             </div>
+                                            <div class="photo career_image" style="position: relative;">
+                                                
+                                                <img src="{$imglist[2]?'__STATIC_PATH__/'.$imglist[2]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                            </div>
+                                            <div class="photo career_image" style="position: relative;">
+                                                
+                                                <img src="{$imglist[3]?'__STATIC_PATH__/'.$imglist[3]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                            </div>
+                                            <div class="photo career_image" style="position: relative;">
+                                                
+                                                <img src="{$imglist[4]?'__STATIC_PATH__/'.$imglist[4]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                            </div>
+                                        </div>
+                                        <span class="form-tip">能体现职务的名片、工作证、加盖公章的在职证明、劳动合同和社保缴费证明等，仅供审核参考，信息保密</span>
+                                        <span class="form-error Errpho"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="readme" data-required="required">自述（最多1000字）
+                                        <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                    </label>    
+                                    <textarea name="" id="self_intro" cols="30" rows="10" disabled="true">{$expert['exp_narration']}</textarea>
+                                    <span class="form-error Errintro"></span>
+                                </div>
+
+
+                                <div class="checkbox-wrap">
+                                    <label>
+                                        <input id="is_agreed" type="checkbox" checked="true" disabled="true">
+                                        <span class="checkbox checkbox-true"><i class="icon icon-checkbox"></i></span>
+                                        本人承诺为以上信息的真实性及准确性负责，并会在任职信息变更时及时更新行家资料
+                                    </label>
+                                </div>
+                                 <div class="form-group">
+                                    <a href="{:url('edit',['id'=>$expert['id']])}" class="btn" id="btnEdit" style="background: #F1C40F;color: white;">编辑</a>
+                                    <input type="button" value="保存" class="btn" disabled="true" id="subuser" style="display: inline-block; background: #ed6b75;color: white;height: 34px;width: 54px;">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+            </div>
+            
+         </div>
+     </div>
+
+</div>
+    
+{include file="public/footer"}

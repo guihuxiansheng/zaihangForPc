@@ -7,37 +7,75 @@
          <div class="card-body">
              <div class="col-sm-4 text-center">
                  <img src="http://media.zaih.com/Fh8J1Fi5s-dN1IasJlJ12wpJKOsa!avatar" alt="">
-                 <p>行家</p>
+                <!--  <img src="{$info.user_head_pic}" alt="" style="position: relative; height: 160px;width: 160px;top: -160px;left: 0;border-radius: 50%;"> -->
+                 <div class="head_pic" style="position:relative;display: block; height: 160px;width: 160px;opacity: 0;left: 25px;top: -320px;border-radius: 50%;z-index: 2;background-image: url('{$info.user_head_pic}');"></div>
+                 {if $info.if_specialist}
+                 <a href="{:url('admin/iexpert/detailed',['uid'=>$info['id']])}" class="btn btn-primary" style="margin-top: -135px;display: block;">行家</a>
+                 {else}
+                 <p style="margin-top: -135px;">普通用户</p>
+                 <div class="form-group">
+                    <a href="{:url('admin/iexpert/add',['id'=>$info['id']])}" class="btn btn-warning" id="btnEdit">成为行家</a>
+                </div>
+                 {/if}
+                
+
+
              </div>
              <div class="col-sm-8">
-                 <form action="{:url('save')}" method="post">
+                 <form action="{:url('save')}" method="post" id="userEdit">
+                     <div class="form-group">
+                        <label >用户编号</label>
+                        <input type="text" name="id" value="{$info.id}" disabled="true">
+                    </div>
                     <div class="form-group">
                         <label >用户名</label>
-                        <input type="text" class="form-control"  name="user_name" value="{$info.user_name}" disabled="true">
+                        <input type="text" class="form-control inputdata"  name="user_name" value="{$info.user_name}" disabled="true">
+                        <span class="form-error errUsername" style="position: absolute;height: 18px;color: red;"></span>
                     </div>
                     <div class="form-group">
                         <label >真实姓名</label>
-                        <input type="text" class="form-control" name="user_true_name" value="{$info.user_true_name}" disabled="true">
+                        <input type="text" class="form-control inputdata" name="user_true_name" value="{$info.user_true_name}" disabled="true">
+                        <span class="form-error errTruename" style="position: absolute;height: 18px;color: red;"></span>
                     </div>
                     <div class="form-group">
                         <label >常住地址</label>
-                        <input type="text" class="form-control" name="user_address" value="{$info.user_address}" disabled="true">
-                    </div>
-                     <div class="form-group">
-                        <label >支付宝账户</label>
-                        <input type="text" class="form-control" name="user_alipay" value="{$info.user_alipay}" disabled="true">
+                        <input type="text" class="form-control inputdata" name="user_address" value="{$info.user_address}" disabled="true">
+                        <span class="form-error errAdres" style="position: absolute;height: 18px;color: red;"></span>
                     </div>
                     <div class="form-group">
+                        <label >注册时间</label>
+                        <input type="text" class="form-control inputdata" name="create_time" value="{$info.create_time}" disabled="true">
+                        <span class="form-error errCre" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >身份证号</label>
+                        <input type="text" class="form-control inputdata" name="user_identityId" value="{$info.user_identityId}" disabled="true">
+                        <span class="form-error errIden" style="position: absolute;height: 18px;color: red;"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label >支付宝账户</label>
+                        <input type="text" class="form-control inputdata" name="user_alipay" value="{$info.user_alipay}" disabled="true">
+                        <span class="form-error errAli" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                     <div class="form-group">
                         <label >支付宝姓名</label>
-                        <input type="text" class="form-control" name="user_alipay_name" value="{$info.user_alipay_name}" disabled="true">
+                        <input type="text" class="form-control inputdata" name="user_alipay_name" value="{$info.user_alipay_name}" disabled="true">
+                        <span class="form-error errAliname" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >手机号码</label>
+                        <input type="text" class="form-control inputdata" name="user_phone" value="{$info.user_phone}" disabled="true">
+                        <span class="form-error errForMobile" style="position: absolute;height: 18px;color: red;"></span>
                     </div>
                      <div class="form-group">
                         <label >简介</label>
-                        <textarea id="text_content" name="user_intro" id="" style="width:100%" value="{$info.user_intro}" disabled="true"></textarea>
+                        <textarea id="text_content" name="user_intro" class="inputdata" style="width:100%" value="{$info.user_intro}" disabled="true"></textarea>
+                        <span class="form-error errIntro" style="position: absolute;height: 18px;color: red;"></span>
                     </div>
                     <div class="form-group">
-                        <input type="button" value="编辑" class="btn btn-warning">
-                        <input type="submit" value="提交" class="btn btn-info" disabled="true">
+                        <a href="{:url('edit',['id'=>$info['id']])}" class="btn btn-warning" id="btnEdit">编辑</a>
+                        <input type="button" value="保存" class="btn btn-danger" disabled="true" id="subuser">
                     </div>
                  </form> 
              </div>

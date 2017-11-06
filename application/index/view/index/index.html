@@ -1,13 +1,13 @@
 {include file='common/header'}
 {include file='nav_foot/nav'}
-<link rel="stylesheet" href="__STATIC_PATH__/static/index/css/index.css">
+<link rel="stylesheet" href="__STATIC_PATH__/static/index/css/index.css?ab">
 <div class="index container">
     <div class="cover">
         <div class="cover-image" style="background-image:url({:url('/data/index/Fgfa_iD_vHSZTzMo94hqJl9CzKl3.png')})"></div>
         <div class="column">
             <div class="index-title">
-                <h1>行家指路<br>少走弯路</h1>
-                <p>在行，领先的知识技能共享平台</p>
+                <h1>{$data_list.main_word1}<br>{$data_list.main_word2}</h1>
+                <p>{$data_list.described_word}</p>
                 <a href="" class="app-download-btn"
                     target="_blank">下载客户端</a>
                 <form class="index-search" action="{:url('/index/search')}" method="GET">
@@ -56,16 +56,35 @@
             </div>
         </div>
     </div>
+  <!--   <?php
+        var_dump($use_print);
+        var_dump($find_money_uid);
+        var_dump($find_money_expert);
+        
+    ?> -->
+    <!-- <div>
+         
+         {foreach $find_money_expert as $k=>$exparray}
+         {if $k<=2}
+    <img src="__STATIC_PATH__/{$exparray['exp_homepic']}">
+    {/if}
+   {if $k>1}
+   <p>{$exparray['exp_homepic']}</p>
+   {/if}
+    {/foreach}
+    </div> -->
     <div class="content">
         <ul class="index-list">
+        {foreach $find_money_expert as $k=>$exparray}
+        {if $k<4}
             <li class="index-list-tutor index-list-sm">
                 <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
+                <img src="__STATIC_PATH__/{$exparray['exp_homepic']}">
 
                 <div class="index-list-cover"></div>
                 <div class="index-tutor-info">
-                    <h3>王琦</h3>
-                    <h4>京东到家算法负责人</h4>
+                    <h3>{$exparray['exp_realname']}</h3>
+                    <h4>{$exparray['exp_job']}</h4>
                     <p class="index-topic-name">小白也能懂的个性化推荐系统</p>
                     <p class="index-topic-info">
                         <i>『 </i>
@@ -78,227 +97,42 @@
                 </span>
             </a>
             </li>
-
-
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>悦宁</h3>
-                    <h4>北广传媒主持人&amp;制片人</h4>
-                    <p class="index-topic-name">如何提高语言表达能力</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>语言表达能力是生活学习工作的基石。会表达，会沟通，做到话入人心，能为生活锦上添花，为职场发展铺平道路。</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    10人见过
-                </span>
-                
-            </a>
-            </li>
-
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>韩冰</h3>
-                    <h4>北京律协商事犯罪预防与辩护专委会主任</h4>
-                    <p class="index-topic-name">商事犯罪辩护咨询</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>如果你是涉嫌违法犯罪的当事人（或亲属），或许会为寻找专业律师服务感到困扰。我在商事犯罪预防与辩护方面有多年执业经验。相信在…</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    6人见过
-                </span>
-                
-            </a>
-            </li>
-
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>韩祖利</h3>
-                    <h4>虎嗅网联合创始人</h4>
-                    <p class="index-topic-name">带你走进摩托车的世界</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>每当你燃起买摩托车的欲望时，就被“要想死的快，就买一脚踹”吓得想都不敢想？那么摩托车到底安全么？</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    8人见过
-                </span>
-                
-            </a>
-            </li>
-
+        {/if}
+        {/foreach}
 
             <li class="index-list-subject index-list-lg">
 
-                <a data-received="首页-专题页..specialID.944" href="{:url('/special').'/health2017_wuhan/'}">
-                <img src="http://media.zaih.com/FuYmga_0r4nyplCgslMKKnkETC7T">
+                <a data-received="首页-专题页..specialID.944" href="{:url('/index/holiday')}">
+                <img src="{$place_topic['pic']} " style="width: 480px;height: 320px">
             </a>
 
             </li>
 
+        {foreach $find_money_expert as $k=>$exparray}
+        {if $k>=4}
             <li class="index-list-tutor index-list-sm">
                 <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
+                <img src="__STATIC_PATH__/{$exparray['exp_homepic']}">
 
                 <div class="index-list-cover"></div>
                 <div class="index-tutor-info">
-                    <h3>王华</h3>
-                    <h4>爱奇艺电影市场分析师</h4>
-                    <p class="index-topic-name">让你的电影项目打动投资方</p>
+                    <h3>{$exparray['exp_realname']}</h3>
+                    <h4>{$exparray['exp_job']}</h4>
+                    <p class="index-topic-name">小白也能懂的个性化推荐系统</p>
                     <p class="index-topic-info">
                         <i>『 </i>
-                            <span>如果你是编剧，正在为自己的剧本找钱，却不太顺利，就来找我吧，我可以教你多种方法来包装剧本，你会发现你的剧本比你想象的更善变…</span>
+                            <span>依托于互联网行业的快速发展，信息的爆炸式增长，推荐系统有了很好的生存土壤。所谓个性化推荐，就是要帮助人们从纷繁复杂的信息中…</span>
                         <i> 』</i>
                     </p>
                 </div>
-                
-                <span class="index-tutor-views">
-                    34人见过
-                </span>
-                
-            </a>
-            </li>
-
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>罗浩</h3>
-                    <h4>移动端互联网创业公司APP研发经理</h4>
-                    <p class="index-topic-name">APP开发岗位如何进行职业规划</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>APP开发已在各大行业领域得到了广泛的应用，从事APP开发人员的竞争优势在哪里？面对越来越多的开发人员，如何提高自己，方向…</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
                 <span class="index-tutor-views">
                     10人见过
                 </span>
-                
             </a>
             </li>
+        {/if}
+        {/foreach}
 
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>黄子潇</h3>
-                    <h4>无二之旅资深旅行定制师</h4>
-                    <p class="index-topic-name">如何快速高效规划你的海外旅行</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>我热爱旅行，享受在路上的感觉，认为有故事的地方就有远方。曾在比利时、法国、刚果布旅居，陆续深度游历了26个国家，足迹遍及欧…</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    9人见过
-                </span>
-                
-            </a>
-            </li>
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>赵威</h3>
-                    <h4>世界五百强HRD，地产文化公司总经理</h4>
-                    <p class="index-topic-name">帮你在企业中脱颖而出</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>如果你是外企或大型民企中的工作不到5年的职场新人，或许会为这些问题感到困扰：为什么被提升的人不是我？为什么我不能脱颖而出？</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    38人见过
-                </span>
-                
-            </a>
-            </li>
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>丛洋</h3>
-                    <h4>葡萄园CEO</h4>
-                    <p class="index-topic-name">问诊创始合伙团队，查漏补缺</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>这不是一个单打独斗的时代，这是一个联手外脑，换位思考，共赢共创的时代。</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    5人见过
-                </span>
-                
-            </a>
-            </li>
-
-            <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
-                <img src="http://media.zaih.com/FmWvIBaDuJyILnq7tN4gMmWwQc4y">
-
-                <div class="index-list-cover"></div>
-                <div class="index-tutor-info">
-                    <h3>吴斐</h3>
-                    <h4>北京亮亮视野科技有限公司创始人</h4>
-                    <p class="index-topic-name">AR增强现实行业应用</p>
-                    <p class="index-topic-info">
-                        <i>『 </i>
-                            <span>都说增强现实AR硬件应该从行业突破，那么具体如何做？我愿与你分享具体的行业介绍；针对核心技术进行讲解；分享行业拓展心得。</span>
-                        <i> 』</i>
-                    </p>
-                </div>
-                
-                <span class="index-tutor-views">
-                    7人见过
-                </span>
-                
-            </a>
-            </li>
         </ul>
         <div class="index-btn">
             <a  href="{:url('/index/topics/')}" class="btn-default btn-hg">发现更多行家</a>
@@ -306,7 +140,7 @@
 
         <div class="index-app-download appDownloadBar">
             <a class="app-download-lg" href="{:url('/index/appzai')}">
-            <img src="http://media.zaih.com/FqF4pQnbAuzVwpjNjstOox7L_RSW">
+            <img src="__STATIC_PATH__/static/index/images/zh_download.jpeg">
         </a>
             <a target="_blank" class="app-download-sm">
             <img src="http://media.zaih.com/FlUh_JkYc1zis1lEr3Z84DCBfsmu">
@@ -320,31 +154,30 @@
      <div id="slider" class="slider">
 
         
-        <div class="slides" style="background-image: url(&quot;http://media.zaih.com/Fv1BET_ZkUooIcySBnF2QE1Y-lBf&quot;);">
+        <a class="slides" style="background-image: url(&quot;__STATIC_PATH__/{$lunbo_list.slide_pic1}?abcd&quot;);">
 
-            <p class="slides-title">「在行是连接人与人的<br>一万种可能。」</p>
-            <p class="slides-summary">在“有趣然而无用”大行其道的当下，<br>在行所促成的每一次经验交谈都明确的指向“有用”。<br>无论你的问题是“资金不足时如何创业”，<br>还是“姐弟恋中如何扮演好姐姐”<br>——《南方人物周刊》</p>
+            <p class="slides-title">{$lunbo_list.title1}</p>
+            <p class="slides-summary">{$lunbo_list.summary1}</p>
+            <span class="slides-btn">{$lunbo_list.pepole_index1}</span>
 
-
-        </div>
-
-
-
-        <a href="" class="slides" style="background-image: url(&quot;http://media.zaih.com/FlACCWOn8Nku5IKZe3ZTR5nE_5j6&quot;);">
-
-            <p class="slides-title">在行是我进行“数字生存实验”<br>的沃土。我要印证一个生命影响<br>另一个生命的可能。</p>
-            <p class="slides-summary">萧秋水,知识管理专家。<br>在行一对一服务已破百单。<br>她通过在行找到了互联网时代新的生存之道。<br>甚至通过在行开展微信私教分享课程。<br>在将认知盈余价值最大化的同时，<br>获得了可观的经济收益。</p>
-            <span class="slides-btn">去萧秋水的行家页</span>
         </a>
 
 
 
-        <a href="" class="slides" style="background-image: url(&quot;http://media.zaih.com/FuPR4BPYaY8GI3Rsj3sKo33Ztyl6&quot;);">
+        <a href="" class="slides" style="background-image: url(&quot;__STATIC_PATH__/{$lunbo_list.slide_pic2}?abcd&quot;);">
 
-            <p class="slides-title">「除了社交作用,<br>她们还是我的数据库,<br>知道她们需要什么<br>很重要」</p>
-            <p class="slides-summary">乔齐, <br>女装品牌Georgette.Q创始人。<br>作为在行上的行家,已经见过35个人<br>大部分是科技圈的女高管,是她的目标客户</p>
+            <p class="slides-title">{$lunbo_list.title2}</p>
+            <p class="slides-summary">{$lunbo_list.summary2}</p>
+            <span class="slides-btn">{$lunbo_list.pepole_index2}</span>
+        </a>
 
-            <span class="slides-btn">去乔齐的行家页</span>
+
+
+        <a href="" class="slides" style="background-image: url(&quot;__STATIC_PATH__/{$lunbo_list.slide_pic3}?abcd&quot;);">
+
+            <p class="slides-title">{$lunbo_list.title3}</p>
+            <p class="slides-summary">{$lunbo_list.summary3}</p>
+            <span class="slides-btn">{$lunbo_list.pepole_index3}</span>
 
 
         </a>
@@ -354,6 +187,23 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+//  改变首页大图
+    var coverImage=document.querySelector('.cover-image');
+    coverImage.style.backgroundImage='url("__STATIC_PATH__/{$data_list.head_img}")';
+    
+</script>
+<script type="text/javascript">
+    //改变slider中的第一个span
+    var vSlider=document.querySelector('#slider');
+    var vSpan=vSlider.querySelectorAll('.slider .slides-btn');
+    for(var i=0;i<vSpan.length;i++){
+        if(vSpan[i].innerHTML==''){
+            vSpan[i].style.display="none";
+        }
+    }   
+//  vSpan.style.display="none";
+</script>
 <script src="__STATIC_PATH__/static/index/js/index.js"></script>
 {include file='nav_foot/foot' /}
 {include file='common/footer' /}

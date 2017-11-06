@@ -1,0 +1,417 @@
+{include file="public/header"} 
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+ 
+<div class="container mt-3" style="padding: 0;">
+    <div class="content">
+            <div>
+                <label>用户编号</label>
+                <input type="text" value="{$uid}" id="uid">
+            </div>
+            <div class="main" id="formWrap">
+                <form class="apply-form" id="tutorForm">
+                    <div class="form-group">
+                        <div class="profile-picture">
+                            <div class="profile-picture-mask"></div>
+                            <input type="file" name="file" data-name="profile_picture" id="picture_input" style="z-index: 20">
+                            <div style="position: absolute;border-radius: 50%; top: 0px;left: 0px;width: 100%;height: 100%;z-index: 15;background-size:100%; background-repeat:round;"></div>
+                            <img src="__STATIC_PATH__/static/expertaddinfo/image/camera.png" alt="" class="profile-picture-mask-camera">
+                            <img src="__STATIC_PATH__/static/expertaddinfo/image/profile-picture.png" id="profile_picture">
+                        </div>
+                        <div class="form-tip">头像支持jpg，png，gif格式图片，请尽可能选用160*160以上照片。</div>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <div class="form-group" data-required="required">
+                        <input name="realname" type="text" maxlength="20" placeholder="行家姓名：真名或常用名，最少2字" value="" id="realname">
+                        <span class="form-error ErrName"></span>
+                    </div>
+
+                    <div class="form-group" data-required="required">
+                        <select autofocus="" name="city" id="city">
+                            <option value="">请选择：常驻城市</option>
+                            
+                                {foreach $place as $value}
+                                    <option value="{$value['id']}">{$value['place_name']}</option>
+                                {/foreach}
+                               
+                            <option value="其他">其他</option>
+                        </select>
+                        <span class="form-error Errcity"></span>
+                    </div>
+
+                    <div class="form-group" data-required="required">
+                        <input name="meet_location" type="text" maxlength="20" placeholder="在常驻城市的常活动区域：国贸、中关村，最少2字" value="" id="meet_location">
+                        <!-- <span class="form-range"><i>0</i>/20</span> -->
+                        <span class="form-error Errmeet"></span>
+                     </div>
+
+                    <div class="row">
+                            <div class="form-group" data-required="required">
+                                <select autofocus="" name="category_id" placeholder="行业：请选择您所擅长的领域" id="category_id">
+                                    <option value="">请选择：行业</option>
+
+                                        {foreach $category as $value}
+                                            <option value="{$value['id']}">{$value['cate_name']}</option>
+                                        {/foreach}
+                                        <option value="其他">其他</option>
+                                </select>
+                                <span class="form-error Errcate"></span>
+                            </div>
+                            <div class="form-group" data-required="required">
+                                <select autofocus="" name="seniority" placeholder="工作年限" id="seniority">
+                                    <option value="">请选择：工作年限</option>
+                                    <option value="3-5年">3-5年</option>
+                                    <option value="5-10年">5-10年</option>
+                                    <option value="10年以上">10年以上</option>
+                                </select>
+                                <span class="form-error Errsenior"></span>
+                            </div>
+                    </div>
+
+
+                    <div class="form-group" data-required="required">
+                        <input name="occupation" type="text" maxlength="20" placeholder="任职机构：自由职业者可填写工作室名字，最少2字" value="" id="occupation">
+                        <!-- <span class="form-range"><i>0</i>/20</span> -->
+                        <span class="form-error Erroccu"></span>
+                    </div>
+
+
+                    <div class="form-group" data-required="required">
+                        <input name="title" type="text" maxlength="20" placeholder="头衔/职位：自由职业者可注明，最少2字" value="" id="title">
+                        <!-- <span class="form-range"><i>0</i>/20</span> -->
+                        <span class="form-error Errtitle"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="education" data-required="required">教育背景/培训经历（最多500字）
+                            <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                        </label>
+                        <textarea rows="6" name="education" maxlength="500" placeholder="2007年9月-2011年7月，北京大学，新闻与传播学专业，硕士研究生，最少20字" id="education"></textarea>
+                        <span class="form-error Erredu"></span>
+                    </div>
+
+                    <div class="checkbox-wrap">
+                        <label>
+                            <input name="is_show_education" type="checkbox" id="showedu">
+                            <span class="checkbox checkbox-false"><i class="icon icon-checkbox"></i></span>
+                            向学员公开教育背景/培训经历，以增加行家资质说明
+                        </label>
+                    </div>
+
+
+
+
+                    <div id="categoryForm">
+                        <div class="category-item" data-category_type="certificate">
+                            <div class="form-group">
+                                <label for="career_experience" data-required="required">职业经历（最多800字）
+                                    <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                </label>    
+
+
+                                <textarea name="" id="work_exper" cols="30" rows="10" placeholder="可填写多段经历，描述清楚时间段、任职机构、职位，最少20字"></textarea>
+                                 <span class="form-error Errexper"></span>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project_experience" >项目经历（最多800字）
+                                    <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                </label>    
+                                <textarea name="" id="pro_exper" cols="30" rows="10"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="social_account" >媒体报道/社交账号链接（最多500字）
+                                    <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                </label>    
+                                <textarea name="" id="soc_cont" cols="30" rows="10"></textarea>
+                            </div>  
+
+
+                            <div class="form-group">
+                                <label for="career_images">上传职业证明材料（最多5张照片）</label>
+                                    <div id="career_images">
+                                        <div class="photo career_image" style="position: relative;">
+                                            <input type="file" name="file1" style="display: block;height: 100%;width: 100%;position: absolute;">
+                                            <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;" >
+                                        </div>
+                                        <div class="photo career_image" style="position: relative;">
+                                            <input type="file" name="file2" style="display: block;height: 100%;width: 100%;position: absolute;">
+                                            <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                         </div>
+                                        <div class="photo career_image" style="position: relative;">
+                                            <input type="file" name="file3" style="display: block;height: 100%;width: 100%;position: absolute;">
+                                            <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                        </div>
+                                        <div class="photo career_image" style="position: relative;">
+                                            <input type="file" name="file4" style="display: block;height: 100%;width: 100%;position: absolute;">
+                                            <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                        </div>
+                                        <div class="photo career_image" style="position: relative;">
+                                            <input type="file" name="file5" style="display: block;height: 100%;width: 100%;position: absolute;">
+                                            <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+                                        </div>
+                                    </div>
+                                    <span class="form-tip">能体现职务的名片、工作证、加盖公章的在职证明、劳动合同和社保缴费证明等，仅供审核参考，信息保密</span>
+                                    <span class="form-error Errpho"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="readme" data-required="required">自述（最多1000字）
+                                    <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                                </label>    
+                                <textarea name="" id="self_intro" cols="30" rows="10"></textarea>
+                                <span class="form-error Errintro"></span>
+                            </div>
+
+
+                            <div class="checkbox-wrap">
+                                <label>
+                                    <input id="is_agreed" type="checkbox">
+                                    <span class="checkbox checkbox-true"><i class="icon icon-checkbox"></i></span>
+                                    本人承诺为以上信息的真实性及准确性负责，并会在任职信息变更时及时更新行家资料
+                                </label>
+                            </div>
+
+                            
+                            <div class="btns-wrap btns-wrap-center">
+                                <input id="submitBtn" class="btn-primary btn-lg" value="保存" type="button" disabled="true" style="line-height: 100%;" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+</div>
+<script>
+        $(function(){
+            var formData = new FormData();
+            console.log(formData)
+            var headPic='';
+            var imgList=[];
+            for(var i=0;i<5;i++){
+                $('#career_images input').eq(i).change(function(){
+                    // console.log(this)
+                    imgList.push(showImg(this,1))
+                }) 
+            }
+            $('#picture_input').change(function(){
+                headPic=showImg(this,-1)
+            })
+
+            function showImg(that,id){
+                var objUrl = getObjectURL(that.files[0]);
+                console.log(that)
+                // var type = that.files[0].type;
+                var type = that.files[0].type.split('/')[1]; 
+                console.log(type)
+                var size = that.files[0].size;
+                if(type == 'jpeg' || type == 'jpg' || type == 'png' || type == 'gif'){
+                    if(size > 1000000){alert('上传的图片不能大于1m,请重新上传')}
+                    if(id==1){
+                        if (objUrl) {
+                                $(that).next().attr("src", objUrl);
+                            }
+                    }else{
+                            if (objUrl) {
+                                $(that).next().css("background-image","url("+objUrl+")");
+                            }
+                    }
+                    return that.files[0];
+                }else{
+                    alert('上传的图片格式不对')
+                }   
+            }
+
+            function getObjectURL(file) {
+                var url = null ;
+                if (window.createObjectURL!=undefined) { // basic
+                    url = window.createObjectURL(file) ;
+                } else if (window.URL!=undefined) { // mozilla(firefox)
+                    url = window.URL.createObjectURL(file) ;
+                    console.log(2)
+                }
+                 else if (window.webkitURL!=undefined) { // webkit or chrome
+                    url = window.webkitURL.createObjectURL(file) ;
+                }
+                return url ;
+            }
+            
+            $('#formWrap #is_agreed').click(function(){
+                console.log(this)
+                if($(this).get(0).checked){
+                    $('#formWrap #submitBtn').attr("disabled",false);
+                    console.log(1) 
+                }else{
+                    $('#formWrap #submitBtn').attr("disabled",true); 
+                    console.log(2)
+                }
+            })
+
+            $('#formWrap #submitBtn').click(function(){
+                var uid = $('#uid').val();
+                var realname = $('#realname').val();//真实姓名*
+                var city = $('#city').val();//城市*
+                var meet_location = $('#meet_location').val();//常住城市活动区域*
+                var category_id = $('#category_id').val();//行业*
+                var seniority = $('#seniority').val();//工作年限*
+                var occupation = $('#occupation').val();//任职机构*
+                var title = $('#title').val();//头衔，职位*
+                var education = $('#education').val();//教育经历*
+                var work_exper = $('#work_exper').val();//职业经历*
+                var pro_exper = $('#pro_exper').val();//项目经历
+                var soc_cont = $('#soc_cont').val();//社交、媒体链接
+                var self_intro = $('#self_intro').val();//自我介绍*
+
+                var showedu = 0; //是否公开教育经历
+                if ($("#showedu").get(0).checked) {
+                   showedu = 1;
+                   console.log('gawgw');
+                }
+                var is_agreed = 0;//是否同意协议
+                if ($("#is_agreed").get(0).checked) {
+                   is_agreed = 1;
+                   console.log('wgw');
+                }
+
+                if(!realname)
+                {
+                    $('#formWrap .ErrName').text('不能为空');
+                    return;                             //姓名错误
+                }else if(!city){
+                    $('#formWrap .Errcity').text('不能为空');
+                    return;                             //城市错误
+                }else if(!meet_location){
+                    $('#formWrap .Errmeet').text('不能为空');
+                    return;                             //区域错误
+                }else if(!category_id){
+                    $('#formWrap .Errcate').text('不能为空');
+                    return;                             //行业错误
+                }else if(!seniority){
+                    $('#formWrap .Errsenior').text('不能为空');
+                    return;                             //年限错误
+                }else if(!occupation){
+                    $('#formWrap .Erroccu').text('不能为空');
+                    return;                             //机构错误
+                }else if(!title){
+                    $('#formWrap .Errtitle').text('不能为空');
+                    return;                             //职位错误
+                }else if(!education){
+                    $('#formWrap .Erredu').text('不能为空');
+                    return;                             //教育经历错误
+                }else if(!work_exper){
+                    $('#formWrap .Errexper').text('不能为空');
+                    return;                             //职业经历
+                }
+                else if(!imgList){
+                    $('#formWrap .Errpho').text('不能为空');
+                    return;                             //图片验证
+                }
+                else if(!self_intro){
+                    $('#formWrap .Errintro').text('不能为空');
+                    return;                             //自述
+                }
+                
+                for(var i=0;i<imgList.length;i++)
+                {
+                    formData.append("picture"+(i),imgList[i]);
+                }
+
+                formData.append("headPic",headPic);
+                // var badata = {
+                //  realname: realname,
+                //  city: city,
+                //  meet_location: meet_location,
+                //  category_id: category_id,
+                //  seniority: seniority,
+                //  occupation: occupation,
+                //  title: title,
+                //  work_exper: work_exper,
+                //  pro_exper: pro_exper,
+                //  soc_cont: soc_cont,
+                //  self_intro: self_intro,
+                // }
+                
+                // badata=JSON.stringify(badata);
+                // formData.append('badata',badata);
+                formData.append("uid",uid);
+                formData.append("realname",realname);
+                formData.append("city",city);
+                formData.append("meet_location",meet_location);
+                formData.append("category_id",category_id);
+                formData.append("seniority",seniority);
+                formData.append("occupation",occupation);
+                formData.append("title",title);
+                formData.append("education",education);
+                formData.append("work_exper",work_exper);
+                formData.append("pro_exper",pro_exper);
+                formData.append("soc_cont",soc_cont);
+                formData.append("self_intro",self_intro);
+                
+                formData.append("showedu",showedu);
+                
+                formData.append("is_agreed",is_agreed);
+                //提交前验证
+                
+                // console.log(imgList)
+                // console.log(formData)
+                $.post({
+                    url: "{:url('/admin/iexpert/doHang')}",
+                    
+                    data: formData,
+                    processData: false,  // 不处理数据
+                    contentType: false,   // 不设置内容类型
+                    traditional: true,
+                    success: function(data){
+                        data = JSON.parse(data);
+                        // console.log(data);
+                        
+                        if(data.status==10){
+                            window.location.href = "{:url('/admin/iexpert/detailed',['uid'=>$uid])}"
+                        }else{
+                            ErrorShow(data);
+                        }
+                    },
+
+                })
+            })
+        
+            
+            //错误提示
+            function ErrorShow(data){
+                if(data.status==13)
+                {
+                    $('#formWrap .ErrName').text(data.message);//姓名错误
+                }else if(data.status==14){
+                    $('#formWrap .Errcity').text(data.message);//城市错误
+                }else if(data.status==15){
+                    $('#formWrap .Errmeet').text(data.message);//区域错误
+                }else if(data.status==16){
+                    $('#formWrap .Errcate').text(data.message);//行业错误
+                }else if(data.status==17){
+                    $('#formWrap .Errsenior').text(data.message);//年限错误
+                }else if(data.status==18){
+                    $('#formWrap .Erroccu').text(data.message);//机构错误
+                }else if(data.status==19){
+                    $('#formWrap .Errtitle').text(data.message);//职位错误
+                }else if(data.status==20){
+                    $('#formWrap .Erredu').text(data.message);//教育经历错误
+                }else if(data.status==21){
+                    $('#formWrap .Errexper').text(data.message);//职业经历
+                }else if(data.status==22){
+                    $('#formWrap .Errpho').text(data.message);//图片验证
+                }else if(data.status==23){
+                    $('#formWrap .Errintro').text(data.message);//自述
+                }
+            }
+            //获取焦点后清除错误信息
+            $("#formWrap input").focus(function(){
+              $("#formWrap .form-error").text('');
+            });
+        })
+    </script>
+{include file="public/footer"}

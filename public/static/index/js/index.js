@@ -167,3 +167,14 @@
 
             var p1 = new Banner();
             //console.log(p1)
+
+
+            $(document).ready(function(){ 
+                $("按下回车的控件").keydown(function(e){ 
+                    var curKey = e.which; 
+                    if(curKey == 13){ 
+                        $("#回车事件按钮控件").click(); 
+                        return false; 
+                    } 
+                }); 
+            }); 

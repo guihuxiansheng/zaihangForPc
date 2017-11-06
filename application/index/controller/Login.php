@@ -12,33 +12,23 @@
 		}
 		public function index(){
 			//如果用户已经的登陆，则转到首页面
-			 if($this->user)
+			 if($this->user!=null)
 			 	{
-			 		// //获取个人信息
-			   //      $info = db("user")
-			   //      		->where("user_name='$this->user'")
-			   //      		->find();
-			   //      $this->assign("info",$info);
-			 		return $this->fetch('index/index');
+			 		return $this->redirect('index/index');
 			 	}
 			return $this->fetch();
 		}
 
 		function login(){
-			$username = input('username');
-			// $password = input('password');
-			$password = md5(input('password'));
 			try{
-				$info = db('user')->where("user_name='$username' and user_pwd='$password'")->find();
+				$that=model("Login");
+				$info = $that->findsame();
 
 				// var_dump($info);
 				if($info){
 					// $this->success("登录成功！");
 					Session::set('user_name',$info);
 
-					// $this->assign('login',$username);
-
-					// return $this->fetch('index/index');
 					return json_encode(Array(
 						'status'=>0,
 						'message'=> '登录成功！'

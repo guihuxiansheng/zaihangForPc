@@ -61,8 +61,14 @@
             </ul>
             
             <div class="header_setting">
-                
+                {if $login}
+                {if $login['if_specialist']==1}
+                <a class="tutorApply hover tohangj" href="{:url('/index/expertreal')}">我的行家</a>
+                {else}
                 <a class="tutorApply hover tohangj" href="{:url('/index/expertreal')}">成为行家</a>
+                {/if}
+                {/if}
+
                 {if !$reg}
                 {if $login}
                 <a class="hover header_user" href="{:url('/index/personalinfo/index')}">{$login['user_name']}</a>
@@ -130,7 +136,7 @@
                                         <input class="form-control" id="password" name="password" placeholder="密码" type="password" value="">
                                         <p class="form-error errForPassword"></p>
                                     </div>
-                                    <div class="err"></div>
+                                    <div class="err" style="position: absolute; text-align: left;color: #ff946e;"></div>
                                 </div>
                                 <div class="btns-wrap-center">
                                     <input type="button" id="submit" class="btn-submit btn-hg btn-complete-register" value="登录">
@@ -161,6 +167,7 @@
                     alert('请输入账号内容！');
                     return;
                 }
+                // console.log(3333)
                 $.post({
                     url: "{:url('../../index/login/login')}",
                     data:{
@@ -169,20 +176,39 @@
                     },
                     success: function(data){
                         data = JSON.parse(data);
-                        console.log(data,data.status,data.status == 0)
+                        console.log(data)
                         if(data.status == 0){
                             window.location.href = "{:url('index')}";
                         }else{
-                            showErr();
+                            showErr(data);
                         }
                     },
 
                 })
             })
+
             function showErr(data){
-                $('.signup .err').text(data.message);
+                $('.signForm .err').text(data.message);
+                console.log(11111)
             }
         })
+
+
+        $(document).ready(function(){ 
+            $("#loginWin .signForm").keydown(function(e){ 
+                var curKey = e.which; 
+                // console.log(111);
+                if(curKey == 13){ 
+                    $("#loginWin #submit").click();
+                    // console.log(2222) 
+                    return false; 
+                } 
+            }); 
+        }); 
+        
+        $(".signup input").focus(function(){
+              $(".signup .err").text('');
+            });
     </script>
 </body>
 </html>

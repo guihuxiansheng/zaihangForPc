@@ -1,0 +1,138 @@
+{include file="public/header"} 
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddtop/css/add_subject.css">
+ 
+<div class="container mt-3" style="padding-top: 0;">
+    
+     <div class="card">
+         <div class="card-title">
+            <h3 style="text-align: center;color: rgb(255, 148, 110);font-size: 30px;">行家审核</h3>
+            <a href="{:url('user',['id'=>$info['id']])}" class="btn btn-info" style="background: #ff946e;">用户信息</a>
+            <a href="{:url('expert',['id'=>$info['id']])}" class="btn btn-info">行家信息</a>
+            <a href="{:url('firsttop',['id'=>$info['id']])}" class="btn btn-info">话题信息</a>
+         </div>
+
+        <div class="card-body">
+        	<h4 style="margin: 30px;text-align: center;color: #ff946e;font-size: 24px;">用户信息审核</h4>
+             <div class="col-sm-4 text-center">
+                 <img src="http://media.zaih.com/Fh8J1Fi5s-dN1IasJlJ12wpJKOsa!avatar" alt="">
+                <!--  <img src="{$info.user_head_pic}" alt="" style="position: relative; height: 160px;width: 160px;top: -160px;left: 0;border-radius: 50%;"> -->
+                
+             </div>
+             <div class="col-sm-8">
+                 <form action="{:url('save')}" method="post" id="userEdit">
+                     <div class="form-group">
+                        <label >用户编号</label>
+                        <input type="text" name="id" value="{$info.id}" disabled="true">
+                    </div>
+                    <div class="form-group">
+                        <label >用户名</label>
+                        <input type="text" class="form-control inputdata"  name="user_name" value="{$info.user_name}" disabled="true">
+                        <span class="form-error errUsername" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >真实姓名</label>
+                        <input type="text" class="form-control inputdata" name="user_true_name" value="{$info.user_true_name}" disabled="true">
+                        <span class="form-error errTruename" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >常住地址</label>
+                        <input type="text" class="form-control inputdata" name="user_address" value="{$info.user_address}" disabled="true">
+                        <span class="form-error errAdres" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >注册时间</label>
+                        <input type="text" class="form-control inputdata" name="create_time" value="{$info.create_time}" disabled="true">
+                        <span class="form-error errCre" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >身份证号</label>
+                        <input type="text" class="form-control inputdata" name="user_identityId" value="{$info.user_identityId}" disabled="true">
+                        <span class="form-error errIden" style="position: absolute;height: 18px;color: red;"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label >支付宝账户</label>
+                        <input type="text" class="form-control inputdata" name="user_alipay" value="{$info.user_alipay}" disabled="true">
+                        <span class="form-error errAli" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                     <div class="form-group">
+                        <label >支付宝姓名</label>
+                        <input type="text" class="form-control inputdata" name="user_alipay_name" value="{$info.user_alipay_name}" disabled="true">
+                        <span class="form-error errAliname" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >手机号码</label>
+                        <input type="text" class="form-control inputdata" name="user_phone" value="{$info.user_phone}" disabled="true">
+                        <span class="form-error errForMobile" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >简介</label>
+                        <textarea id="text_content" name="user_intro" class="inputdata" style="width:100%" value="{$info.user_intro}" disabled="true"></textarea>
+                        <span class="form-error errIntro" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label >信用度</label>
+                        <input type="text" class="form-control inputdata" name="credit" value="{$info.credit}" disabled="true">
+                        <span class="form-error errIntro" style="position: absolute;height: 18px;color: red;"></span>
+                    </div>
+                 </form> 
+             </div>
+              <div class="btns-wrap btns-wrap-center">
+                    <input id="submitBtn" class="btn-primary btn-lg" value="审核通过" type="button"/>
+                </div>
+                <br>
+                <div class="btns-wrap btns-wrap-center">
+                    <input id="submitBtnno" class="btn-primary btn-lg" value="审核不通过" type="button" style="background: #dddddd;border:0;" />
+                </div>
+         </div>
+     </div>
+
+</div>
+<script>
+     $(function(){
+       $('#submitBtn').click(function(){
+            var uid="<?php echo $info['id'];?>";
+            $.post({
+                    url: "{:url('/admin/expertver/veruser')}",
+                    data:{
+                        uid:uid,
+                        type:1
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                        // console.log(data);
+                        if(data.status==10){
+                            window.location.href = "{:url('expert',['id'=>$info['id']])}"
+                        }else{
+                            ErrorShow(data);
+                        }
+                    },
+
+                })
+       })
+        $('#submitBtnno').click(function(){
+            var uid="<?php echo $info['id'];?>";
+         
+            $.post({
+                    url: "{:url('/admin/expertver/veruser')}",
+                    data:{
+                        uid:uid,
+                        type:0
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                        // console.log(data);
+                        if(data.status==11){
+                            window.location.href = "{:url('index')}"
+                        }else{
+                            ErrorShow(data);
+                        }
+                    },
+
+                })
+       })
+    })
+</script>
+    
+{include file="public/footer"}

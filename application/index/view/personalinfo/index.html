@@ -22,15 +22,7 @@
 								</li>
 								
 								<!--添加我的话题，预约单、收到的评论-->
-								<li class="navList_ul_li">	
-									<router-link to="/myTopic" active-class="whether_curMenu"><i class="cur_menu"></i>我的话题</router-link>
-								</li>
-								<li class="navList_ul_li">	
-									<router-link to="/yuyueList" active-class="whether_curMenu"><i class="cur_menu"></i>预约单</router-link>
-								</li>
-								<li class="navList_ul_li">	
-									<router-link to="/receivePinglun" active-class="whether_curMenu"><i class="cur_menu"></i>收到的评论</router-link>
-								</li>
+								
 								<!--添加结束-->
 								
 								<li class="navList_ul_li">	
@@ -96,9 +88,9 @@
 {$vo.id}:{$vo.meet_situation}<br/>
 {/volist} -->
 
-{foreach $meetinfo as  $key => $vo} 
-    <!-- {$vo.id}:{$vo.meet_question} -->
-		{if condition="($vo.expert_confirm == 0)"} <h2>等待行家确认</h2>
+				{foreach $meetinfo as  $key => $vo} 
+				    <!-- {$vo.id}:{$vo.meet_question} -->
+						{if condition="($vo.expert_confirm == 0)"} <h2>等待行家确认</h2>
 
 
 				<div class="haveHangjia">
@@ -136,7 +128,7 @@
 				</div>
 
 
-		{elseif condition="($vo.expert_confirm == -1)"/} <h2>订单被取消</h2>
+				{elseif condition="($vo.expert_confirm == -1)"/} <h2>订单被取消</h2>
 
 
 
@@ -176,7 +168,7 @@
 
 
 
-		{elseif condition="($vo.student_pay == 0)"/} <h2>确认并付款</h2> 
+				{elseif condition="($vo.student_pay == 0)"/} <h2>确认并付款</h2> 
 
 				<div class="haveHangjia">
 					<div class="appointmentHtml_zr_header">
@@ -219,7 +211,7 @@
 
 
 
-		{elseif condition="($vo.student_pay == 1) "/} <h2>已付款</h2> 
+				{elseif condition="($vo.student_pay == 1) "/} <h2>已付款</h2> 
 
 				<div class="haveHangjia">
 					<div class="appointmentHtml_zr_header">
@@ -258,7 +250,7 @@
 					</div>
 				</div>
 
-		{elseif condition="($vo.student_pay == 2) AND($vo.meet_score == NULL)"/} <h2>未评价</h2>
+				{elseif condition="($vo.student_pay == 2) AND($vo.meet_score == NULL)"/} <h2>未评价</h2>
 
 				<div class="haveHangjia">
 					<div class="appointmentHtml_zr_header">
@@ -303,7 +295,7 @@
 				</div>
 
 
-		{elseif condition="($vo.meet_score != 0)"/} <h2>已评价</h2>
+				{elseif condition="($vo.meet_score != 0)"/} <h2>已评价</h2>
 				<div class="haveHangjia">
 					<div class="appointmentHtml_zr_header">
 						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
@@ -333,7 +325,7 @@
 						</div>
 						<div class="aboutGeren">
 							<p>您的评论：</p>
-							<p>{$vo.meet_comment}</p>
+							<p></p>
 						</div>
 					</div>
 				</div>
@@ -403,351 +395,9 @@
 		
 		
 		<!--添加3个template，我的话题，预约单，收到的评论-->
-		<template id="myTopicHtml">
-			<div class="myTopicHtml">
-				<div class="myTopicHtml_zr_container">
-					<p>真忧伤，还没有我的话题。<a href="#">继续努力！</a></p>
-					<!--<ul>
-						<li>
-							
-						</li>
-					</ul>-->
-				</div>
-			</div>
-		</template>
-		<template id="yuyueListHtml">
-			<div class="yuyueListHtml">
-				{if (1==0)}
-
-				<!--没行家时-->
-				<div class="noHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p>我约的人</p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<p>真忧伤，我还没有约过人唉。<a href="#">立即去约人！</a></p>
-					</div>
-				</div>
-				
-				{else/}
-
-				<!--有行家时-->
-
-<!-- 				<?php
-					var_dump($expmeetinfo);
-				?> -->
-<!--···································· 预约单start ·······································-->
-
-{foreach $expmeetinfo as  $key => $vo} 
-    <!-- {$vo.id}:{$vo.meet_question} -->
-		{if condition="($vo.expert_confirm == 0)"}<h2>等待您确认！</h2>
-
-
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>{$vo.topic_name}</h2>
-								<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
-							</div>
-						</div>
-						<div class="money">
-							{$vo.topic_price}元
-						</div>
-						<div class="status" style="color:red;">
-							请确认
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop({$key})">查看详情</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>您想请教的问题是：</p>
-							<p>{$vo.meet_question}</p>
-						</div>
-						<div class="aboutGeren">
-							<p>您的个人简介:</p>
-							<p>{$vo.meet_situation}</p>
-						</div>
-						<form action="{:url('expertConfirm')}">
-							<div>
-								<p>输入您要见面的地点：</p>
-								<input type="text" name="meet_place">
-							</div>
-							<div>
-								<p>输入您要见面的时间：</p>
-								<input type="text" name="meet_time">
-							</div>
-							<input type="submit" value="同意预约">
-							<input type="hidden" value="{$vo.id}" name="id">
-						</form>
-						<form action="{:url('expertReject')}">
-							<input type="submit" value="拒绝">
-							<input type="hidden" value="{$vo.id}" name="id">
-						</form>
-					</div>
-				</div>
-
-
-		{elseif condition="($vo.expert_confirm == -1)"/}<h2>被您取消的订单</h2>
-
-
-
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>{$vo.topic_name}</h2>
-								<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
-							</div>
-						</div>
-						<div class="money">
-							{$vo.topic_price}元
-						</div>
-						<div class="status" >
-							您已拒绝
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop({$key})">查看详情</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>您想请教的问题是：</p>
-							<p>{$vo.meet_question}</p>
-						</div>
-						<div class="aboutGeren">
-							<p>您的个人简介:</p>
-							<p>{$vo.meet_situation}</p>
-						</div>
-					</div>
-				</div>
-
-
-
-		{elseif condition="($vo.student_pay == 0)"/} <h2>已提交，等待学员确认预约</h2> 
-
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>{$vo.topic_name}</h2>
-								<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
-							</div>
-						</div>
-						<div class="money">
-							{$vo.topic_price}元
-						</div>
-						<div class="status" style="color: sienna;">
-							等待中
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop({$key})">查看地点</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>见面地点：</p>
-							<p>{$vo.meet_place}</p>
-						</div>
-						<div class="aboutGeren">
-							<p>见面时间：</p>
-							<p>{$vo.meet_time}</p>
-						</div>
-					</div>
-				</div>
-
-
-
-
-
-		{elseif condition="($vo.student_pay == 1) "/} <h2>已完成，等待学员付款</h2>
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>{$vo.topic_name}</h2>
-								<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
-							</div>
-						</div>
-						<div class="money">
-							{$vo.topic_price}元
-						</div>
-						<div class="status" style="color:#FF946E;">
-							已见面
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop({$key})">查看地点</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>见面地点：</p>
-							<p>{$vo.meet_place}</p>
-						</div>
-						<div class="aboutGeren">
-							<p>见面时间：</p>
-							<p>{$vo.meet_time}</p>
-						</div>
-					</div>
-				</div>
-
-
-		{elseif condition="($vo.student_pay == 2) AND($vo.meet_score == NULL)"/} <h2>等待学员评价</h2>
-
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>{$vo.topic_name}</h2>
-								<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
-							</div>
-						</div>
-						<div class="money">
-							{$vo.topic_price}元
-						</div>
-						<div class="status" style="color:#FF946E;">
-							等待评价
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop({$key})">查看地点</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>见面地点：</p>
-							<p>{$vo.meet_place}</p>
-						</div>
-						<div class="aboutGeren">
-							<p>见面时间：</p>
-							<p>{$vo.meet_time}</p>
-						</div>
-					</div>
-				</div>
-
-		{elseif condition="($vo.meet_score != NULL)"/}<h2>已完成</h2>
-
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>{$vo.topic_name}</h2>
-								<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
-							</div>
-						</div>
-						<div class="money">
-							{$vo.topic_price}元
-						</div>
-						<div class="status" style="color:#FF946E;">
-							学员已评价
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop({$key})">查看评价</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>学员的评分：</p>
-							<p>{$vo.meet_score}</p>
-						</div>
-						<div class="aboutGeren">
-							<p>学员的评论：</p>
-							<p>{$vo.meet_comment}</p>
-						</div>
-					</div>
-				</div>
-
-
-
-		{else /} <h2>出现bug：有一条数据未输出</h2>
-		{/if}
-		<br/>
-{/foreach}
-
-
-<!--···································· 预约单end ·······································-->
-
-
-<!-- 
-				<div class="haveHangjia">
-					<div class="appointmentHtml_zr_header">
-						<p><span class="bianhao">编号：1506511613968660</span><span class="time">发起时间：2017-09-27</span></p>
-					</div>
-					<div class="appointmentHtml_zr_container">
-						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$info.user_head_pic}"/>
-							<div class="topic_word">
-								<h2>IT从业者如何做好职业规划</h2>
-								<p><span>范雯甜</span><span>&nbsp;&nbsp;&nbsp;</span>博优咨询首席顾问、合伙人</p>
-							</div>
-						</div>
-						<div class="money">
-							600元
-						</div>
-						<div class="status">
-							已经取消
-						</div>
-						<div class="lookMore">
-							<a @click="detailpop(0)">查看详情</a>
-						</div>
-					</div>
-					<div class="lookMove_box">
-						<div class="aboutWenti">
-							<p>您想请教的问题是：</p>
-							<p>111111</p>
-						</div>
-						<div class="aboutGeren">
-							<p>您的个人简介:</p>
-							<p>222222</p>
-						</div>
-						<div class="aboutLocaltion">
-							<p>见面时间：<span>2020-11-11</span></p>
-							<p>见面地点： <span>龙口商业大厦</span></p>
-						</div>
-					</div>
-				</div> -->
 		
-				
-				{/if}
-			</div>
-		</template>
-		<template id="receivePinglunHtml">
-			<div class="receivePinglunHtml">
-				<div class="receivePinglunHtml_zr_container">
-					<p>真忧伤，还没有关于我的评论。<a href="#">继续努力！</a></p>
-					<!--<ul>
-						<li>
-							
-						</li>
-					</ul>-->
-				</div>
-			</div>
-		</template>
+		
+		<!--  -->
 		<!--添加结束-->		
 		
 		
@@ -760,7 +410,7 @@
 						<a href="#">使用规则</a>
 					</p>
 				</div>
-				<div class="liquanHtml_zr_container">
+				<div class="liquanHtml_zr_container" style="padding: 26px 20px 35px 20px;">
 					<!--<p>您还没有获得礼券，请随时关注「在行」</p>-->
 					<div class="coupon_usable">
 						<div class="title">
@@ -1005,42 +655,8 @@
 							template:'#wantListHtml'
 						}
 					},
-					
-					
 //					添加导航项，我的话题，预约单，收到的评论
-					{
-						path:'/myTopic',
-						component:{
-							template:'#myTopicHtml'
-						}
-					},
-					{
-						path:'/yuyueList',
-						component:{
-							template:'#yuyueListHtml',
-							mounted:function(){
-								$(".nav_zr_container").css("border","none");
-								$(".yuyueListHtml").css("background","#fafafa");
-							},							
-							beforeDestroy:function(){
-								$(".nav_zr_container").css("border","1px solid #ccc");
-							},
-							methods:{
-								detailpop:function(even){
-									$(event.target).parent().parent().parent().find(".lookMove_box").toggle();
-								}
-							}
-						}
-					},
-					{
-						path:'/receivePinglun',
-						component:{
-							template:'#receivePinglunHtml'
-						}
-					},
 //					添加结束					
-					
-					
 //					礼券
 					{
 						path:'/liquan',
@@ -1101,7 +717,10 @@
 					{
 						path:'/YanzhengPhone',
 						component:{
-							template:'#YanzhengPhoneHtml'
+							template:'#YanzhengPhoneHtml',
+							methods:{
+
+							}
 						}
 					},
 					{
