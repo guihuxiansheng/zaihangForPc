@@ -15,35 +15,31 @@
 		{
 			//如果给用户没有过登陆，则自动转到登陆界面
 			if($this->user==null){
-				return $this->fetch('/login/index');
+				return $this->redirect('index/login/index');
 			}
 
+			$that = model('Expertaddinfo');
 			//如果该用户没有认证，则自动转到认证界面
-			$identification = db('user')
-	    			->field("user_identification,if_specialist")
-					->where("user_name='$this->user'")
-					->find();
+			$identification = $that->finduser($this->user['user_name']);
 			if($identification['user_identification']==0){
 				// return $this->fetch('/expertreal/index');
 				$this->redirect('expertreal/index');//路由重定向
 			}
-			//如果已经注册成为行家，则转到添加话题页面
+			//如果已经注册成为行家，则转到行家中心
 			if($identification['if_specialist']==1){
-				$this->redirect('expertaddtop/index');//路由重定向
+				$this->redirect('expertinfo/index');//路由重定向
 			}
 
 
 			//获取城市id和城市名
-			$place = db('place')
-					->field('id,place_name')
-					->select();
+			
+			//通过info.php接入
+			//获取城市id和城市名
+			$place = $that->findplace();
 			$this->assign('place',$place);
 
 
-			$field = db('category')
-					->field('id,cate_name')
-					->where("level=1")
-					->select();
+			$field = $that->findcategory();
 			$this->assign('category',$field);
 			//获取一级分类列表，地址列表
 			//在页面显示
@@ -125,9 +121,9 @@
 			$headPath='';
 			foreach ($img_file as $key => $value) {
 				if($key=='headPic'){
-					$headPath = $this->saveFiles($value,'static/images/');
+					$headPath = $this->saveFiles($value,'uploads/images/');
 				}else{
-					$imgPath[] = $this->saveFiles($value,'static/images/');
+					$imgPath[] = $this->saveFiles($value,'uploads/images/');
 				}
 			}
 
@@ -142,89 +138,43 @@
 					));
 			}
 			
-			$uid = db('user')
-					->field('id')
-					->where("user_name='$this->user'")
-					->find();
-			$id = $uid['id'];
+			$that = model('Expertaddinfo');
+			$uid = $that->finduser($this->user['user_name']);
+			// $id = $uid['id'];
 			// //存储
 			//查询专家表，如果该专家已经存在，则更新数据
 			//如果没有存在，则添加新专家
-			$info=db('expert')
-				->field('uid')
-				->where("uid='$id'")
-				->find();
+			$info=findexpert($uid['id']);
+
 			if($info){
-				db('expert')
-					->where("uid='$id'")
-	    			->update([
-						'exp_realname'=>$new_data['realname'],
-						'exp_city_id'=>$new_data['city'],
-						'exp_place'=>$new_data['meet_location'],
-						'exp_field_id'=>$new_data['category_id'],
-						'exp_workyear'=>$new_data['seniority'],
-						'exp_company'=>$new_data['occupation'],//
-						'exp_job'=>$new_data['title'],
-						'exp_edu_experience'=>$new_data['education'],
-						'exp_job_experience'=>$new_data['work_exper'],
-						'exp_project_experience'=>$new_data['pro_exper'],
-						'exp_sociallink'=>$new_data['soc_cont'],
-						'exp_proofpic'=>$proimg,//证明图片
-						'exp_narration'=>$new_data['self_intro'],//
-						'head_pic'=>$headPath,//头像
-						'show_edu'=>$new_data['showedu']//是否公开教育经历
-					]);
+				$that->updateexpert($id,$new_data,$proimg,$headPath);
 			}else{
-				db('expert')
-	    			->insert([
-						'uid'=>$id,
-						'exp_realname'=>$new_data['realname'],
-						'exp_city_id'=>$new_data['city'],
-						'exp_place'=>$new_data['meet_location'],
-						'exp_field_id'=>$new_data['category_id'],
-						'exp_workyear'=>$new_data['seniority'],
-						'exp_company'=>$new_data['occupation'],//
-						'exp_job'=>$new_data['title'],
-						'exp_edu_experience'=>$new_data['education'],
-						'exp_job_experience'=>$new_data['work_exper'],
-						'exp_project_experience'=>$new_data['pro_exper'],
-						'exp_sociallink'=>$new_data['soc_cont'],
-						'exp_proofpic'=>$proimg,//证明图片
-						'exp_narration'=>$new_data['self_intro'],//
-						'head_pic'=>$headPath,//头像
-						'create_time'=>time(),
-						'show_edu'=>$new_data['showedu']//是否公开教育经历
-					]);
+				$that->saveexpert($id,$new_data,$proimg,$headPath);
 			}
-	    	//更新用户表，更改是否是行家的字段值
-	    	db('user')
-	    			->where("id='$id'")
-	    			->update(['if_specialist' => 1]);
 
 
-	    	// $this->redirect('expertaddtop/index');//路由重定向
 	    	
 			return json_encode(Array(
 						'status'=>10,
-						'message'=> '注册成功'
+						'message'=> '提交成功,请等待审核'
 						// 'src'=> '/expertaddtop/index'//跳转到行家中心
 					));
 		}
 		
 		function saveFiles($file_data='',$path){
-		// if(!empty($file_data)){
-		// 	return '';
-		// }
-		// 获取文件临时路径
-		$var_file_path = $file_data['tmp_name'];
-		// 获取文件类型
-		$file_type = explode('/', $file_data['type']);
-		// 生成新的文件信息
-		$save_file_path = $path.time().rand(100000,1000000).'.'.$file_type[1];
-		// 保存图片
-		copy($var_file_path,$save_file_path);
+			// if(!empty($file_data)){
+			// 	return '';
+			// }
+			// 获取文件临时路径
+			$var_file_path = $file_data['tmp_name'];
+			// 获取文件类型
+			$file_type = explode('/', $file_data['type']);
+			// 生成新的文件信息
+			$save_file_path = $path.time().rand(100000,1000000).'.'.$file_type[1];
+			// 保存图片
+			copy($var_file_path,$save_file_path);
 
-		return $save_file_path;
-	}
+			return $save_file_path;
+		}
 	}
 ?>

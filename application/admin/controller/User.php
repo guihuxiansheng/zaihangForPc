@@ -48,10 +48,15 @@ class User extends Islogin
     public function update()
     {
 
-        db("user")->update(input());
+        $user_info=input();
+        // var_dump($user_info);
+        $that = model('User'); 
+        $that->updateinfo();
 
-        $this->success("修改成功","index");
-
+        return json_encode(Array(
+                        'status'=>10,
+                        'message'=> '保存成功'
+                    ));
     }
     // 删除 
      public function delete()
@@ -62,4 +67,20 @@ class User extends Islogin
         $this->success("删除成功","index");
 
     }
+    //图片处理
+    function saveFiles($file_data='',$path){
+            // if(!empty($file_data)){
+            //  return '';
+            // }
+            // 获取文件临时路径
+            $var_file_path = $file_data['tmp_name'];
+            // 获取文件类型
+            $file_type = explode('/', $file_data['type']);
+            // 生成新的文件信息
+            $save_file_path = $path.time().rand(100000,1000000).'.'.$file_type[1];
+            // 保存图片
+            copy($var_file_path,$save_file_path);
+
+            return $save_file_path;
+        }
 }

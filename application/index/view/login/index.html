@@ -41,7 +41,7 @@
 					                    <input class="form-control" id="passwordP" name="password" placeholder="密码" type="password" value="">
 										<p class="form-error errForPassword"></p>
 									</div>
-									<div class="err"></div>
+									<div class="err" style="position:absolute; text-align: left;color: #ff946e;"></div>
 				                </div>
 								<div class="btns-wrap-center">
 									<input type="button" id="submit" class="btn-submit btn-hg btn-complete-register" value="登录">
@@ -92,6 +92,21 @@
 			function showErr(data){
 				$('.signup .err').text(data.message);
 			}
+
+			$(document).ready(function(){ 
+	            $(".signup .signForm").keydown(function(e){ 
+	                var curKey = e.which; 
+	                // console.log(111);
+	                if(curKey == 13){ 
+	                    $(".signup #submit").click();
+	                    // console.log(2222) 
+	                    return false; 
+	                } 
+	            }); 
+	        }); 
+			$(".signup input").focus(function(){
+			  $(".signup .err").text('');
+			});
 		})
 	</script>
 {include file="nav_foot/foot"}
