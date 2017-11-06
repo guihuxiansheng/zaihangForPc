@@ -1,0 +1,271 @@
+{include file="common/header"}
+{include file="nav_foot/nav"}
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddtop/css/add_subject.css">
+	<div class="container">
+		<div class="content">
+
+			<div class="sticky-wrapper" id="sticky-wrapper" style="height: 100px;">
+				<div class="apply-steps sticky">
+					<div class="step-list" style="margin: 36px;text-align: center;color: rgb(255, 148, 110);">
+						请等待审核！我们会在3-5个工作日内发布审核结果，请耐心等待。
+					</div>
+				</div>
+			</div>
+
+			<div class="main" id="formWrap">
+				<form class="apply-form" id="tutorForm">
+					<div class="form-group">
+						<div class="profile-picture">
+							<div class="profile-picture-mask"></div>
+							<img src="__STATIC_PATH__/{$expert['head_pic']}" id="profile_picture" style="z-index: 11;">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="realname" data-required="required">真实姓名</label>
+						<input name="realname" type="text" maxlength="20" value="{$expert['exp_realname']}" id="realname" disabled="true">
+						<span class="form-error ErrName"></span>
+					</div>
+
+					<div class="form-group">
+						<label for="realname" data-required="required">常驻城市</label>
+				        <select autofocus="" name="city" id="city" disabled="true">
+				            <option value="">{$city['place_name']}</option>
+				        </select>
+				        <span class="form-error Errcity"></span>
+				    </div>
+
+				    <div class="form-group">
+				    	<label for="realname" data-required="required">常驻城市的常活动区域</label>
+				        <input name="meet_location" type="text" maxlength="20" disabled="true" value="{$expert['exp_place']}" id="meet_location">
+				        <!-- <span class="form-range"><i>0</i>/20</span> -->
+				        <span class="form-error Errmeet"></span>
+   					 </div>
+
+					<div class="row">
+					        <div class="form-group">
+					        	<label for="realname" data-required="required">行业</label>
+					            <select autofocus="" name="category_id" id="category_id" disabled="true">
+					                <option value="">{$category['cate_name']}</option>
+					            </select>
+					            <span class="form-error Errcate"></span>
+					        </div>
+					        <div class="form-group">
+					        	<label for="realname" data-required="required">工作年限</label>
+					            <select autofocus="" name="seniority" placeholder="工作年限" id="seniority" disabled="true">
+					                <option value="">{$expert['exp_workyear']}</option>
+					            </select>
+					            <span class="form-error Errsenior"></span>
+					        </div>
+				    </div>
+
+
+					<div class="form-group">
+						<label for="realname" data-required="required">任职机构</label>
+				        <input name="occupation" type="text" maxlength="20" placeholder="任职机构：自由职业者可填写工作室名字，最少2字" value="{$expert['exp_company']}" id="occupation" disabled="true">
+				        <!-- <span class="form-range"><i>0</i>/20</span> -->
+				        <span class="form-error Erroccu"></span>
+				    </div>
+
+
+					<div class="form-group">
+						<label for="realname" data-required="required">头衔、职位</label>
+				        <input name="title" type="text" maxlength="20" placeholder="头衔/职位：自由职业者可注明，最少2字" value="{$expert['exp_job']}" id="title" disabled="true">
+				        <!-- <span class="form-range"><i>0</i>/20</span> -->
+				        <span class="form-error Errtitle"></span>
+				    </div>
+
+
+					<div class="form-group">
+				        <label for="education" data-required="required">教育背景/培训经历（最多500字）
+				        	<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+			        	</label>
+				        <textarea rows="6" name="education" maxlength="500" placeholder="2007年9月-2011年7月，北京大学，新闻与传播学专业，硕士研究生，最少20字" id="education" value="{$expert['exp_edu_experience']}" disabled="true"></textarea>
+				        <span class="form-error Erredu"></span>
+				    </div>
+
+					<div class="checkbox-wrap">
+				        <label>
+				            <input name="is_show_education" type="checkbox" id="showedu">
+				            <span class="checkbox checkbox-false"><i class="icon icon-checkbox"></i></span>
+				            向学员公开教育背景/培训经历，以增加行家资质说明
+				        </label>
+				    </div>
+
+
+
+
+					<div id="categoryForm">
+						<div class="category-item" data-category_type="certificate">
+							<div class="form-group">
+								<label for="career_experience" data-required="required">职业经历（最多800字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+
+
+								<textarea name="" id="work_exper" cols="30" rows="10" placeholder="可填写多段经历，描述清楚时间段、任职机构、职位，最少20字" disabled="true">{$expert['exp_job_experience']}</textarea>
+								 <span class="form-error Errexper"></span>
+
+							</div>
+
+							<div class="form-group">
+								<label for="project_experience" >项目经历（最多800字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+								<textarea name="" id="pro_exper" cols="30" rows="10" disabled="true">{$expert['exp_project_experience']}</textarea>
+							</div>
+
+							<div class="form-group">
+								<label for="social_account" >媒体报道/社交账号链接（最多500字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+								<textarea name="" id="soc_cont" cols="30" rows="10" disabled="true">{$expert['exp_sociallink']}</textarea>
+							</div>	
+
+
+							<div class="form-group">
+								<label for="career_images">上传职业证明材料（最多5张照片）</label>
+									<div id="career_images">
+			                            <div class="photo career_image" style="position: relative;">
+			                            	<img src="{$imglist[0]?'__STATIC_PATH__/'.$imglist[0]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;" >
+		                            	</div>
+			                            <div class="photo career_image" style="position: relative;">
+			              
+			                         	  	<img src="{$imglist[1]?'__STATIC_PATH__/'.$imglist[1]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+			                           	 </div>
+			                            <div class="photo career_image" style="position: relative;">
+			                       	   	 	
+			                       	   	 	<img src="{$imglist[2]?'__STATIC_PATH__/'.$imglist[2]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+			                            </div>
+			                            <div class="photo career_image" style="position: relative;">
+		                        	        
+		                        	        <img src="{$imglist[3]?'__STATIC_PATH__/'.$imglist[3]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+			                            </div>
+			                            <div class="photo career_image" style="position: relative;">
+		                                    
+		                                    <img src="{$imglist[4]?'__STATIC_PATH__/'.$imglist[4]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+			                            </div>
+				                    </div>
+				                    <span class="form-tip">能体现职务的名片、工作证、加盖公章的在职证明、劳动合同和社保缴费证明等，仅供审核参考，信息保密</span>
+				                    <span class="form-error Errpho"></span>
+							</div>
+
+							<div class="form-group">
+								<label for="readme" data-required="required">自述（最多1000字）
+									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+								</label>	
+								<textarea name="" id="self_intro" cols="30" rows="10" disabled="true">{$expert['exp_narration']}</textarea>
+								<span class="form-error Errintro"></span>
+							</div>
+
+
+							<div class="checkbox-wrap">
+						        <label>
+						            <input id="is_agreed" type="checkbox" checked="true" disabled="true">
+						            <span class="checkbox checkbox-true"><i class="icon icon-checkbox"></i></span>
+						            本人承诺为以上信息的真实性及准确性负责，并会在任职信息变更时及时更新行家资料
+						        </label>
+						    </div>
+
+
+						</div>
+					</div>
+
+				</form>
+			</div>
+			
+				<form id="formTop" class="main">
+					
+					<h4 style="margin: 20px auto;color: #ff946e;text-align: center;">我的第一个话题</h4>
+					<div class="apply-form" id="topicForm">
+
+						<div class="form-group">
+							<label for="realname" data-required="required">话题名称</label>
+					        <input name="topic_title" type="text" maxlength="20" placeholder="话题名称：提炼话题的核心要点，方便学员筛选，最少5字" value="{$topic['topic_name']}" id="title" disabled="true">
+					        <!-- <span class="form-range"><i>0</i>/20</span> -->
+					        <span class="form-error Errtitle"></span>
+					    </div>
+						
+						<div class="form-group">
+							<label for="realname" data-required="required">行业类型</label>
+					        <select autofocus="" name="topic_duration" placeholder="行业类型" id="cateid" disabled="true">
+					        	<option value="">{$cate['cate_name']}</option>
+					        </select>
+					        <span class="form-error Errcat"></span>
+					    </div>
+
+						<div class="form-group">
+							<label for="realname" data-required="required">大致时长</label>
+					        <select autofocus="" name="topic_duration" placeholder="大致时长" id="holdtime" disabled="true">
+					            <option value="">{$topic['topic_time']}</option>
+					            
+					        </select>
+					        <span class="form-error Errht"></span>
+					    </div>
+
+					    <div class="form-group" data-type="number1">
+					    	<label for="realname" data-required="required">话题价格(元)</label>
+					        <input name="topic_reward" type="text" placeholder="话题价格" value="{$topic['topic_price']}" id="price" disabled="true">
+					        <span class="form-tip">价格不代表行家资历及水平，而是学员用来向知识分享者表达感谢的金额。在行的行家均价约为300元，建议您将价格设定在200-400元区间，更容易被学员约见。</span>
+					        <span class="form-error Errprice"></span>
+					    </div>
+						
+						<div class="form-group">
+							<label for="topic_introduction" data-required="required">话题大纲/要点（最多800字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="不少于5条要点，同一主题&#xA（1）教你科学的练习方法，多种训练方法结合练习腹肌&#xA（2）短期见效，让你越练越High&#xA（3）为你量身定制饮食计划&#xA最少20字" name="" id="bconcent" cols="30" rows="10" disabled="true">{$topic['topic_outline']}</textarea>
+							<span class="form-error Errbc"></span>
+						</div>
+
+						<div class="form-group">
+							<label for="topic_introduction" data-required="required">您在该领域的资历和成就（最多800字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="说说你为什么擅长分享这个话题&#xA我拥有十年健身经验，积累了丰富的理论知识，通过ACE培训及考试认证；拥有独家腹肌训练方法与技巧&#xA最少20字&#xA" name="" id="achieve" cols="30" rows="10" disabled="true">{$topic['topic_achievement']}</textarea>
+							<span class="form-error Errach"></span>
+						</div>
+
+						<div class="form-group">
+							<label for="topic_introduction">补充更多想说的（最多1000字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="包括但不限于：你想与学员分享的心情、学员约见前需做哪些准备、话题涉及的方法论模型和工具" name="elsecare" id="elsecare" cols="30" rows="10" disabled="true">{$topic['topic_ps']}</textarea>
+						</div>
+
+						<div class="checkbox-wrap">
+					        <label>
+					            <input name="has_icebreaker_price" type="checkbox" id="spread" disabled="true">
+					            <span class="checkbox checkbox-true">
+					        	    <!-- <i class="icon icon-checkbox"></i> -->
+					            </span>
+					            接受前两单半价，获得更多推广机会
+					        </label>
+					        <span class="form-tip">确认接受2名学员的约见后，价格将自动恢复到原价。据统计：95.2%的新行家通过破冰价获得首批种子学员，获得了首批好评。</span>
+					    </div>
+
+					</div>
+
+				</form>
+			<!--  -->
+		</div>
+		
+	</div>
+	<script>
+		$(function(){
+			var arr=<?php echo $topic['topic_spread'];?>;
+			if(arr==1)
+			{
+				$('#spread').attr('checked',true);
+			}
+
+			var ar=<?php echo $expert['show_edu'];?>;
+			if(ar==1)
+			{
+				$('#showedu').attr('checked',true);
+			}
+		})()
+	</script>
+{include file="nav_foot/foot"}
+{include file="common/footer"}

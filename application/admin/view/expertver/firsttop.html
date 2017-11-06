@@ -1,0 +1,107 @@
+{include file="public/header"} 
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddtop/css/add_subject.css">
+ 
+<div class="container mt-3" style="padding-top: 0;">
+    
+     <div class="card">
+         <div class="card-title">
+            <h3 style="text-align: center;color: rgb(255, 148, 110);font-size: 30px;">行家审核</h3>
+            <a href="{:url('user',['id'=>$id])}" class="btn btn-info">用户信息</a>
+            <a href="{:url('expert',['id'=>$id])}" class="btn btn-info">行家信息</a>
+            <a href="{:url('firsttop',['id'=>$id])}" class="btn btn-info" style="background: #ff946e;">话题信息</a>
+         </div>
+
+         <div class="card-body">
+            
+                <form id="formTop" class="main">
+                    
+                    <h4 style="margin: 20px auto;color: #ff946e;text-align: center; font-size: 24px">第一个话题审核</h4>
+                    <div class="apply-form" id="topicForm">
+
+                        <div class="form-group">
+                            <label for="realname" data-required="required">话题名称</label>
+                            <input name="topic_title" type="text" maxlength="20" placeholder="话题名称：提炼话题的核心要点，方便学员筛选，最少5字" value="{$topic['topic_name']}" id="title" disabled="true">
+                            <!-- <span class="form-range"><i>0</i>/20</span> -->
+                            <span class="form-error Errtitle"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="realname" data-required="required">行业类型</label>
+                            <select autofocus="" name="topic_duration" placeholder="行业类型" id="cateid" disabled="true">
+                                <option value="">{$cate['cate_name']}</option>
+                            </select>
+                            <span class="form-error Errcat"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realname" data-required="required">大致时长</label>
+                            <select autofocus="" name="topic_duration" placeholder="大致时长" id="holdtime" disabled="true">
+                                <option value="">{$topic['topic_time']}</option>
+                                
+                            </select>
+                            <span class="form-error Errht"></span>
+                        </div>
+
+                        <div class="form-group" data-type="number1">
+                            <label for="realname" data-required="required">话题价格(元)</label>
+                            <input name="topic_reward" type="text" placeholder="话题价格" value="{$topic['topic_price']}" id="price" disabled="true">
+                            <span class="form-tip">价格不代表行家资历及水平，而是学员用来向知识分享者表达感谢的金额。在行的行家均价约为300元，建议您将价格设定在200-400元区间，更容易被学员约见。</span>
+                            <span class="form-error Errprice"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic_introduction" data-required="required">话题大纲/要点（最多800字）
+                                <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                            </label>
+                            <textarea placeholder="不少于5条要点，同一主题&#xA（1）教你科学的练习方法，多种训练方法结合练习腹肌&#xA（2）短期见效，让你越练越High&#xA（3）为你量身定制饮食计划&#xA最少20字" name="" id="bconcent" cols="30" rows="10" disabled="true">{$topic['topic_outline']}</textarea>
+                            <span class="form-error Errbc"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topic_introduction" data-required="required">您在该领域的资历和成就（最多800字）
+                                <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                            </label>
+                            <textarea placeholder="说说你为什么擅长分享这个话题&#xA我拥有十年健身经验，积累了丰富的理论知识，通过ACE培训及考试认证；拥有独家腹肌训练方法与技巧&#xA最少20字&#xA" name="" id="achieve" cols="30" rows="10" disabled="true">{$topic['topic_achievement']}</textarea>
+                            <span class="form-error Errach"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topic_introduction">补充更多想说的（最多1000字）
+                                <!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+                            </label>
+                            <textarea placeholder="包括但不限于：你想与学员分享的心情、学员约见前需做哪些准备、话题涉及的方法论模型和工具" name="elsecare" id="elsecare" cols="30" rows="10" disabled="true">{$topic['topic_ps']}</textarea>
+                        </div>
+
+                        <div class="checkbox-wrap">
+                            <label>
+                                <input name="has_icebreaker_price" type="checkbox" id="spread" disabled="true">
+                                <span class="checkbox checkbox-true">
+                                    <!-- <i class="icon icon-checkbox"></i> -->
+                                </span>
+                                接受前两单半价，获得更多推广机会
+                            </label>
+                            <span class="form-tip">确认接受2名学员的约见后，价格将自动恢复到原价。据统计：95.2%的新行家通过破冰价获得首批种子学员，获得了首批好评。</span>
+                        </div>
+
+                    </div>
+
+                </form>
+                <div class="btns-wrap btns-wrap-center">
+                    <input id="submitBtn" class="btn-primary btn-lg" value="审核通过" type="button"/>
+                </div>
+                <br>
+                <div class="btns-wrap btns-wrap-center">
+                    <input id="submitBtn" class="btn-primary btn-lg" value="审核不通过" type="button" style="background: #dddddd;border:0;" />
+                </div>
+         </div>
+     </div>
+
+</div>
+<script>
+    $(function(){
+       
+    })
+</script>
+    
+{include file="public/footer"}

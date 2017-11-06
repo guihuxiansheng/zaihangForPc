@@ -1,0 +1,50 @@
+{include file="public/header"}
+<div class="container mt-3">
+    <h2>用户申请行家界面</h2>
+    <div class="row">
+        <form action="" class="form ">
+            <div class="form-group">
+                <label >用户名</label>
+                <input type="text" placeholder="请输入用户名进行搜索" name="user_name">
+                <input type="submit" class="btn btn-info" value="搜索"></div>
+        </form>
+    </div>
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>用户名</th>
+            <th>手机号</th>
+            <th>常住地址</th>
+            <th>支付宝</th>
+            <th>是否行家</th>
+            <th>创建时间</th>
+            <th>行家审核</th>
+            <th>操作</th>
+        </tr>
+        {foreach $user_list as $value}
+        <tr>
+            <td>{$value['id']}</td>
+            <td>{$value['user_name']}</td>
+            <td>{$value['user_phone']}</td>
+            <td>{$value['user_address']}</td>
+            <td>{$value['user_alipay']}</td>
+            <td>{$value['if_specialist']==1?'是':'否'}</td>
+            <td>{$value['create_time']}</td>
+            <td>
+                {if $value['exp_examine']==0}
+                <a href="{:url('user',['id'=>$value['id']])}" class="btn btn-info">申请成为行家</a>
+                {/if}
+            </td>
+            <td>
+                
+                <a href="{:url('detailed',['id'=>$value['id']])}" class="btn btn-info">详细</a>
+                <a href="{:url('delete',['id'=>$value['id']])}" class="btn btn-danger">删除</a>
+            </td>
+        </tr>
+        {/foreach}
+    </table>
+    <div>
+        {$user_list->render()}
+    </div>
+</div>
+{include file="public/footer"}

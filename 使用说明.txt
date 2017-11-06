@@ -1,1 +1,5 @@
-拉回本地使用时，首先需要根据本地路径修改application下的config.php配置文件（将视图输出字符串内容替换view_replace-str的属性__STATIC_PATH__的路径改成本地路径）。有时候也需要修改database.php的数据库配置
+脌颅禄脴卤戮碌脴脢鹿脫脙脢卤拢卢脢脳脧脠脨猫脪陋赂霉戮脻卤戮碌脴脗路戮露脨脼赂脛application脧脗碌脛config.php脜盲脰脙脦脛录镁拢篓陆芦脢脫脥录脢盲鲁枚脳脰路没麓庐脛脷脠脻脤忙禄禄view_replace-str碌脛脢么脨脭__STATIC_PATH__碌脛脗路戮露赂脛鲁脡卤戮碌脴脗路戮露拢漏隆拢脫脨脢卤潞貌脪虏脨猫脪陋脨脼赂脛database.php碌脛脢媒戮脻驴芒脜盲脰脙
+
+
+
+1010.9  鍦ㄦ暟鎹簱 user锛堢敤鎴疯〃锛変箣鍚庢坊鍔犱竴涓瓧娈礳redit锛堢敤鎴蜂俊鐢ㄥ�硷級

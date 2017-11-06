@@ -104,7 +104,7 @@
 					return;
 				}
 				$.post({
-					url: "{:url('/api/register/doReg')}",
+					url: "{:url('/index/register/doReg')}",
 					data:{
 						mobile: mobile,
 						nickname: nickname,
@@ -136,7 +136,7 @@
 					return;
 				}
 				$.post({
-					url: "../api/register/getCode",
+					url: "../index/register/getCode",
 					data:{
 						mobile: $('#mobile').val(),
 						capche: $('#captcha').val()
@@ -161,11 +161,11 @@
 
 			function changeCapche(){
 				$.get({
-					url: "../api/register/setCapche",
+					url: "../index/register/setCapche",
 					success:function(data){
 						// data = JSON.parse(data);
 						// console.log(data)
-						$('.signup #setCapche').attr('src', 'http://localhost/php/project/zaihangForPc/public/api/register/setcapche?'+Math.random());
+						$('.signup #setCapche').attr('src', 'http://localhost/php/project/zaihang/zaihangForPc/public/index/register/setcapche?'+Math.random());
 					}
 				})
 			}

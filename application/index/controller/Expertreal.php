@@ -15,18 +15,26 @@
 		{	
 			//如果没有登陆，则转到登陆界面
 			if($this->user==null){
-				return $this->fetch('/login/index');
+				return $this->redirect('index/login/index');
 			}
-
+			$that = model('Expertreal');
 			//查询用户表，判断是否认证
 			//如果已经认证，则转到成为行家资料页面
-			$user_identification = db('user')
-									->field('user_identification')
-									->where("user_name='$this->user'")
-									->find();
-			if($user_identification['user_identification']){
+			$user_identification = $that->findident($this->user['user_name']);
+			if($user_identification['if_specialist']==1){
 				// return $this->fetch('/expertaddinfo/index');
-				$this->redirect('expertaddinfo/index');
+				$this->redirect('index/expertinfo/index');
+			}else if($user_identification['user_identification']==1){
+				$expert=$that->findexpert($this->user['id']);
+				if($expert){
+					if($expert['exp_examine']==1){
+						$this->redirect('expertinfo/index');
+					}else if($expert['exp_examine']==0){
+						$this->redirect('index/experver/index');
+					}else if($expert['exp_examine']==-1){
+						$this->redirect('index/experver/realverno');
+					}
+				}
 			}
 
 
@@ -54,21 +62,11 @@
 					));
 	    	}
 
-	    	//验证身份证和姓名是否匹配
-
-
-	    	//保存
-	    	// $user->where('id', 1)->update(['name' => 'thinkphp']);
-	    	 db('user')
-	    			->where("user_name='$this->user'")
-	    			->update(['user_true_name' => $user_true_name,'user_identityId' => $user_identityId,'user_identification' => 1]);
-	    // 	return json_encode(Array(
-					// 	'status'=>10,
-					// 	'message'=> '提交成功'
-					// ));
+	    	$that->saveuser($user_true_name,$user_identityId);
+	   
 	    	return json_encode(Array(
 						'status'=>10,
-						'message'=> '认证成功'
+						'message'=> '提交成功'
 					));
 		}
 		

@@ -1,0 +1,49 @@
+{include file="public/header"}
+<div class="container mt-3">
+    <a href="{:url('iexpert/index')}" class="btn btn-primary">审核通过</a>
+    <a href="{:url('iexpert/nover')}" class="btn btn-primary">没有审核</a>
+    <a href="{:url('iexpert/norealver')}" class="btn btn-info">审核不通过</a>
+    <h2>行家管理界面</h2>
+    <div class="row">
+        <form action="" class="form ">
+            <div class="form-group">
+                <label >行家名</label>
+                <input type="text" placeholder="请输入用户名进行搜索" name="user_name">
+                <input type="submit" class="btn btn-info" value="搜索"></div>
+        </form>
+    </div>
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>行家名</th>
+            <th>常驻地址</th>
+            <th>行业</th>
+            <th>工作时间</th>
+            <th>职位</th>
+            <th>申请时间</th>
+            <th>操作</th>
+        </tr>
+        {foreach $expert_list as $value}
+        <tr>
+            <td>{$value['id']}</td>
+            <td>{$value['exp_realname']}</td>
+            <td>{$value['exp_city_id']} {$value['exp_place']}</td>
+            <td>{$value['exp_field_id']}</td>
+            <td>{$value['exp_workyear']}</td>
+            <td>{$value['exp_company']} {$value['exp_job']}</td>
+            <td>{$value['create_time']}</td>
+            <td>
+                <a href="{:url('expertver/user',['id'=>$value['uid']])}" class="btn btn-danger">重新审核</a>
+                <a href="{:url('detailed',['id'=>$value['id']])}" class="btn btn-info">详细</a>
+                <a href="{:url('edit',['id'=>$value['id']])}" class="btn btn-info">编辑</a>
+                <a href="{:url('delete',['id'=>$value['id']])}" class="btn btn-danger">删除</a>
+
+            </td>
+        </tr>
+        {/foreach}
+    </table>
+    <div>
+        {$expert_list->render()}
+    </div>
+</div>
+{include file="public/footer"}
