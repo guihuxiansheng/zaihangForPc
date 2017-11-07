@@ -76,6 +76,9 @@
 		public function getOne(){
 			return $info = db("user")->where("id=".input('id'))->find();
 		}
+		function getPlace($city){
+			return $this->table('zh_place place,zh_special special')->where(['place.place'=>$city])->where('place.special_name=special.special')->field('place.id,place.place,special.special,special.special_img as pic')->find();
+		}
 	}
 	
 ?>

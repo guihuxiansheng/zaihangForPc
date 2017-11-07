@@ -13,21 +13,19 @@ class Index extends Islogin
     	$this->assign("lunbo_list",$lunbo_list);
 		//城市按钮部分循环出来
 		$model = model('Index');
-		$this->assign('city_list',$model->getCity());
+		$this->assign('cityList',$model->getCity());
 		//城市按钮部分利用session显示城市
 		$city = $model->findCity();
 		$this->assign('city',$city[0]);
 		//把所有的地名相关话题传过去
-		$place_topic=db('place')->where("place='$city[0]'")->find();
+		$place_topic=$model->getPlace($city[0]);
 		$this->assign('place_topic',$place_topic);
 		//把走后门的热门推送数据传过去
-		$find_place_id=db('place')->where("place='$city[0]'")->field('id')->find()['id'];
-		$this->assign('use_print',$find_place_id);
 
-		$find_money_uid=db('expert')->where("exp_city_id='$find_place_id'")->where('money_status=1')->field('id')->select();
+		$find_money_uid=db('expert')->where(["exp_city_id"=>$place_topic['id']])->where('money_status=1')->field('id')->select();
 		$this->assign('find_money_uid',$find_money_uid);
 
-		$find_money_expert=db('expert')->where("exp_city_id='$find_place_id'")->where('money_status=1')->order('id asc')->limit(10)->select();		
+		$find_money_expert=db('expert')->where(["exp_city_id"=>$place_topic['id']])->where('money_status=1')->order('id asc')->limit(10)->select();		
 		$this->assign('find_money_expert',$find_money_expert);
         return $this->fetch();
     }

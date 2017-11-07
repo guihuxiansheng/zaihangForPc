@@ -27,9 +27,12 @@
 			$sort = input('sort');
 			$page = (int)input('page');
 			$word = input('word');
-			$map['expert.exp_realname|expert.exp_job_experience|topic.topic_name'] = ['like','%'.$word.'%'];
+			$word_real = $word !== '' && $word !== null;
+			if(!empty($word_real)){
+				$map['expert.exp_realname|expert.exp_job_experience|topic.topic_name'] = ['like','%'.$word.'%'];
+			}
 			$sort = $this->getSort();
-			$list[0] = $this->table('zh_topic topic, zh_expert expert')->where('topic.uid = expert.uid')->where($map)->count();
+			$list[0] = $this->table('zh_topic topic, zh_expert expert')->where('topic.eid = expert.id')->where($map)->count();
 			// 防止查询超出范围
 			if($list[0]>10 && $list[0]<$page*10-10){
 				$page = floor($list[0]/10);
@@ -38,7 +41,7 @@
 				$page = 1;
 			}
 			$list[1] = $page;
-			$list[2] = $this->table('zh_topic topic, zh_expert expert')->where('topic.uid = expert.uid')->where($map)->limit($page*10-10,$page*10)->field('topic.id as id,topic.topic_name as title,topic.topic_price as price,topic.create_time as create_time,expert.id as uid,expert.exp_realname as realname,expert.exp_job as job')->order($sort)->select();
+			$list[2] = $this->table('zh_topic topic, zh_expert expert')->where('topic.eid = expert.id')->where($map)->limit($page*10-10,$page*10)->field('topic.id as id,topic.topic_name as title,topic.topic_price as price,topic.create_time as create_time,expert.id as eid,expert.exp_realname as realname,expert.exp_job as job')->order($sort)->select();
 			$list[3] = $btm[0];
 			$list[4] = $btm[1];
 			if(empty($sort)){
@@ -46,8 +49,7 @@
 			}else{
 				$list[5] = input('sort');
 			}
-			$list[6] = $word;
-			
+			$list[6] = $word_real? $word : '';
 			return $list;
 		}
 		function getSort(){

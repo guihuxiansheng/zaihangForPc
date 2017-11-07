@@ -6,21 +6,13 @@
 	{
 		public function index()
 		{
-			$id = 11;
-			//根据用户id找行家id
-			$expert_id = db("user")
-				->alias("u")
-				->field("e.id")
-				->join("expert e","e.uid = u.id")
-				->where("u.id='$id'")
-				->find()['id'];
-
+			$id = (int)input('id');
 			//行家信息
 	        $info = db("expert")
 	     	    ->alias("e")
+	     	    ->where(["e.id"=>$id])
 				->field("e.*,p.place_name")
 	        	->join("place p","e.exp_city_id = p.id")
-		        ->where("uid='$id'")
 		        ->find();
 	        $this->assign("info",$info);
 
@@ -31,7 +23,7 @@
 				->join("expert e","m.expert_id = e.id")
 				->join("topic t","m.topic_id = t.id")
 				->join("user u","m.student_id = u.id")
-				->where("m.expert_id='$expert_id'")
+				->where(["m.expert_id"=>$id])
 				->where("m.meet_comment","not null")
 				->order("m.meet_commenttime desc")
 				->select();
@@ -42,17 +34,16 @@
 	        $this->assign("commentinfo",$commentinfo);
 
 	        //所有话题信息
-	        $topicinfo = db("topic")->where("uid='$id'")->select();
+	        $topicinfo = db("topic")->where("eid='$id'")->select();
 	        $this->assign("topicinfo",$topicinfo);
 
 
 	        //临时用户头像
 	        $user_headpic_temp = db("user")
-				->alias("user_head_pic")
 				->field("user_head_pic")
-				->where("id='$id'")
-				->find()['user_head_pic'];
-	        $this->assign("user_headpic_temp",$user_headpic_temp);
+				->where(["id"=>$info['uid']])
+				->find();
+	        $this->assign("user_headpic_temp",$user_headpic_temp['user_head_pic']);
 	        
 			return $this->fetch();
 		}
@@ -64,8 +55,5 @@
 			db('meet')->insert($add_data);
 			return input();
 		}
-
-		
-		
 	}
 ?>

@@ -56,29 +56,12 @@
             </div>
         </div>
     </div>
-  <!--   <?php
-        var_dump($use_print);
-        var_dump($find_money_uid);
-        var_dump($find_money_expert);
-        
-    ?> -->
-    <!-- <div>
-         
-         {foreach $find_money_expert as $k=>$exparray}
-         {if $k<=2}
-    <img src="__STATIC_PATH__/{$exparray['exp_homepic']}">
-    {/if}
-   {if $k>1}
-   <p>{$exparray['exp_homepic']}</p>
-   {/if}
-    {/foreach}
-    </div> -->
     <div class="content">
         <ul class="index-list">
         {foreach $find_money_expert as $k=>$exparray}
         {if $k<4}
             <li class="index-list-tutor index-list-sm">
-                <a class="index-list-item aTutor" href="">
+                <a class="index-list-item aTutor" href="{:url('/index/detail?id='.$exparray['id'])}">
                 <img src="__STATIC_PATH__/{$exparray['exp_homepic']}">
 
                 <div class="index-list-cover"></div>
@@ -102,7 +85,7 @@
 
             <li class="index-list-subject index-list-lg">
 
-                <a data-received="首页-专题页..specialID.944" href="{:url('/index/holiday')}">
+                <a data-received="首页-专题页..specialID.944" href="{:url('/special/'.$place_topic['special'].date('Y').'_'.$place_topic['place'])}">
                 <img src="{$place_topic['pic']} " style="width: 480px;height: 320px">
             </a>
 

@@ -83,8 +83,9 @@
                 <a href="{:url('/index/appfen')}" class="hover">去「分答」</a>
             </div>
 
-            <form class="search" action="" method="">
+            <form class="search" action="{:url('/index/search')}" method="get">
                 <input class="search-content" type="text" placeholder="搜行家、话题、服务" value="" name="word">
+                <input type="hidden" value="{$city?$city:''}" name="city">
                 <div class="search-sug sug"></div>
                 <button class="search-btn icon icon-search" type="submit"></button>
             </form>

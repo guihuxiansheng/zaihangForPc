@@ -165,7 +165,7 @@
 					success:function(data){
 						// data = JSON.parse(data);
 						// console.log(data)
-						$('.signup #setCapche').attr('src', 'http://localhost/php/project/zaihang/zaihangForPc/public/index/register/setcapche?'+Math.random());
+						$('.signup #setCapche').attr('src', '{:url("/index/register/setcapche")}?'+Math.random());
 					}
 				})
 			}

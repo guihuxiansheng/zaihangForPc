@@ -108,8 +108,9 @@
 		</div>
 		<div class="list-content">
 			<ul>
-				<a href="{:url('/index/detail')}">
-					{foreach $topic[2] as $key=>$value}
+				{foreach $topic[2] as $key=>$value}
+					<a href="{:url('/index/detail').'?id='.$value['eid']}">
+					
 					<li class="clear-fix">
 						<div class="avatar"></div>
 						<div class="list-body">
@@ -126,11 +127,12 @@
 						</div>
 							
 					</li>
+					</a>
 					{/foreach}
 					{if $topic[2] == null}
 					<p style="font-size: 14px;">暂时没有相关话题哦，已经记下您的兴趣，在行会努力寻找相关行家~</p>
 					{/if}
-				</a>
+				
 			</ul>
 		</div>
 	</div>
