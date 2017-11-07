@@ -39,14 +39,14 @@
 
 							<div class="form-group">
 								<div class="form-item">
-									<input type="text" id="nickname" name="user_name" placeholder="昵称" class="form-control">
+									<input type="text" id="nickname" name="user_name" placeholder="昵称" class="form-control" value="">
 									<span class="form-error errForNickname"></span>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<div class="form-item">
-									<input type="text" id="password" name="user_pwd" placeholder="密码" class="form-control">
+									<input type="text" id="pwd" name="user_pwd" placeholder="密码" class="form-control" value="">
 									<span class="form-error errForPassword"></span>
 								</div>
 							</div>
@@ -81,10 +81,12 @@
 	</div>
 	<script>
 		$(function(){
+			var sendCode = false;
+			var register = false;
 			$('.signup #submit').click(function(){
 				var mobile = $('#mobile').val();
 				var nickname = $('#nickname').val();
-				var password = $('#password').val();
+				var password = $('#pwd').val();
 				var code = $('#code').val();
 				if(!/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(mobile)){
 					$('.signup .errForMobile').text('手机号码输入有误');
@@ -96,15 +98,17 @@
 				}
 				else if(!/^.{4,16}$/.test(nickname)){
 					$('.signup .errForNickname').text('请输入4-16位的昵称');
-					console.log(1)
 					return;
 				}else if(!/^.{6,16}$/.test(password)){
 					$('.signup .errForPassword').text('请输入6-16位的密码');
-					console.log(2)
 					return;
 				}
+				if(register){
+					return
+				}
+				register = true;
 				$.post({
-					url: "{:url('/index/register/doReg')}",
+					url: "{:url('/index/register/doreg')}",
 					data:{
 						mobile: mobile,
 						nickname: nickname,
@@ -114,12 +118,14 @@
 					success: function(data){
 						data = JSON.parse(data);
 						// console.log('waefwf')
-						console.log(data)
 						if(data.status == 10){
-							window.location.href = '../'
+							window.location.href = '{:url("/index")}';
 						}else{
 						ErrorShow(data)
 						}
+					},
+					complete: function(){
+						register = false;
 					}
 				})
 			})
@@ -129,12 +135,28 @@
 			});
 			//点击发送验证码
 			$('.signup #getCode').click(function(){
+				if(sendCode){
+					return;
+				}
+				sendCode = true;
 				var mobile = $('#mobile').val();
 				// var capche = $('#captcha').val();
 				if(!mobile){
 					$('.signup .errForMobile').text('手机号码不能为空');
+					sendCode = false;
 					return;
 				}
+				var time = 60;
+				$(this).css('color','#ff946e').val(60 + 's 后重试');
+				var timer = setInterval(function(){
+					time --;
+					$('#getCode').val(time + 's 后重试');
+					if(time == 0){
+						$('#getCode').css('color','#343434').val('发送手机验证码');
+						sendCode = false;
+						clearInterval(timer)
+					}
+				},1000)
 				$.post({
 					url: "../index/register/getCode",
 					data:{
@@ -147,7 +169,17 @@
 						// if(data.status == 0){
 						// 	window.location.href = '../'
 						// }
+						if(data.status !== 10){
+							$('#getCode').css('color','#343434').val('发送手机验证码');
+							sendCode = false;
+							clearInterval(timer);
+						}
 						ErrorShow(data);
+					},
+					error: function(){
+						$('#getCode').css('color','#343434').val('发送手机验证码');
+						sendCode = false;
+						clearInterval(timer);
 					}
 
 				})

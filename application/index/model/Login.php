@@ -10,9 +10,10 @@ class Login extends \think\Model{
 			// $password = input('password');
 		$password = md5(input('password'));
 		
-		return db('user')
-				->where("user_name='$username' and user_pwd='$password'")
-				->find();
+		return db('user')->where([
+					"user_phone"=>$username,
+					'user_pwd'=>$password
+				])->find();
 
 	}
 

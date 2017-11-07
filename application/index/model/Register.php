@@ -48,7 +48,6 @@ class Register extends \think\Model{
 
 	public function getOne($user){
 		return db('user')
-				->field("id,user_name,user_phone")
 				->where("user_name='$user'")
 				->find();
 	}

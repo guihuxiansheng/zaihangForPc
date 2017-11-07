@@ -85,7 +85,7 @@
 			
 		}
 
-		public function doReg()
+		public function doreg()
     	{
 	       
 	       	$that=model("Register");
@@ -174,9 +174,8 @@
 	        //保存数据
 	    	$that->saveInfo($add_data);
 	    	//保存登陆信息
-	    	$user=getOne($add_data['user_name']);
-	    	Session::set('user_name',$user['user_name']);
-	    	Session::set('id',$user['id']);
+	    	$user=model('Register')->getOne($add_data['user_name']);
+	    	Session::set('user_name',$user);
 	        return json_encode(Array(
 					'status'=>10,
 					'message'=> '注册成功！'
