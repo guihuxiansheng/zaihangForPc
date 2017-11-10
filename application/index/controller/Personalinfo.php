@@ -12,7 +12,7 @@
 		}
 		public function index()
 		{
-			$id = 12;
+			$id = $this->user['id'];
 			//找到登录用户对应的行家id
 			$expert_id = db("user")
 				->alias("u")
@@ -20,20 +20,20 @@
 				->join("expert e","e.uid = u.id")
 				->where("u.id='$id'")
 				->find()['id'];
-
+			//我（学员）约的话题
 			$meetinfo = db("meet")
 				->alias("m")
-				->field("m.*,e.exp_realname,e.exp_job,t.topic_name,t.topic_price,u.user_head_pic")
+				->field("m.*,e.exp_realname,e.exp_job,e.head_pic,t.topic_name,t.topic_price,u.user_head_pic")
 				->join("expert e","m.expert_id = e.id")
 				->join("topic t","m.topic_id = t.id")
 				->join("user u","e.uid = u.id")
 				->where("m.student_id='$id' AND u.id!='$id'")
 				->order("m.create_time desc")
 				->select();
-	        $this->assign("meetinfo",$meetinfo);			
+	        $this->assign("meetinfo",$meetinfo);
 
-
-			$expmeetinfo = db("meet")
+	        //约我（行家）的人
+/*			$expmeetinfo = db("meet")
 				->alias("m")
 				->field("m.*,e.exp_realname,e.exp_job,t.topic_name,t.topic_price,u.user_head_pic,u.user_true_name,u.user_phone")
 				->join("expert e","m.expert_id = e.id")
@@ -42,7 +42,7 @@
 				->where("m.expert_id='$expert_id'")
 				->order("m.create_time desc")
 				->select();
-	        $this->assign("expmeetinfo",$expmeetinfo);
+	        $this->assign("expmeetinfo",$expmeetinfo);*/
 
 	        $info = db("user")->where("id='$id'")->find();
 	        $this->assign("info",$info);	
@@ -160,10 +160,14 @@
 	        	->where("meet_score","not null")
 	        	->select();
 	        $topic_score = 0;
-			foreach ($topic_scoreall as $key => $value) {
-				$topic_score = $topic_score + $topic_scoreall[$key]['meet_score'];
-			}
-			$topic_score = $topic_score/count($topic_scoreall)*2;
+	        if(!empty($topic_scoreall)){
+				foreach ($topic_scoreall as $key => $value) {
+					$topic_score = $topic_score + $topic_scoreall[$key]['meet_score'];
+				}
+				$topic_score = $topic_score/count($topic_scoreall)*2;
+	        }else{
+	        	$topic_score = input('meet_score')*2;
+	        }
 	        db("topic")
 	        	->where("id='$topic_id'")
 	        	->update(['topic_score' => $topic_score]);

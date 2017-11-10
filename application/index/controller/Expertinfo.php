@@ -17,8 +17,14 @@
 				return $this->redirect('index/login/index');
 			}
 			$id=$this->user['id'];
-			
 			$that = model('Expertinfo');
+			//获取行家信息
+	        $info = $that->findexpertinfo($id);
+	        $this->assign("expert",$info);
+
+			$test = $id;
+	  	    $this->assign("test",$info);
+
 			//获取行家基本信息
 			$user = $that->finduser($id);
 			if($user['if_specialist']==0){
@@ -26,14 +32,10 @@
 			}
 
 			//获取预约单信息
-			$expmeetinfo = $that->findwant($id);
+			$expmeetinfo = $that->findwant($info['id']);
 	        $this->assign("expmeetinfo",$expmeetinfo);
 	       
 
-			//获取行家信息
-	        $info = $that->findexpertinfo($id);
-	        // var_dump($info);
-	        $this->assign("expert",$info);
 
 	        $imglist=$info['exp_proofpic'];
 
@@ -62,6 +64,17 @@
 
 			return $this->fetch();
 		}
+		
+  	    public function expertConfirm(){
+	    	$id = input('id');
+	    	$add_data = input();
+	    	$add_data['expert_confirm_time'] = time();
+	    	$add_data['expert_confirm'] = 1;
+	    	db("meet")
+	        	->where("id='$id'")
+	        	->update($add_data);
+        	$this->redirect('index');
+	    }  
 
 		//获取话题信息
 		public function gettops(){
