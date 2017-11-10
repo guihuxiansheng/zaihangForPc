@@ -55,7 +55,6 @@
 			$('#zhimaForm #submitAli').click(function(){
 				var user_true_name = $('#name').val();
 				var user_identityId = $('#identityId').val();
-				console.log(111111111)
 				if(!user_true_name || !user_identityId ){
 					alert('请输入账号内容！');
 					return;
@@ -75,9 +74,9 @@
 						{
 							$('#zhimaForm .ErrIdent').text(data.message);
 						}else{
-							window.location.href = "{url:('/index/expertaddinfo/index')}"
-					},
-
+							window.location.href = "{:url('/index/expertaddinfo/index')}"
+						}
+					}
 				})
 			})
 			//获取焦点后清除错误信息

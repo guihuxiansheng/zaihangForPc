@@ -112,7 +112,7 @@
 					<a href="{:url('/index/detail').'?id='.$value['eid']}">
 					
 					<li class="clear-fix">
-						<div class="avatar"></div>
+						<div class="avatar" style="background-image: url(__STATIC_PATH__{$value['head_pic']?$value['head_pic']:'/data/home_head_pic/system_headpic/system_headpic.jpeg'});background-repeat:no-repeat;"></div>
 						<div class="list-body">
 							<div class="list-head">
 								 <div class="type f6">线上课</div><div class="title">{$value['title']}</div><div class="score"><span>9.3</span>分</div><img class="tips" src="__STATIC_PATH__/static/topics/images/170920151653.png"><!-- 该题分由在行系统算法综合学员的匿名评分以及多种因素得出，每增加三个评分，更新一次-->
@@ -228,6 +228,9 @@
 		$('.topics .list-filter .city ol li').on('mousedown',function(){
 			return false;
 		})
+		$('.topics .category .contetn-left .cate-more').siblings('a').hover(function(){
+            $(this).siblings('.cate-more').css('top',$(this).parent()[0].offsetTop + $(this).parent().height() + 'px');
+        })
 	})
 </script>
 {include file="nav_foot/foot"}

@@ -8,32 +8,59 @@
 					->alias('c')
 					->field('c.exp_field_id')
 					->join('user u','c.uid=u.id')
-					->where("u.user_name='$user'")
+					->where(["u.user_phone"=>$user])
 					->find();
 			$cate=$cate_id['exp_field_id'];
 
-			// var_dump($cate);
-			//获取2级分类
-			$field = db('category')
-					->field('id,cate_name')
-					->where("pr_id='$cate'")
-					->select();
-			// var_dump($field);
+			// // var_dump($cate);
+			// //获取2级分类
+			// $field = db('category')
+			// 		->field('id,cate_name')
+			// 		->where("pr_id='$cate'")
+			// 		->select();
+			// // var_dump($field);
 
-			//获取三级分类
-			$cateid=[];
-			for($i=0; $i <count($field); $i++) { 
-				$j=$field[$i]['id'];
-				// var_dump($j);
-				$cateid[] = db('category')
-							->field('id,cate_name')
-							->where("pr_id='$j'")
-							->select();
+			// //获取三级分类
+			// $cateid=[];
+			// for($i=0; $i <count($field); $i++) { 
+			// 	$j=$field[$i]['id'];
+			// 	$cateid[] = db('category')
+			// 				->field('id,cate_name')
+			// 				->where("pr_id='$j'")
+			// 				->select();
+			// }
+			function selectLevel($id,$that,$val){
+				$array = $that->table('zh_category')
+							->where([
+								'pr_id'=>$id
+							])->select();
+				if(count($array) !==0){
+					foreach ($array as $key => $value) {
+						$value['cate_name'] = $val.'>'.$value['cate_name'];
+						$array = array_merge($array,selectLevel($value['id'],$that,$value['cate_name']));
+					}
+				}
+				return $array;
+			}
+			$cate_name = $this->table('zh_category')
+							->where([
+								'id'=>$cate
+							])->field('cate_name')->find();
+			$cated = selectLevel($cate,$this,$cate_name['cate_name']);
+			$array_cate = Array();
+			foreach ($cated as $key => $value) {
+				$array_cate[$value['pr_id']] = 1;
+			}
+			$cateid = Array();
+			foreach ($cated as $key => $value) {
+				if(!isset($array_cate[$value['id']])){
+					$cateid[]= $value;
+				}
 			}
 			return $cateid;
 		}
 		public function findexpertid($id){
-			return db('expert')
+			return db('expert') 
 					->field('id')
 					->where("uid='$id'")
 					->find();

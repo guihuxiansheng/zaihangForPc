@@ -23,6 +23,9 @@ class Register extends \think\Model{
 	//保存手机验证码
 	public function saveCode($data='')
 	{
+		db('phonecode')->where([
+				'phone'=>$data['phone']
+		])->delete();
 		db('phonecode')->insert([
 				'phone'=>$data['phone'],
 				'code'=>$data['code'],

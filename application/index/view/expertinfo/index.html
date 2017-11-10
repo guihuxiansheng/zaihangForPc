@@ -680,9 +680,9 @@
 						<div class="main" id="formWrap">
 							<form class="apply-form" id="tutorForm">
 								<div class="form-group">
-									<div class="profile-picture">
+									<div class="profile-picture" @click="changeHead()">
 										<div class="profile-picture-mask"></div>
-										<img src="{$expert['head_pic']?'__STATIC_PATH__/'.$expert['head_pic']:''}" id="profile_picture" style="z-index: 11;">
+										<img src="__STATIC_PATH__{$expert['head_pic']?$expert['head_pic']:'data/home_head_pic/system_headpic/system_headpic.jpeg'}" id="profile_picture" style="z-index: 11;">
 									</div>
 								</div>
 								
@@ -840,6 +840,7 @@
 						</div>
 					</div>
 				</div>
+				<input type="file" ref='head' @change="upHead" @input="upHead" style="display: none" name="">
 			</div>
 		</template>
 		
@@ -1031,6 +1032,28 @@
 						component:{
 							template:'#personalSetHtml',
 							//增加
+							methods: {
+								changeHead: function(){
+									this.$refs['head'].click();					
+								},
+								upHead: function(e){
+									var file = e.target.files[0];
+									var formdata = new FormData();
+									formdata.append('file', file);
+									$.ajax({
+										url: "{:url('/index/expertinfo/headpic')}",
+										type: 'POST',
+										data: formdata,
+										processData: false,
+										contentType: false,
+										success: function(response){
+											if(response.status === 0){
+												$('#profile_picture').attr('src', "__STATIC_PATH__" + response.path)
+											}
+										}
+									})
+								}
+							}
 						}
 					},
 				]

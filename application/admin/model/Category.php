@@ -23,7 +23,9 @@
 			 return db("category")
 					->paginate();//在视图使用render()分页函数时需要用这个
 		}
-
+		function getDetailList(){
+			return db("category")->select();
+		}
 		//搜索查询
 		public function getTrueUs($cate_name='')
 		{

@@ -99,7 +99,7 @@
 			$list[1] = $page;
 			$list[2] = $this->table('zh_topic topic, zh_expert expert')
 							->where('topic.eid = expert.id')
-							->where($map)->limit($page*10-10,$page*10)->field('topic.id as id,topic.topic_name as title,topic.topic_price as price,topic.create_time as create_time,expert.id as eid,expert.exp_realname as realname,expert.exp_job as job')
+							->where($map)->limit($page*10-10,$page*10)->field('topic.id as id,topic.topic_name as title,topic.topic_price as price,topic.create_time as create_time,expert.head_pic,expert.id as eid,expert.exp_realname as realname,expert.exp_job as job')
 							->order($sort)->select();
 			$list[3] = $btm[0];
 			$list[4] = $btm[1];

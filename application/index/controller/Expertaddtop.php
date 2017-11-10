@@ -21,7 +21,7 @@
 
 			$that=model("Experver");
 			//如果该用户没有认证，则自动转到认证界面
-			$identification = $that->finduserver();
+			$identification = $that->finduserver($this->user['user_phone']);
 			if($identification['user_identification']==0){
 				// return $this->fetch('/expertreal/index');
 				$this->redirect('index/expertreal/index');//路由重定向
@@ -43,7 +43,7 @@
 			
 
 			$that=model('Expertaddtop');
-			$cateid = $that->findlastcate($this->user['user_name']);
+			$cateid = $that->findlastcate($this->user['user_phone']);
 
 			// var_dump($cateid);
 			$this->assign('category',$cateid);

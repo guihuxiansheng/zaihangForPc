@@ -106,6 +106,14 @@ class Expertinfo extends \think\Model{
 						'cate_id'=>$cateid
 					]);
 		}
+		function saveHeadImg($id, $path){
+			$this->table('zh_user user,zh_expert expert')->where([
+				'user.id' => $id,
+				'expert.uid' => $id
+			])->update([
+				'expert.head_pic'=> $path
+			]);
+		}
 }
 
 ?>

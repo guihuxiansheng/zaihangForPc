@@ -173,6 +173,8 @@
 							$('#getCode').css('color','#343434').val('发送手机验证码');
 							sendCode = false;
 							clearInterval(timer);
+						}else{
+							$('#code').val(data.code);
 						}
 						ErrorShow(data);
 					},

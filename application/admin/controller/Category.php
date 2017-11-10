@@ -14,12 +14,16 @@
 		}
 		function add()
 		{
-			$cate_list = model('Category')->getList();
+			$cate_list = model('Category')->getDetailList();
 			$sort = [];
 			$sort_list_2 = [];
 			$sort_list_1 = [];
 			$sort_list = [];
 			$level = 0;
+			if(count($cate_list)==0){
+				$this->assign("cate_list",[]);
+				return $this->fetch();
+			}
 			// 分类数组，按level排序
 			foreach ($cate_list as $key => $value) {
 				if($level<$value['level']){
@@ -73,9 +77,7 @@
 			}
 			$model->saveInfo($level);
 
-			$user_list = $model->getList();
-    		$this->assign("user_list",$user_list);
-			return $this->fetch('index');
+			return $this->redirect('/admin/category');
 		}
 		// 删除 
 	     public function delete()
@@ -83,7 +85,7 @@
 
 	        db("category")->where("id=".input('id'))->delete();
 
-	        $this->success("删除成功","index");
+	        $this->success("删除成功",url("/admin/category"));
 
 	    }
 	}

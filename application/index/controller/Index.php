@@ -22,8 +22,8 @@ class Index extends Islogin
 		$this->assign('place_topic',$place_topic);
 		//把走后门的热门推送数据传过去
 
-		$find_money_uid=db('expert')->where(["exp_city_id"=>$place_topic['id']])->where('money_status=1')->field('id')->select();
-		$this->assign('find_money_uid',$find_money_uid);
+		// $find_money_uid=db('expert')->where(["exp_city_id"=>$place_topic['id']])->where('money_status=1')->field('id')->select();
+		// $this->assign('find_money_uid',$find_money_uid);
 
 		$find_money_expert=db('expert')->where(["exp_city_id"=>$place_topic['id']])->where('money_status=1')->order('id asc')->limit(10)->select();		
 		$this->assign('find_money_expert',$find_money_expert);

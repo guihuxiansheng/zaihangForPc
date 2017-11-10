@@ -15,8 +15,7 @@
 		}
 		public function finduser($user){
 			return db('user')
-					->field('id')
-					->where("user_name='$user'")
+					->where("user_phone='$user'")
 					->find();
 		}
 		public function findexpert($id){
@@ -64,7 +63,7 @@
 						'exp_proofpic'=>$proimg,//证明图片
 						'exp_narration'=>$new_data['self_intro'],//
 						'head_pic'=>$headPath,//头像
-						'create_time'=>time(),
+						'create_time'=>(new \DateTime())->format('Y-m-d H:i:s'),
 						'show_edu'=>$new_data['showedu']//是否公开教育经历
 					]);
 		}

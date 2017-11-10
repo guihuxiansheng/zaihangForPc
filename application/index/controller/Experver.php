@@ -25,7 +25,7 @@
 			//获取专家信息
 			$that=model("Experver");
 			//如果该用户没有认证，则自动转到认证界面
-			$identification = $that->finduserver();
+			$identification = $that->finduserver($this->user['user_phone']);
 			if($identification['user_identification']==0){
 				// return $this->fetch('/expertreal/index');
 				$this->redirect('index/expertreal/index');//路由重定向
@@ -68,7 +68,7 @@
 			// $cid=$expertInfo['exp_city_id'];
 			//获取常驻城市
 			$cityInfo=$that->findcity($expertInfo['exp_city_id']);
-			$this->assign('city',$cityInfo);
+			$this->assign('cityInfo',$cityInfo);
 
 			//获取行业
 			// $hid=$expertInfo['exp_field_id'];
@@ -97,7 +97,7 @@
 			}
 
 			//如果该用户没有认证，则自动转到认证界面
-			$identification = $that->finduserver();
+			$identification = $that->finduserver($this->user['user_phone']);
 			if($identification['user_identification']==0){
 				// return $this->fetch('/expertreal/index');
 				$this->redirect('expertreal/index');//路由重定向

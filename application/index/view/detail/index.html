@@ -99,7 +99,7 @@
 	<div class="content">
 		<div class="left con_left">
 			<div class="logo">
-				<img src="__STATIC_PATH__/{$user_headpic_temp}" alt="刘艳蓉">
+				<img src="__STATIC_PATH__/{$info.head_pic}" alt="刘艳蓉">
 			</div>
 			<div class="introduce">
 
@@ -236,11 +236,8 @@
 				
 			<div class="about">
 				<h2>关于行家   </h2>
-				<img src="FnSFIS7F4PD9_0c4O0NYSW78m486!mainbody.jpg" />
 				<p>{$info.exp_job_experience}</p>
 				<p>{$info.exp_narration}</p>
-				<p>当我第一次在活动现场，经历了两个小时的活动，主持人手卡上的最后一句话说完，嘉宾离场，灯光暗下来……看着这一切，我特别开心。</p>
-				<p>当我第一次在活动现场，经历了两个小时的活动，主持人手卡上的最后一句话说完，嘉宾离场，灯光暗下来……看着这一切，我特别开心。</p>
 
 			</div>
 		</div>
@@ -251,17 +248,24 @@
 				<a href=""><img src="__STATIC_PATH__/static/expertreal/image/weibo1.png" style="width: 30px;height: 30px;cursor: pointer;" /></a>
 				<a href=""><img src="__STATIC_PATH__/static/expertreal/image/weixin1.png" style="width: 30px;height: 30px;cursor: pointer;" /></a>
 			</div>
-			
+			<ul class="recommend">
+				<li>
+					<p>只需付<span>几百元</span>，就可以与行家<span>一对一线下面谈</span></p>
+					<p>为您答疑解惑、出谋划策。不满意还能“无忧退款”。</p>
+					<p><i class="icon icon_zaih">海学</i></p>
+				</li>
+
+			</ul>
 			<div class="r_btn">
 				<p href="">立即预约</p>
 				<p href="">加入心愿墙</p>
 			</div>
-			<ul class="recommend">
+			<!-- <ul class="recommend">
 				<h2>王弢的推荐</h2>
 				<li>
 					<a href="">
 						<div class="item">
-							<img src="__STATIC_PATH__{$commentinfo[0]['user_head_pic']}" class="left" />
+							<img src="__STATIC_PATH__{$commentinfo[0]?$commentinfo[0]['user_head_pic']:'/data/home_head_pic/system_headpic/system_headpic.jpeg'}" class="left" />
 							<div class="left commend f5">
 								<h4>HR高阶教程：如何真正成为业务伙伴</h4>
 								<p class="name">张少林<span>北京</span></p>
@@ -272,7 +276,7 @@
 					</a>
 				</li>
 
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 	<div class="discuss">
@@ -460,8 +464,13 @@
 
 	//显示弹框
     $(".con_right .r_btn p").eq(0).on("click",function(){
-		$(".appointment").show();
-		$(".appointment .mask").show();
+    	if({$login?'true':'false'}){
+			$(".appointment").show();
+			$(".appointment .mask").show();
+    	}else{
+    		$('.header_login').click();
+    	}
+			
 	})
 
 

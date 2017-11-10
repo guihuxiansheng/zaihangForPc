@@ -73,6 +73,7 @@
 				// echo $code;
 				return json_encode(Array(
 							'status'=>10,
+							'code'=>$code,
 							'message'=> '验证码已发送，请注意查收，1分钟之内有效！'
 						));
 			// }

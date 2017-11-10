@@ -19,7 +19,7 @@
 		}
 		public function findtopic($zid){
 			return db('topic')
-						->where("uid='$zid'")
+						->where("eid='$zid'")
 						->find();
 		}
 		public function findcate($tid){
@@ -29,10 +29,10 @@
 		}
 
 
-		public function finduserver(){
+		public function finduserver($user){
 			return db('user')
-	    			->field("user_identification,if_specialist")
-					->where('user_name',$this->user['user_name'])
+	    			->field("id,user_identification,if_specialist")
+					->where('user_phone',$user)
 					->find();
 		}
 	}

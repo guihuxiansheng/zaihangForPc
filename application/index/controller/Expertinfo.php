@@ -195,5 +195,19 @@
 					'message'=> '保存成功'
 				));
 	    }
+	    function headpic(){
+	    	$file = request()->file('file');
+	    	if($file){
+        		$info = $file->move(ROOT_PATH . 'public' . DS . 'uploads' . DS . 'user');
+        		if($info){
+        			$path = DS . 'uploads' . DS . 'user' . DS . $info->getSaveName();
+        			model('Expertinfo')->saveHeadImg($this->user['id'], $path);
+        			return json([
+        				'status' => 0,
+        				'path' => $path
+        			]);
+        		}
+        	}
+	    }
 	}
 ?>

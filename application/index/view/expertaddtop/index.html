@@ -36,10 +36,8 @@
 						<div class="form-group" data-required="required">
 					        <select autofocus="" name="topic_duration" placeholder="行业类型" id="cateid">
 					        	<option value="">请选择：类型</option>
-					        	{foreach $category as $value}
-						        	{foreach $value as $val}
-					            		<option value="{$val['id']}">{$val['cate_name']}</option>
-					            	{/foreach}
+					        	{foreach $category as $key=>$value}
+					            		<option value="{$value['id']}">{$value['cate_name']}</option>
 				            	{/foreach}
 					        </select>
 					        <span class="form-error Errcat"></span>
@@ -114,11 +112,9 @@
 		$(function(){
 			$('#formTop #saveBtn').click(function(){
 				postinfo(0);
-				console.log(111)
 			})
 			$('#formTop #submitBtn').click(function(){
 				postinfo(1);
-				console.log(2222)
 			})
 			function postinfo(id){
 
@@ -137,7 +133,6 @@
 				var spread = 0;
 				if ($("#spread").get(0).checked) {
 				   spread = 1;
-				   console.log('gawgw');
 				}
 
 				// //提交前验证
@@ -161,8 +156,6 @@
 					$('#formTop .Errach').text('不能为空');
 					return;                             //成就错误
 				}
-				console.log(holdtime)
-				console.log(346)
 				$.post({
 					url: "{:url('/index/expertaddtop/dotopic')}",
 					data: {

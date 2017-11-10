@@ -20,7 +20,7 @@
 
 			$that = model('Expertaddinfo');
 			//如果该用户没有认证，则自动转到认证界面
-			$identification = $that->finduser($this->user['user_name']);
+			$identification = $that->finduser($this->user['user_phone']);
 			if($identification['user_identification']==0){
 				// return $this->fetch('/expertreal/index');
 				$this->redirect('expertreal/index');//路由重定向
@@ -139,12 +139,12 @@
 			}
 			
 			$that = model('Expertaddinfo');
-			$uid = $that->finduser($this->user['user_name']);
-			// $id = $uid['id'];
+			$uid = $that->finduser($this->user['user_phone']);
+			$id = $uid['id'];
 			// //存储
 			//查询专家表，如果该专家已经存在，则更新数据
 			//如果没有存在，则添加新专家
-			$info=findexpert($uid['id']);
+			$info=$that->findexpert($id);
 
 			if($info){
 				$that->updateexpert($id,$new_data,$proimg,$headPath);

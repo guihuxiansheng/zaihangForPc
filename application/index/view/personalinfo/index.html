@@ -740,7 +740,7 @@
 			new Vue({
 				el:"#zr_vue_here",
 				data:{
-					touxiang_src: "__STATIC_PATH__/{$info.user_head_pic}"
+					touxiang_src: "__STATIC_PATH__/{$info.user_head_pic?$info.user_head_pic:'data/home_head_pic/system_headpic/system_headpic.jpeg'}"
 				},
 				methods:{
 				},
