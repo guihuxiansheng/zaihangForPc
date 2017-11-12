@@ -81,7 +81,7 @@
 
 				<!--有行家时-->
 <!-- 					<?php
-					var_dump($meetinfo);
+					var_dump($info);
 				?> -->
 
 <!-- {volist name="$meetinfo" id="vo"}
@@ -99,7 +99,7 @@
 					</div>
 					<div class="appointmentHtml_zr_container">
 						<div class="img_topic_word">
-							<img src="__STATIC_PATH__{$vo.user_head_pic}"/>
+							<img src="{$vo.head_pic?'__STATIC_PATH__'.$vo.head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
 							<div class="topic_word">
 								<h2>{$vo.topic_name}</h2>
 								<p><span>{$vo.exp_realname}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.exp_job}</p>
@@ -138,7 +138,7 @@
 					</div>
 					<div class="appointmentHtml_zr_container">
 						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
+							<img src="{$vo.head_pic?'__STATIC_PATH__'.$vo.head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
 							<div class="topic_word">
 								<h2>{$vo.topic_name}</h2>
 								<p><span>{$vo.exp_realname}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.exp_job}</p>
@@ -176,7 +176,7 @@
 					</div>
 					<div class="appointmentHtml_zr_container">
 						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
+							<img src="{$vo.head_pic?'__STATIC_PATH__'.$vo.head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
 							<div class="topic_word">
 								<h2>{$vo.topic_name}</h2>
 								<p><span>{$vo.exp_realname}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.exp_job}</p>
@@ -219,7 +219,7 @@
 					</div>
 					<div class="appointmentHtml_zr_container">
 						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
+							<img src="{$vo.head_pic?'__STATIC_PATH__'.$vo.head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
 							<div class="topic_word">
 								<h2>{$vo.topic_name}</h2>
 								<p><span>{$vo.exp_realname}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.exp_job}</p>
@@ -258,7 +258,7 @@
 					</div>
 					<div class="appointmentHtml_zr_container">
 						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
+							<img src="{$vo.head_pic?'__STATIC_PATH__'.$vo.head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
 							<div class="topic_word">
 								<h2>{$vo.topic_name}</h2>
 								<p><span>{$vo.exp_realname}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.exp_job}</p>
@@ -302,7 +302,7 @@
 					</div>
 					<div class="appointmentHtml_zr_container">
 						<div class="img_topic_word">
-							<img src="__STATIC_PATH__/{$vo.user_head_pic}"/>
+							<img src="{$vo.head_pic?'__STATIC_PATH__'.$vo.head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
 							<div class="topic_word">
 								<h2>{$vo.topic_name}</h2>
 								<p><span>{$vo.exp_realname}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.exp_job}</p>
@@ -325,7 +325,7 @@
 						</div>
 						<div class="aboutGeren">
 							<p>您的评论：</p>
-							<p></p>
+							<p>{$vo.meet_comment}</p>
 						</div>
 					</div>
 				</div>
@@ -532,7 +532,7 @@
 				<div class="TouxiangSetHtml_zr_container">
 					<div class="img_word_btn">
 						<div class="touxiang_imgbox">
-							<img src="__STATIC_PATH__/{$info.user_head_pic}" class="touxiangImg"/>
+							<img src="__STATIC_PATH__/{$info.user_head_pic?$info.user_head_pic:'data/home_head_pic/system_headpic/system_headpic.jpeg'}" class="touxiangImg"/>
 							<span class="close_touxiang" @click="close_touxiang()" >x</span>
 						</div>
 						
@@ -765,11 +765,11 @@
 					}
 				}
 				if(key==1){					
-					navList_li[6].setAttribute("class",'navList_ul_li liWhether_curMenu');
+					navList_li[3].setAttribute("class",'navList_ul_li liWhether_curMenu');
 					navList_li_ol[0].style.display="block";
 				}
 				else{
-					navList_li[6].setAttribute("class",'navList_ul_li');
+					navList_li[3].setAttribute("class",'navList_ul_li');
 					navList_li_ol[0].style.display="none";
 				}
 			}
@@ -796,7 +796,7 @@
 //			个人设置导航条是否显示
 			ShowGerenNav();
 			function ShowGerenNav(){
-				navList_li[6].children[0].onclick=function(){					
+				navList_li[3].children[0].onclick=function(){					
 					if(navList_li_ol[0].style.display=="block"){
 						navList_li_ol[0].style.display="none";
 					}
@@ -804,7 +804,7 @@
 						navList_li_ol[0].style.display="block";
 					}
 					//增加
-					navList_li[6].setAttribute("class",'navList_ul_li liWhether_curMenu');
+					navList_li[3].setAttribute("class",'navList_ul_li liWhether_curMenu');
 				}
 			}
 		</script>

@@ -1,0 +1,2321 @@
+---------------------------------------------------------------
+[ 2017-11-10T17:49:27+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/
+[ info ] localhost/haixue/hx/zaihangForPc/public/ [运行时间：0.116007s][吞吐率：8.62req/s] [内存消耗：5,589.55kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:27+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//uploads/20171107/90d2044383fab3acb1e3802687466a1a.png
+[ info ] localhost/haixue/hx/zaihangForPc/public//uploads/20171107/90d2044383fab3acb1e3802687466a1a.png [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：2,579.55kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171107',
+    2 => '90d2044383fab3acb1e3802687466a1a',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:27+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//static/nav_foot/css/ddfa3f61.tutor-icons.woff
+[ info ] localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/ddfa3f61.tutor-icons.woff [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,579.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'nav_foot',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/nav.css?fgf',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:27+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//static/nav_foot/css/d7c26ff4.tutor-icons.ttf
+[ info ] localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/d7c26ff4.tutor-icons.ttf [运行时间：0.044003s][吞吐率：22.73req/s] [内存消耗：2,579.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'nav_foot',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/nav.css?fgf',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:31+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index/login/logout
+[ info ] localhost/haixue/hx/zaihangForPc/public/index/login/logout [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：4,643.29kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'logout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Login->logout[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:31+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index/index/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index/index/index [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：5,306.95kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:31+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//uploads/20171107/90d2044383fab3acb1e3802687466a1a.png
+[ info ] localhost/haixue/hx/zaihangForPc/public//uploads/20171107/90d2044383fab3acb1e3802687466a1a.png [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,579.59kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171107',
+    2 => '90d2044383fab3acb1e3802687466a1a',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:31+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//static/nav_foot/css/ddfa3f61.tutor-icons.woff
+[ info ] localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/ddfa3f61.tutor-icons.woff [运行时间：0.049002s][吞吐率：20.41req/s] [内存消耗：2,579.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'nav_foot',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/nav.css?fgf',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:31+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//static/nav_foot/css/d7c26ff4.tutor-icons.ttf
+[ info ] localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/d7c26ff4.tutor-icons.ttf [运行时间：0.036002s][吞吐率：27.78req/s] [内存消耗：2,579.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'nav_foot',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/nav.css?fgf',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:39+08:00 ] ::1 ::1 POST /haixue/hx/zaihangForPc/public/index/login/login
+[ info ] localhost/haixue/hx/zaihangForPc/public/index/login/login [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：5,097.73kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '36',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+  'username' => '13542866010',
+  'password' => '123456',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  `user_phone` = 13542866010  AND `user_pwd` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:39+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/index/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：5,309.84kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:39+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/data/index/Fgfa_iD_vHSZTzMo94hqJl9CzKl3.png
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/data/index/Fgfa_iD_vHSZTzMo94hqJl9CzKl3.png [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,579.49kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'data',
+    1 => 'index',
+    2 => 'Fgfa_iD_vHSZTzMo94hqJl9CzKl3',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:39+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//uploads/20171107/90d2044383fab3acb1e3802687466a1a.png
+[ info ] localhost/haixue/hx/zaihangForPc/public//uploads/20171107/90d2044383fab3acb1e3802687466a1a.png [运行时间：0.114007s][吞吐率：8.77req/s] [内存消耗：2,579.79kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171107',
+    2 => '90d2044383fab3acb1e3802687466a1a',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:39+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//static/nav_foot/css/ddfa3f61.tutor-icons.woff
+[ info ] localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/ddfa3f61.tutor-icons.woff [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,579.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'nav_foot',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/nav.css?fgf',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:39+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//static/nav_foot/css/d7c26ff4.tutor-icons.ttf
+[ info ] localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/d7c26ff4.tutor-icons.ttf [运行时间：0.041002s][吞吐率：24.39req/s] [内存消耗：2,579.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'nav_foot',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public//static/nav_foot/css/nav.css?fgf',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:40+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.108006s][吞吐率：9.26req/s] [内存消耗：5,061.20kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'expmeetinfo',
+  6 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='12' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='12' AND u.id!='12' ) ORDER BY m.create_time desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic`,`u`.`user_true_name`,`u`.`user_phone` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `m`.`student_id`=`u`.`id` WHERE  (  m.expert_id='12' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='12' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:40+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//data/user_head_pic/a5fd5fd43cef073a6b083ce8f851abb1.jpg
+[ info ] localhost/haixue/hx/zaihangForPc/public//data/user_head_pic/a5fd5fd43cef073a6b083ce8f851abb1.jpg [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,579.94kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'data',
+    1 => 'user_head_pic',
+    2 => 'a5fd5fd43cef073a6b083ce8f851abb1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:49:41+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/
+[ info ] localhost/haixue/hx/zaihangForPc/public/ [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：5,309.26kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:49:43+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/
+[ info ] localhost/haixue/hx/zaihangForPc/public/ [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：5,309.26kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:00+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：5,050.22kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:01+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:02+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:03+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:04+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：4,738.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:04+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:09+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：4,738.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:09+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:10+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：4,738.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:10+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.081005s][吞吐率：12.34req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:17+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：4,738.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:52:17+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.125007s][吞吐率：8.00req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:54:03+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：5,049.97kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:54:04+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public///uploads/user/20171109/50e997d7d6d6486effa66e6cadc77207.jpg
+[ info ] localhost/haixue/hx/zaihangForPc/public///uploads/user/20171109/50e997d7d6d6486effa66e6cadc77207.jpg [运行时间：0.040002s][吞吐率：25.00req/s] [内存消耗：2,579.71kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'user',
+    2 => '20171109',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:54:04+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：4,738.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:54:05+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public///uploads/user/20171109/50e997d7d6d6486effa66e6cadc77207.jpg
+[ info ] localhost/haixue/hx/zaihangForPc/public///uploads/user/20171109/50e997d7d6d6486effa66e6cadc77207.jpg [运行时间：0.043003s][吞吐率：23.25req/s] [内存消耗：2,579.71kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'user',
+    2 => '20171109',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T17:54:27+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：4,738.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:56:03+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：5,050.58kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:56:04+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：4,738.19kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:56:07+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.110007s][吞吐率：9.09req/s] [内存消耗：4,738.19kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:56:09+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.091006s][吞吐率：10.99req/s] [内存消耗：4,738.19kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:56:11+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：4,738.19kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:56:13+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：4,738.19kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:57:19+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:57:29+08:00 ] ::1 ::1 POST /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/update
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/update [运行时间：0.081005s][吞吐率：12.34req/s] [内存消耗：5,091.89kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'update',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '111',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'biily1122',
+  'user_true_name' => '安晓辉',
+  'user_address' => '北京',
+  'user_intro' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->update[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'code',
+  5 => 'msg',
+  6 => 'data',
+  7 => 'url',
+  8 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `zh_user`  SET `user_name`='biily1122',`user_true_name`='安晓辉',`user_address`='北京',`user_intro`=''  WHERE  `id` = 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:57:30+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：5,050.91kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/update',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:57:33+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public//
+[ info ] localhost/haixue/hx/zaihangForPc/public// [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：5,309.37kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\index\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'data_list',
+  5 => 'lunbo_list',
+  6 => 'cityList',
+  7 => 'place_topic',
+  8 => 'find_money_expert',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_head_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_head_pic` WHERE  (  set_index=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_home_lunbo` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_home_lunbo` WHERE  (  status=1 ) LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_place` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` ORDER BY id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_place` WHERE  `place` = 'beijing' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `place`.`id`,`place`.`place`,`special`.`special`,special.special_img as pic FROM `zh_place` `place`,`zh_special` `special` WHERE  `place`.`place` = 'beijing'  AND (  place.special_name=special.special ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_expert` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_expert` WHERE  `exp_city_id` = 1  AND (  money_status=1 ) ORDER BY id asc LIMIT 10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:58:35+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.101005s][吞吐率：9.90req/s] [内存消耗：5,050.91kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/update',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:58:41+08:00 ] ::1 ::1 POST /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/saveimg
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/saveimg [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：4,835.05kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'saveimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '27432',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryGRGX0gXUZ9Nn2Hov',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->saveimg[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `zh_user`  SET `user_head_pic`='data/user_head_pic/72dab855b0b9d24b367371deea1f70ba.jpg'  WHERE  (  id='1' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-10T17:58:41+08:00 ] ::1 ::1 GET /haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index
+[ info ] localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：4,738.48kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\haixue\hx\zaihangForPc\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'personalinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/haixue/hx/zaihangForPc/public/index.php/index/personalinfo/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=b1lu1vo73iuvub2hdl0u7o3ai7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Personalinfo->index[ D:\wamp64\www\haixue\hx\zaihangForPc\application\index\controller\Personalinfo.php ]
+[ info ] [ VIEW ] D:\wamp64\www\haixue\hx\zaihangForPc\public/../application/index\view\personalinfo\index.html [ array (
+  0 => 'login',
+  1 => 'city',
+  2 => 'cate_top',
+  3 => 'reg',
+  4 => 'meetinfo',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=zh1;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_category` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_category` WHERE  (  pr_id=0 ) ORDER BY id ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `e`.`id` FROM `zh_user` `u` INNER JOIN `zh_expert` `e` ON `e`.`uid`=`u`.`id` WHERE  (  u.id='1' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zh_meet` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `m`.*,`e`.`exp_realname`,`e`.`exp_job`,`e`.`head_pic`,`t`.`topic_name`,`t`.`topic_price`,`u`.`user_head_pic` FROM `zh_meet` `m` INNER JOIN `zh_expert` `e` ON `m`.`expert_id`=`e`.`id` INNER JOIN `zh_topic` `t` ON `m`.`topic_id`=`t`.`id` INNER JOIN `zh_user` `u` ON `e`.`uid`=`u`.`id` WHERE  (  m.student_id='1' AND u.id!='1' ) ORDER BY m.create_time desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `zh_user` WHERE  (  id='1' ) LIMIT 1 [ RunTime:0.001000s ]

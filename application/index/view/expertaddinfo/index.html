@@ -1,444 +1,1114 @@
 {include file="common/header"}
 {include file="nav_foot/nav"}
-	<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>		
+		<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/personalinfo/css/zr_personaCenter.css?jhj"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddinfo/css/add_detail.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC_PATH__/static/expertaddtop/css/add_subject.css">
+		<style>
+			.myTopic .topicItem{
+				margin: 10px;
+			}
 
-	<!-- <script src="data/js/7a77b0f3.ckeditor.js"></script> -->
-	<!-- <script src="data/js/f38e580e.jquery.js"></script> -->
-	<!-- <script src="https://cdn.bootcss.com/ckeditor/4.7.2/adapters/jquery.js"></script> -->
-<!-- 	<script src="data/js/jquery.js"></script>
-	<script src="https://cdn.bootcss.com/ckeditor/4.7.2/ckeditor.js"></script>
-	<script src="data/js/82952b29.sisyphus.js"></script>
-	<script src="data/js/198002d1.apply.js"></script> -->
-	<div class="container">
-		<div class="content">
+			/*我的话题模块开始*/
+			.myTopicHtml .topic-item{
+				background: #fcfaf9;
+			    border-radius: 8px;
+			    margin:8px;
+			    padding: 30px 20px 0;
+			    position: relative;
+			    margin-bottom: 20px;
+			}
+			.myTopicHtml .topic-list .topic-info {
+			    position: relative;
+			    margin-bottom: 10px;
+			    height: 29px;
+			}
+			.myTopicHtml .topic-list .rating {
+			    position: absolute;
+			    top: 2px;
+			    right: 0;
+			    line-height: 25px;
+			    font-size: 20px;
+			    color: #343434;
+			    cursor: pointer;
+			}
+			.myTopicHtml .topic-list .rating .unit {
+			    font-size: 12px;
+			    vertical-align: baseline;
+			}
+			.myTopicHtml .topic-list .rating .icon, .topic-list .rating .stars {
+			    line-height: 25px;
+			    color: #b3b3b3;
+			    vertical-align: bottom;
+			    font-size: 16px;
+			    cursor: pointer;
+			}
+			.myTopicHtml .topic-list .topic-price {
+			    position: relative;
+			    clear: both;
+			    float: left;
+			    display: block;
+			    line-height: 25px;
+			    font-size: 14px;
+			    color: #343434;
+			}
+			.myTopicHtml .topic-list .topic-price .yuan {
+			    vertical-align: top;
+			    font-size: 12px;
+			}
+			.myTopicHtml .topic-list .topic-price .price {
+			    vertical-align: middle;
+			    font-size: 20px;
+			}
+			.myTopicHtml .topic-list .topic-price .time {
+			    vertical-align: sub;
+			    font-size: 12px;
+			}
+			.myTopicHtml .topic-list li h2 {
+			    font-size: 18px;
+			    line-height: 20px;
+			    margin: 10px 0;
+			    font-weight: 700;
+    			color: #343434;
+			}
+			.myTopicHtml .topic-list li:hover {
+			    box-shadow: 0 0 8px rgba(0,0,0,.3);
+			}
+			.myTopicHtml .topic-list li:hover .delete-btn{
+			    display: block;
+			}
+			.myTopicHtml .topic-list li:hover .edit-btn {
+			    display: block;
+			}
+			.myTopicHtml .topic-list .topic-content-fold {
+			    max-height: 90px;
+			    overflow: hidden;
+			    position: relative;
+			    margin-bottom: 10px;
+			}
+			.myTopicHtml .tutor-content p {
+			    margin-bottom: 10px;
+			    line-height: 22px;
+			}
+			.myTopicHtml .topic-list .topic-ft {
+			    border-top: 1px solid #ddd;
+			    height: 50px;
+			    line-height: 18px;
+			}
+			.myTopicHtml .topic-list .topic-ft .topic-info .meet-time {
+			    display: inline-block;
+			    margin: 16px 6px 16px 0;
+			    padding-right: 10px;
+			    border-right: 1px solid #ddd;
+			}
+			.myTopicHtml .topic-list .topic-ft .topic-info .meet-num {
+			    display: inline-block;
+			    margin: 16px 6px 16px 0;
+			    padding-right: 10px;
+			    border-right: 1px solid #ddd;
+			}
+			.myTopicHtml .topic-list .topic-info:after, .myTopicHtml .topic-list .topic-info:before {
+			    content: " ";
+			    display: table;
+			}
+			.myTopicHtml .delete-btn, .myTopicHtml .edit-btn{
+			    display: none;
+			    position: absolute;
+			    /*top: 25px;
+			    right: 30px;*/
+			    background: #fff;
+			    width: 100px;
+			    height: 34px;
+			    line-height: 34px;
+			    text-align: center;
+			    border: 1px solid #ccc;
+    			color: #343434;
+			}
+			.myTopicHtml .delete-btn{
+				right: 20px;
+    			bottom: 10px;
+			}
+			.myTopicHtml .edit-btn{
+				right: 125px;
+    			bottom: 10px;
+			}
 
-			<div class="sticky-wrapper" id="sticky-wrapper" style="height: 100px;">
-				<div class="apply-steps sticky">
-					<ol class="step-list">
-						<li class="visited">
-							<span>1</span>
-							实名认证
-						</li>
-						<li class="active">
-							<span>2</span>
-							填写行家资料
-						</li>
-						<li class="">
-							<span>3</span>
-							添加话题
-						</li>
-					</ol>
-					<p class="step-tip">填写行家资料大约需要20-30分钟</p>
+			/*我的话题模块结束*/
+
+			/*收到的评论开始*/
+			.receivePinglunHtml .comments-list {
+			    overflow: hidden;
+			}
+			.receivePinglunHtml .comments-list .comment-all {
+			    padding: 30px 10px 15px;
+			    overflow: hidden;
+			    margin: 8px;
+			}
+			.receivePinglunHtml .comments-list .comment-all:hover {
+			    box-shadow: 0 0 8px rgba(0,0,0,.3);
+			}
+			/*.receivePinglunHtml .comments-list .comment-all:hover .like{
+			    display: block;
+			}
+			.receivePinglunHtml .comments-list .comment-all:hover .edit-btn {
+			    display: block;
+			}*/
+			.receivePinglunHtml .comments-list .user-avatar {
+			    float: left;
+			    display: block;
+			    width: 48px;
+			}
+			.receivePinglunHtml .comments-list .user-avatar img {
+			    display: block;
+			    width: 48px;
+			    border-radius: 50%;
+			}
+			.receivePinglunHtml .comments-list .comment {
+			    margin-left: 60px;
+			    padding-bottom: 20px;
+			}
+			.receivePinglunHtml .comments-list .comment-hd {
+			    margin-bottom: 5px;
+			    margin-top: 2px;
+			    overflow: hidden;
+			}
+			.receivePinglunHtml .comments-list .comment-student-name {
+			    float: left;
+			    margin-right: 13px;
+			    font-weight: 700;
+			}
+			.receivePinglunHtml .comments-list .comment-bd {
+			    line-height: 22px;
+			    color: #666;
+			}
+			.receivePinglunHtml .comments-list .comment-topic-name {
+			    margin-top: 15px;
+			    color: #ccc;
+			}
+			.receivePinglunHtml .comments-list .comment-ft {
+			    margin-top: 10px;
+			    line-height: 16px;
+			    color: #ccc;
+			    font-size: 12px;
+			}
+			.receivePinglunHtml .comments-list .comment-ft .comment-date {
+			    color: #ccc;
+			}
+			.receivePinglunHtml .comments-list .comment-reply {
+			    margin-top: 20px;
+			    border-radius: 8px;
+			    color: #ff946e;
+			}
+			/*收到的评论结束*/
+		</style>
+		<div class="zr_zr_header">
+			
+		</div>
+		<div class="zr_container" style="min-height: 800px;">
+			<div class="zr_content">
+				<div id="zr_vue_here">
+					<!--左边-->
+					<div class="img_nav">
+						<!-- <img :src="touxiang_src"/> -->
+						<div class="nav_list" style="margin-top: 0px;">
+							<ul>
+								<li class="navList_ul_li">									
+									<router-link to="/myTopic" active-class="whether_curMenu"><i class="cur_menu"></i>我的话题</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/yuyueList" active-class="whether_curMenu"><i class="cur_menu"></i>预约单</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/receivePinglun" active-class="whether_curMenu"><i class="cur_menu"></i>收到的评论</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/addTop" active-class="whether_curMenu"><i class="cur_menu"></i>添加话题</router-link>
+								</li>
+								<li class="navList_ul_li">	
+									<router-link to="/personalSet" active-class="whether_curMenu"><i class="cur_menu"></i>我的资料</router-link>
+								</li>							
+							</ul>
+						</div>
+					</div>
+					<!--右边-->
+					<div class="nav_zr_container" style="border:none;">
+						<router-view></router-view>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+			
+		<!--我的话题页-->
+		<template id="myTopicHtml">
+		<div class="myTopicHtml">
+				<div class="myTopicHtml_zr_container" style="background: white;">
+					{if !$topics}
+					<p style="width: 100%;padding: 70px 0px;text-align: center;box-sizing: border-box;">真忧伤，还没有我的话题。<a>继续努力！</a></p>
+					{else}
+					<ul style="width: 100%;" class="topic-list">
+						{foreach $topics as  $key => $value} 
+
+						<!-- <?php
+							print_r($value);
+						?> -->
+						<li class="topic-item ">
+		                    <div class="topic-info">
+		                        <div class="rating withRatingTip tooltipstered">
+		                            {$value['topic_score']}<span class="unit">分</span>
+		                            <span class="icon icon-tip"></span>
+		                        </div>
+		                        <div class="topic-price">
+		                            <span class="yuan">￥</span>
+		                            <span class="price">{$value['topic_price']}</span>
+		                            <span class="time">/次</span>
+		                        </div> 
+		                    </div>
+		                    <h2 class="topicTitle" data-topic_id="29863907" data-topic_price="699" data-topic_duration="1.5" data-is_meeting="false" data-topic_type="general" data-is_fixture="False">{$value['topic_name']}</h2>
+		                    <div class="topic-content-fold topicFold">
+		                        <div class="topic-introduction topicIntroduction">
+		                            <div><p>{$value['topic_outline']}</p></div>
+		                        </div>
+		                        <div class="fold"></div>
+		                    </div>
+		                    <div class="topic-ft">
+		                        <div class="topic-info">
+		                            <span class="meet-time">约<span>{$value['topic_time']}</span></span>
+		                            <span class="meet-num"><span>{$value['topic_meet_count']}</span>人约过</span>
+		                            <span class="meet-num"><span>{$value['create_time']}</span></span>
+		                        </div>
+		                    </div>
+		                    <button class="edit-btn" @click="editTop({$value['id']})">编辑</button>
+		                    <button class="delete-btn" id="topDel" @click="detelTop({$value['id']})">删除</button>
+		                    <!-- <a href="{:url('deteTop',['id'=>$value['id']])}" class="delete-btn">删除</a> -->
+		                </li>
+				        
+				       {/foreach}
+					</ul>
+					{/if}
 				</div>
 			</div>
+		</template>
 
-			<div class="main" id="formWrap">
-				<form class="apply-form" id="tutorForm">
+		<!--预约单页-->
+		<template id="yuyueListHtml">
+			<div class="yuyueListHtml">
+				{foreach $expmeetinfo as  $key => $vo} 
+    <!-- {$vo.id}:{$vo.meet_question} -->
+				{if condition="($vo.expert_confirm == 0)"}<h2>等待您确认！</h2>
 
-					<div class="form-group">
-						<div class="profile-picture">
-							<div class="profile-picture-mask"></div>
-							<input type="file" name="file" data-name="profile_picture" id="picture_input" style="z-index: 20">
-							<div style="position: absolute;border-radius: 50%; top: 0px;left: 0px;width: 100%;height: 100%;z-index: 15;background-size:100%; background-repeat:round;"></div>
-							<img src="__STATIC_PATH__/static/expertaddinfo/image/camera.png" alt="" class="profile-picture-mask-camera">
-							<img src="__STATIC_PATH__/static/expertaddinfo/image/profile-picture.png" id="profile_picture">
+
+						<div class="haveHangjia">
+							<div class="appointmentHtml_zr_header">
+								<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
+							</div>
+							<div class="appointmentHtml_zr_container">
+								<div class="img_topic_word">
+									<img src="{$vo.user_head_pic?'__STATIC_PATH__'.$vo.user_head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
+									<div class="topic_word">
+										<h2>{$vo.topic_name}</h2>
+										<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
+									</div>
+								</div>
+								<div class="money">
+									{$vo.topic_price}元
+								</div>
+								<div class="status" style="color:red;">
+									请确认
+								</div>
+								<div class="lookMore">
+									<a @click="detailpop({$key})">查看详情</a>
+								</div>
+							</div>
+							<div class="lookMove_box">
+								<div class="aboutWenti">
+									<p>您想请教的问题是：</p>
+									<p>{$vo.meet_question}</p>
+								</div>
+								<div class="aboutGeren">
+									<p>您的个人简介:</p>
+									<p>{$vo.meet_situation}</p>
+								</div>
+								<form action="{:url('expertConfirm')}">
+									<div>
+										<p>输入您要见面的地点：</p>
+										<input type="text" name="meet_place">
+									</div>
+									<div>
+										<p>输入您要见面的时间：</p>
+										<input type="text" name="meet_time">
+									</div>
+									<input type="submit" value="同意预约">
+									<input type="hidden" value="{$vo.id}" name="id">
+								</form>
+								<form action="{:url('expertReject')}">
+									<input type="submit" value="拒绝">
+									<input type="hidden" value="{$vo.id}" name="id">
+								</form>
+							</div>
 						</div>
-						<div class="form-tip">头像支持jpg，png，gif格式图片，请尽可能选用160*160以上照片。</div>
-						<span class="form-error"></span>
-					</div>
 
-					<div class="form-group" data-required="required">
-						<input name="realname" type="text" maxlength="20" placeholder="行家姓名：真名或常用名，最少2字" value="" id="realname">
-						<span class="form-error ErrName"></span>
-					</div>
+				{elseif condition="($vo.expert_confirm == -1)"/}<h2>被您取消的订单</h2>
 
-					<div class="form-group" data-required="required">
-				        <select autofocus="" name="city" id="city">
-				            <option value="">请选择：常驻城市</option>
-				            
-								{foreach $place as $value}
-				            		<option value="{$value['id']}">{$value['place_name']}</option>
+
+
+						<div class="haveHangjia">
+							<div class="appointmentHtml_zr_header">
+								<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
+							</div>
+							<div class="appointmentHtml_zr_container">
+								<div class="img_topic_word">
+									<img src="{$vo.user_head_pic?'__STATIC_PATH__'.$vo.user_head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
+									<div class="topic_word">
+										<h2>{$vo.topic_name}</h2>
+										<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
+									</div>
+								</div>
+								<div class="money">
+									{$vo.topic_price}元
+								</div>
+								<div class="status" >
+									您已拒绝
+								</div>
+								<div class="lookMore">
+									<a @click="detailpop({$key})">查看详情</a>
+								</div>
+							</div>
+							<div class="lookMove_box">
+								<div class="aboutWenti">
+									<p>您想请教的问题是：</p>
+									<p>{$vo.meet_question}</p>
+								</div>
+								<div class="aboutGeren">
+									<p>您的个人简介:</p>
+									<p>{$vo.meet_situation}</p>
+								</div>
+							</div>
+						</div>
+
+				{elseif condition="($vo.student_pay == 0)"/} <h2>已提交，等待学员确认预约</h2> 
+
+						<div class="haveHangjia">
+							<div class="appointmentHtml_zr_header">
+								<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
+							</div>
+							<div class="appointmentHtml_zr_container">
+								<div class="img_topic_word">
+									<img src="{$vo.user_head_pic?'__STATIC_PATH__'.$vo.user_head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
+									<div class="topic_word">
+										<h2>{$vo.topic_name}</h2>
+										<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
+									</div>
+								</div>
+								<div class="money">
+									{$vo.topic_price}元
+								</div>
+								<div class="status" style="color: sienna;">
+									等待中
+								</div>
+								<div class="lookMore">
+									<a @click="detailpop({$key})">查看地点</a>
+								</div>
+							</div>
+							<div class="lookMove_box">
+								<div class="aboutWenti">
+									<p>见面地点：</p>
+									<p>{$vo.meet_place}</p>
+								</div>
+								<div class="aboutGeren">
+									<p>见面时间：</p>
+									<p>{$vo.meet_time}</p>
+								</div>
+							</div>
+						</div>
+
+				{elseif condition="($vo.student_pay == 1) "/} <h2>预约成功，等待见面</h2>
+						<div class="haveHangjia">
+							<div class="appointmentHtml_zr_header">
+								<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
+							</div>
+							<div class="appointmentHtml_zr_container">
+								<div class="img_topic_word">
+									<img src="{$vo.user_head_pic?'__STATIC_PATH__'.$vo.user_head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
+									<div class="topic_word">
+										<h2>{$vo.topic_name}</h2>
+										<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
+									</div>
+								</div>
+								<div class="money">
+									{$vo.topic_price}元
+								</div>
+								<div class="status" style="color:#FF946E;">
+									等待见面
+								</div>
+								<div class="lookMore">
+									<a @click="detailpop({$key})">查看地点</a>
+								</div>
+							</div>
+							<div class="lookMove_box">
+								<div class="aboutWenti">
+									<p>见面地点：</p>
+									<p>{$vo.meet_place}</p>
+								</div>
+								<div class="aboutGeren">
+									<p>见面时间：</p>
+									<p>{$vo.meet_time}</p>
+								</div>
+							</div>
+						</div>
+
+				{elseif condition="($vo.student_pay == 2) AND($vo.meet_score == NULL)"/} <h2>完成约见，等待评价</h2>
+
+						<div class="haveHangjia">
+							<div class="appointmentHtml_zr_header">
+								<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
+							</div>
+							<div class="appointmentHtml_zr_container">
+								<div class="img_topic_word">
+									<img src="{$vo.user_head_pic?'__STATIC_PATH__'.$vo.user_head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
+									<div class="topic_word">
+										<h2>{$vo.topic_name}</h2>
+										<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
+									</div>
+								</div>
+								<div class="money">
+									{$vo.topic_price}元
+								</div>
+								<div class="status" style="color:#FF946E;">
+									等待评价
+								</div>
+								<div class="lookMore">
+									<a @click="detailpop({$key})">查看地点</a>
+								</div>
+							</div>
+							<div class="lookMove_box">
+								<div class="aboutWenti">
+									<p>见面地点：</p>
+									<p>{$vo.meet_place}</p>
+								</div>
+								<div class="aboutGeren">
+									<p>见面时间：</p>
+									<p>{$vo.meet_time}</p>
+								</div>
+							</div>
+						</div>
+
+				{elseif condition="($vo.meet_score != NULL)"/}<h2>已完成</h2>
+
+						<div class="haveHangjia">
+							<div class="appointmentHtml_zr_header">
+								<p><span class="bianhao">编号：{$vo.order_number}</span><span class="time">发起时间：{$vo.create_time}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.id}</span></p>
+							</div>
+							<div class="appointmentHtml_zr_container">
+								<div class="img_topic_word">
+									<img src="{$vo.user_head_pic?'__STATIC_PATH__'.$vo.user_head_pic:'__STATIC_PATH__/data/home_head_pic/system_headpic/system_headpic.jpeg'}"/>
+									<div class="topic_word">
+										<h2>{$vo.topic_name}</h2>
+										<p><span>{$vo.user_true_name}</span><span>&nbsp;&nbsp;&nbsp;</span>{$vo.user_phone}</p>
+									</div>
+								</div>
+								<div class="money">
+									{$vo.topic_price}元
+								</div>
+								<div class="status" style="color:#FF946E;">
+									学员已评价
+								</div>
+								<div class="lookMore">
+									<a @click="detailpop({$key})">查看评价</a>
+								</div>
+							</div>
+							<div class="lookMove_box">
+								<div class="aboutWenti">
+									<p>学员的评分：</p>
+									<p>{$vo.meet_score}</p>
+								</div>
+								<div class="aboutGeren">
+									<p>学员的评论：</p>
+									<p>{$vo.meet_comment}</p>
+								</div>
+							</div>
+						</div>
+
+				{else /} <h2>出现bug：有一条数据未输出</h2>
+				
+				{/if}
+				<br/>
+		{/foreach}
+			</div>
+		</template>
+		<!--收到的品论-->
+			<template id="receivePinglunHtml">
+			<div class="receivePinglunHtml">
+				<div class="receivePinglunHtml_zr_container" style="background: white;">
+					<!-- <?php
+					print_r($evaluate);
+					?> -->
+					{if !$evaluate}
+					<p style="width: 100%;padding: 70px 0px;text-align: center;box-sizing: border-box;">真忧伤，还没有关于我的评论。<a href="#">继续努力！</a>
+					</p>
+					{else}
+					<ul class="comments-list">
+
+
+						{foreach $evaluate as $key =>$evalu}
+						<li class="comment-all">
+                        <span class="user-avatar" data-id="85134474">
+                            <img src="http://media.zaih.com/Fh8J1Fi5s-dN1IasJlJ12wpJKOsa!avatar" alt="broguo">
+                        </span>
+                        <div class="comment">
+                            <div class="comment-hd">
+                                <strong class="comment-student-name">
+                                冰河
+                                </strong>
+                            </div>
+                            <div class="comment-bd">
+                                约了三个小时时间，两个小时就聊得豁然开朗了。李老师从心理学角度分析了我是什么样的人、我的优势在哪里、适合怎样的工作。又从职业规划的角度分析了我现在工作实质是什么、需要怎样的人才。之前自己只是感性地觉得无法适应现在的工作，但说不清为什么无法适应。通过老师的分析，让我更清楚地认识了自己，也认识了我的工作。而且，李老师海归出生，眼界比较开阔，为我列举了更多职业的可能。感觉李老师这样复合型的咨询师非常难得，因为表面上是职业的选择，更深的则是内心的选择。虽然工作只是人生的一部分，但合适的职业能实现人生价值。美中不足的是，自己由于表达得很爽，忽视了倾听方面的专注，有时候会打断老师的话，对自己表示遗憾。感谢老师的耐心和时间。多喝热水，保护嗓子😂
+                            </div>
+                            <div class="comment-topic-name">参与话题：职业规划：重新审视职场中的人际瓶颈</div>
+                            <div class="comment-ft">
+                                <span class="comment-date">2017-02-15</span>
+                                <button class="comment-like like" data-review-id="83259">
+                                    回复</button>
+                            </div>
+                           <!--  
+                            <div class="comment-reply">
+                                行家回复：教育带给人的思考高度、性格带给人的处事态度、志趣（兴趣+知识技能）带给人的坚定方向，职业的基石在你这个年纪就这么牢固，的确很让人羡慕嫉妒啊……你懂的。剩下的就交给时间吧，只要我们把能做的都做好了，职业会慢慢发酵到事业甚至使命的，等你的好消息～
+                            </div> -->
+                            
+                        </div>
+                    </li>
+						
+						{/foreach}
+					</ul>
+					{/if}
+				</div>
+			</div>
+		</template>
+		<template  id="addTopHtml">
+			<div class="addTopHtml">
+				<form id="formTop" class="main">
+					<div class="apply-form" id="topicForm">
+
+						<div class="form-group" data-required="required">
+					        <input name="topic_title" type="text" maxlength="20" placeholder="话题名称：提炼话题的核心要点，方便学员筛选，最少5字" value="" id="title">
+					        <!-- <span class="form-range"><i>0</i>/20</span> -->
+					        <span class="form-error Errtitle"></span>
+					    </div>
+						
+						<div class="form-group" data-required="required">
+					        <select autofocus="" name="topic_duration" placeholder="行业类型" id="cateid">
+					        	<option value="">请选择：类型</option>
+					        	{foreach $category as $value}
+						        	{foreach $value as $val}
+					            		<option value="{$val['id']}">{$val['cate_name']}</option>
+					            	{/foreach}
 				            	{/foreach}
-				               
-				            <option value="其他">其他</option>
-				        </select>
-				        <span class="form-error Errcity"></span>
-				    </div>
+					        </select>
+					        <span class="form-error Errcat"></span>
+					    </div>
 
-				    <div class="form-group" data-required="required">
-				        <input name="meet_location" type="text" maxlength="20" placeholder="在常驻城市的常活动区域：国贸、中关村，最少2字" value="" id="meet_location">
-				        <!-- <span class="form-range"><i>0</i>/20</span> -->
-				        <span class="form-error Errmeet"></span>
-   					 </div>
+						<div class="form-group" data-required="required">
+					        <select autofocus="" name="topic_duration" placeholder="大致时长" id="holdtime">
+					            <option value="">请选择：大致时长</option>
+					            <option value="0.5小时">0.5小时</option>
+					            <option value="1小时" selected="">1小时</option>
+					            <option value="1.5小时">1.5小时</option>
+					            <option value="2小时">2小时</option>
+					            <option value="2.5小时">2.5小时</option>
+					            <option value="3小时">3小时</option>
+					        </select>
+					        <span class="form-error Errht"></span>
+					    </div>
 
-					<div class="row">
-					        <div class="form-group" data-required="required">
-					            <select autofocus="" name="category_id" placeholder="行业：请选择您所擅长的领域" id="category_id">
-					                <option value="">请选择：行业</option>
-
-					                	{foreach $category as $value}
-						            		<option value="{$value['id']}">{$value['cate_name']}</option>
-						            	{/foreach}
-					                    <option value="其他">其他</option>
-					            </select>
-					            <span class="form-error Errcate"></span>
-					        </div>
-					        <div class="form-group" data-required="required">
-					            <select autofocus="" name="seniority" placeholder="工作年限" id="seniority">
-					                <option value="">请选择：工作年限</option>
-					                <option value="3-5年">3-5年</option>
-					                <option value="5-10年">5-10年</option>
-					                <option value="10年以上">10年以上</option>
-					            </select>
-					            <span class="form-error Errsenior"></span>
-					        </div>
-				    </div>
-
-
-					<div class="form-group" data-required="required">
-				        <input name="occupation" type="text" maxlength="20" placeholder="任职机构：自由职业者可填写工作室名字，最少2字" value="" id="occupation">
-				        <!-- <span class="form-range"><i>0</i>/20</span> -->
-				        <span class="form-error Erroccu"></span>
-				    </div>
-
-
-					<div class="form-group" data-required="required">
-				        <input name="title" type="text" maxlength="20" placeholder="头衔/职位：自由职业者可注明，最少2字" value="" id="title">
-				        <!-- <span class="form-range"><i>0</i>/20</span> -->
-				        <span class="form-error Errtitle"></span>
-				    </div>
-
-
-					<div class="form-group">
-				        <label for="education" data-required="required">教育背景/培训经历（最多500字）
-				        	<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
-			        	</label>
-				        <textarea rows="6" name="education" maxlength="500" placeholder="2007年9月-2011年7月，北京大学，新闻与传播学专业，硕士研究生，最少20字" id="education"></textarea>
-				        <span class="form-error Erredu"></span>
-				    </div>
-
-					<div class="checkbox-wrap">
-				        <label>
-				            <input name="is_show_education" type="checkbox" id="showedu">
-				            <span class="checkbox checkbox-false"><i class="icon icon-checkbox"></i></span>
-				            向学员公开教育背景/培训经历，以增加行家资质说明
-				        </label>
-				    </div>
-
-
-
-
-					<div id="categoryForm">
-						<div class="category-item" data-category_type="certificate">
-							<div class="form-group">
-								<label for="career_experience" data-required="required">职业经历（最多800字）
-									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
-								</label>	
-
-
-								<textarea name="" id="work_exper" cols="30" rows="10" placeholder="可填写多段经历，描述清楚时间段、任职机构、职位，最少20字"></textarea>
-								 <span class="form-error Errexper"></span>
-
-							</div>
-
-							<div class="form-group">
-								<label for="project_experience" >项目经历（最多800字）
-									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
-								</label>	
-								<textarea name="" id="pro_exper" cols="30" rows="10"></textarea>
-							</div>
-
-							<div class="form-group">
-								<label for="social_account" >媒体报道/社交账号链接（最多500字）
-									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
-								</label>	
-								<textarea name="" id="soc_cont" cols="30" rows="10"></textarea>
-							</div>	
-
-
-							<div class="form-group">
-								<label for="career_images">上传职业证明材料（最多5张照片）</label>
-									<div id="career_images">
-			                            <div class="photo career_image" style="position: relative;">
-			                            	<input type="file" name="file1" style="display: block;height: 100%;width: 100%;position: absolute;">
-			                            	<img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;" >
-		                            	</div>
-			                            <div class="photo career_image" style="position: relative;">
-			                         	  	<input type="file" name="file2" style="display: block;height: 100%;width: 100%;position: absolute;">
-			                         	  	<img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
-			                           	 </div>
-			                            <div class="photo career_image" style="position: relative;">
-			                       	   	 	<input type="file" name="file3" style="display: block;height: 100%;width: 100%;position: absolute;">
-			                       	   	 	<img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
-			                            </div>
-			                            <div class="photo career_image" style="position: relative;">
-		                        	        <input type="file" name="file4" style="display: block;height: 100%;width: 100%;position: absolute;">
-		                        	        <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
-			                            </div>
-			                            <div class="photo career_image" style="position: relative;">
-		                                    <input type="file" name="file5" style="display: block;height: 100%;width: 100%;position: absolute;">
-		                                    <img src="" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
-			                            </div>
-				                    </div>
-				                    <span class="form-tip">能体现职务的名片、工作证、加盖公章的在职证明、劳动合同和社保缴费证明等，仅供审核参考，信息保密</span>
-				                    <span class="form-error Errpho"></span>
-							</div>
-
-							<div class="form-group">
-								<label for="readme" data-required="required">自述（最多1000字）
-									<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
-								</label>	
-								<textarea name="" id="self_intro" cols="30" rows="10"></textarea>
-								<span class="form-error Errintro"></span>
-							</div>
-
-
-							<div class="checkbox-wrap">
-						        <label>
-						            <input id="is_agreed" type="checkbox">
-						            <span class="checkbox checkbox-true"><i class="icon icon-checkbox"></i></span>
-						            本人承诺为以上信息的真实性及准确性负责，并会在任职信息变更时及时更新行家资料
-						        </label>
-						    </div>
-
-							
-							<div class="btns-wrap btns-wrap-center">
-								<input id="submitBtn" class="btn-primary btn-lg" value="下一项：添加话题" type="button" disabled="true" />
-  							</div>
-
+					    <div class="form-group" data-required="required" data-type="number">
+					        <input name="topic_reward" type="text" placeholder="话题价格" value="" id="price">
+					        <span class="form-tip">价格不代表行家资历及水平，而是学员用来向知识分享者表达感谢的金额。在行的行家均价约为300元，建议您将价格设定在200-400元区间，更容易被学员约见。</span>
+					        <span class="form-error Errprice"></span>
+					    </div>
+						
+						<div class="form-group">
+							<label for="topic_introduction" data-required="required">话题大纲/要点（最多800字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="不少于5条要点，同一主题&#xA（1）教你科学的练习方法，多种训练方法结合练习腹肌&#xA（2）短期见效，让你越练越High&#xA（3）为你量身定制饮食计划&#xA最少20字" name="" id="bconcent" cols="30" rows="10"></textarea>
+							<span class="form-error Errbc"></span>
 						</div>
+
+						<div class="form-group">
+							<label for="topic_introduction" data-required="required">您在该领域的资历和成就（最多800字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="说说你为什么擅长分享这个话题&#xA我拥有十年健身经验，积累了丰富的理论知识，通过ACE培训及考试认证；拥有独家腹肌训练方法与技巧&#xA最少20字&#xA" name="" id="achieve" cols="30" rows="10"></textarea>
+							<span class="form-error Errach"></span>
+						</div>
+
+						<div class="form-group">
+							<label for="topic_introduction">补充更多想说的（最多1000字）
+								<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+							</label>
+							<textarea placeholder="包括但不限于：你想与学员分享的心情、学员约见前需做哪些准备、话题涉及的方法论模型和工具" name="elsecare" id="elsecare" cols="30" rows="10"></textarea>
+						</div>
+
+						<div class="checkbox-wrap">
+					        <label>
+					            <input name="has_icebreaker_price" type="checkbox" id="spread">
+					            <span class="checkbox checkbox-true">
+					        	    <!-- <i class="icon icon-checkbox"></i> -->
+					            </span>
+					            接受前两单半价，获得更多推广机会
+					        </label>
+					        <span class="form-tip">确认接受2名学员的约见后，价格将自动恢复到原价。据统计：95.2%的新行家通过破冰价获得首批种子学员，获得了首批好评。</span>
+					    </div>
+
+						<div class="btns-wrap btns-wrap-center">
+					        <input class="btn-link btn-md" type="button" id="saveBtn" value="保存暂不提交" @click="subsave()"/>
+					        <input class="btn-primary btn-md" type="button" id="submitBtn" value="提交认证" @click="subpublish()"/>
+					    </div>
+
 					</div>
 
 				</form>
 			</div>
-		</div>
-	</div>
-	<script>
-		$(function(){
-			var formData = new FormData();
-			console.log(formData)
-			var headPic='';
-			var imgList=[];
-			for(var i=0;i<5;i++){
-				$('#career_images input').eq(i).change(function(){
-					// console.log(this)
-					imgList.push(showImg(this,1))
-				}) 
-			}
-			$('#picture_input').change(function(){
-				headPic=showImg(this,-1)
-			})
+		</template>
+		<!--个人设置页-->
+		<template id="personalSetHtml">
+			<div class="container">
+				<div class="content" style="width: 100%;">
+					<div class="main" id="formWrap">
+						<div class="main" id="formWrap">
+							<form class="apply-form" id="tutorForm">
+								<div class="form-group">
+									<div class="profile-picture" @click="changeHead()">
+										<div class="profile-picture-mask"></div>
+										<img src="__STATIC_PATH__{$expert['head_pic']?$expert['head_pic']:'data/home_head_pic/system_headpic/system_headpic.jpeg'}" id="profile_picture" style="z-index: 11;">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="realname" data-required="required">真实姓名</label>
+									<input name="realname" type="text" maxlength="20" value="{$expert['exp_realname']}" id="realname" disabled="true">
+									<span class="form-error ErrName"></span>
+								</div>
 
-			function showImg(that,id){
-				var objUrl = getObjectURL(that.files[0]);
-				console.log(that)
-				// var type = that.files[0].type;
-				var type = that.files[0].type.split('/')[1]; 
-				console.log(type)
-				var size = that.files[0].size;
-				if(type == 'jpeg' || type == 'jpg' || type == 'png' || type == 'gif'){
-					if(size > 1000000){alert('上传的图片不能大于1m,请重新上传')}
-					if(id==1){
-						if (objUrl) {
-								$(that).next().attr("src", objUrl);
+								<div class="form-group">
+									<label for="realname" data-required="required">常驻城市</label>
+							        <select autofocus="" name="city" id="city" disabled="true">
+							            <option value="">{$expert['place_name']}</option>
+							        </select>
+							        <span class="form-error Errcity"></span>
+							    </div>
+
+							    <div class="form-group">
+							    	<label for="realname" data-required="required">常驻城市的常活动区域</label>
+							        <input name="meet_location" type="text" maxlength="20" disabled="true" value="{$expert['exp_place']}" id="meet_location">
+							        <!-- <span class="form-range"><i>0</i>/20</span> -->
+							        <span class="form-error Errmeet"></span>
+			   					 </div>
+
+								<div class="row">
+								        <div class="form-group">
+								        	<label for="realname" data-required="required">行业</label>
+								            <select autofocus="" name="category_id" id="category_id" disabled="true">
+								                <option value="">{$expert['cate_name']}</option>
+								            </select>
+								            <span class="form-error Errcate"></span>
+								        </div>
+								        <div class="form-group">
+								        	<label for="realname" data-required="required">工作年限</label>
+								            <select autofocus="" name="seniority" placeholder="工作年限" id="seniority" disabled="true">
+								                <option value="">{$expert['exp_workyear']}</option>
+								            </select>
+								            <span class="form-error Errsenior"></span>
+								        </div>
+							    </div>
+
+
+								<div class="form-group">
+									<label for="realname" data-required="required">任职机构</label>
+							        <input name="occupation" type="text" maxlength="20" placeholder="任职机构：自由职业者可填写工作室名字，最少2字" value="{$expert['exp_company']}" id="occupation" disabled="true">
+							        <!-- <span class="form-range"><i>0</i>/20</span> -->
+							        <span class="form-error Erroccu"></span>
+							    </div>
+
+
+								<div class="form-group">
+									<label for="realname" data-required="required">头衔、职位</label>
+							        <input name="title" type="text" maxlength="20" placeholder="头衔/职位：自由职业者可注明，最少2字" value="{$expert['exp_job']}" id="title" disabled="true">
+							        <!-- <span class="form-range"><i>0</i>/20</span> -->
+							        <span class="form-error Errtitle"></span>
+							    </div>
+
+
+								<div class="form-group">
+							        <label for="education" data-required="required">教育背景/培训经历（最多500字）
+							        	<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+						        	</label>
+							        <textarea rows="6" name="education" maxlength="500" placeholder="2007年9月-2011年7月，北京大学，新闻与传播学专业，硕士研究生，最少20字" id="education" disabled="true">{$expert['exp_edu_experience']}</textarea>
+							        <span class="form-error Erredu"></span>
+							    </div>
+
+								<div class="checkbox-wrap">
+							        <label>
+							            <input name="is_show_education" type="checkbox" id="showedu">
+							            <span class="checkbox checkbox-false"><i class="icon icon-checkbox"></i></span>
+							            向学员公开教育背景/培训经历，以增加行家资质说明
+							        </label>
+							    </div>
+
+
+
+
+								<div id="categoryForm">
+									<div class="category-item" data-category_type="certificate">
+										<div class="form-group">
+											<label for="career_experience" data-required="required">职业经历（最多800字）
+												<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+											</label>	
+
+
+											<textarea name="" id="work_exper" cols="30" rows="10" placeholder="可填写多段经历，描述清楚时间段、任职机构、职位，最少20字" disabled="true">{$expert['exp_job_experience']}</textarea>
+											 <span class="form-error Errexper"></span>
+
+										</div>
+
+										<div class="form-group">
+											<label for="project_experience" >项目经历（最多800字）
+												<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+											</label>	
+											<textarea name="" id="pro_exper" cols="30" rows="10" disabled="true">{$expert['exp_project_experience']}</textarea>
+										</div>
+
+										<div class="form-group">
+											<label for="social_account" >媒体报道/社交账号链接（最多500字）
+												<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+											</label>	
+											<textarea name="" id="soc_cont" cols="30" rows="10" disabled="true">{$expert['exp_sociallink']}</textarea>
+										</div>	
+
+
+										<div class="form-group">
+											<label for="career_images">上传职业证明材料（最多5张照片）</label>
+												<div id="career_images">
+						                            <div class="photo career_image" style="position: relative;">
+						                            	<img src="{$imglist[0]?'__STATIC_PATH__/'.$imglist[0]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;" >
+					                            	</div>
+						                            <div class="photo career_image" style="position: relative;">
+						              
+						                         	  	<img src="{$imglist[1]?'__STATIC_PATH__/'.$imglist[1]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+						                           	 </div>
+						                            <div class="photo career_image" style="position: relative;">
+						                       	   	 	
+						                       	   	 	<img src="{$imglist[2]?'__STATIC_PATH__/'.$imglist[2]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+						                            </div>
+						                            <div class="photo career_image" style="position: relative;">
+					                        	        
+					                        	        <img src="{$imglist[3]?'__STATIC_PATH__/'.$imglist[3]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+						                            </div>
+						                            <div class="photo career_image" style="position: relative;">
+					                                    
+					                                    <img src="{$imglist[4]?'__STATIC_PATH__/'.$imglist[4]:''}" alt="" class="show" style="height: 100%;width: 100%;position: absolute;">
+						                            </div>
+							                    </div>
+							                    <span class="form-tip">能体现职务的名片、工作证、加盖公章的在职证明、劳动合同和社保缴费证明等，仅供审核参考，信息保密</span>
+							                    <span class="form-error Errpho"></span>
+										</div>
+
+										<div class="form-group">
+											<label for="readme" data-required="required">自述（最多1000字）
+												<!-- <span class="sampleTip sample-tip tooltipstered">【示例】</span> -->
+											</label>	
+											<textarea name="" id="self_intro" cols="30" rows="10" disabled="true">{$expert['exp_narration']}</textarea>
+											<span class="form-error Errintro"></span>
+										</div>
+
+
+										<div class="checkbox-wrap">
+									        <label>
+									            <input id="is_agreed" type="checkbox" checked="true" disabled="true">
+									            <span class="checkbox checkbox-true"><i class="icon icon-checkbox"></i></span>
+									            本人承诺为以上信息的真实性及准确性负责，并会在任职信息变更时及时更新行家资料
+									        </label>
+									    </div>
+
+
+									</div>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+				<input type="file" ref='head' @change="upHead" @input="upHead" style="display: none" name="">
+			</div>
+		</template>
+		
+		
+		<script type="text/javascript">
+			const router=new VueRouter({
+				routes:[
+//					重定向
+					{
+						path:'/',
+						redirect:'/myTopic'
+					},
+//					我的话题
+					{
+						path:'/myTopic',
+						component:{
+							template:'#myTopicHtml',
+							data: { topics: [] },
+							created:function(){
+								var id="<?php echo $expert['id'];?>"
+								console.log(id)
+								$.post({
+										url: "{:url('../../index/expertinfo/gettops')}",
+										data:{
+											id: id
+										},
+										success: function(data){
+											// data = JSON.parse(data);
+											console.log(this.topics);
+											this.topics=data;
+											console.log(this.topics);
+											if(!data){
+												alert('请求失败');
+											}
+										},
+									})
+							},
+							beforeDestroy:function(){
+								console.log(123)
+							},
+							methods:{
+								detelTop:function(i){
+									$.post({
+										url: "{:url('../../index/expertinfo/deteltop')}",
+										data:{
+											id: i
+										},
+										success: function(data){
+											data = JSON.parse(data);
+											console.log(data,data.status)
+											if(data.status != 50){
+												alert(data.message);
+											}
+										},
+									})
+								},
+								editTop:function(i){
+									alert('功能在开发中');
+								}
 							}
-					}else{
-							if (objUrl) {
-								$(that).next().css("background-image","url("+objUrl+")");
-							}
-					}
-					return that.files[0];
-				}else{
-					alert('上传的图片格式不对')
-				}	
-			}
-
-			function getObjectURL(file) {
-				var url = null ;
-				if (window.createObjectURL!=undefined) { // basic
-					url = window.createObjectURL(file) ;
-				} else if (window.URL!=undefined) { // mozilla(firefox)
-					url = window.URL.createObjectURL(file) ;
-					console.log(2)
-				}
-				 else if (window.webkitURL!=undefined) { // webkit or chrome
-					url = window.webkitURL.createObjectURL(file) ;
-				}
-				return url ;
-			}
-			
-			$('#formWrap #is_agreed').click(function(){
-				console.log(this)
-				if($(this).get(0).checked){
-					$('#formWrap #submitBtn').attr("disabled",false);
-					console.log(1) 
-				}else{
-					$('#formWrap #submitBtn').attr("disabled",true); 
-					console.log(2)
-				}
-			})
-
-			$('#formWrap #submitBtn').click(function(){
-				
-				var realname = $('#realname').val();//真实姓名*
-				var city = $('#city').val();//城市*
-				var meet_location = $('#meet_location').val();//常住城市活动区域*
-				var category_id = $('#category_id').val();//行业*
-				var seniority = $('#seniority').val();//工作年限*
-				var occupation = $('#occupation').val();//任职机构*
-				var title = $('#title').val();//头衔，职位*
-				var education = $('#education').val();//教育经历*
-				var work_exper = $('#work_exper').val();//职业经历*
-				var pro_exper = $('#pro_exper').val();//项目经历
-				var soc_cont = $('#soc_cont').val();//社交、媒体链接
-				var self_intro = $('#self_intro').val();//自我介绍*
-
-				var showedu = 0; //是否公开教育经历
-				if ($("#showedu").get(0).checked) {
-				   showedu = 1;
-				   console.log('gawgw');
-				}
-				var is_agreed = 0;//是否同意协议
-				if ($("#is_agreed").get(0).checked) {
-				   is_agreed = 1;
-				   console.log('wgw');
-				}
-
-				if(!realname)
-				{
-					$('#formWrap .ErrName').text('不能为空');
-					return;                             //姓名错误
-				}else if(!city){
-					$('#formWrap .Errcity').text('不能为空');
-					return;                             //城市错误
-				}else if(!meet_location){
-					$('#formWrap .Errmeet').text('不能为空');
-					return;                             //区域错误
-				}else if(!category_id){
-					$('#formWrap .Errcate').text('不能为空');
-					return;                             //行业错误
-				}else if(!seniority){
-					$('#formWrap .Errsenior').text('不能为空');
-					return;                             //年限错误
-				}else if(!occupation){
-					$('#formWrap .Erroccu').text('不能为空');
-					return;                             //机构错误
-				}else if(!title){
-					$('#formWrap .Errtitle').text('不能为空');
-					return;                             //职位错误
-				}else if(!education){
-					$('#formWrap .Erredu').text('不能为空');
-					return;                             //教育经历错误
-				}else if(!work_exper){
-					$('#formWrap .Errexper').text('不能为空');
-					return;                             //职业经历
-				}
-				else if(!imgList){
-					$('#formWrap .Errpho').text('不能为空');
-					return;                             //图片验证
-				}
-				else if(!self_intro){
-					$('#formWrap .Errintro').text('不能为空');
-					return;                             //自述
-				}
-				
-				for(var i=0;i<imgList.length;i++)
-				{
-					formData.append("picture"+(i),imgList[i]);
-				}
-
-				formData.append("headPic",headPic);
-				// var badata = {
-				// 	realname: realname,
-				// 	city: city,
-				// 	meet_location: meet_location,
-				// 	category_id: category_id,
-				// 	seniority: seniority,
-				// 	occupation: occupation,
-				// 	title: title,
-				// 	work_exper: work_exper,
-				// 	pro_exper: pro_exper,
-				// 	soc_cont: soc_cont,
-				// 	self_intro: self_intro,
-				// }
-				
-				// badata=JSON.stringify(badata);
-				// formData.append('badata',badata);
-
-				formData.append("realname",realname);
-				formData.append("city",city);
-				formData.append("meet_location",meet_location);
-				formData.append("category_id",category_id);
-				formData.append("seniority",seniority);
-				formData.append("occupation",occupation);
-				formData.append("title",title);
-				formData.append("education",education);
-				formData.append("work_exper",work_exper);
-				formData.append("pro_exper",pro_exper);
-				formData.append("soc_cont",soc_cont);
-				formData.append("self_intro",self_intro);
-				
-				formData.append("showedu",showedu);
-				
-				formData.append("is_agreed",is_agreed);
-				//提交前验证
-				
-				// console.log(imgList)
-				// console.log(formData)
-				$.post({
-					url: "{:url('/index/expertaddinfo/doHang')}",
-					
-					data: formData,
-					processData: false,  // 不处理数据
-					contentType: false,   // 不设置内容类型
-					traditional: true,
-					success: function(data){
-						data = JSON.parse(data);
-						// console.log(data);
-						
-						if(data.status==10){
-							window.location.href = "{:url('/index/expertaddtop/index')}"
-						}else{
-							ErrorShow(data);
 						}
 					},
+					//预约
+					{
+						path:'/yuyueList',
+						component:{
+							template:'#yuyueListHtml',
+							// mounted:function(){
+							// 	$(".nav_zr_container").css("border","none");
+							// },							
+							// beforeDestroy:function(){
+							// 	$(".nav_zr_container").css("border","1px solid #ccc");
+							// },
+							methods:{
+								detailpop:function(even){
+									$(event.target).parent().parent().parent().find(".lookMove_box").toggle();
+								}
+							}
+						}
+					},
+//					收到的评论
+					{
+						path:'/receivePinglun',
+						component:{
+							template:'#receivePinglunHtml'
+						}
+					},
+					//添加话题
+					{
+						path:'/addTop',
+						component:{
+							template:'#addTopHtml',
+							methods:{
+								subpublish:function(){
+									this.postinfo(1)
+								},
+								subsave:function(){
+									this.postinfo(0)
+								},
+								postinfo:function(id=0){
+									var cateid = $('.addTopHtml #cateid').val();//行业类型
+									var publish=id;
+									var title = $('.addTopHtml #title').val();//话题名*
+									var holdtime = $('.addTopHtml #holdtime').val();//时间*
+									var price = $('.addTopHtml #price').val();//价格*
+									var bconcent = $('.addTopHtml #bconcent').val();//话题大纲要点*
+									var achieve = $('.addTopHtml #achieve').val();//成就*
+									var elsecare = $('.addTopHtml #elsecare').val();//更多想说的*
+									// var spread = $('#spread').val();//推广*
+									var spread = 0;
+									if ($(".addTopHtml #spread").get(0).checked) {
+									   spread = 1;
+									   // console.log('gawgw');
+									}
 
-				})
-			})
-		
-			
-			//错误提示
-			function ErrorShow(data){
-				if(data.status==13)
-				{
-					$('#formWrap .ErrName').text(data.message);//姓名错误
-				}else if(data.status==14){
-					$('#formWrap .Errcity').text(data.message);//城市错误
-				}else if(data.status==15){
-					$('#formWrap .Errmeet').text(data.message);//区域错误
-				}else if(data.status==16){
-					$('#formWrap .Errcate').text(data.message);//行业错误
-				}else if(data.status==17){
-					$('#formWrap .Errsenior').text(data.message);//年限错误
-				}else if(data.status==18){
-					$('#formWrap .Erroccu').text(data.message);//机构错误
-				}else if(data.status==19){
-					$('#formWrap .Errtitle').text(data.message);//职位错误
-				}else if(data.status==20){
-					$('#formWrap .Erredu').text(data.message);//教育经历错误
-				}else if(data.status==21){
-					$('#formWrap .Errexper').text(data.message);//职业经历
-				}else if(data.status==22){
-					$('#formWrap .Errpho').text(data.message);//图片验证
-				}else if(data.status==23){
-					$('#formWrap .Errintro').text(data.message);//自述
-				}
-			}
-			//获取焦点后清除错误信息
-			$("#formWrap input").focus(function(){
-			  $("#formWrap .form-error").text('');
+									// //提交前验证
+									if(!title)
+									{
+										$('.addTopHtml #formTop .Errtitle').text('不能为空');
+										return;                             //话题错误
+									}else if(!cateid){
+										$('.addTopHtml #formTop .Errcat').text('不能为空');
+										return;                             //类型
+									}else if(!holdtime){
+										$('.addTopHtml #formTop .Errht').text('不能为空');
+										return;                             //时长错误
+									}else if(!price){
+										$('.addTopHtml #formTop .Errprice').text('不能为空');
+										return;                             //价格错误
+									}else if(!bconcent){
+										$('.addTopHtml #formTop .Errbc').text('不能为空');
+										return;                             //话题大纲错误
+									}else if(!achieve){
+										$('.addTopHtml #formTop .Errach').text('不能为空');
+										return;                             //成就错误
+									}
+									
+									$.post({
+										url: "{:url('/index/expertinfo/dotopic')}",
+										data: {
+											title:title,
+											holdtime:holdtime,
+											price:price,
+											bconcent:bconcent,
+											achieve:achieve,
+											elsecare:elsecare,
+											spread:spread,
+											publish:publish,
+											cateid:cateid
+										},
+										success: function(data){
+
+											data = JSON.parse(data);
+												// console.log(data);
+											if(data.status==9){
+												alert('提交成功')
+											}else{
+												this.ErrorShow(data);
+											}
+										},
+
+									})
+								},
+									//错误提示
+								ErrorShow:function(data){
+									if(data.status==25)
+									{
+										$('.addTopHtml #formTop .Errtitle').text(data.message);//话题错误
+									}else if(data.status==26){
+										$('.addTopHtml #formTop .Errht').text(data.message);//时长错误
+									}else if(data.status==27){
+										$('.addTopHtml #formTop .Errprice').text(data.message);//价格错误
+									}else if(data.status==28){
+										$('.addTopHtml #formTop .Errbc').text(data.message);//话题大纲错误
+									}else if(data.status==29){
+										$('.addTopHtml #formTop .Errach').text(data.message);//成就错误
+									}else if(data.status==30){
+										$('.addTopHtml #formTop .Errcat').text(data.message);
+									}
+
+								},
+							}
+
+						}
+					},
+//					个人设置
+					{
+						path:'/personalSet',
+						component:{
+							template:'#personalSetHtml',
+							//增加
+							methods: {
+								changeHead: function(){
+									this.$refs['head'].click();					
+								},
+								upHead: function(e){
+									var file = e.target.files[0];
+									var formdata = new FormData();
+									formdata.append('file', file);
+									$.ajax({
+										url: "{:url('/index/expertinfo/headpic')}",
+										type: 'POST',
+										data: formdata,
+										processData: false,
+										contentType: false,
+										success: function(response){
+											if(response.status === 0){
+												$('#profile_picture').attr('src', "__STATIC_PATH__" + response.path)
+											}
+										}
+									})
+								}
+							}
+						}
+					},
+				]
 			});
-		})
-	</script>
+			new Vue({
+				el:"#zr_vue_here",
+				data:{
+					
+				},
+				methods:{
+				},
+				router
+			});
+		</script>
+		<!--js-->
+		
+		<script type="text/javascript">
+
+			        // $(".filepath").on("change",function() {
+			        //     // var srcs = getObjectURL(this.files[0]);   //获取路径
+			        //     srcs = window.URL.createObjectURL($(".filepath")[0].files[0])
+			        //     console.log(srcs);
+			        //     console.log($(".filepath"));
+			        //     $(".close_touxiang").show();
+			        //     $(".submit_touxiang").show();
+			        //     $(".touxiangImg").attr("src",srcs);    //this指的是input
+			        // })
+
+
+			        // $(".close_touxiang").on("click",function() {
+		         //        $(this).hide();
+		         //        $(".submit_touxiang").hide();
+		         //         $(".touxiangImg").attr("src",'__STATIC_PATH__/static/personalinfo/images/touxiang_normal.png');
+		         //    })
+
+			//获取焦点后清除错误信息
+			$("#formTop input").focus(function(){
+			  $("#formTop .form-error").text('');
+			});
+			
+			//获取路径的方法
+			function getObjectURL(file) {
+		        var url = null;
+		        if (window.createObjectURL != undefined) {
+		            url = window.createObjectURL(file)
+		            console.log('w1')
+		        } else if (window.URL != undefined) {
+		            url = window.URL.createObjectURL(file)
+		            console.log('w2')
+		        } else if (window.webkitURL != undefined) {
+		            url = window.webkitURL.createObjectURL(file)
+		            console.log('w3')
+		        }
+		        return url
+		    };
+		</script>
 {include file="nav_foot/foot"}
 {include file="common/footer"}
