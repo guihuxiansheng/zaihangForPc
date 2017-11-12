@@ -8,7 +8,10 @@
 			$special = model('special')->checkUrl($id);
 			if($special !== false && $special !== null){
 				$this->assign('special',$special);
-				$coupon = model('special')->getCoupon($special['name']);
+				if($this->isLogin){
+					$coupon = model('special')->getCoupon($special['name'],$this->isLogin['id']);
+				}
+				$coupon = isset($coupon)?$coupon:false;
 				$this->assign('coupon',$coupon);
 				$special_list = model('special')->getList($special['place']);
 				$this->assign('special_list',$special_list);

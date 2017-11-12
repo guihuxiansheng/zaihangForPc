@@ -9,9 +9,12 @@
 			$list = $this->table('zh_holiday holiday, zh_expert expert,zh_topic topic')->where(['holiday.place' => $city])->where('holiday.uid = expert.id and topic.id = holiday.topic_id')->field('topic.topic_name as name,expert.exp_realname as realname,expert.exp_job as job')->select();
 			return $list;
 		}
-		function getCoupon($special){
+		function getCoupon($special,$id){
 			try{
-				$coupon = db('coupon')->where(['special'=>$special])->find();
+				$coupon = db('coupon')->where([
+					'special'=>$special,
+					'uid'=>$id
+				])->find();
 				return $coupon;
 			}catch(\Exception $e){
 				return false;
