@@ -438,7 +438,7 @@
 		   type: "POST",
 		   url: "{:url('meetsubmit')}",
 		   data: {
-		  	 	student_id:12,
+		  	 	student_id:{$login.id},
 		   		expert_id: {$info.id},
 		   		topic_id:$(".beforesubmit .center input:radio:checked").val(),
 		   		meet_question:$('.meet_question').val(),
